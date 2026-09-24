@@ -56,11 +56,12 @@
 \contentsline {subsection}{\numberline {7.3}Per-study abundance replication; a tempered yeast claim}{21}{}%
 \contentsline {subsection}{\numberline {7.4}Co-expression and evidence channels: annotation transfer in yeast}{22}{}%
 \contentsline {subsection}{\numberline {7.5}Enrichment and structural coverage: scattered generic enzymes}{22}{}%
-\contentsline {section}{\numberline {8}Discussion}{22}{}%
+\contentsline {subsection}{\numberline {7.6}Domain architecture, ortholog clustering, and recurrence lanes}{22}{}%
+\contentsline {section}{\numberline {8}Discussion}{23}{}%
 \contentsline {subsection}{\numberline {8.1}Limitations}{23}{}%
 \contentsline {subsection}{\numberline {8.2}Future work}{23}{}%
-\contentsline {section}{\numberline {9}Per-model fold analysis}{23}{}%
-\contentsline {section}{\numberline {10}Conclusion}{23}{}%
+\contentsline {section}{\numberline {9}Per-model fold analysis}{24}{}%
+\contentsline {section}{\numberline {10}Conclusion}{24}{}%
 \contentsline {section}{\numberline {A}Reproducibility}{25}{}%
 \contentsline {section}{\numberline {B}Feature definitions}{25}{}%
 \contentsline {section}{\numberline {C}Strain-design tables}{25}{}%

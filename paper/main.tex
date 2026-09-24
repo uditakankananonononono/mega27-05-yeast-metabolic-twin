@@ -868,6 +868,41 @@ catalytic annotations with no structure ever determined
 audit: MEMOTE total scores (0.499 yeast-GEM, 0.523 iML1515;
 \texttt{results/memote\_*.html}) sit in the normal published range.
 
+\subsection{Domain architecture, ortholog clustering, and recurrence lanes}
+Three accession-level lanes test the annotation-transfer mechanism on
+independent resources, and a fourth records an honest negative. First,
+domain architecture: fetching the InterPro entry of every backup and
+partner (24 proteins) and comparing Pfam domain sets shows 13 of 14
+over-rescued pairs share at least one Pfam domain, against 3 of 262
+background pairs drawn from the same protein set (Fisher OR 1122,
+$p=1.2\times10^{-18}$; \texttt{results/interpro\_domain\_sharing.json}).
+The backups are not merely co-annotated; they are the same fold, which is
+why similarity propagation pulled the catalytic claim across. Second,
+sequence-cluster replication: OrthoDB Eukaryota-level clusters place
+12 of 14 pairs in the same cluster against the same 3 of 262 background
+(OR 518, $p=1.3\times10^{-16}$;
+\texttt{results/orthodb\_same\_group.json}), replicating the
+domain-sharing result on a resource that shares no curation pipeline
+with InterPro. Third, curated-pathway co-membership through the
+BioCyc/MetaCyc web services is an honest weak signal: only 1 of 14 pairs
+co-occurs in a curated yeast pathway ($p=0.051$;
+\texttt{results/metacyc\_pathway\_summary.json}), consistent with the
+g:Profiler impoverishment -- the pairs scatter across pathways rather
+than forming one. Fourth, ortholog-group recurrence through the OMA
+Browser is an honest negative: 85 of 107 over-rescued backups across
+six species map to OMA groups, but no group recurs in more than two
+species (\texttt{results/oma\_recurrence.json}) -- the over-rescue
+phenomenon is phylogenetically recurrent, the specific backups are
+lineage-specific paralogs. For the strain-design chapter, Rhea curates
+the design reactions (succinate dehydrogenase RHEA:13713 among six
+records; \texttt{results/rhea\_design\_reactions.csv}) and the EBI
+Ontology Lookup Service resolves the five design metabolites to ChEBI
+terms (\texttt{results/ols\_chebi\_design\_metabolites.csv}). As
+bibliography QA, every reference in this paper was verified against
+Crossref: all 14 resolve to DOI-backed records
+(\texttt{results/crossref\_bib\_check.csv}); two top hits are secondary
+records of the cited work and are noted as such.
+
 \section{Discussion}
 The honest negative on MCC is scientifically informative: with 159
 positives among 1{,}107 genes, a per-fold threshold tuned on training
