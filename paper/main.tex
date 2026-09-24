@@ -253,20 +253,76 @@ backups at 13$\times$ the rate of FBA-caught essentials.}
 \end{figure}
 \subsection{Strain design for succinate overproduction}
 The wild-type production envelope (Figure~\ref{fig:envelope}) shows the
-proved growth--production tradeoff. A full 1{,}143-gene knockout scan at a
-10\%-of-wild-type growth floor ranks candidates; validation anchors are the
-experimentally confirmed deletions of Raab et al.\ (2010): SDH1, SDH2,
-IDH1, IDP1 (quadruple strain: 3.62 g/L, 4.8$\times$ wild type). Novel
-candidates beyond the validated set are named in
-Table~\ref{tab:strain}.
+proved growth--production tradeoff. We then searched for
+\emph{growth-coupled} designs: deletions that make succinate excretion
+stoichiometrically obligatory at maximal growth, quantified as the minimum
+succinate flux at (near-)maximum growth (an FVA-style min-flux test;
+Section~\ref{sec:methods-sd}). Two naive metrics failed and are preserved
+as methodology negatives: maximum succinate at a relative growth floor ties
+1{,}063/1{,}143 genes at the envelope ceiling, and coupling to 90\% of each
+mutant's own growth rewards growth-defective strains. The decisive control
+is the medium: on complete Y7 medium even the published quadruple deletion
+shows zero obligatory production, while on minimal glucose medium---the
+condition of the Raab et al.\ (2010) shake-flask experiments---the model
+reproduces the engineering logic exactly (Table~\tabref{tab:validation}).
+\begin{table}[h]
+\centering\small
+\caption{Obligatory succinate production (min flux at max growth) by
+medium. The published quadruple is validated only on minimal medium.}
+\label{tab:validation}
+\begin{tabular}{lrrrr}
+\toprule
+ & \multicolumn{2}{c}{complete Y7} & \multicolumn{2}{c}{minimal glucose}\\
+strain & growth & min succinate & growth & min succinate\\
+\midrule
+wild type & 2.8139 & 0.0000 & 0.8386 & 0.0000\\
+$\Delta$sdh1 & 2.8139 & 0.0000 & 0.8386 & 0.0000\\
+Raab quadruple & 2.4939 & 0.0000 & 0.7791 & \textbf{0.0598}\\
+\bottomrule
+\end{tabular}
+\end{table}
+On minimal medium we scanned all 1{,}143 single deletions, all 1{,}139
+fifth deletions on the validated quadruple background, and all 253 pairs
+among 23 verified TCA/glyoxylate genes
+(Tables~\ref{tab:singles}--\ref{tab:pairs},
+Figure~\ref{fig:designs}). Three discoveries result:
+\begin{enumerate}
+\item \textbf{$\Delta$sdh2$\Delta$ach1} produces obligatory succinate at
+0.0892 mmol\,gDW$^{-1}$\,h$^{-1}$ with 99.2\% of wild-type
+growth---+49\% obligatory flux and +6.8 points of growth over the
+published quadruple, with two deletions instead of four. No prior
+SDH2+ACH1 combination appears in the succinate-engineering literature we
+reviewed.
+\item \textbf{$\Delta$sdh2 or $\Delta$sdh3 alone} forces 0.0670
+obligatory succinate at 99.4\% growth, already exceeding the quadruple's
+obligatory flux with a single deletion. Mechanistically SDH2 and SDH3
+appear in every GPR clause of complex II in the model, so their deletion
+blocks succinate oxidation unconditionally.
+\item \textbf{quad+$\Delta$ymc1} is the best fifth deletion on the
+published background (0.0833; +0.0235).
+\end{enumerate}
+A model-limitation caveat connects to Section~\ref{sec:overrescue}: the
+model treats SDH1 as redundant for complex II (alternative GPR clauses),
+so $\Delta$sdh1 shows no coupling in silico even though Raab et al.\
+deleted it experimentally.
 \begin{figure}[t]
 \centering\includegraphics[width=0.5\textwidth]{../figures/fig_envelope.png}
 \caption{Wild-type succinate production envelope on Kennedy Y7 medium.}
 \label{fig:envelope}
 \end{figure}
 
+\begin{figure}[t]
+\centering\includegraphics[width=0.85\textwidth]{../figures/fig_strain_designs.png}
+\caption{Growth-coupled succinate designs on minimal glucose. Novel
+designs (this work) exceed the published quadruple on obligatory flux and
+growth simultaneously.}
+\label{fig:designs}
+\end{figure}
 \input{tab_cv_folds}
 \input{tab_overrescued}
+\input{tab_strain_singles}
+\input{tab_strain_5th}
+\input{tab_strain_pairs}
 
 \section{Discussion}
 The honest negative on MCC is scientifically informative: with 159
@@ -311,5 +367,5 @@ COBRApy 0.32.1, PyTorch 2.14.0 (CPU), scikit-learn 1.7.2.
 Full per-gene feature table (1{,}143 genes $\times$ 11 features) at
 \texttt{results/gene\_features\_partial.csv}.
 \section{Strain-design tables}
-% tab_strain generated after the scan completes
+Full scan outputs: \texttt{results/strain\_design\_*.csv}.
 \end{document}
