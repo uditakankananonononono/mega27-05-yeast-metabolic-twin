@@ -1,0 +1,49 @@
+a_sys	b_sys	a_sym	b_sym	system	type	pub	src
+b0048	b0044	folA	fixX	Two-hybrid	physical	PUBMED:24561554	Escherichia_coli_K12_MG1655
+b0048	b1566	folA	flxA	Two-hybrid	physical	PUBMED:24561554	Escherichia_coli_K12_MG1655
+b0048	b1575	folA	dicB	Two-hybrid	physical	PUBMED:24561554	Escherichia_coli_K12_MG1655
+b0048	b0424	folA	yajL	Two-hybrid	physical	PUBMED:24561554	Escherichia_coli_K12_MG1655
+b0048	b1831	folA	proQ	Two-hybrid	physical	PUBMED:24561554	Escherichia_coli_K12_MG1655
+b0048	b3825	folA	pldB	Two-hybrid	physical	PUBMED:24561554	Escherichia_coli_K12_MG1655
+b0171	b1566	pyrH	flxA	Two-hybrid	physical	PUBMED:24561554	Escherichia_coli_K12_MG1655
+b0475	b2440	hemH	eutC	Two-hybrid	physical	PUBMED:24561554	Escherichia_coli_K12_MG1655
+b2411	b3751	ligA	rbsB	Two-hybrid	physical	PUBMED:24561554	Escherichia_coli_K12_MG1655
+b0910	b3825	cmk	pldB	Two-hybrid	physical	PUBMED:24561554	Escherichia_coli_K12_MG1655
+b0684	b3825	fldA	pldB	Two-hybrid	physical	PUBMED:24561554	Escherichia_coli_K12_MG1655
+b2411	b0642	ligA	leuS	Two-hybrid	physical	PUBMED:24561554	Escherichia_coli_K12_MG1655
+b0684	b2830	fldA	rppH	Two-hybrid	physical	PUBMED:24561554	Escherichia_coli_K12_MG1655
+b0684	b3185	fldA	rpmA	Two-hybrid	physical	PUBMED:24561554	Escherichia_coli_K12_MG1655
+b0684	b3296	fldA	rpsD	Two-hybrid	physical	PUBMED:24561554	Escherichia_coli_K12_MG1655
+b0684	b3303	fldA	rpsE	Two-hybrid	physical	PUBMED:24561554	Escherichia_coli_K12_MG1655
+b4237	b4237	nrdG	nrdG	Two-hybrid	physical	PUBMED:24561554	Escherichia_coli_K12_MG1655
+b2472	b4237	dapE	nrdG	Two-hybrid	physical	PUBMED:24561554	Escherichia_coli_K12_MG1655
+b4238	b0864	nrdD	artP	Two-hybrid	physical	PUBMED:24561554	Escherichia_coli_K12_MG1655
+b0889	b0048	lrp	folA	Two-hybrid	physical	PUBMED:24561554	Escherichia_coli_K12_MG1655
+b0684	b4118	fldA	melR	Two-hybrid	physical	PUBMED:24561554	Escherichia_coli_K12_MG1655
+b0684	b2980	fldA	glcC	Two-hybrid	physical	PUBMED:24561554	Escherichia_coli_K12_MG1655
+b2502	b2502	ppx	ppx	Two-hybrid	physical	PUBMED:24561554	Escherichia_coli_K12_MG1655
+b0026	b2411	ileS	ligA	Two-hybrid	physical	PUBMED:24561554	Escherichia_coli_K12_MG1655
+b3751	b2411	rbsB	ligA	Two-hybrid	physical	PUBMED:24561554	Escherichia_coli_K12_MG1655
+b1274	b2411	topA	ligA	Two-hybrid	physical	PUBMED:24561554	Escherichia_coli_K12_MG1655
+b2411	b2411	ligA	ligA	Two-hybrid	physical	PUBMED:24561554	Escherichia_coli_K12_MG1655
+b0139	b2411	htrE	ligA	Two-hybrid	physical	PUBMED:24561554	Escherichia_coli_K12_MG1655
+b4253	b2411	yjgL	ligA	Two-hybrid	physical	PUBMED:24561554	Escherichia_coli_K12_MG1655
+b0780	b2411	ybhK	ligA	Two-hybrid	physical	PUBMED:24561554	Escherichia_coli_K12_MG1655
+b0910	b1176	cmk	minC	Two-hybrid	physical	PUBMED:24561554	Escherichia_coli_K12_MG1655
+b2411	b0975	ligA	hyaD	Two-hybrid	physical	PUBMED:24561554	Escherichia_coli_K12_MG1655
+b4237	b4238	nrdG	nrdD	Two-hybrid	physical	PUBMED:24561554	Escherichia_coli_K12_MG1655
+b4238	b4238	nrdD	nrdD	Two-hybrid	physical	PUBMED:24561554	Escherichia_coli_K12_MG1655
+b4238	b3992	nrdD	thiF	Two-hybrid	physical	PUBMED:24561554	Escherichia_coli_K12_MG1655
+b2502	b0199	ppx	metN	Two-hybrid	physical	PUBMED:24561554	Escherichia_coli_K12_MG1655
+b0684	b2698	fldA	recX	Two-hybrid	physical	PUBMED:24561554	Escherichia_coli_K12_MG1655
+b2502	b4299	ppx	yjhI	Two-hybrid	physical	PUBMED:24561554	Escherichia_coli_K12_MG1655
+b0910	b1831	cmk	proQ	Two-hybrid	physical	PUBMED:24561554	Escherichia_coli_K12_MG1655
+b0684	b1831	fldA	proQ	Two-hybrid	physical	PUBMED:24561554	Escherichia_coli_K12_MG1655
+b0684	b1499	fldA	ydeO	Two-hybrid	physical	PUBMED:24561554	Escherichia_coli_K12_MG1655
+b2515	b0292	ispG	ecpB	Two-hybrid	physical	PUBMED:24561554	Escherichia_coli_K12_MG1655
+b0048	b1566	folA	flxA	Affinity Capture-Western	physical	PUBMED:24561554	Escherichia_coli_K12_MG1655
+b0684	b1361	fldA	ydaW	Affinity Capture-Western	physical	PUBMED:24561554	Escherichia_coli_K12_MG1655
+b0684	b2698	fldA	recX	Affinity Capture-Western	physical	PUBMED:24561554	Escherichia_coli_K12_MG1655
+b0048	b1566	folA	flxA	Affinity Capture-Luminescence	physical	PUBMED:24561554	Escherichia_coli_K12_MG1655
+b0655	b2234	gltI	nrdA	Cross-Linking-MS (XL-MS)	physical	PUBMED:28524877	Escherichia_coli_K12_MG1655
+b1368	b4226	tmpR	ppa	Cross-Linking-MS (XL-MS)	physical	PUBMED:28524877	Escherichia_coli_K12_MG1655

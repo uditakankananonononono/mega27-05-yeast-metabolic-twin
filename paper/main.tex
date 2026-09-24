@@ -643,6 +643,36 @@ we tested, including the published quadruple, shows obligatory succinate.
 A screen run on the wrong medium would have reported the entire design
 space as empty.
 
+\subsection{Synthesis: a four-link mechanism chain, two species}
+Table~\ref{tab:chain} collects the evidence. In both yeast and
+\emph{E. coli}, genome-scale models miss essential genes specifically
+where an isozyme clause offers a backup (link 1--2); in both species the
+trusted backups are expressed far below the essentials they supposedly
+rescue (link 3); and where genetics has been curated (yeast BioGRID),
+overexpressing the backup rescues---confirming the failure is
+expression-blindness, not wrong chemistry (link 4). BioGRID's
+\emph{E. coli} curation (48 physical but zero genetic interactions
+among our genes) cannot yet test link 4 cross-species; we record that
+as a coverage gap, not a failure
+(\texttt{data/raw/biogrid\_ecoli\_overrescue\_interactions.tsv}).
+\begin{table}[h]
+\centering\small
+\begin{tabular}{lcc}
+\hline\hline
+chain link & \emph{S. cerevisiae} & \emph{E. coli} \\
+\hline
+1. missed essentials isozyme-backed & OR 16.2, $p=3.8\times10^{-4}$ & OR 11.5, $p=1.2\times10^{-5}$ \\
+2. named over-rescued genes & 19 & 13 \\
+3. backups less abundant & 17/28, $p=0.038$ & 17/20, $p=0.007$ \\
+4. overexpression rescues (curated) & 4 pairs (BioGRID) & untested (no curation) \\
+\hline
+\end{tabular}
+\caption{The isozyme over-rescue chain across species. Link 3
+abundances from PaxDb v4.2; link 4 from BioGRID 5.0.261 rescue-type
+interactions between model backup pairs.}
+\label{tab:chain}
+\end{table}
+
 \section{Discussion}
 The honest negative on MCC is scientifically informative: with 159
 positives among 1{,}107 genes, a per-fold threshold tuned on training
