@@ -17,3 +17,4 @@ SGD phenotype data,SGD download 2026-09-24,201521 annotations,essentiality trian
 PaxDb E. coli whole-organism abundances,PaxDb v4.2 species 511145,4093 proteins (ppm),cross-species backup expression test
 iYO844 B. subtilis genome-scale model,BiGG Models iYO844,1250 reactions / 844 genes,third-species over-rescue audit
 Koo 2017 B. subtilis deletion libraries,DOI 10.1016/j.cels.2017.05.013 Table S3,257 essential genes,third-species essentiality labels
+PaxDb B. subtilis whole-organism abundances,PaxDb v4.2 species 224308,3997 proteins (ppm),third-species backup expression test (negative)

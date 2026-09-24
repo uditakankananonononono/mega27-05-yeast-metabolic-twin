@@ -442,6 +442,20 @@ $p=0.038$ (\texttt{results/overrescue\_abundance.csv}). The extremes
 are dramatic: PMA1 (4{,}368 ppm) is trusted to be backed up by an
 enzyme at 14.1 ppm---a 310-fold shortfall. The model assumes catalytic
 capacity that the cell never produces.
+\paragraph{Honest negative: the expression gap does not replicate in
+\emph{B. subtilis}.}
+PaxDb abundances for \emph{B. subtilis} (3{,}997 proteins) give 38 of
+71 backup pairs with the backup less abundant (53.5\%), median log$_2$
+ratio 0.23, Wilcoxon $p=0.29$
+(\texttt{results/overrescue\_abundance\_bsubtilis.csv}). Unlike
+yeast and \emph{E. coli}, the over-rescued essentials here are
+\emph{low}-abundance enzymes (median 6.6 ppm vs 17.8 genome-wide) and
+include a mutually redundant isozyme family (BSU31600--BSU31660) whose
+members back each other up. The phenomenon is universal; the
+expression-blindness mechanism is not---\emph{B. subtilis} likely fails
+through wrong reaction-level annotations instead. We report the
+negative as-is.
+
 \paragraph{Third species, strongest signal: \emph{B. subtilis}.}
 Against the Koo 2017 genome-scale deletion libraries (257 protein-coding
 essentials; 101 metabolic genes in iYO844), the same audit gives the
@@ -672,7 +686,7 @@ chain link & \emph{S. cerevisiae} & \emph{E. coli} & \emph{B. subtilis} \\
 \hline
 1. missed essentials isozyme-backed & OR 16.2, $p=3.8\times10^{-4}$ & OR 11.5, $p=1.2\times10^{-5}$ & OR 22.7, $p=2.5\times10^{-7}$ \\
 2. named over-rescued genes & 19 & 13 & 15 \\
-3. backups less abundant & 17/28, $p=0.038$ & 17/20, $p=0.007$ & untested \\
+3. backups less abundant & 17/28, $p=0.038$ & 17/20, $p=0.007$ & 38/71, $p=0.29$ (neg.) \\
 4. overexpression rescues (curated) & 4 pairs (BioGRID) & untested (no curation) & untested \\
 \hline
 \end{tabular}

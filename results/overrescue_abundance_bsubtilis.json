@@ -1,0 +1,11 @@
+{
+  "n_pairs": 71,
+  "n_backup_lower": 38,
+  "frac_backup_lower": 0.5352112676056338,
+  "median_log2_ratio": 0.23384593830624648,
+  "n_pairs_finite": 71,
+  "wilcoxon_p": 0.2891237943690408,
+  "genome_median_ppm": 17.8,
+  "backup_median_ppm": 12.1,
+  "essential_median_ppm": 6.58
+}
