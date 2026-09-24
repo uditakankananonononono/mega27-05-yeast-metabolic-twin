@@ -1,0 +1,29 @@
+{
+  "n_genes": 39,
+  "essential_with_structure": 7,
+  "n_essential": 16,
+  "backup_with_structure": 7,
+  "n_backup": 27,
+  "backups_without_structure": [
+    "YBR069C",
+    "YCR024C-A",
+    "YDR302W",
+    "YDR376W",
+    "YEL017C-A",
+    "YER005W",
+    "YER141W",
+    "YHL012W",
+    "YHR011W",
+    "YIL066C",
+    "YJL100W",
+    "YJR069C",
+    "YKL150W",
+    "YKR039W",
+    "YLL031C",
+    "YMR056C",
+    "YMR101C",
+    "YOL130W",
+    "YOR347C",
+    "YPL036W"
+  ]
+}
