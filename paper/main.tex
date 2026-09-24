@@ -839,7 +839,13 @@ linked (median 0.90) but barely \emph{co-expression}-channel linked
 pairs show no such contrast ($p=0.14$). The yeast backups thus enter
 GPRs through pathway curation, not through evidence of covering
 expression -- annotation transfer, convergent with the KEGG provenance
-signature. The two species classes fail differently: bacteria through
+signature. Curated-record provenance confirms the mechanism: fetching the
+UniProt entry for every over-rescued gene and backup (70 entries, one
+request per gene) shows 92.9\% of yeast and 100\% of \emph{E. coli}
+pairs annotated only by family-level similarity comments
+(ECO:0000305 propagation), with catalytic-activity curation symmetric
+between pair members (\texttt{results/uniprot\_pairs\_*.csv}) - the
+backup's catalytic claim is itself similarity-propagated. The two species classes fail differently: bacteria through
 barely-expressed backups, yeast through annotation transfer of
 non-covering isozymes.
 
