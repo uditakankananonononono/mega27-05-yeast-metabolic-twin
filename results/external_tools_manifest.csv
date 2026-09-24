@@ -19,3 +19,5 @@ AlphaFold DB,service,v2 API,structure evidence for over-rescued genes
 BiGG Models,database,iML1515 release,cross-species model source
 Europe PMC REST API,service,-,supplementary-file retrieval (Keio table)
 PaxDb,database,v4.2,protein abundance evidence
+BioGRID,database,5.0.261,curated genetic interaction evidence
+SGD downloads,database,-,phenotype curation

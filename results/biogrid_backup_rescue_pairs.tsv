@@ -1,0 +1,6 @@
+a_sys	b_sys	a_sym	b_sym	system	type	pub	pair
+YBR002C	YMR101C	RER2	SRT1	Dosage Rescue	genetic	PUBMED:9858571	frozenset({'YMR101C', 'YBR002C'})
+YBR002C	YMR101C	RER2	SRT1	Dosage Rescue	genetic	PUBMED:11442630	frozenset({'YMR101C', 'YBR002C'})
+YBL030C	YBR085W	PET9	AAC3	Dosage Rescue	genetic	PUBMED:15238515	frozenset({'YBL030C', 'YBR085W'})
+YLR305C	YJL100W	STT4	LSB6	Dosage Rescue	genetic	PUBMED:12361950	frozenset({'YJL100W', 'YLR305C'})
+YBR252W	YJR069C	DUT1	HAM1	Synthetic Rescue	genetic	PUBMED:32939983	frozenset({'YBR252W', 'YJR069C'})

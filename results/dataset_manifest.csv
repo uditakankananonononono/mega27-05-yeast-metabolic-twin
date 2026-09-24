@@ -12,3 +12,5 @@ AlphaFold DB yeast structures,AF v2 API,19+ proteins,structure evidence table
 iML1515 E. coli genome-scale model,BiGG Models iML1515,2712 reactions / 1516 genes,cross-species over-rescue audit
 Keio essential gene candidates,Baba 2006 PMID 16738554 Suppl Table 6,300 essential candidates,cross-species essentiality labels
 PaxDb S. cerevisiae whole-organism abundances,PaxDb v4.2 dataset 1329501331,6443 proteins (ppm),backup-isozyme expression mechanism test
+BioGRID curated interactions,BioGRID 5.0.261 S. cerevisiae,10436 interactions (49 backup-pair),genetic rescue evidence for backups
+SGD phenotype data,SGD download 2026-09-24,201521 annotations,essentiality triangulation (inviable curation)

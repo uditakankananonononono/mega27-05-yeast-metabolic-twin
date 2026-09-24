@@ -442,6 +442,17 @@ $p=0.038$ (\texttt{results/overrescue\_abundance.csv}). The extremes
 are dramatic: PMA1 (4{,}368 ppm) is trusted to be backed up by an
 enzyme at 14.1 ppm---a 310-fold shortfall. The model assumes catalytic
 capacity that the cell never produces.
+\paragraph{Genetic evidence: overexpressed backups do rescue.}
+If the failure is expression rather than chemistry, forcing backup
+expression should restore viability. Curated interactions (BioGRID
+5.0.261) contain 49 records between an over-rescued essential and its
+model backup; the 5 Rescue-type records span 4 pairs---RER2/SRT1 (two
+independent PMIDs), PET9/AAC3, STT4/LSB6 (dosage rescue) and DUT1/HAM1
+(synthetic rescue)---and in each, \emph{overexpression} of the backup
+rescues the essential's defect (\texttt{results/biogrid\_backup\_rescue\_pairs.tsv}).
+The chemistry the model trusts is real; what the cell lacks is the
+expression. Isozyme over-rescue is thus an expression-blindness failure
+of stoichiometric models.
 \begin{figure}[h]
 \centering\includegraphics[width=0.55\textwidth]{../figures/fig_abundance.png}
 \caption{PaxDb abundances of over-rescued essential genes vs their
@@ -570,6 +581,16 @@ growth simultaneously.}
 \input{tab_strain_singles}
 \input{tab_strain_5th}
 \input{tab_strain_pairs}
+
+\subsection{Essentiality triangulation and a curation conflict}
+Cross-checking the 19 over-rescued genes against 201{,}521 curated SGD
+phenotype records: 18 carry explicit \emph{inviable} annotations
+(\texttt{results/sgd\_inviable\_triangulation.json}). The exception,
+YMR108W/ILV2, is annotated \emph{viable} in the systematic mutation
+set---consistent with conditional essentiality (ILV2 is required only
+without exogenous branched-chain amino acids) and with this project's
+medium-dependence theme; we keep the gene in the over-rescued set but
+flag the conflict.
 
 \subsection{External experimental validation}
 Against data never used in training, the model reproduces anaerobic
