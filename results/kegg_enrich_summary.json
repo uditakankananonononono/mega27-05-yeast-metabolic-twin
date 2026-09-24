@@ -1,0 +1,227 @@
+{
+  "ecoli": {
+    "kegg_org": "eco",
+    "n_overrescued": 13,
+    "n_background": 1149,
+    "n_over_in_bg": 11,
+    "n_pathways_tested": 127,
+    "n_significant": 0,
+    "top": [
+      {
+        "pathway": "eco00240",
+        "overlap": 4,
+        "size": 53,
+        "p": 0.001048754119620392,
+        "p_bonf": 0.1331917731917898
+      },
+      {
+        "pathway": "eco01232",
+        "overlap": 4,
+        "size": 56,
+        "p": 0.0012957430494263931,
+        "p_bonf": 0.16455936727715192
+      },
+      {
+        "pathway": "eco03410",
+        "overlap": 1,
+        "size": 1,
+        "p": 0.009573542210617928,
+        "p_bonf": 1.0
+      },
+      {
+        "pathway": "eco03030",
+        "overlap": 1,
+        "size": 1,
+        "p": 0.009573542210617928,
+        "p_bonf": 1.0
+      },
+      {
+        "pathway": "eco03430",
+        "overlap": 1,
+        "size": 1,
+        "p": 0.009573542210617928,
+        "p_bonf": 1.0
+      }
+    ]
+  },
+  "bsubtilis": {
+    "kegg_org": "bsu",
+    "n_overrescued": 15,
+    "n_background": 662,
+    "n_over_in_bg": 6,
+    "n_pathways_tested": 107,
+    "n_significant": 0,
+    "top": [
+      {
+        "pathway": "bsu00261",
+        "overlap": 1,
+        "size": 7,
+        "p": 0.06201885525377124,
+        "p_bonf": 1.0
+      },
+      {
+        "pathway": "bsu00450",
+        "overlap": 1,
+        "size": 7,
+        "p": 0.06201885525377124,
+        "p_bonf": 1.0
+      },
+      {
+        "pathway": "bsu00780",
+        "overlap": 1,
+        "size": 10,
+        "p": 0.08759877005434204,
+        "p_bonf": 1.0
+      },
+      {
+        "pathway": "bsu00470",
+        "overlap": 1,
+        "size": 13,
+        "p": 0.11259469408135114,
+        "p_bonf": 1.0
+      },
+      {
+        "pathway": "bsu00550",
+        "overlap": 1,
+        "size": 13,
+        "p": 0.11259469408135114,
+        "p_bonf": 1.0
+      }
+    ]
+  },
+  "mtb": {
+    "kegg_org": "mtu",
+    "n_overrescued": 36,
+    "n_background": 546,
+    "n_over_in_bg": 34,
+    "n_pathways_tested": 113,
+    "n_significant": 0,
+    "top": [
+      {
+        "pathway": "mtu00061",
+        "overlap": 4,
+        "size": 8,
+        "p": 0.0007395852619477003,
+        "p_bonf": 0.08357313460009012
+      },
+      {
+        "pathway": "mtu01212",
+        "overlap": 4,
+        "size": 12,
+        "p": 0.004365456700051159,
+        "p_bonf": 0.49329660710578094
+      },
+      {
+        "pathway": "mtu00074",
+        "overlap": 5,
+        "size": 22,
+        "p": 0.008479764210321228,
+        "p_bonf": 0.9582133557662987
+      },
+      {
+        "pathway": "mtu00920",
+        "overlap": 4,
+        "size": 15,
+        "p": 0.010515692985491536,
+        "p_bonf": 1.0
+      },
+      {
+        "pathway": "mtu00401",
+        "overlap": 2,
+        "size": 4,
+        "p": 0.020886863149522178,
+        "p_bonf": 1.0
+      }
+    ]
+  },
+  "saureus": {
+    "kegg_org": "sau",
+    "n_overrescued": 10,
+    "n_background": 500,
+    "n_over_in_bg": 10,
+    "n_pathways_tested": 102,
+    "n_significant": 1,
+    "top": [
+      {
+        "pathway": "sau00010",
+        "overlap": 5,
+        "size": 36,
+        "p": 0.00028468056344715297,
+        "p_bonf": 0.0290374174716096
+      },
+      {
+        "pathway": "sau00520",
+        "overlap": 4,
+        "size": 24,
+        "p": 0.0007122710459578383,
+        "p_bonf": 0.07265164668769951
+      },
+      {
+        "pathway": "sau02060",
+        "overlap": 3,
+        "size": 17,
+        "p": 0.003393119236438553,
+        "p_bonf": 0.34609816211673244
+      },
+      {
+        "pathway": "sau00710",
+        "overlap": 2,
+        "size": 12,
+        "p": 0.021376054991752817,
+        "p_bonf": 1.0
+      },
+      {
+        "pathway": "sau02020",
+        "overlap": 2,
+        "size": 26,
+        "p": 0.09051377479693086,
+        "p_bonf": 1.0
+      }
+    ]
+  },
+  "styphimurium": {
+    "kegg_org": "stm",
+    "n_overrescued": 14,
+    "n_background": 1012,
+    "n_over_in_bg": 12,
+    "n_pathways_tested": 123,
+    "n_significant": 0,
+    "top": [
+      {
+        "pathway": "stm01310",
+        "overlap": 2,
+        "size": 11,
+        "p": 0.006685436735243445,
+        "p_bonf": 0.8223087184349437
+      },
+      {
+        "pathway": "stm03410",
+        "overlap": 1,
+        "size": 1,
+        "p": 0.011857707509881422,
+        "p_bonf": 1.0
+      },
+      {
+        "pathway": "stm03430",
+        "overlap": 1,
+        "size": 1,
+        "p": 0.011857707509881422,
+        "p_bonf": 1.0
+      },
+      {
+        "pathway": "stm03030",
+        "overlap": 1,
+        "size": 1,
+        "p": 0.011857707509881422,
+        "p_bonf": 1.0
+      },
+      {
+        "pathway": "stm03420",
+        "overlap": 1,
+        "size": 1,
+        "p": 0.011857707509881422,
+        "p_bonf": 1.0
+      }
+    ]
+  }
+}

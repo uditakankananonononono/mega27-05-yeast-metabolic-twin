@@ -1,0 +1,60 @@
+{
+  "yeast": {
+    "organism": "scerevisiae",
+    "n_genes": 19,
+    "n_significant_terms": 8,
+    "top": [
+      {
+        "source": "GO:MF",
+        "term": "GO:0003824",
+        "name": "catalytic activity",
+        "p": 0.00035631534787066555,
+        "intersections": 17
+      },
+      {
+        "source": "GO:BP",
+        "term": "GO:1901135",
+        "name": "carbohydrate derivative metabolic process",
+        "p": 0.010715879528406845,
+        "intersections": 7
+      },
+      {
+        "source": "GO:MF",
+        "term": "GO:0051377",
+        "name": "mannose-ethanolamine phosphotransferase activity",
+        "p": 0.01077191109795873,
+        "intersections": 2
+      },
+      {
+        "source": "GO:MF",
+        "term": "GO:0046872",
+        "name": "metal ion binding",
+        "p": 0.0187304577696859,
+        "intersections": 10
+      },
+      {
+        "source": "GO:MF",
+        "term": "GO:0043167",
+        "name": "ion binding",
+        "p": 0.020992365543039942,
+        "intersections": 13
+      }
+    ]
+  },
+  "ecoli": {
+    "error": "HTTP Error 400: BAD REQUEST",
+    "n_genes": 13
+  },
+  "bsubtilis": {
+    "error": "HTTP Error 400: BAD REQUEST",
+    "n_genes": 15
+  },
+  "mtb": {
+    "error": "HTTP Error 400: BAD REQUEST",
+    "n_genes": 36
+  },
+  "yeast_caught_contrast": {
+    "n_genes": 65,
+    "n_significant_terms": 131
+  }
+}

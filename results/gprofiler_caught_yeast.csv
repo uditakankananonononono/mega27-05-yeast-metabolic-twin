@@ -1,0 +1,132 @@
+source,term,name,p
+GO:MF,GO:1990825,sequence-specific mRNA binding,1.876359091168475e-27
+GO:MF,GO:0004812,aminoacyl-tRNA ligase activity,2.4363148399963388e-27
+GO:MF,GO:0016875,"ligase activity, forming carbon-oxygen bonds",2.4363148399963388e-27
+GO:BP,GO:0006418,tRNA aminoacylation for protein translation,3.63456936151323e-27
+GO:MF,GO:0016874,ligase activity,1.7997369424272548e-26
+GO:BP,GO:0043038,amino acid activation,4.8984996740716776e-26
+GO:BP,GO:0043039,tRNA aminoacylation,4.8984996740716776e-26
+GO:MF,GO:0003824,catalytic activity,1.1391424126465527e-25
+GO:BP,GO:0009058,biosynthetic process,1.1758202332129382e-19
+KEGG,KEGG:00970,Aminoacyl-tRNA biosynthesis,6.713772677541518e-19
+GO:MF,GO:0097367,carbohydrate derivative binding,3.230571390362423e-18
+GO:MF,GO:0032553,ribonucleotide binding,2.126359157485925e-17
+GO:BP,GO:0090407,organophosphate biosynthetic process,2.6582947742026804e-17
+GO:MF,GO:0017076,purine nucleotide binding,6.435153498049621e-17
+GO:MF,GO:0035639,purine ribonucleoside triphosphate binding,7.351923791675535e-17
+GO:MF,GO:0032555,purine ribonucleotide binding,9.299849492679884e-17
+GO:MF,GO:1901363,heterocyclic compound binding,1.2180952645151606e-16
+GO:MF,GO:0000166,nucleotide binding,1.348100328659318e-16
+GO:MF,GO:1901265,nucleoside phosphate binding,1.406480980389871e-16
+GO:MF,GO:0140101,"catalytic activity, acting on a tRNA",1.6623444966890599e-16
+GO:MF,GO:0036094,small molecule binding,3.6982035867717763e-16
+GO:MF,GO:0030554,adenyl nucleotide binding,8.460283151187711e-16
+GO:MF,GO:0005524,ATP binding,8.730431535398409e-16
+GO:MF,GO:0032559,adenyl ribonucleotide binding,1.1194248390025464e-15
+GO:MF,GO:0043168,anion binding,1.3313978237030607e-15
+GO:MF,GO:0043167,ion binding,8.682453182285731e-15
+GO:BP,GO:0055086,nucleobase-containing small molecule metabolic process,5.559265608122929e-14
+GO:BP,GO:0019637,organophosphate metabolic process,9.353078918839158e-14
+GO:BP,GO:0006753,nucleoside phosphate metabolic process,2.2160893430588808e-13
+KEGG,KEGG:01240,Biosynthesis of cofactors,4.0943976292769154e-13
+GO:BP,GO:0006520,amino acid metabolic process,1.0296951422625596e-12
+GO:BP,GO:1901293,nucleoside phosphate biosynthetic process,6.572212059055841e-12
+GO:BP,GO:0044281,small molecule metabolic process,1.3700410570519829e-11
+GO:BP,GO:0008152,metabolic process,1.9554861788583403e-11
+GO:BP,GO:0006399,tRNA metabolic process,2.992554447456104e-11
+GO:BP,GO:0009226,nucleotide-sugar biosynthetic process,4.0258266738239494e-10
+GO:MF,GO:0140098,"catalytic activity, acting on RNA",2.6469322373761547e-09
+GO:BP,GO:0046501,protoporphyrinogen IX metabolic process,2.6536500327330814e-09
+GO:BP,GO:0006782,protoporphyrinogen IX biosynthetic process,2.6536500327330814e-09
+GO:BP,GO:0006796,phosphate-containing compound metabolic process,2.3421722995720155e-08
+KEGG,KEGG:01100,Metabolic pathways,2.4462055155417048e-08
+GO:MF,GO:0003729,mRNA binding,3.4605208204915353e-08
+GO:BP,GO:0006793,phosphorus metabolic process,3.573315450617006e-08
+GO:BP,GO:0009225,nucleotide-sugar metabolic process,3.663283900487473e-08
+GO:BP,GO:0006779,porphyrin-containing compound biosynthetic process,6.179421676865259e-08
+GO:BP,GO:0006783,heme biosynthetic process,6.179421676865259e-08
+GO:BP,GO:0046148,pigment biosynthetic process,6.179421676865259e-08
+GO:BP,GO:0033014,tetrapyrrole biosynthetic process,6.179421676865259e-08
+GO:BP,GO:0016114,terpenoid biosynthetic process,7.778372405019054e-08
+GO:BP,GO:0042440,pigment metabolic process,1.0033580807017441e-07
+GO:BP,GO:0006778,porphyrin-containing compound metabolic process,1.0033580807017441e-07
+GO:BP,GO:0042168,heme metabolic process,1.0033580807017441e-07
+GO:BP,GO:0033013,tetrapyrrole metabolic process,1.0033580807017441e-07
+GO:BP,GO:0008299,isoprenoid biosynthetic process,1.5763642480828757e-07
+GO:BP,GO:0006721,terpenoid metabolic process,1.698059435860985e-07
+KEGG,KEGG:00860,Porphyrin metabolism,1.7862754719038153e-07
+GO:BP,GO:0006720,isoprenoid metabolic process,2.406420162638601e-07
+GO:BP,GO:0045337,farnesyl diphosphate biosynthetic process,2.488965887590768e-07
+GO:BP,GO:0045338,farnesyl diphosphate metabolic process,8.645039355749315e-07
+GO:BP,GO:0072521,purine-containing compound metabolic process,1.5299412297839823e-06
+GO:BP,GO:0006790,sulfur compound metabolic process,1.6835243196491153e-06
+GO:BP,GO:0008204,ergosterol metabolic process,1.8208778659772669e-06
+GO:BP,GO:0006139,nucleobase-containing compound metabolic process,2.646165727039441e-06
+GO:MF,GO:0002161,aminoacyl-tRNA deacylase activity,3.5272863600161086e-06
+GO:BP,GO:0106074,aminoacyl-tRNA metabolism involved in translational fidelity,5.108331725346534e-06
+GO:MF,GO:0140640,"catalytic activity, acting on a nucleic acid",7.208169337131419e-06
+GO:BP,GO:1902652,secondary alcohol metabolic process,1.1762391775669193e-05
+KEGG,KEGG:00900,Terpenoid backbone biosynthesis,2.046119522939871e-05
+GO:BP,GO:0016129,phytosteroid biosynthetic process,2.2886094887016102e-05
+GO:BP,GO:0006696,ergosterol biosynthetic process,2.2886094887016102e-05
+GO:BP,GO:0016125,sterol metabolic process,2.5659823133320527e-05
+GO:BP,GO:1902653,secondary alcohol biosynthetic process,3.406667164255043e-05
+GO:BP,GO:0008202,steroid metabolic process,3.428744021115537e-05
+GO:MF,GO:0016879,"ligase activity, forming carbon-nitrogen bonds",4.856492019349986e-05
+KEGG,KEGG:01250,Biosynthesis of nucleotide sugars,6.0482317867703914e-05
+GO:BP,GO:0009987,cellular process,6.550371326447953e-05
+GO:BP,GO:0009240,isopentenyl diphosphate biosynthetic process,6.649228387563247e-05
+GO:BP,GO:0046490,isopentenyl diphosphate metabolic process,6.649228387563247e-05
+GO:BP,GO:0006412,translation,7.928048555097069e-05
+GO:BP,GO:0160307,protein biosynthetic process,7.928048555097069e-05
+GO:BP,GO:0016126,sterol biosynthetic process,8.367223099918897e-05
+GO:BP,GO:0006575,modified amino acid metabolic process,8.698343863641314e-05
+GO:BP,GO:0006694,steroid biosynthetic process,9.873247545905974e-05
+GO:BP,GO:0042398,modified amino acid biosynthetic process,0.0001519104326500992
+GO:BP,GO:0015937,coenzyme A biosynthetic process,0.0001539959904623757
+GO:BP,GO:0006048,UDP-N-acetylglucosamine biosynthetic process,0.0001539959904623757
+GO:BP,GO:0008610,lipid biosynthetic process,0.00026821122596810276
+GO:BP,GO:0006047,UDP-N-acetylglucosamine metabolic process,0.00030570419180280813
+GO:BP,GO:0008654,phospholipid biosynthetic process,0.0003163489555232344
+GO:BP,GO:0006084,acetyl-CoA metabolic process,0.0003242850820231364
+GO:BP,GO:0044283,small molecule biosynthetic process,0.0003633784126526151
+GO:MF,GO:0016881,acid-amino acid ligase activity,0.00037794564148660133
+KEGG,KEGG:00520,Amino sugar and nucleotide sugar metabolism,0.0004290171271452713
+GO:BP,GO:0019673,GDP-mannose metabolic process,0.0004765784216371025
+GO:BP,GO:1902767,isoprenoid biosynthetic process via mevalonate,0.0004765784216371025
+GO:BP,GO:0010142,"farnesyl diphosphate biosynthetic process, mevalonate pathway",0.0004765784216371025
+GO:BP,GO:0009298,GDP-mannose biosynthetic process,0.0004765784216371025
+GO:BP,GO:0044238,primary metabolic process,0.0007059868108807355
+GO:MF,GO:0005488,binding,0.0008770052524451493
+GO:BP,GO:0046165,alcohol biosynthetic process,0.0008789227480409319
+GO:BP,GO:0015936,coenzyme A metabolic process,0.0009035422132902018
+GO:BP,GO:0009396,folic acid-containing compound biosynthetic process,0.0020982759591685815
+GO:BP,GO:0006637,acyl-CoA metabolic process,0.002342176381501165
+GO:BP,GO:0006066,alcohol metabolic process,0.0025819912327680163
+GO:BP,GO:0044272,sulfur compound biosynthetic process,0.002778375335235468
+GO:BP,GO:0042559,pteridine-containing compound biosynthetic process,0.0030083509560186097
+GO:BP,GO:0006644,phospholipid metabolic process,0.003430605692646407
+GO:MF,GO:0046872,metal ion binding,0.00466800139488509
+GO:BP,GO:0046654,tetrahydrofolate biosynthetic process,0.0046985433325480806
+GO:BP,GO:0019287,"isopentenyl diphosphate biosynthetic process, mevalonate pathway",0.0046985433325480806
+GO:BP,GO:0006450,regulation of translational fidelity,0.004921593998117399
+GO:BP,GO:1901137,carbohydrate derivative biosynthetic process,0.00493604094319279
+KEGG,KEGG:00790,Folate biosynthesis,0.00551513285015954
+GO:MF,GO:0160215,deacylase activity,0.005533899505528705
+GO:BP,GO:1901135,carbohydrate derivative metabolic process,0.005997507603846806
+GO:BP,GO:0006629,lipid metabolic process,0.00606364567885116
+GO:MF,GO:0043169,cation binding,0.0066636519902964165
+GO:MF,GO:0016740,transferase activity,0.0068424480727028525
+GO:MF,GO:0003723,RNA binding,0.006885617473892691
+GO:BP,GO:0006760,folic acid-containing compound metabolic process,0.00971999066202592
+KEGG,KEGG:01110,Biosynthesis of secondary metabolites,0.010596500563651216
+GO:BP,GO:0042558,pteridine-containing compound metabolic process,0.012404477970598187
+GO:MF,GO:0016860,intramolecular oxidoreductase activity,0.0164212072557649
+GO:BP,GO:0072522,purine-containing compound biosynthetic process,0.021931966632876464
+GO:MF,GO:0016772,"transferase activity, transferring phosphorus-containing groups",0.022571153342009972
+GO:MF,GO:0004819,glutamine-tRNA ligase activity,0.034525093024178256
+GO:MF,GO:0004452,isopentenyl-diphosphate delta-isomerase activity,0.034525093024178256
+GO:BP,GO:0046655,folic acid metabolic process,0.03836307940573902
+GO:BP,GO:0046349,amino sugar biosynthetic process,0.04119545092877467
+GO:MF,GO:0016829,lyase activity,0.04480107637293988
+GO:BP,GO:0006425,glutaminyl-tRNA aminoacylation,0.049685191639880784

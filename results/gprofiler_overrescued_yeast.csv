@@ -1,0 +1,9 @@
+source,term,name,p,intersections
+GO:MF,GO:0003824,catalytic activity,0.00035631534787066555,17
+GO:BP,GO:1901135,carbohydrate derivative metabolic process,0.010715879528406845,7
+GO:MF,GO:0051377,mannose-ethanolamine phosphotransferase activity,0.01077191109795873,2
+GO:MF,GO:0046872,metal ion binding,0.0187304577696859,10
+GO:MF,GO:0043167,ion binding,0.020992365543039942,13
+GO:MF,GO:0043169,cation binding,0.022554778923534767,10
+KEGG,KEGG:00541,Biosynthesis of various nucleotide sugars,0.02573268833931509,2
+GO:MF,GO:0036094,small molecule binding,0.0296201424995697,13
