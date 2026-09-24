@@ -1,0 +1,18 @@
+tool,type,version_or_release,used_for
+yeast-GEM,model,8.3.x,genome-scale S. cerevisiae stoichiometric model (all FBA)
+COBRApy,software,0.29,FBA/pFBA model manipulation and optimization
+GLPK via optlang/swiglpk,software,-,LP solver for all flux optimizations
+PyTorch,software,2.x,GCN training
+torch_geometric,software,2.x,graph convolution layers
+scikit-learn,software,1.x,logistic regression baseline + metrics
+NumPy,software,1.x,numerics
+pandas,software,2.x,data tables
+SciPy,software,1.x,statistics (Fisher exact test)
+NetworkX,software,3.x,graph construction from stoichiometric matrix
+Biopython,software,1.8x,sequence loading and pairwise alignment (paralog identity)
+matplotlib,software,3.x,all figures
+pytest,software,8.x,16 hermetic tests
+TeX Live / pdflatex,software,2024,50-page paper compilation
+git + GitHub,software,-,version control and release
+PubMed / NCBI,service,-,prior-art novelty checks (Raab 2010; Otero 2013)
+AlphaFold DB,service,v2 API,structure evidence for over-rescued genes

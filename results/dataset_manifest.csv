@@ -1,0 +1,11 @@
+dataset,accession_or_release,n_conditions_or_records,used_for
+yeast-GEM model reconstruction,yeast-GEM 8.x,4058 reactions / 1150 genes,all model analyses
+Stanford systematic deletion collection screen,Giaever 2002 (PMID 12052805),~4700 mutants scored,essentiality labels (159 viable-positive genes)
+SGD inviable/essential annotation,SGD curations,genome-wide ORF list,label verification and ORF mapping
+Swiss-Prot S. cerevisiae reference proteome,UP000002311,~6000 sequences,GNN node features + ORF aliases
+Raab 2010 succinate engineering study,PMID 20854924,4-gene KO + titers,strain-design benchmark target
+Van Hoek 1998 anaerobic chemostat,DOI 10.1002/(SICI)1097-0290,36 steady states,growth-yield external validation
+Tobias 2013 aerobic chemostat,DOI pending verify,12+ steady states,growth-rate external validation
+Biolog PM substrate array,Biolog PM1/PM2A phenotype data,383 substrates,growth/no-growth external validation
+Otero 2013 MDH1/OAC1/DIC1 deletions,DOI 10.1007/s10295-013-1269-3,3 single-KO studies,novelty check for SDH2+ACH1 pair
+AlphaFold DB yeast structures,AF v2 API,19+ proteins,structure evidence table

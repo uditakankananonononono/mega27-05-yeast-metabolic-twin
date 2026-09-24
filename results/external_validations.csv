@@ -1,0 +1,4 @@
+dataset,n,r2_growth,rmse,r2_co2_per_glucose,stored_model_accuracy,recomputed_model_accuracy,recomputed_n
+Tobias2013,32,-0.5060754171863642,0.1216877077965358,,,,
+VanHoek1998,4,0.9650617833574864,,-2.815409686765421,,,
+Biolog,383,,,,0.8172323759791122,0.6149732620320856,187.0
