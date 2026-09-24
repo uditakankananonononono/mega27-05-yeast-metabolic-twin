@@ -1,0 +1,44 @@
+singles 100/1143 9s
+singles 200/1143 12s
+singles 300/1143 15s
+singles 400/1143 20s
+singles 500/1143 23s
+singles 600/1143 26s
+singles 700/1143 31s
+singles 800/1143 34s
+singles 900/1143 38s
+singles 1000/1143 42s
+singles 1100/1143 45s
+singles done 47s; >0: 16
+quadruple baseline: obligatory=0.0598 growth=0.7791
+5th 200/1139 56s
+5th 400/1139 66s
+5th 600/1139 74s
+5th 800/1139 83s
+5th 1000/1139 91s
+5th-KO done 97s
+   gene   growth  obligatory_succinate  gain_over_quadruple
+YPR058W 0.779136              0.083345             0.023530
+YBL015W 0.775488              0.083102             0.023287
+YKR080W 0.771185              0.071539             0.011724
+YLR058C 0.761012              0.070449             0.010634
+YHR002W 0.764804              0.069915             0.010100
+YGR208W 0.734556              0.068667             0.008851
+YOR184W 0.734556              0.068667             0.008851
+YMR205C 0.777825              0.064920             0.005105
+YKL060C 0.777825              0.064920             0.005105
+YGR240C 0.777825              0.064920             0.005105
+pairs done 105s
+    ko1     ko2   growth  obligatory_succinate
+YLL041C YBL015W 0.831931              0.089151
+YLL041C YJR095W 0.833589              0.068585
+YLL041C YDL066W 0.832424              0.067683
+YLL041C YPL262W 0.820017              0.067131
+YPL262W YJR095W 0.820017              0.067131
+YLL041C YDR148C 0.833589              0.066969
+YLL041C YER065C 0.833589              0.066969
+YLL041C YIL125W 0.833589              0.066969
+YLL041C YKR097W 0.833589              0.066969
+YLL041C YOL126C 0.833589              0.066969
+TOTAL 105s
+EXIT_0

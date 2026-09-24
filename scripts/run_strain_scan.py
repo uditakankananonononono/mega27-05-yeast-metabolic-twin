@@ -12,23 +12,32 @@ from yeasttwin.strain_design import obligatory_production
 t0 = time.time()
 RAAB4 = ("YKL148C", "YLL041C", "YNL037C", "YDL066W")  # SDH1 SDH2 IDH1 IDP1 (verified ORFs)
 
-# 1. singles
+# 1. singles (checkpointed); reuse ONE minimal-medium model, no copies
+from yeasttwin.media import minimal_glucose
+m0 = minimal_glucose(load_model())
+MED = None
 rows = []
-for gid in [g.id for g in load_model().genes]:
-    s, g = obligatory_production(load_model(), (gid,))
+for i, gid in enumerate([g.id for g in m0.genes]):
+    s, g = obligatory_production(m0, (gid,), medium=MED)
     rows.append({"gene": gid, "growth": g, "obligatory_succinate": s})
+    if (i + 1) % 100 == 0:
+        pd.DataFrame(rows).to_csv("results/strain_design_obligatory_singles.csv", index=False)
+        print("singles %d/1143 %.0fs" % (i+1, time.time()-t0), flush=True)
 df = pd.DataFrame(rows).sort_values("obligatory_succinate", ascending=False)
 df.to_csv("results/strain_design_obligatory_singles.csv", index=False)
 print("singles done %.0fs; >0: %d" % (time.time()-t0, (df.obligatory_succinate>1e-6).sum()), flush=True)
 
 # 2. 5th KO on quadruple background
-q_s, q_g = obligatory_production(load_model(), RAAB4)
+q_s, q_g = obligatory_production(m0, RAAB4, medium=MED)
 print("quadruple baseline: obligatory=%.4f growth=%.4f" % (q_s, q_g), flush=True)
 rows = []
-for gid in [g.id for g in load_model().genes if g.id not in RAAB4]:
-    s, g = obligatory_production(load_model(), RAAB4 + (gid,))
+for i, gid in enumerate([g.id for g in m0.genes if g.id not in RAAB4]):
+    s, g = obligatory_production(m0, RAAB4 + (gid,), medium=MED)
     rows.append({"gene": gid, "growth": g, "obligatory_succinate": s,
                  "gain_over_quadruple": s - q_s})
+    if (i + 1) % 200 == 0:
+        pd.DataFrame(rows).to_csv("results/strain_design_5th_ko.csv", index=False)
+        print("5th %d/1139 %.0fs" % (i+1, time.time()-t0), flush=True)
 fifth = pd.DataFrame(rows).sort_values("gain_over_quadruple", ascending=False)
 fifth.to_csv("results/strain_design_5th_ko.csv", index=False)
 print("5th-KO done %.0fs" % (time.time()-t0), flush=True)
@@ -42,7 +51,7 @@ TARGETS = ["YKL148C","YLL041C","YNL037C","YDL066W","YOR136W",  # SDH1 SDH2 IDH1 
            "YLR304C","YKL120W","YJR095W"]                       # ACO1 OAC1 SFC1 (ORFs verified vs swissprot aliases)
 rows = []
 for a, b in itertools.combinations(TARGETS, 2):
-    s, g = obligatory_production(load_model(), (a, b))
+    s, g = obligatory_production(m0, (a, b), medium=MED)
     rows.append({"ko1": a, "ko2": b, "growth": g, "obligatory_succinate": s})
 pairs = pd.DataFrame(rows).sort_values("obligatory_succinate", ascending=False)
 pairs.to_csv("results/strain_design_pairs.csv", index=False)

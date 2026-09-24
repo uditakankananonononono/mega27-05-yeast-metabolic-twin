@@ -161,18 +161,27 @@ def obligatory_production(model, kos: tuple[str, ...] = (),
 
     Min succinate at (near-)maximal growth is the obligatory production
     level: positive iff succinate excretion is stoichiometrically forced
-    by growth (growth-coupled design).
+    by growth (growth-coupled design). If *model* is already constrained
+    to the desired medium it is used in place (cobra history context
+    reverts every change); otherwise a medium copy is built.
     """
-    from .media import complete_y7, minimal_glucose
-    m = minimal_glucose(model) if medium == "minimal" else complete_y7(model)
-    for k in kos:
-        m.genes.get_by_id(k).knock_out()
-    g = m.slim_optimize(error_value=0.0)
-    if g < 1e-6:
-        return 0.0, 0.0
-    ex = m.reactions.get_by_id(find_succinate_exchange(m))
-    ex.lower_bound, ex.upper_bound = 0.0, 1000.0
-    m.reactions.get_by_id("r_2111").lower_bound = 0.999 * g
-    m.objective = ex
-    m.objective.direction = "min"
-    return max(m.slim_optimize(error_value=0.0), 0.0), g
+    if medium is None:
+        m = model
+        ctx = m
+    else:
+        from .media import complete_y7, minimal_glucose
+        m = minimal_glucose(model) if medium == "minimal" else complete_y7(model)
+        import contextlib
+        ctx = contextlib.nullcontext()
+    with ctx:
+        for k in kos:
+            m.genes.get_by_id(k).knock_out()
+        g = m.slim_optimize(error_value=0.0)
+        if g < 1e-6:
+            return 0.0, 0.0
+        ex = m.reactions.get_by_id(find_succinate_exchange(m))
+        ex.lower_bound, ex.upper_bound = 0.0, 1000.0
+        m.reactions.get_by_id("r_2111").lower_bound = 0.999 * g
+        m.objective = ex
+        m.objective.direction = "min"
+        return max(m.slim_optimize(error_value=0.0), 0.0), g
