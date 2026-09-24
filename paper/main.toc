@@ -36,17 +36,19 @@
 \contentsline {paragraph}{Third species, strongest signal: \emph {B. subtilis}.}{11}{}%
 \contentsline {paragraph}{The expression gap replicates in \emph {E. coli}, stronger.}{12}{}%
 \contentsline {paragraph}{Genetic evidence: overexpressed backups do rescue.}{12}{}%
-\contentsline {paragraph}{Cross-reconstruction: the same genes fail in iMM904.}{12}{}%
+\contentsline {paragraph}{Fourth species: \emph {M. tuberculosis}.}{12}{}%
+\contentsline {paragraph}{Five generations of \emph {E. coli} K-12 reconstructions.}{13}{}%
+\contentsline {paragraph}{Cross-reconstruction: the same genes fail in iMM904.}{13}{}%
 \contentsline {paragraph}{Provenance: an exact annotation-transfer signature.}{13}{}%
-\contentsline {paragraph}{Cross-species replication.}{13}{}%
-\contentsline {paragraph}{Mechanism: annotation-driven paralog backups.}{13}{}%
+\contentsline {paragraph}{Cross-species replication.}{14}{}%
+\contentsline {paragraph}{Mechanism: annotation-driven paralog backups.}{14}{}%
 \contentsline {subsection}{\numberline {6.6}The nineteen over-rescued genes}{14}{}%
 \contentsline {subsection}{\numberline {6.7}Strain design for succinate overproduction}{15}{}%
 \contentsline {subsection}{\numberline {6.8}Essentiality triangulation and a curation conflict}{19}{}%
 \contentsline {subsection}{\numberline {6.9}External experimental validation}{19}{}%
 \contentsline {section}{\numberline {7}Negative results and failed approaches}{19}{}%
-\contentsline {paragraph}{CNN on sequence alone.}{20}{}%
-\contentsline {paragraph}{MCC gate.}{20}{}%
+\contentsline {paragraph}{CNN on sequence alone.}{19}{}%
+\contentsline {paragraph}{MCC gate.}{19}{}%
 \contentsline {paragraph}{Naive strain-design metrics.}{20}{}%
 \contentsline {paragraph}{Complete-medium screening.}{20}{}%
 \contentsline {subsection}{\numberline {7.1}Synthesis: a four-link mechanism chain, two species}{20}{}%
@@ -54,7 +56,7 @@
 \contentsline {subsection}{\numberline {8.1}Limitations}{21}{}%
 \contentsline {subsection}{\numberline {8.2}Future work}{21}{}%
 \contentsline {section}{\numberline {9}Per-model fold analysis}{21}{}%
-\contentsline {section}{\numberline {10}Conclusion}{21}{}%
+\contentsline {section}{\numberline {10}Conclusion}{22}{}%
 \contentsline {section}{\numberline {A}Reproducibility}{23}{}%
 \contentsline {section}{\numberline {B}Feature definitions}{23}{}%
 \contentsline {section}{\numberline {C}Strain-design tables}{23}{}%

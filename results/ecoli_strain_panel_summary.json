@@ -1,0 +1,35 @@
+{
+  "models_audited": 4,
+  "models_significant": 3,
+  "median_odds_ratio": Infinity,
+  "recurrent_genes": {
+    "b0733": 4,
+    "b2925": 3,
+    "b0048": 3,
+    "b0084": 3,
+    "b0126": 3,
+    "b0635": 3,
+    "b0684": 3,
+    "b2234": 3,
+    "b2235": 3,
+    "b2411": 3,
+    "b2563": 3,
+    "b3640": 3,
+    "b3709": 3,
+    "b4226": 3
+  },
+  "skipped": [
+    {
+      "model": "iECDH10B_1368",
+      "skipped": "gene ids not b-numbers"
+    },
+    {
+      "model": "iECDH1ME8569_1439",
+      "skipped": "gene ids not b-numbers"
+    },
+    {
+      "model": "iEcolC_1368",
+      "skipped": "gene ids not b-numbers"
+    }
+  ]
+}

@@ -20,3 +20,6 @@ Koo 2017 B. subtilis deletion libraries,DOI 10.1016/j.cels.2017.05.013 Table S3,
 PaxDb B. subtilis whole-organism abundances,PaxDb v4.2 species 224308,3997 proteins (ppm),third-species backup expression test (negative)
 KEGG REST ortholog annotations,KEGG API 2026-09-24,42 genes KO-mapped,backup-clause provenance analysis
 iMM904 older yeast genome-scale model,BiGG Models iMM904,1577 reactions / 905 genes,cross-reconstruction over-rescue audit
+iNJ661 M. tuberculosis genome-scale model,BiGG Models iNJ661,1025 reactions / 661 genes,fourth-species over-rescue audit
+Sassetti 2003 Mtb TraSH essentiality (via Griffin 2011 Table S2),DOI 10.1371/journal.ppat.1002251.s002,613 essential genes,fourth-species essentiality labels
+E. coli K-12 reconstruction panel (4 models),BiGG e_coli_core/iAF1260/iAF1260b/iJO1366,4 model generations,cross-generation robustness audit

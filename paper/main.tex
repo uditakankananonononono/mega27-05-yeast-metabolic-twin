@@ -522,6 +522,23 @@ supposedly rescues.}
 \label{fig:abundance}
 \end{figure}
 
+\paragraph{Fourth species: \emph{M. tuberculosis}.}
+Against the Sassetti 2003 TraSH essential calls (613 genes, tabulated in
+Griffin 2011 Table S2; 237 metabolic genes in iNJ661), FBA-missed
+essentials are isozyme-backed at 27.3\% vs 4.8\% caught (Fisher OR
+7.5, $p=3.5\times10^{-6}$; 36 named genes,
+\texttt{results/overrescue\_audit\_mtb.json}). The effect now holds in
+every organism tested: one eukaryote and three bacteria.
+\paragraph{Five generations of \emph{E. coli} K-12 reconstructions.}
+Auditing e\_coli\_core, iAF1260, iAF1260b, iJO1366 against the same
+Keio labels (iML1515 makes five) replicates the signal in every model
+generation large enough to test it (iAF1260 $p=4.6\times10^{-8}$,
+iJO1366 OR 15.9 $p=1.7\times10^{-5}$; e\_coli\_core is underpowered),
+and the same genes recur---b0733 is over-rescued in all four testable
+models, 12 genes in at least three
+(\texttt{results/ecoli\_strain\_panel.csv}). Over-rescue is stable
+across 14 years and five generations of one species' reconstructions.
+
 \paragraph{Cross-reconstruction: the same genes fail in iMM904.}
 Running the audit on the older iMM904 reconstruction (1{,}577 reactions,
 905 genes) against the same Stanford labels reproduces the effect within
@@ -746,6 +763,8 @@ chain link & \emph{S. cerevisiae} & \emph{E. coli} & \emph{B. subtilis} \\
 2. named over-rescued genes & 19 & 13 & 15 \\
 3. backups less abundant & 17/28, $p=0.038$ & 17/20, $p=0.007$ & 38/71, $p=0.29$ (neg.) \\
 4. overexpression rescues (curated) & 4 pairs (BioGRID) & untested (no curation) & untested \\
+\hline
+\multicolumn{4}{l}{\emph{M. tuberculosis} (link 1--2): OR 7.5, $p=3.5\times10^{-6}$; 36 genes} \\
 \hline
 \end{tabular}
 \caption{The isozyme over-rescue chain across three species. Link 3
