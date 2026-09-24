@@ -1,0 +1,5 @@
+gene	orf	evidence	citation
+SDH1	YKL148C	experimentally validated deletion, oxidative succinate production, up to quadruple-KO 3.62 g/L (4.8x WT)	Raab et al. 2010 Metab Eng 12(6):518-25, PMID 20854924, DOI 10.1016/j.ymben.2010.08.005
+SDH2	YLL041C	experimentally validated deletion, same study	Raab et al. 2010, PMID 20854924
+IDH1	YOR136W	experimentally validated deletion, same study	Raab et al. 2010, PMID 20854924
+IDP1	YDL066W	experimentally validated deletion, same study	Raab et al. 2010, PMID 20854924
