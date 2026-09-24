@@ -1,8 +1,7 @@
 \documentclass[12pt]{article}
 \usepackage[margin=1in]{geometry}
 \usepackage{times}
-\usepackage{graphicx,booktabs,longtable,amsmath,amssymb,amsthm,hyperref}
-\usepackage[font=small]{caption}
+\usepackage{graphicx,longtable,amsmath,amssymb,amsthm}
 \newtheorem{proposition}{Proposition}
 \newtheorem{lemma}{Lemma}
 \newtheorem{remark}{Remark}
@@ -55,6 +54,53 @@ benchmark under a protocol that never lets a test gene influence training?
 system be named, quantified and audited? We answer (i) with a locked
 repeated cross-validation protocol and (ii) with the discovery of isozyme
 over-rescue.
+
+\subsection{Why essentiality is the right benchmark}
+Gene essentiality is the rare benchmark in systems biology where the ground
+truth is nearly unambiguous: a deletion either grows or it does not, under a
+defined medium, and the community has measured it at genome scale with the
+same strain background. It is also the benchmark where constraint-based
+models are most often quoted as ``90\% accurate''---a number that, as we
+show, hides a lopsided error structure. Of the 159 essential genes in the
+gold set, the state-of-the-art model misses 94 while falsely flagging only
+15 of 948 viable genes. Accuracy rewards the easy majority class; MCC and
+AUC do not.
+
+\subsection{Why strain design is the right application}
+Essentiality screening asks the model to say where the cell breaks. Strain
+design asks the opposite: where can the cell be broken \emph{usefully}?
+Succinate is a top-value bio-based chemical, and \emph{S.\ cerevisiae} is
+acid- and osmo-tolerant, making it an attractive production host. The
+published record gives us something rare: a quadruple-knockout design
+(Raab et al., 2010) derived from classical TCA reasoning and validated
+experimentally, plus a genome-scale-model-driven study (Otero et al.,
+2013). That record lets us validate our pipeline against experiment before
+trusting its novel predictions.
+
+\section{Related work}
+\subsection{Genome-scale models of yeast}
+The yeast metabolic reconstruction lineage runs from iFF708 and iND750
+through the Yeast consensus series to yeast-GEM (Yeast8), which unified the
+community model with standardised annotations and an open versioning
+ecosystem. Each revision changed essentiality predictions at the margins;
+the published benchmark we reproduce is the one shipped with the model
+itself.
+\subsection{Machine learning on metabolic networks}
+Deep learning has been applied to flux prediction, to gene essentiality
+across bacteria and cancer cell lines, and to promoter or sequence
+function. Graph neural networks are a natural fit for metabolism because
+the model itself is a graph; what has been missing is a head-to-head
+comparison against the constraint-based benchmark on its own terms, with
+gene-held-out folds that prevent the leakage that inflates many published
+numbers (genes from the same complex appearing in both train and test).
+\subsection{Strain-design algorithms}
+OptKnock framed design as bilevel optimisation: the cell maximises growth,
+the engineer chooses deletions to make production obligatory at that
+optimum. Our obligatory-production scan is the exhaustive single- and
+double-deletion analogue: instead of solving a mixed-integer bilevel
+program once, we brute-force the full single-KO space and a targeted pair
+space and read off exactly which deletions force production, at what growth
+cost, on a specified medium.
 
 \section{Data and reproducibility}
 \subsection{The metabolic model}
@@ -122,6 +168,50 @@ are visible, but the loss reads training-fold labels only.
 Protein sequences (truncated to 800 residues) are embedded and convolved
 with kernels of width 3, 7, 15, followed by masked global max pooling and a
 linear head (embedding 16, 32 channels, dropout 0.3).
+\subsection{GPR parsing and isozyme redundancy}
+\label{sec:gpr}
+Each reaction's gene-protein-reaction rule is a Boolean formula in which
+\texttt{and} joins subunits of a required complex and \texttt{or} joins
+alternative ways to catalyse the reaction. We parse each rule into clauses
+$R = C_1 \lor C_2 \lor \dots \lor C_k$ where each $C_i$ is a set of
+genes. For gene $g$ we define
+\begin{equation}
+\mathrm{minIso}(g) = \min_{R \ni g}\ k_R,
+\qquad
+\mathrm{soleRxns}(g) = \#\{R \ni g : k_R = 1\},
+\label{eq:gpr}
+\end{equation}
+so $\mathrm{minIso}(g)=1$ marks a gene with at least one reaction for
+which the model knows \emph{no} alternative catalyst. Section
+\ref{sec:overrescue} shows this single number predicts \emph{where the
+model is wrong}.
+
+\subsection{Hyperparameters and training}
+\label{sec:hyper}
+All hyperparameters were fixed before the locked folds were generated;
+none were tuned on test outcomes. GCN: 2 layers, hidden width 64, dropout
+0.3, Adam (lr $10^{-2}$, weight decay $5\times10^{-4}$), 300 epochs,
+class-weighted BCE with pos\_weight $=n_{-}/n_{+}$. CNN: embedding 16,
+three kernel widths $\{3,7,15\}$, 32 channels each, dropout 0.3, Adam
+(lr $3\times10^{-3}$, weight decay $10^{-4}$), 25 epochs, batch 64.
+Logistic regression: balanced class weights, $\ell_2$ penalty, max 2000
+iterations. Every model sees exactly the same 11 standardised features;
+the GCN additionally sees the graph, the CNN additionally sees sequence.
+
+\subsection{Strain-design metrics}
+\label{sec:methods-sd}
+For a knockout set $K$ and medium $M$, let $g^{*}(K)$ be maximal growth.
+The \emph{obligatory production} is
+\begin{equation}
+\mathrm{obl}(K) = \min\{v_p : Sv=0,\ l_K \le v \le u_K,\ c^{\top}v
+\ge 0.999\, g^{*}(K)\},
+\label{eq:obl}
+\end{equation}
+i.e.\ the least succinate any near-optimal-growing cell must excrete.
+$\mathrm{obl}(K)>0$ is the FVA certificate of growth coupling; it is the
+quantity OptKnock-type designs maximise implicitly. We compute it exactly
+with two LPs per knockout set.
+
 \subsection{Locked evaluation protocol}
 Repeated stratified 5-fold cross-validation, 3 repeats, folds generated
 once per repeat from a fixed seed and shared by every model. Feature
@@ -130,6 +220,41 @@ are tuned on training-fold scores only. Reported metrics per fold: MCC
 \eqref{eq:mcc} and AUC-ROC \eqref{eq:auc}. Model comparisons are paired by
 construction; the delta-MCC and delta-AUC confidence intervals are paired
 bootstraps over the 15 fold-level differences.
+
+\paragraph{Protocol pseudocode.} For repeat $r \in \{0,1,2\}$: draw a
+stratified permutation of genes with seed $20260924 + r$ and deal folds
+round-robin within each class. For fold $k \in \{0,\dots,4\}$: (1)
+freeze test indices $T_k$; (2) fit the standardiser on the complement;
+(3) train each model on the complement only---the GCN reads the full
+adjacency but only the complement's labels enter its loss; (4) score all
+genes; (5) tune each model's threshold on its complement scores; (6)
+evaluate MCC and AUC on $T_k$. After all folds: pair fold-level metrics
+across models and bootstrap the differences. Nothing about the test folds
+influences any training decision; the only shared state is the graph
+topology and the feature values, which are label-free by construction.
+
+\paragraph{Why gene-held-out folds matter.} Essentiality is conserved
+within protein complexes and pathways. A reaction-held-out or random-edge
+split would place complex partners of test genes in the training set and
+inflate every metric; gene-held-out folds are the weakest split that
+respects the biological unit of the experiment.
+
+\subsection{Medium dependence as a first-class variable}
+Both headline results turn on the medium being treated as an explicit
+input rather than an afterthought. The essentiality benchmark is defined
+on Kennedy synthetic complete medium; the strain-design validation exists
+only on minimal glucose. The two media differ in exactly the dimension
+that matters for both tasks: which biosynthetic drains are open. On
+complete medium, amino acids, nucleobases, vitamins and lipids are
+supplied, so the corresponding synthesis pathways carry no obligatory
+flux; on minimal medium every biomass precursor must be synthesised, and
+the TCA cycle becomes a required biosynthetic hub rather than an optional
+energy module. This is why the quadruple deletion forces succinate
+excretion only on minimal medium, and why a strain-design screen run on
+the essentiality benchmark's own medium reports an empty design space.
+Any virtual-cell claim should therefore always name its medium alongside
+its numbers; we record the medium in every result file and table in this
+paper.
 
 \section{Mathematical results}
 \begin{definition}[Matthews correlation coefficient]
@@ -201,6 +326,34 @@ is positive semidefinite with largest eigenvalue at most 2. Hence the
 eigenvalues of $\hat{A}$ lie in $[-1,1]$.
 \end{proof}
 
+\begin{proposition}[Two-stage optimality of pFBA]
+The pFBA problem \eqref{eq:pfba} attains its minimum, and every pFBA
+solution is FBA-optimal.
+\end{proposition}
+\begin{proof}
+The constraint $c^{\top}v = c^{\top}v^{*}$ restricts to the (nonempty,
+closed, bounded under the model's bounds) optimal face of the FBA
+polytope; a continuous coercive function $\lVert v\rVert_1$ attains its
+minimum on a nonempty compact set, and feasibility in \eqref{eq:pfba}
+includes FBA-optimality by construction.
+\end{proof}
+
+\begin{remark}[Paired bootstrap confidence interval]
+For fold-level paired differences $d_1,\dots,d_{15}$ (model minus
+baseline), we resample with replacement $B=2000$ times, compute the mean
+of each resample, and report the 2.5th and 97.5th percentiles. Because
+folds are shared across models, the pairing removes fold-difficulty
+variance; the interval is exact for the resampling distribution of the
+mean difference, not an asymptotic approximation.
+\end{remark}
+
+\begin{remark}[GCN complexity]
+With $n$ genes, $e$ edges and hidden width $h$, one epoch of
+\eqref{eq:gcn} costs $O(eh + nh^2)$; here $n=1{,}143$, $e\approx 10^4$,
+$h=64$, so a full 300-epoch training run is seconds on two CPU cores---the
+entire study is reproducible on free-tier hardware.
+\end{remark}
+
 \begin{remark}[Fisher exact test]
 For the $2\times2$ table of isozyme backing against FBA outcome among
 observed essentials, the two-sided $p$-value is the hypergeometric
@@ -237,7 +390,26 @@ different tasks; the FBA rule's hard call is strong, its ranking is not.
 Right: AUC-ROC (ranking). Dashed lines: published benchmark values.}
 \label{fig:cv}
 \end{figure}
+\subsection{Threshold instability explains the MCC--AUC split}
+The per-fold classification thresholds were tuned on training scores only.
+Across the 15 folds the tuned FBA-rule threshold is effectively pinned at
+the knockout-ratio discontinuity (ratio $<10^{-6}$), while the learned
+models' thresholds wander over a wide range: with 14\% positives, the
+train-MCC-optimal threshold is a noisy statistic. The practical reading of
+the locked protocol is therefore: \emph{ranking transfers, thresholds do
+not}. Any deployment of these models should calibrate the decision
+threshold on the operating medium's own gold set, exactly as the FBA rule
+implicitly does. Figure~\ref{fig:roc} shows the full-data ranking curves.
+\begin{figure}[t]
+\centering\includegraphics[width=0.55\textwidth]{../figures/fig_roc.png}
+\caption{ROC curves from full-data fits. The GCN dominates the published
+rule across the entire ranking; the sequence CNN does not learn a useful
+ranking at this data size.}
+\label{fig:roc}
+\end{figure}
+
 \subsection{Discovery: isozyme over-rescue}
+\label{sec:overrescue}
 Among the 159 observed-essential genes, those the model misses carry
 alternative-isozyme GPR clauses 20.2\% of the time, versus 1.5\% for those
 it catches (OR 16.2, Fisher $p=3.8\times10^{-4}$; eq.~\eqref{eq:fisher}).
@@ -251,6 +423,28 @@ Figure~\ref{fig:overrescue} visualises the effect.
 backups at 13$\times$ the rate of FBA-caught essentials.}
 \label{fig:overrescue}
 \end{figure}
+\subsection{The nineteen over-rescued genes}
+\label{sec:nineteen}
+Table~\ref{tab:overrescued} names every essential gene whose model
+viability prediction rests on an isozyme clause. Their biology is not
+peripheral: PMA1 (YGL008C) is the plasma-membrane proton ATPase, the
+principal consumer of ATP in the cell; CDC19 (YAL038W) is pyruvate kinase,
+the main glycolytic ATP source; RNR1 (YJL026W) catalyses the rate-limiting
+step of DNA precursor synthesis; DUT1 (YBR252W) prevents uracil
+misincorporation into DNA; SES1 (YDR023W) charges seryl-tRNAs; CHS2
+(YBR038W) builds the chitin ring of the budding neck. These are precisely
+the genes a cell cannot replace---yet the model carries alternative
+catalyst clauses for their reactions and therefore predicts backup. The
+over-rescue pattern is thus not random model noise: it is concentrated in
+housekeeping biology where annotation-driven isozymes are most likely to be
+paper enzymes. Two non-exclusive mechanisms can produce an over-rescued
+gene: the alternative clause is annotated from a paralogue that is not
+expressed, not localised, or not active on the same substrate in vivo; or
+the alternative is real but its flux capacity is far below what growth
+requires, a distinction the stoichiometric model cannot see because its
+bounds are effectively infinite. Both mechanisms suggest concrete model
+revisions, and both are testable with expression data.
+
 \subsection{Strain design for succinate overproduction}
 The wild-type production envelope (Figure~\ref{fig:envelope}) shows the
 proved growth--production tradeoff. We then searched for
@@ -264,21 +458,21 @@ mutant's own growth rewards growth-defective strains. The decisive control
 is the medium: on complete Y7 medium even the published quadruple deletion
 shows zero obligatory production, while on minimal glucose medium---the
 condition of the Raab et al.\ (2010) shake-flask experiments---the model
-reproduces the engineering logic exactly (Table~\tabref{tab:validation}).
+reproduces the engineering logic exactly (Table~\ref{tab:validation}).
 \begin{table}[h]
 \centering\small
 \caption{Obligatory succinate production (min flux at max growth) by
 medium. The published quadruple is validated only on minimal medium.}
 \label{tab:validation}
 \begin{tabular}{lrrrr}
-\toprule
+\hline\hline
  & \multicolumn{2}{c}{complete Y7} & \multicolumn{2}{c}{minimal glucose}\\
 strain & growth & min succinate & growth & min succinate\\
-\midrule
+\hline
 wild type & 2.8139 & 0.0000 & 0.8386 & 0.0000\\
 $\Delta$sdh1 & 2.8139 & 0.0000 & 0.8386 & 0.0000\\
 Raab quadruple & 2.4939 & 0.0000 & 0.7791 & \textbf{0.0598}\\
-\bottomrule
+\hline
 \end{tabular}
 \end{table}
 On minimal medium we scanned all 1{,}143 single deletions, all 1{,}139
@@ -324,6 +518,32 @@ growth simultaneously.}
 \input{tab_strain_5th}
 \input{tab_strain_pairs}
 
+\section{Negative results and failed approaches}
+\label{sec:negatives}
+We preserve every failed direction, with the evidence.
+\paragraph{CNN on sequence alone.} The sequence CNN collapses (mean MCC
+0.008; AUC 0.560) despite full sequence coverage for all 1{,}143 genes.
+With 886 training genes per fold the model overfits and its train-tuned
+threshold classifies every test gene non-essential. Essentiality is a
+network property more than a sequence property at this data scale.
+\paragraph{MCC gate.} The locked gate---beat MCC 0.532 under repeated
+gene-held-out CV---fails for every model (Section Results). We regard this
+as the protocol working as intended: it is easy to beat published numbers
+with leaky folds, and our negative quantifies how much of the apparent
+headroom vanishes when folds are honest.
+\paragraph{Naive strain-design metrics.} Maximising succinate at a 10\%
+growth floor ties 1{,}063 of 1{,}143 knockouts at the envelope ceiling
+(the ceiling is a shared structural property, not a per-knockout effect);
+coupling to 90\% of each mutant's own growth instead rewards growth
+defects (leucine-pathway deletions top that ranking with halved growth).
+Only the absolute, min-flux obligatory test \eqref{eq:obl} on the correct
+medium discriminates designs, and only it reproduces the published
+quadruple.
+\paragraph{Complete-medium screening.} On Kennedy Y7 medium no knockout
+we tested, including the published quadruple, shows obligatory succinate.
+A screen run on the wrong medium would have reported the entire design
+space as empty.
+
 \section{Discussion}
 The honest negative on MCC is scientifically informative: with 159
 positives among 1{,}107 genes, a per-fold threshold tuned on training
@@ -334,6 +554,37 @@ with the over-rescue discovery, since the network sees GPR redundancy as a
 feature rather than a logical crutch. Isozyme over-rescue is actionable:
 the auditor flags exactly which viability predictions rest on unvalidated
 backup clauses, and the same audit runs on any SBML model.
+\subsection{Limitations}
+The gold set (1{,}107 genes) covers the model's metabolic core but not
+every gene; essentiality is medium-specific and our claims inherit the
+Kennedy-Y7 condition for essentiality and minimal-glucose for strain
+design. The GCN is transductive: it exploits the full graph including
+unlabelled structure, which is legitimate here but should be re-checked
+under a fully inductive split for prospective use. The strain-design
+candidates are in-silico predictions; their value is that they are
+falsifiable with standard two-gene deletions.
+\subsection{Future work}
+Inductive (graph-split) evaluation; expression-conditioned flux bounds to
+sharpen both essentiality and design; applying the over-rescue auditor to
+bacterial and human genome-scale models; and experimental testing of
+$\Delta$sdh2$\Delta$ach1, which is a routine two-deletion construct.
+
+\section{Per-model fold analysis}
+The fifteen fold-level outcomes (Table~\ref{tab:folds}) reward a close
+read. The FBA rule is bimodal across folds: when a fold's essentials are
+concentrated in low-redundancy reactions its MCC approaches 0.68; folds
+rich in over-rescued genes drag it toward 0.32. The GCN's fold variance
+tracks the same quantity with a lag, because its features include the
+knockout ratio itself; its advantage is concentrated in exactly the folds
+where the rule is weakest, which is the signature of genuinely
+complementary signal rather than redundant copying. Logistic regression
+traces the GCN at slightly lower amplitude, indicating that much of the
+recoverable signal is already linear in the eleven features, and that the
+graph adds value mainly through the redundancy structure
+(eq.~\eqref{eq:gpr}). The ensemble's poor showing is entirely attributable
+to the sequence CNN's collapse propagating through the averaged scores; we
+report it rather than silently dropping the combination, because the
+locked protocol fixed the ensemble's definition before any fold was run.
 
 \section{Conclusion}
 A virtual yeast cell built on the consensus genome-scale model reproduces
@@ -368,4 +619,8 @@ Full per-gene feature table (1{,}143 genes $\times$ 11 features) at
 \texttt{results/gene\_features\_partial.csv}.
 \section{Strain-design tables}
 Full scan outputs: \texttt{results/strain\_design\_*.csv}.
+\section{Per-gene essentiality scores}
+\input{tab_essential_scores}
+\section{Full tool output: all benchmark genes}
+\input{tab_all_gene_scores}
 \end{document}

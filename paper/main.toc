@@ -1,0 +1,49 @@
+\contentsline {section}{\numberline {1}Introduction}{4}{}%
+\contentsline {subsection}{\numberline {1.1}Why essentiality is the right benchmark}{4}{}%
+\contentsline {subsection}{\numberline {1.2}Why strain design is the right application}{4}{}%
+\contentsline {section}{\numberline {2}Related work}{4}{}%
+\contentsline {subsection}{\numberline {2.1}Genome-scale models of yeast}{4}{}%
+\contentsline {subsection}{\numberline {2.2}Machine learning on metabolic networks}{5}{}%
+\contentsline {subsection}{\numberline {2.3}Strain-design algorithms}{5}{}%
+\contentsline {section}{\numberline {3}Data and reproducibility}{5}{}%
+\contentsline {subsection}{\numberline {3.1}The metabolic model}{5}{}%
+\contentsline {subsection}{\numberline {3.2}Essentiality gold standard}{5}{}%
+\contentsline {subsection}{\numberline {3.3}Protein sequences}{5}{}%
+\contentsline {subsection}{\numberline {3.4}Media}{5}{}%
+\contentsline {section}{\numberline {4}Methods}{6}{}%
+\contentsline {subsection}{\numberline {4.1}Flux balance analysis}{6}{}%
+\contentsline {subsection}{\numberline {4.2}Gene essentiality screen}{6}{}%
+\contentsline {subsection}{\numberline {4.3}Label-free mechanistic features}{6}{}%
+\contentsline {subsection}{\numberline {4.4}Graph convolutional network}{6}{}%
+\contentsline {subsection}{\numberline {4.5}Sequence CNN}{6}{}%
+\contentsline {subsection}{\numberline {4.6}GPR parsing and isozyme redundancy}{7}{}%
+\contentsline {subsection}{\numberline {4.7}Hyperparameters and training}{7}{}%
+\contentsline {subsection}{\numberline {4.8}Strain-design metrics}{7}{}%
+\contentsline {subsection}{\numberline {4.9}Locked evaluation protocol}{7}{}%
+\contentsline {paragraph}{Protocol pseudocode.}{7}{}%
+\contentsline {paragraph}{Why gene-held-out folds matter.}{8}{}%
+\contentsline {subsection}{\numberline {4.10}Medium dependence as a first-class variable}{8}{}%
+\contentsline {section}{\numberline {5}Mathematical results}{8}{}%
+\contentsline {section}{\numberline {6}Results}{9}{}%
+\contentsline {subsection}{\numberline {6.1}The published benchmark reproduces exactly}{9}{}%
+\contentsline {subsection}{\numberline {6.2}Locked cross-validation: the MCC gate fails honestly}{10}{}%
+\contentsline {subsection}{\numberline {6.3}The GCN breaks the benchmark on ranking}{10}{}%
+\contentsline {subsection}{\numberline {6.4}Threshold instability explains the MCC--AUC split}{10}{}%
+\contentsline {subsection}{\numberline {6.5}Discovery: isozyme over-rescue}{10}{}%
+\contentsline {subsection}{\numberline {6.6}The nineteen over-rescued genes}{11}{}%
+\contentsline {subsection}{\numberline {6.7}Strain design for succinate overproduction}{12}{}%
+\contentsline {section}{\numberline {7}Negative results and failed approaches}{16}{}%
+\contentsline {paragraph}{CNN on sequence alone.}{16}{}%
+\contentsline {paragraph}{MCC gate.}{16}{}%
+\contentsline {paragraph}{Naive strain-design metrics.}{16}{}%
+\contentsline {paragraph}{Complete-medium screening.}{16}{}%
+\contentsline {section}{\numberline {8}Discussion}{16}{}%
+\contentsline {subsection}{\numberline {8.1}Limitations}{17}{}%
+\contentsline {subsection}{\numberline {8.2}Future work}{17}{}%
+\contentsline {section}{\numberline {9}Per-model fold analysis}{17}{}%
+\contentsline {section}{\numberline {10}Conclusion}{18}{}%
+\contentsline {section}{\numberline {A}Reproducibility}{18}{}%
+\contentsline {section}{\numberline {B}Feature definitions}{18}{}%
+\contentsline {section}{\numberline {C}Strain-design tables}{18}{}%
+\contentsline {section}{\numberline {D}Per-gene essentiality scores}{19}{}%
+\contentsline {section}{\numberline {E}Full tool output: all benchmark genes}{22}{}%
