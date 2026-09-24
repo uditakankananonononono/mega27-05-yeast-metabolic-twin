@@ -1,0 +1,4 @@
+/home/sandbox/mega27/item5-yeast/src/yeasttwin/ml.py:82: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/Context.cpp:848.)
+  return torch.sparse_coo_tensor(idx, val, (n, n)).coalesce()
+/home/sandbox/mega27/item5-yeast/src/yeasttwin/ml.py:108: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  tr = torch.tensor(train_idx, dtype=torch.long)
