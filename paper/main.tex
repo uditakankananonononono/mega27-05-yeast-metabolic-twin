@@ -7,8 +7,9 @@
 \newtheorem{remark}{Remark}
 \newtheorem{definition}{Definition}
 \title{A Virtual Yeast Cell for Metabolic Engineering:\\[4pt]
-{\large Genome-Scale Flux Balance Analysis, Graph Deep Learning, and the
-Discovery of Isozyme Over-Rescue in the State-of-the-Art Yeast Model}}
+{\large Genome-Scale Flux Balance Analysis, Graph Deep Learning, and
+Isozyme Over-Rescue: an Expression-Blindness Failure of Genome-Scale
+Models, Discovered in Yeast and Replicated Across Three Species}}
 \author{MEGA-PROGRAM-27, Item 5}
 \date{\today}
 \begin{document}
@@ -30,10 +31,20 @@ of the state-of-the-art model, \emph{isozyme over-rescue}: genes whose
 essentiality the model misses carry alternative-isozyme clauses in its
 gene-protein-reaction rules at 20.2\% versus 1.5\% for genes it catches
 (odds ratio 16.2, Fisher $p=3.8\times10^{-4}$); we name the 19 affected
-genes and ship a reusable auditor. Finally we run a full 1{,}143-gene
-in-silico knockout screen for succinate overproduction, validate against
-the published quadruple-deletion strain of Raab et al.\ (2010), and nominate
-novel, falsifiable strain-design candidates.
+genes and ship a reusable auditor. The phenomenon generalises: the same
+audit reproduces it in \emph{E. coli} (iML1515 vs the Keio collection;
+OR 11.5, $p=1.2\times10^{-5}$) and \emph{B. subtilis} (iYO844 vs the
+Koo 2017 libraries; OR 22.7, $p=2.5\times10^{-7}$). Protein-abundance
+data (PaxDb) show the model-trusted backups are expressed far below the
+essentials they supposedly rescue in yeast ($p=0.038$) and \emph{E.
+coli} ($p=0.007$), and curated genetics (BioGRID) shows overexpressed
+backups \emph{do} rescue---the failure is expression-blindness, not
+wrong chemistry. In \emph{B. subtilis} the abundance mechanism does
+\emph{not} replicate ($p=0.29$), an honest negative we analyse.
+Finally we run a full 1{,}143-gene in-silico knockout screen for
+succinate overproduction, validate against the published
+quadruple-deletion strain of Raab et al.\ (2010), and nominate novel,
+falsifiable strain-design candidates.
 \end{abstract}
 \tableofcontents
 \newpage

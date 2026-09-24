@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.14)  24 SEP 2026 21:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.14)  24 SEP 2026 21:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -177,7 +177,7 @@ Package: amsthm 2020/05/29 v2.20.6
 \c@remark=\count281
 \c@definition=\count282
 LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 1
-4.
+5.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
@@ -275,20 +275,20 @@ LaTeX Warning: Label `tab:allscores' multiply defined.
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -346,13 +346,13 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Trying to load font information for U+msa on input line 15.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 16.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 15.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 16.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -365,27 +365,27 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
  [3] [4]
 LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 1
-07.
+18.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 LaTeX Font Info:    Trying to load font information for OMS+ptm on input line 1
-14.
+25.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 114.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 125.
 
-Overfull \hbox (13.94963pt too wide) in paragraph at lines 111--117
+Overfull \hbox (13.94963pt too wide) in paragraph at lines 122--128
 \OT1/ptm/m/n/12 The Stan-ford deletion-collection clas-si-fi-ca-tions (\OT1/pcr
 /m/n/12 data/raw/essentialGenes.tsv\OT1/ptm/m/n/12 ) la-bel 1,107
  []
 
 
-Overfull \hbox (34.67265pt too wide) in paragraph at lines 125--133
+Overfull \hbox (34.67265pt too wide) in paragraph at lines 136--144
 \OT1/ptm/m/n/12 (32 steady states with mea-sured up-take and growth rates), the
  anaer-o-bic chemo-stat study of Van Hoek 1998
  []
@@ -394,23 +394,23 @@ Overfull \hbox (34.67265pt too wide) in paragraph at lines 125--133
 <../figures/fig_cv_metrics.png, id=47, 650.43pt x 260.172pt>
 File: ../figures/fig_cv_metrics.png Graphic file (type png)
 <use ../figures/fig_cv_metrics.png>
-Package pdftex.def Info: ../figures/fig_cv_metrics.png  used on input line 397.
+Package pdftex.def Info: ../figures/fig_cv_metrics.png  used on input line 408.
 
 (pdftex.def)             Requested size: 469.75502pt x 187.90726pt.
 <../figures/fig_roc.png, id=49, 331.7193pt x 303.534pt>
 File: ../figures/fig_roc.png Graphic file (type png)
 <use ../figures/fig_roc.png>
-Package pdftex.def Info: ../figures/fig_roc.png  used on input line 413.
+Package pdftex.def Info: ../figures/fig_roc.png  used on input line 424.
 (pdftex.def)             Requested size: 258.36668pt x 236.43597pt.
  [10 <../figures/fig_cv_metrics.png>]
 <../figures/fig_overrescue.png, id=54, 303.534pt x 245.718pt>
 File: ../figures/fig_overrescue.png Graphic file (type png)
 <use ../figures/fig_overrescue.png>
-Package pdftex.def Info: ../figures/fig_overrescue.png  used on input line 430.
+Package pdftex.def Info: ../figures/fig_overrescue.png  used on input line 441.
 
 (pdftex.def)             Requested size: 234.8775pt x 190.13702pt.
 
-Overfull \hbox (118.9473pt too wide) in paragraph at lines 436--445
+Overfull \hbox (118.9473pt too wide) in paragraph at lines 447--456
 \OT1/ptm/m/n/12 17 cases (60.7%), me-dian log$[]$ abun-dance ra-tio 0.63, Wilco
 xon $\OML/cmm/m/it/12 p \OT1/cmr/m/n/12 = 0\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 03
 8$ \OT1/ptm/m/n/12 (\OT1/pcr/m/n/12 results/overrescue[]abundance.csv\OT1/ptm/m
@@ -418,14 +418,14 @@ xon $\OML/cmm/m/it/12 p \OT1/cmr/m/n/12 = 0\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 03
  []
 
 
-Overfull \hbox (4.94142pt too wide) in paragraph at lines 447--458
+Overfull \hbox (4.94142pt too wide) in paragraph at lines 458--469
 \OT1/ptm/m/n/12 log$[]$ ra-tio 0.23, Wilcoxon $\OML/cmm/m/it/12 p \OT1/cmr/m/n/
 12 = 0\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 29$ \OT1/ptm/m/n/12 (\OT1/pcr/m/n/12 re
 sults/overrescue[]abundance[]bsubtilis.csv\OT1/ptm/m/n/12 ).
  []
 
 [11 <../figures/fig_roc.png>]
-Overfull \hbox (163.06702pt too wide) in paragraph at lines 460--467
+Overfull \hbox (163.06702pt too wide) in paragraph at lines 471--478
 \OT1/ptm/m/n/12 caught es-sen-tials (Fisher odds ra-tio 22.7, $\OML/cmm/m/it/12
  p \OT1/cmr/m/n/12 = 2\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 5 \OMS/cmsy/m/n/12 ^^B 
 \OT1/cmr/m/n/12 10[]$\OT1/ptm/m/n/12 ; 15 named genes, \OT1/pcr/m/n/12 results/
@@ -435,10 +435,10 @@ overrescue[]audit[]bsubtilis.json\OT1/ptm/m/n/12 ).
 <../figures/fig_abundance.png, id=60, 332.08064pt x 303.534pt>
 File: ../figures/fig_abundance.png Graphic file (type png)
 <use ../figures/fig_abundance.png>
-Package pdftex.def Info: ../figures/fig_abundance.png  used on input line 492.
+Package pdftex.def Info: ../figures/fig_abundance.png  used on input line 503.
 (pdftex.def)             Requested size: 258.36668pt x 236.16734pt.
 
-Overfull \hbox (5.55052pt too wide) in paragraph at lines 481--499
+Overfull \hbox (5.55052pt too wide) in paragraph at lines 492--510
 \OT1/ptm/m/n/12 res-cues the es-sen-tial's de-fect (\OT1/pcr/m/n/12 results/bio
 grid[]backup[]rescue[]pairs.tsv\OT1/ptm/m/n/12 ). The chem-
  []
@@ -447,7 +447,7 @@ grid[]backup[]rescue[]pairs.tsv\OT1/ptm/m/n/12 ). The chem-
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Overfull \hbox (29.86885pt too wide) in paragraph at lines 501--510
+Overfull \hbox (29.86885pt too wide) in paragraph at lines 512--521
 \OT1/ptm/m/n/12 11.5, $\OML/cmm/m/it/12 p \OT1/cmr/m/n/12 = 1\OML/cmm/m/it/12 :
 \OT1/cmr/m/n/12 2 \OMS/cmsy/m/n/12 ^^B \OT1/cmr/m/n/12 10[]$\OT1/ptm/m/n/12 ; 1
 3 named over-rescued genes, \OT1/pcr/m/n/12 results/overrescue[]audit[]ecoli.js
@@ -455,7 +455,7 @@ on\OT1/ptm/m/n/12 ).
  []
 
 [12 <../figures/fig_overrescue.png>] [13 <../figures/fig_abundance.png>]
-Overfull \hbox (137.04419pt too wide) in paragraph at lines 591--596
+Overfull \hbox (137.04419pt too wide) in paragraph at lines 602--607
 \OT1/ptm/m/n/12 so the pair is a cer-ti-fied lo-cal op-ti-mum of the obligatory
 -flux land-scape (\OT1/pcr/m/n/12 results/strain[]design[]triples.csv\OT1/ptm/m
 /n/12 ). 
@@ -465,13 +465,13 @@ Overfull \hbox (137.04419pt too wide) in paragraph at lines 591--596
 <../figures/fig_envelope.png, id=73, 303.534pt x 245.718pt>
 File: ../figures/fig_envelope.png Graphic file (type png)
 <use ../figures/fig_envelope.png>
-Package pdftex.def Info: ../figures/fig_envelope.png  used on input line 602.
+Package pdftex.def Info: ../figures/fig_envelope.png  used on input line 613.
 (pdftex.def)             Requested size: 234.8775pt x 190.13702pt.
 <../figures/fig_strain_designs.png, id=74, 505.89pt x 274.626pt>
 File: ../figures/fig_strain_designs.png Graphic file (type png)
 <use ../figures/fig_strain_designs.png>
 Package pdftex.def Info: ../figures/fig_strain_designs.png  used on input line 
-608.
+619.
 (pdftex.def)             Requested size: 399.29463pt x 216.76358pt.
  (./tab_cv_folds.tex) (./tab_overrescued.tex
 Overfull \hbox (18.06499pt too wide) in alignment at lines 1--26
@@ -481,25 +481,25 @@ Overfull \hbox (18.06499pt too wide) in alignment at lines 1--26
 [15 <../figures/fig_envelope.png>]) (./tab_strain_singles.tex [16 <../figures/f
 ig_strain_designs.png>]) (./tab_strain_5th.tex) (./tab_strain_pairs.tex
 [17])
-Overfull \hbox (1.519pt too wide) in paragraph at lines 621--629
+Overfull \hbox (1.519pt too wide) in paragraph at lines 632--640
 \OT1/ptm/m/n/12 carry ex-plicit \OT1/ptm/m/it/12 in-vi-able \OT1/ptm/m/n/12 an-
 no-ta-tions (\OT1/pcr/m/n/12 results/sgd[]inviable[]triangulation.json\OT1/ptm/
 m/n/12 ). The
  []
 
 [18]
-Overfull \hbox (75.89784pt too wide) in paragraph at lines 683--695
+Overfull \hbox (75.89784pt too wide) in paragraph at lines 694--706
  [][] 
  []
 
 
-Overfull \hbox (19.22015pt too wide) in paragraph at lines 670--698
+Overfull \hbox (19.22015pt too wide) in paragraph at lines 681--709
 \OT1/ptm/m/n/12 cov-er-age gap, not a fail-ure (\OT1/pcr/m/n/12 data/raw/biogri
 d[]ecoli[]overrescue[]interactions.tsv\OT1/ptm/m/n/12 ).
  []
 
 [19] [20]
-Overfull \hbox (35.89604pt too wide) in paragraph at lines 770--772
+Overfull \hbox (35.89604pt too wide) in paragraph at lines 781--783
 \OT1/ptm/m/n/12 Full per-gene fea-ture ta-ble (1,143 genes $\OMS/cmsy/m/n/12 ^^
 B$ \OT1/ptm/m/n/12 11 fea-tures) at \OT1/pcr/m/n/12 results/gene[]features[]par
 tial.csv\OT1/ptm/m/n/12 . 
@@ -508,7 +508,7 @@ tial.csv\OT1/ptm/m/n/12 .
 (./tab_essential_scores.tex [21] [22] [23] [24]) (./tab_all_gene_scores.tex
 [25] [26] [27] [28] [29] [30] [31] [32] [33] [34] [35] [36] [37] [38] [39]
 [40] [41] [42] [43] [44] [45] [46] [47] [48] [49] [50] [51] [52])
-Overfull \hbox (87.70172pt too wide) in paragraph at lines 779--786
+Overfull \hbox (87.70172pt too wide) in paragraph at lines 790--797
 \OT1/ptm/m/n/12 Honest counts: 17 ex-ter-nal tools and 10 accession-level datas
 ets (\OT1/pcr/m/n/12 results/external[]tools[]manifest.csv\OT1/ptm/m/n/12 ,
  []
@@ -542,7 +542,7 @@ live/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr
 8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (53 pages, 495851 bytes).
+Output written on main.pdf (53 pages, 496648 bytes).
 PDF statistics:
  275 PDF objects out of 1000 (max. 8388607)
  172 compressed objects within 2 object streams
