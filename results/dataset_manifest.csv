@@ -48,3 +48,8 @@ Expression Atlas E-MTAB-8621 (yeast cell cycle, ethanol),EBI GXA baseline RNA-se
 Expression Atlas E-MTAB-8626 (yeast cell cycle, glucose),EBI GXA baseline RNA-seq,27 assays / 8 condition groups,isozyme co-expression test
 UniProt entries yeast over-rescue pairs (39),UniProtKB accessions organism 559292,39 curated entries fetched per gene,annotation-transfer provenance
 UniProt entries E. coli over-rescue pairs (31),UniProtKB accessions organism 83333,31 curated entries fetched per gene,annotation-transfer provenance
+PubChem CID 160419 (succinate),PubChem PUG-REST,compound record,strain-design redox/charge context
+PubChem CID 5460307 (fumarate),PubChem PUG-REST,compound record,strain-design redox/charge context
+PubChem CID 525 (malate),PubChem PUG-REST,compound record,strain-design redox/charge context
+PubChem CID 164533 (alpha-ketoglutarate),PubChem PUG-REST,compound record,strain-design redox/charge context
+PubChem CID 760 (glyoxylate),PubChem PUG-REST,compound record,strain-design redox/charge context

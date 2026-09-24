@@ -30,3 +30,4 @@ UniProt REST API,service,2026-09,curated entry retrieval per gene
 NCBI E-utilities,service,-,assembly accession resolution
 MEMOTE,benchmark suite,0.20,model quality benchmarking (in progress)
 g:Profiler g:GOSt API,service,2026-09,functional enrichment (yeast)
+PubChem PUG-REST,service,-,compound property records
