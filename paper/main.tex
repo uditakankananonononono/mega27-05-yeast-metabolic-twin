@@ -51,13 +51,45 @@ H^{(l+1)} = \mathrm{ReLU}\!\left(\hat{D}^{-1/2}\hat{A}\hat{D}^{-1/2} H^{(l)} W^{
 % validation set from Raab et al. 2010 (SDH1, SDH2, IDH1, IDP1).
 
 \section{Mathematical results}
-\begin{proposition}[Weak duality bound for growth]
-% shadow prices; dual of FBA LP; proof.
+\begin{proposition}[Dual bound on growth]
+Let $S \in \mathbb{R}^{m \times n}$ be the stoichiometric matrix and let the
+FBA program be $\max\{c^{\top} v : Sv = 0,\ l \le v \le u\}$ with finite
+optimum $v^{*}$. For any dual multipliers $(y, \lambda^{l}, \lambda^{u})$
+with $S^{\top} y + \lambda^{u} - \lambda^{l} = c$, $\lambda^{l}, \lambda^{u} \ge 0$,
+the dual objective $u^{\top}\lambda^{u} - l^{\top}\lambda^{l}$ upper-bounds
+the maximal growth rate $c^{\top} v^{*}$, and at optimality equality holds.
 \end{proposition}
-\begin{proposition}[Envelope monotonicity]
-% max product flux is nonincreasing in the enforced growth fraction; proof
-% by feasible-set nesting.
+\begin{proof}
+For any primal-feasible $v$,
+$c^{\top} v = (S^{\top} y + \lambda^{u} - \lambda^{l})^{\top} v
+= y^{\top} S v + (\lambda^{u})^{\top} v - (\lambda^{l})^{\top} v
+\le (\lambda^{u})^{\top} u - (\lambda^{l})^{\top} l$,
+using $Sv = 0$, $v \le u$, $v \ge l$ and nonnegativity of the multipliers.
+The bound holds for every dual-feasible point, hence for the dual optimum;
+strong duality for linear programs gives equality at $(v^{*}, y^{*})$.
+\end{proof}
+\begin{remark}
+The optimal dual variables $y^{*}_i$ are the shadow prices of metabolites:
+$-\partial (c^{\top} v^{*}) / \partial b_i$ for a relaxed balance
+$Sv = b$. They price the marginal growth value of each metabolite pool and
+underlie the strain-design interpretation of the production envelope.
+\end{remark}
+\begin{proposition}[Production-envelope monotonicity]
+Fix a product exchange $v_p$ and let
+$P(g) = \max\{v_p : Sv = 0,\ l \le v \le u,\ c^{\top} v \ge g\}$.
+Then $P$ is nonincreasing in $g$ on its feasible domain.
 \end{proposition}
+\begin{proof}
+For $g_1 \le g_2$ the constraint $c^{\top} v \ge g_2$ implies
+$c^{\top} v \ge g_1$, so the feasible set at $g_2$ is a subset of that at
+$g_1$. A maximum over a subset cannot exceed a maximum over a superset.
+\end{proof}
+\begin{remark}
+Monotonicity justifies reporting the envelope as a curve: each point is the
+solution of one LP, and the curve is guaranteed not to rise as enforced
+growth increases, so the growth\textendash production tradeoff has a
+well-defined Pareto frontier.
+\end{remark}
 
 \section{Results}
 \subsection{FBA benchmark reproduction}
