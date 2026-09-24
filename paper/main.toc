@@ -45,11 +45,11 @@
 \contentsline {subsection}{\numberline {6.9}External experimental validation}{18}{}%
 \contentsline {section}{\numberline {7}Negative results and failed approaches}{18}{}%
 \contentsline {paragraph}{CNN on sequence alone.}{18}{}%
-\contentsline {paragraph}{MCC gate.}{18}{}%
+\contentsline {paragraph}{MCC gate.}{19}{}%
 \contentsline {paragraph}{Naive strain-design metrics.}{19}{}%
 \contentsline {paragraph}{Complete-medium screening.}{19}{}%
 \contentsline {subsection}{\numberline {7.1}Synthesis: a four-link mechanism chain, two species}{19}{}%
-\contentsline {section}{\numberline {8}Discussion}{19}{}%
+\contentsline {section}{\numberline {8}Discussion}{20}{}%
 \contentsline {subsection}{\numberline {8.1}Limitations}{20}{}%
 \contentsline {subsection}{\numberline {8.2}Future work}{20}{}%
 \contentsline {section}{\numberline {9}Per-model fold analysis}{20}{}%
