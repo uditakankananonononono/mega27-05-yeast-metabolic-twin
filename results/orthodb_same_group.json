@@ -1,0 +1,10 @@
+{
+ "n_genes": 24,
+ "n_mapped": 24,
+ "n_pairs": 14,
+ "pairs_same_group": 12,
+ "n_background_pairs": 262,
+ "background_same_group": 3,
+ "fisher_oddsratio": 518.0,
+ "fisher_p": 1.2665776404636398e-16
+}

@@ -1,0 +1,10 @@
+{
+ "n_genes": 24,
+ "n_mapped": 20,
+ "n_pairs": 14,
+ "pairs_co_member": 1,
+ "n_background_pairs": 262,
+ "background_co_member": 0,
+ "fisher_oddsratio": Infinity,
+ "fisher_p": 0.05072463768115941
+}

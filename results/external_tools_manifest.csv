@@ -32,3 +32,10 @@ MEMOTE,benchmark suite,0.20,model quality benchmarking (consistency suite skippe
 g:Profiler g:GOSt API,service,2026-09,functional enrichment (yeast)
 PubChem PUG-REST,service,-,compound property records
 RCSB PDB search API,service,-,structural coverage of pairs
+OMA Browser API,service,-,ortholog-group recurrence of over-rescued backups (honest negative)
+InterPro API (EBI),service,-,Pfam domain architecture of backup-partner pairs
+BioCyc/MetaCyc web services (apixml),service,v30.0,pathway co-membership of pairs (YEAST database)
+Rhea,database,-,curated reaction records for design enzymes
+EBI OLS4 (Ontology Lookup Service),service,v4,ChEBI term resolution for design metabolites
+Crossref REST API,service,-,bibliography verification of the paper's references
+OrthoDB,database+API,v12,sequence-cluster paralogy replication of domain-sharing (honest cross-resource check)

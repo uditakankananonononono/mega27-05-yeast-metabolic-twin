@@ -1,0 +1,6 @@
+query,chebi_id,label,description
+succinate,CHEBI:26806,succinate,A dicarboxylic acid anion obtained by deprotonation of at least one of the carboxy groups of succinic acid.
+fumarate,CHEBI:68542,EC 1.3.98.1 [dihydroorotate oxidase (fumarate)] inhibitor,"An EC 1.3.98.* (oxidoreductase acting on CH-CH group of donors, with other, known, acceptors) inhibitor that interferes with the action of dihydroorotate oxidase (fumarate), EC 1.3.98.1 (formerly EC 1.3.3.1)."
+acetyl-CoA,CHEBI:15351,acetyl-CoA,An acyl-CoA having acetyl as its <i>S</i>-acetyl component.
+coenzyme A,CHEBI:15346,coenzyme A,"A thiol comprising a panthothenate unit in phosphoric anhydride linkage with a 3',5'-adenosine diphosphate unit; and an aminoethanethiol unit."
+ubiquinone,CHEBI:38503,EC 1.6.5.3 [NADH:ubiquinone reductase (H(+)-translocating)] inhibitor,"A respiratory-chain inhibitor that interferes with the action of the the enzyme NADH:ubiquinone reductase (H<small><sup>+</small></sup>-translocating), EC 1.6.5.3."

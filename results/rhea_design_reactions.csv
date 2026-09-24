@@ -1,0 +1,7 @@
+gene,ec,role,rhea_id,equation
+SDH2,EC:1.3.5.1,design knockout: succinate dehydrogenase,RHEA:13713,a ubiquinone + succinate = a ubiquinol + fumarate
+SDH2,EC:1.3.5.1,design knockout: succinate dehydrogenase,RHEA:27834,a menaquinone + succinate = a menaquinol + fumarate
+SDH2,EC:1.3.5.1,design knockout: succinate dehydrogenase,RHEA:40523,a quinone + succinate = fumarate + a quinol
+SDH2,EC:1.3.5.1,design knockout: succinate dehydrogenase,RHEA:75711,a rhodoquinone + succinate = a rhodoquinol + fumarate
+ACH1,EC:3.1.2.1,design knockout: acetyl-CoA hydrolase,RHEA:20289,acetyl-CoA + H2O = acetate + CoA + H(+)
+CIT,EC:2.3.3.1;EC:2.3.3.3;EC:2.3.3.16,competing acetyl-CoA sink: citrate synthase,RHEA:16845,oxaloacetate + acetyl-CoA + H2O = citrate + CoA + H(+)

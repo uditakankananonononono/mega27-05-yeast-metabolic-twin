@@ -1,0 +1,10 @@
+{
+ "n_genes": 24,
+ "n_mapped": 24,
+ "n_pairs": 14,
+ "pairs_sharing_domain": 13,
+ "n_background_pairs": 262,
+ "background_sharing_domain": 3,
+ "fisher_oddsratio": 1122.3333333333333,
+ "fisher_p": 1.193397293267313e-18
+}
