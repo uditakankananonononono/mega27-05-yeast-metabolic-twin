@@ -1,0 +1,258 @@
+bsu	gene	viable_condition
+BSU00010	dnaA	Spo0A_rep. 
+BSU00020	dnaN	Spo0A_rep. 
+BSU00060	gyrB	nan
+BSU00070	gyrA	nan
+BSU00130	serS	T-box_antitermination. 
+BSU00190	dnaX	nan
+BSU00280	tmk	nan
+BSU00310	holB	nan
+BSU00380	metS	Spo0A_rep. 
+BSU00460	ispE	nan
+BSU00500	gcaD (glmU)	stringent response_neg. 
+BSU00510	prs	stringent response_neg. 
+BSU00530	pth	SigB. 
+BSU00620	divIC	SigE.sigM.sigW.sigX. 
+BSU00670	tilS	SigM. 
+BSU00770	sul (folP)	nan
+BSU00780	folB	nan
+BSU00790	folK	..
+BSU00820	lysS	nan
+BSU00900	ispD	SigB.sigM.
+BSU00910	ispF	SigB. 
+BSU00920	gltX	nan
+BSU00940	cysS	T-box_antitermination. 
+BSU01000	secE	nan
+BSU01040	rplJ	stringent response_neg. 
+BSU01050	rplL	stringent response_neg. 
+BSU01070	rpoB	stringent response_neg. 
+BSU01080	rpoC	stringent response_neg. 
+BSU01100	rpsL	stringent response_neg. 
+BSU01110	rpsG	stringent response_neg. 
+BSU01120	fusA	stringent response_neg. 
+BSU01130	tufA	stringent response_neg. 
+BSU01150	rpsJ	stringent response_neg. 
+BSU01160	rplC	stringent response_neg. 
+BSU01170	rplD	stringent response_neg. 
+BSU01180	rplW	stringent response_neg. 
+BSU01190	rplB	stringent response_neg. 
+BSU01200	rpsS	stringent response_neg. 
+BSU01210	rplV	stringent response_neg
+BSU01220	rpsC	stringent response_neg. 
+BSU01230	rplP	stringent response_neg. 
+BSU01250	rpsQ	stringent response_neg. 
+BSU01260	rplNA	stringent response_neg. 
+BSU01270	rplX	stringent response_neg. 
+BSU01280	rplE	stringent response_neg. 
+BSU01290	rpsNA	stringent response_neg. 
+BSU01300	rpsH	stringent response_neg. 
+BSU01310	rplF	stringent response_neg. 
+BSU01320	rplR	stringent response_neg. 
+BSU01330	rpsE	stringent response_neg. 
+BSU01340	rpmD	stringent response_neg. 
+BSU01360	secY	stringent response_neg. 
+BSU01370	adk	stringent response_neg. 
+BSU01390	infA	stringent response_neg. 
+BSU01410	rpsM	stringent response_neg. 
+BSU01420	rpsK	stringent response_neg. 
+BSU01430	rpoA	stringent response_neg. 
+BSU01440	rplQ	stringent response_neg. 
+BSU01490	rplM	stringent response_neg. 
+BSU01500	rpsI	stringent response_neg. 
+BSU01770	glmM	nan
+BSU01780	glmS	glmS ribozyme_RNA cleavage. 
+BSU03130	nadE	SigB. 
+BSU03150	aroK	..
+BSU04560	ddl	SigM. 
+BSU04570	murF	SigM. 
+BSU04620	acpS	nan
+BSU04640	alrA	nan
+BSU05920	ydiC (tsaB)	nan
+BSU05940	gcp (tsaD)	nan
+BSU06020	groES	HrcA_rep. 
+BSU06030	groEL	HrcA_rep. 
+BSU06060	ydiO (bsuMA)	LexA_rep. 
+BSU06070	ydiP (bsuMB)	LexA_rep. 
+BSU06610	pcrA	LexA_rep. 
+BSU06620	ligA	LexA_rep. 
+BSU06670	gatC	nan
+BSU06680	gatA	nan
+BSU06690	gatB	nan
+BSU06811	yezG	nan
+BSU09510	yhdL	SigM. 
+BSU09540	plsC	sigB.FapR_rep.
+BSU09950	prsA	nan
+BSU11340	fabF	SigW.FapR_rep. 
+BSU11420	trpS	T-box_antitermination. 
+BSU11610	ppnKA	nan
+BSU12510	xre	nan
+BSU13300	mgtE	M-box_termination. 
+BSU14000	patA	..
+BSU14180	dapH	nan
+BSU14190	dapL (dapI)	nan
+BSU14530	rnjA	nan
+BSU14840	ylaN	..
+BSU14850	ftsW	YofA_act. 
+BSU15020	coaD	nan
+BSU15150	ftsL	nan
+BSU15160	pbpB	nan
+BSU15180	murE	stringent response_neg. 
+BSU15190	mraY	nan
+BSU15200	murD	nan
+BSU15220	murG	SigE.SpoIIID_rep. 
+BSU15230	murB	SigE.sigM.SpoIIID_rep.
+BSU15240	divIB	SigE.SigM.SpoIIID_rep. 
+BSU15280	ftsA	SigH.WalR_act. 
+BSU15290	ftsZ	SigH.WalR_act. 
+BSU15430	ileS	T-box_antitermination. 
+BSU15680	gmk	nan
+BSU15700	coaBC	..
+BSU15710	priA	nan
+BSU15890	plsX	ComA_act.FapR_rep. 
+BSU15900	fabD	ComA_act.FapR_rep. 
+BSU15910	fabG	ComA_act.FapR_rep. 
+BSU15920	acpA	FapR_rep. 
+BSU15930	rnc	stringent response_neg. 
+BSU15940	smc	nan
+BSU15950	ftsY	SigK.GerE_act. 
+BSU15980	ffh	nan
+BSU15990	rpsP	stringent response_neg. 
+BSU16030	trmD	nan
+BSU16040	rplS	stringent response_neg. 
+BSU16050	rbgA	nan
+BSU16490	rpsB	stringent response_neg. 
+BSU16500	tsf	stringent response_neg. 
+BSU16510	pyrH	stringent response_neg. 
+BSU16520	frr	stringent response_neg. 
+BSU16530	uppS	nan
+BSU16540	cdsA	nan
+BSU16550	dxr	nan
+BSU16570	proS	nan
+BSU16580	polC	nan
+BSU16600	nusA	stringent response_neg. 
+BSU16630	infB	stringent response_neg. 
+BSU16670	ribC	nan
+BSU16680	rpsO	nan
+BSU16750	asd	SigK. 
+BSU16760	dapG	SigK. 
+BSU16770	dapA	SigK. 
+BSU16920	pgsA	nan
+BSU17370	nrdI	ResD_act. 
+BSU17380	nrdE	ResD_act. 
+BSU17390	nrdF	ResD_act. 
+BSU17910	yneF	Spo0A_act. 
+BSU18070	plsY	nan
+BSU18090	parE	LexA_rep. 
+BSU18100	parC	LexA_rep. 
+BSU21810	dfrA	nan
+BSU22350	dnaD	nan
+BSU22440	birA	nan
+BSU22450	cca	nan
+BSU22490	dapB	nan
+BSU22600	aroE	TRAPtermination
+BSU22710	aroF	nan
+BSU22780	folEA	..
+BSU22790	hbs	SigH.LexA_rep. 
+BSU22840	engA (der)	nan
+BSU22890	cmk	..
+BSU23220	scpA	stringent response_neg. 
+BSU23840	rnz	nan
+BSU24270	dxs	stringent response_neg. 
+BSU24340	accC	nan
+BSU24350	accB	nan
+BSU25070	ispG	SigE. 
+BSU25160	ispH	nan
+BSU25200	sigA	SigD.SigH. 
+BSU25210	dnaG	SigH.Spo0A_rep. 
+BSU25260	glyS	T-box_antitermination. 
+BSU25270	glyQ	T-box_antitermination. 
+BSU25290	era	SigB. 
+BSU25560	holA	nan
+BSU25640	nadD	nan
+BSU25680	yqeG	nan
+BSU25870	yqcF (rttF)	Spo0A_act. 
+BSU26350	yqaE (sknR)	nan
+BSU27410	alaS	T-box_antitermination. 
+BSU27500	trmU (mnmA)	stringent response_neg. 
+BSU27510	iscS (iscSA)	stringent response_neg. 
+BSU27550	aspS	T-box_antitermination. 
+BSU27560	hisS	T-box_antitermination. 
+BSU27920	obg	nan
+BSU27940	rpmA	nan
+BSU27950	ysxB	stringent response_neg. 
+BSU27960	rplU	stringent response_neg. 
+BSU28010	mreD	SigM. 
+BSU28020	mreC	SigM. 
+BSU28030	mreB	SigM. 
+BSU28080	folC	T-box_antitermination. 
+BSU28090	valS	T-box_antitermination. 
+BSU28190	ysxC	CtsR_rep. 
+BSU28390	racE	nan
+BSU28500	trxA	SigB.CtsR_rep.Spx_act. 
+BSU28630	pheT	T-box_antitermination. 
+BSU28640	pheS	T-box_antitermination. 
+BSU28850	rplT	stringent response_neg.RplT_termination. 
+BSU28870	infC	stringent response_neg.RplT_termination. 
+BSU28980	dnaI	nan
+BSU28990	dnaB	nan
+BSU29060	coaE	nan
+BSU29200	accA	Spo0A_act. 
+BSU29210	accD	Spo0A_act. 
+BSU29230	dnaE	LexA_rep. 
+BSU29660	rpsD	stringent response_neg. 
+BSU29670	tyrS	T-box_antitermination. 
+BSU29790	murC	nan
+BSU30320	leuS	T-box_antitermination. 
+BSU30550	metK	S-box_termination. 
+BSU30780	menC	nan
+BSU30790	menE	nan
+BSU30800	menB	nan
+BSU30820	menD	nan
+BSU31600	mrpA	nan
+BSU31610	mrpB	nan
+BSU31620	mrpC	nan
+BSU31630	mrpD	nan
+BSU31640	mrpE	nan
+BSU31650	mrpF	nan
+BSU31660	mrpG	nan
+BSU31750	pncB	nan
+BSU32110	yumC	nan
+BSU32170	dapF	nan
+BSU32670	sufB	nan
+BSU32680	iscU (sufU)	nan
+BSU32690	sufS	nan
+BSU32700	sufD	nan
+BSU32710	sufC	nan
+BSU33900	eno	CggR_rep. 
+BSU33910	pgm	CggR_rep. 
+BSU33940	gapA	CggR_rep. 
+BSU34790	trxB	Spx_act. 
+BSU35290	prfB	nan
+BSU35300	secA	nan
+BSU35530	tagO	nan
+BSU35600	tuaB	PhoP_act. 
+BSU35660	mnaA	nan
+BSU35700	tagH	nan
+BSU35710	tagG	nan
+BSU35720	tagF	WalR_act.PhoP_rep. 
+BSU35740	tagD	WalR_act.PhoP_rep. 
+BSU35750	tagA	WalR_act.PhoP_rep. 
+BSU35760	tagB	WalR_act.PhoP_rep. 
+BSU36370	fabZ	nan
+BSU36410	mbl	SigE.stringent responsenegative regulation.
+BSU36760	murAA	nan
+BSU37010	prfA	nan
+BSU37150	pyrG	nan
+BSU37330	argS	nan
+BSU38120	rodA	SigM. 
+BSU38490	menA	nan
+BSU38690	yxlC	SigY.
+BSU39220	yxxG (wapI)	DegU_repress.YvrHb_act.
+BSU39290	yxxD (rtbE)	..
+BSU40400	walK	..
+BSU40410	walR	nan
+BSU40440	dnaC	nan
+BSU40550	ppaC	nan
+BSU40890	rpsR	ComK_act.stringent response_neg. 
+BSU40900	ssbA	ComK_act.stringent response_neg. 
+BSU41050	rnpA	nan

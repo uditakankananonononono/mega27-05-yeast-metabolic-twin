@@ -32,22 +32,23 @@
 \contentsline {subsection}{\numberline {6.4}Threshold instability explains the MCC--AUC split}{10}{}%
 \contentsline {subsection}{\numberline {6.5}Discovery: isozyme over-rescue}{11}{}%
 \contentsline {paragraph}{Backups are barely expressed.}{11}{}%
-\contentsline {paragraph}{The expression gap replicates in \emph {E. coli}, stronger.}{11}{}%
+\contentsline {paragraph}{Third species, strongest signal: \emph {B. subtilis}.}{11}{}%
+\contentsline {paragraph}{The expression gap replicates in \emph {E. coli}, stronger.}{12}{}%
 \contentsline {paragraph}{Genetic evidence: overexpressed backups do rescue.}{12}{}%
 \contentsline {paragraph}{Cross-species replication.}{12}{}%
 \contentsline {paragraph}{Mechanism: annotation-driven paralog backups.}{12}{}%
 \contentsline {subsection}{\numberline {6.6}The nineteen over-rescued genes}{13}{}%
-\contentsline {subsection}{\numberline {6.7}Strain design for succinate overproduction}{13}{}%
+\contentsline {subsection}{\numberline {6.7}Strain design for succinate overproduction}{14}{}%
 \contentsline {subsection}{\numberline {6.8}Essentiality triangulation and a curation conflict}{17}{}%
-\contentsline {subsection}{\numberline {6.9}External experimental validation}{17}{}%
-\contentsline {section}{\numberline {7}Negative results and failed approaches}{17}{}%
-\contentsline {paragraph}{CNN on sequence alone.}{17}{}%
-\contentsline {paragraph}{MCC gate.}{18}{}%
-\contentsline {paragraph}{Naive strain-design metrics.}{18}{}%
-\contentsline {paragraph}{Complete-medium screening.}{18}{}%
-\contentsline {subsection}{\numberline {7.1}Synthesis: a four-link mechanism chain, two species}{18}{}%
+\contentsline {subsection}{\numberline {6.9}External experimental validation}{18}{}%
+\contentsline {section}{\numberline {7}Negative results and failed approaches}{18}{}%
+\contentsline {paragraph}{CNN on sequence alone.}{18}{}%
+\contentsline {paragraph}{MCC gate.}{19}{}%
+\contentsline {paragraph}{Naive strain-design metrics.}{19}{}%
+\contentsline {paragraph}{Complete-medium screening.}{19}{}%
+\contentsline {subsection}{\numberline {7.1}Synthesis: a four-link mechanism chain, two species}{19}{}%
 \contentsline {section}{\numberline {8}Discussion}{19}{}%
-\contentsline {subsection}{\numberline {8.1}Limitations}{19}{}%
+\contentsline {subsection}{\numberline {8.1}Limitations}{20}{}%
 \contentsline {subsection}{\numberline {8.2}Future work}{20}{}%
 \contentsline {section}{\numberline {9}Per-model fold analysis}{20}{}%
 \contentsline {section}{\numberline {10}Conclusion}{20}{}%

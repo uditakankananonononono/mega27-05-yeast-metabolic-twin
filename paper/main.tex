@@ -442,6 +442,15 @@ $p=0.038$ (\texttt{results/overrescue\_abundance.csv}). The extremes
 are dramatic: PMA1 (4{,}368 ppm) is trusted to be backed up by an
 enzyme at 14.1 ppm---a 310-fold shortfall. The model assumes catalytic
 capacity that the cell never produces.
+\paragraph{Third species, strongest signal: \emph{B. subtilis}.}
+Against the Koo 2017 genome-scale deletion libraries (257 protein-coding
+essentials; 101 metabolic genes in iYO844), the same audit gives the
+strongest enrichment yet: FBA-missed essentials are isozyme-backed in
+50\% of cases vs 4.2\% of caught essentials (Fisher odds ratio 22.7,
+$p=2.5\times10^{-7}$; 15 named genes,
+\texttt{results/overrescue\_audit\_bsubtilis.json}). Isozyme
+over-rescue now holds in one eukaryote and two bacteria.
+
 \paragraph{The expression gap replicates in \emph{E. coli}, stronger.}
 PaxDb whole-organism abundances for \emph{E. coli} (4{,}093 proteins)
 show the same mechanism with a wider gap: across the 20 over-rescued
@@ -657,17 +666,17 @@ as a coverage gap, not a failure
 (\texttt{data/raw/biogrid\_ecoli\_overrescue\_interactions.tsv}).
 \begin{table}[h]
 \centering\small
-\begin{tabular}{lcc}
+\begin{tabular}{lccc}
 \hline\hline
-chain link & \emph{S. cerevisiae} & \emph{E. coli} \\
+chain link & \emph{S. cerevisiae} & \emph{E. coli} & \emph{B. subtilis} \\
 \hline
-1. missed essentials isozyme-backed & OR 16.2, $p=3.8\times10^{-4}$ & OR 11.5, $p=1.2\times10^{-5}$ \\
-2. named over-rescued genes & 19 & 13 \\
-3. backups less abundant & 17/28, $p=0.038$ & 17/20, $p=0.007$ \\
-4. overexpression rescues (curated) & 4 pairs (BioGRID) & untested (no curation) \\
+1. missed essentials isozyme-backed & OR 16.2, $p=3.8\times10^{-4}$ & OR 11.5, $p=1.2\times10^{-5}$ & OR 22.7, $p=2.5\times10^{-7}$ \\
+2. named over-rescued genes & 19 & 13 & 15 \\
+3. backups less abundant & 17/28, $p=0.038$ & 17/20, $p=0.007$ & untested \\
+4. overexpression rescues (curated) & 4 pairs (BioGRID) & untested (no curation) & untested \\
 \hline
 \end{tabular}
-\caption{The isozyme over-rescue chain across species. Link 3
+\caption{The isozyme over-rescue chain across three species. Link 3
 abundances from PaxDb v4.2; link 4 from BioGRID 5.0.261 rescue-type
 interactions between model backup pairs.}
 \label{tab:chain}

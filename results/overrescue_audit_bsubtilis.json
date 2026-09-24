@@ -1,0 +1,29 @@
+{
+  "n_essential": 101,
+  "n_missed": 30,
+  "n_caught": 71,
+  "missed_isozyme_backed_frac": 0.5,
+  "caught_isozyme_backed_frac": 0.04225352112676056,
+  "fisher_odds_ratio": 22.666666666666668,
+  "fisher_p": 2.4750889304326626e-07,
+  "overrescued_genes": [
+    "BSU13300",
+    "BSU16510",
+    "BSU16760",
+    "BSU28390",
+    "BSU31600",
+    "BSU31610",
+    "BSU31620",
+    "BSU31630",
+    "BSU31640",
+    "BSU31650",
+    "BSU31660",
+    "BSU32110",
+    "BSU34790",
+    "BSU36370",
+    "BSU36760"
+  ],
+  "species": "Bacillus subtilis (iYO844) vs Koo2017 deletion libraries",
+  "n_koo_essentials": 257,
+  "n_in_model": 101
+}
