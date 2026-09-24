@@ -11,3 +11,6 @@ repeat 0 fold 1: fba_rule MCC=0.469, logreg MCC=0.444, gcn MCC=0.488, cnn MCC=0.
 repeat 0 fold 2: fba_rule MCC=0.400, logreg MCC=0.400, gcn MCC=0.357, cnn MCC=0.000, gcn_cnn MCC=0.197
 /home/sandbox/mega27/item5-yeast/src/yeasttwin/ml.py:108: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
   tr = torch.tensor(train_idx, dtype=torch.long)
+repeat 0 fold 3: fba_rule MCC=0.677, logreg MCC=0.632, gcn MCC=0.518, cnn MCC=-0.028, gcn_cnn MCC=0.234
+/home/sandbox/mega27/item5-yeast/src/yeasttwin/ml.py:108: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  tr = torch.tensor(train_idx, dtype=torch.long)
