@@ -21,3 +21,4 @@ Europe PMC REST API,service,-,supplementary-file retrieval (Keio table)
 PaxDb,database,v4.2,protein abundance evidence
 BioGRID,database,5.0.261,curated genetic interaction evidence
 SGD downloads,database,-,phenotype curation
+KEGG REST API,service,-,ortholog-annotation provenance

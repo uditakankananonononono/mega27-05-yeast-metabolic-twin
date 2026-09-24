@@ -508,6 +508,19 @@ supposedly rescues.}
 \label{fig:abundance}
 \end{figure}
 
+\paragraph{Provenance: an exact annotation-transfer signature.}
+KEGG REST ortholog annotations for the 19 genes and their backups show
+half the backup pairs (14/28) share one KO; the sharing is \emph{exactly}
+the close-paralog set---all 9 genes with a high-identity backup
+($>0.30$) have a same-KO backup, and 9 of the 10 without one do not
+(Fisher $p=1.2\times10^{-4}$; \texttt{results/kegg\_same\_ko\_backups.csv}).
+The false clauses enter the model through shared ortholog annotations
+on recently duplicated enzymes. Two orthogonal defects combine: the
+GPR acquires a backup by annotation transfer, and the cell does not
+express that backup---same-KO backups are not the lowly expressed ones
+(medians 68.1 vs 69.2 ppm), so provenance and expression contribute
+independently (\texttt{results/kegg\_provenance\_joint.json}).
+
 \paragraph{Cross-species replication.}
 The identical audit on the \emph{E. coli} genome-scale model iML1515
 (2{,}712 reactions, 1{,}516 genes) against the Keio essential-gene

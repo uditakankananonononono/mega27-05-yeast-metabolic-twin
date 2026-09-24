@@ -1,0 +1,16 @@
+{
+  "sameko_vs_closeparalog_table": [
+    [
+      9,
+      1
+    ],
+    [
+      0,
+      9
+    ]
+  ],
+  "sameko_vs_closeparalog_fisher_p": 0.00011907597046915933,
+  "backup_median_ppm_same_ko": 68.05000000000001,
+  "backup_median_ppm_diff_ko": 69.15,
+  "interpretation": "Annotation-transfer signature is exact (all 9 close-paralog genes have same-KO backups, p=1e-4) but orthogonal to the expression deficit (same-KO backups are not lower expressed)."
+}
