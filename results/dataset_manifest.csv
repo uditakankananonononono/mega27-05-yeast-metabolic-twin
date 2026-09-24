@@ -54,3 +54,10 @@ PubChem CID 525 (malate),PubChem PUG-REST,compound record,strain-design redox/ch
 PubChem CID 164533 (alpha-ketoglutarate),PubChem PUG-REST,compound record,strain-design redox/charge context
 PubChem CID 760 (glyoxylate),PubChem PUG-REST,compound record,strain-design redox/charge context
 RCSB PDB structure entries for yeast pairs (27),RCSB PDB IDs,27 structure records,structural coverage analysis
+OMA Browser protein entries (over-rescued backups),85 protein records across 6 species,85,ortholog-group recurrence test (honest negative)
+InterPro protein entries (yeast backup-partner set),24 UniProt accessions,24,Pfam domain-sharing test
+OrthoDB Eukaryota-level clusters,24 cluster assignments,24,sequence-cluster replication
+BioCyc YEAST pathway memberships,20 gene queries resolved,20,pathway co-membership test (honest weak)
+Rhea curated reactions (design enzymes),6 RHEA IDs,6,design reaction curation
+ChEBI terms via EBI OLS4,5 CHEBI IDs,5,design metabolite ontology
+Crossref works (paper bibliography),14 DOIs,14,bibliography verification
