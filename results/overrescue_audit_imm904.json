@@ -1,0 +1,27 @@
+{
+  "n_essential": 119,
+  "n_missed": 78,
+  "n_caught": 41,
+  "missed_isozyme_backed_frac": 0.19230769230769232,
+  "caught_isozyme_backed_frac": 0.0,
+  "fisher_odds_ratio": Infinity,
+  "fisher_p": 0.0012138887255204096,
+  "overrescued_genes": [
+    "YAL038W",
+    "YBL030C",
+    "YBR038W",
+    "YDL004W",
+    "YDR023W",
+    "YDR353W",
+    "YGL008C",
+    "YGR191W",
+    "YHR020W",
+    "YJL026W",
+    "YKL035W",
+    "YKL104C",
+    "YKL141W",
+    "YLR305C",
+    "YMR113W"
+  ],
+  "model": "iMM904 (BiGG) vs Stanford deletion labels"
+}

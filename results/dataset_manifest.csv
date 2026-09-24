@@ -19,3 +19,4 @@ iYO844 B. subtilis genome-scale model,BiGG Models iYO844,1250 reactions / 844 ge
 Koo 2017 B. subtilis deletion libraries,DOI 10.1016/j.cels.2017.05.013 Table S3,257 essential genes,third-species essentiality labels
 PaxDb B. subtilis whole-organism abundances,PaxDb v4.2 species 224308,3997 proteins (ppm),third-species backup expression test (negative)
 KEGG REST ortholog annotations,KEGG API 2026-09-24,42 genes KO-mapped,backup-clause provenance analysis
+iMM904 older yeast genome-scale model,BiGG Models iMM904,1577 reactions / 905 genes,cross-reconstruction over-rescue audit

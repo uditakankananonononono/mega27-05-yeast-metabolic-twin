@@ -508,6 +508,16 @@ supposedly rescues.}
 \label{fig:abundance}
 \end{figure}
 
+\paragraph{Cross-reconstruction: the same genes fail in iMM904.}
+Running the audit on the older iMM904 reconstruction (1{,}577 reactions,
+905 genes) against the same Stanford labels reproduces the effect within
+species: 19.2\% of FBA-missed essentials are isozyme-backed vs 0\% of
+caught (Fisher $p=1.2\times10^{-3}$;
+\texttt{results/overrescue\_audit\_imm904.json}). Eleven of the 15
+iMM904 over-rescued genes are also in the yeast-GEM 19---the failure set
+is stable across two independent reconstructions 14 years apart, so the
+phenomenon tracks the annotation pipeline, not one model release.
+
 \paragraph{Provenance: an exact annotation-transfer signature.}
 KEGG REST ortholog annotations for the 19 genes and their backups show
 half the backup pairs (14/28) share one KO; the sharing is \emph{exactly}
