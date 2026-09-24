@@ -1,0 +1,28 @@
+{
+  "yeast": {
+    "species": 4932,
+    "n_pairs": 22,
+    "n_missing_edge": 6,
+    "median_coexpression": 0.07100000000000001,
+    "median_database": 0.9,
+    "frac_zero_coexpression": 0.3181818181818182,
+    "frac_database_positive": 0.8181818181818182,
+    "wilcoxon_db_minus_coexpr_p": 7.486976835319765e-05,
+    "control_n_pairs": 117,
+    "control_median_coexpression": 0.087,
+    "mannwhitney_pairs_vs_control_p": 0.09782613762652992
+  },
+  "ecoli": {
+    "species": 511145,
+    "n_pairs": 10,
+    "n_missing_edge": 10,
+    "median_coexpression": 0.054,
+    "median_database": 0.0,
+    "frac_zero_coexpression": 0.4,
+    "frac_database_positive": 0.4,
+    "wilcoxon_db_minus_coexpr_p": 0.140625,
+    "control_n_pairs": 47,
+    "control_median_coexpression": 0.0,
+    "mannwhitney_pairs_vs_control_p": 0.7079940345859763
+  }
+}
