@@ -1,0 +1,27 @@
+{
+  "n_essential": 121,
+  "n_missed": 32,
+  "n_caught": 89,
+  "missed_isozyme_backed_frac": 0.40625,
+  "caught_isozyme_backed_frac": 0.056179775280898875,
+  "fisher_odds_ratio": 11.494736842105263,
+  "fisher_p": 1.2247865585611403e-05,
+  "overrescued_genes": [
+    "b0048",
+    "b0126",
+    "b0171",
+    "b0475",
+    "b0684",
+    "b0733",
+    "b2234",
+    "b2235",
+    "b2411",
+    "b2563",
+    "b3640",
+    "b3709",
+    "b4226"
+  ],
+  "species": "Escherichia coli K-12 (iML1515) vs Keio/Baba2006",
+  "n_keio_candidates": 300,
+  "n_in_model": 121
+}

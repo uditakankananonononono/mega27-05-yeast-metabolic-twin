@@ -31,17 +31,18 @@
 \contentsline {subsection}{\numberline {6.3}The GCN breaks the benchmark on ranking}{10}{}%
 \contentsline {subsection}{\numberline {6.4}Threshold instability explains the MCC--AUC split}{10}{}%
 \contentsline {subsection}{\numberline {6.5}Discovery: isozyme over-rescue}{11}{}%
+\contentsline {paragraph}{Cross-species replication.}{11}{}%
 \contentsline {paragraph}{Mechanism: annotation-driven paralog backups.}{11}{}%
-\contentsline {subsection}{\numberline {6.6}The nineteen over-rescued genes}{11}{}%
+\contentsline {subsection}{\numberline {6.6}The nineteen over-rescued genes}{12}{}%
 \contentsline {subsection}{\numberline {6.7}Strain design for succinate overproduction}{12}{}%
-\contentsline {subsection}{\numberline {6.8}External experimental validation}{17}{}%
-\contentsline {section}{\numberline {7}Negative results and failed approaches}{17}{}%
-\contentsline {paragraph}{CNN on sequence alone.}{17}{}%
-\contentsline {paragraph}{MCC gate.}{17}{}%
-\contentsline {paragraph}{Naive strain-design metrics.}{17}{}%
+\contentsline {subsection}{\numberline {6.8}External experimental validation}{16}{}%
+\contentsline {section}{\numberline {7}Negative results and failed approaches}{16}{}%
+\contentsline {paragraph}{CNN on sequence alone.}{16}{}%
+\contentsline {paragraph}{MCC gate.}{16}{}%
+\contentsline {paragraph}{Naive strain-design metrics.}{16}{}%
 \contentsline {paragraph}{Complete-medium screening.}{17}{}%
 \contentsline {section}{\numberline {8}Discussion}{17}{}%
-\contentsline {subsection}{\numberline {8.1}Limitations}{18}{}%
+\contentsline {subsection}{\numberline {8.1}Limitations}{17}{}%
 \contentsline {subsection}{\numberline {8.2}Future work}{18}{}%
 \contentsline {section}{\numberline {9}Per-model fold analysis}{18}{}%
 \contentsline {section}{\numberline {10}Conclusion}{18}{}%

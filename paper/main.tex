@@ -432,6 +432,17 @@ Figure~\ref{fig:overrescue} visualises the effect.
 backups at 13$\times$ the rate of FBA-caught essentials.}
 \label{fig:overrescue}
 \end{figure}
+\paragraph{Cross-species replication.}
+The identical audit on the \emph{E. coli} genome-scale model iML1515
+(2{,}712 reactions, 1{,}516 genes) against the Keio essential-gene
+candidates (Baba 2006, Supplementary Table 6; 300 parsed, 121 metabolic
+genes in-model) reproduces the effect: FBA-missed essentials carry
+isozyme backups in 40.6\% of cases vs 5.6\% for FBA-caught essentials
+(Fisher odds ratio 11.5, $p=1.2\times10^{-5}$; 13 named over-rescued
+genes, \texttt{results/overrescue\_audit\_ecoli.json}). Isozyme
+over-rescue is therefore not an idiosyncrasy of yeast-GEM but a generic
+failure mode of GPR-trusting genome-scale models.
+
 \paragraph{Mechanism: annotation-driven paralog backups.}
 Global pairwise alignment (Biopython) of each over-rescued gene against
 its model isozyme partners shows 9 of 19 carry a close-paralog

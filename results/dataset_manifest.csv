@@ -9,3 +9,5 @@ Tobias 2013 aerobic chemostat,DOI pending verify,12+ steady states,growth-rate e
 Biolog PM substrate array,Biolog PM1/PM2A phenotype data,383 substrates,growth/no-growth external validation
 Otero 2013 MDH1/OAC1/DIC1 deletions,DOI 10.1007/s10295-013-1269-3,3 single-KO studies,novelty check for SDH2+ACH1 pair
 AlphaFold DB yeast structures,AF v2 API,19+ proteins,structure evidence table
+iML1515 E. coli genome-scale model,BiGG Models iML1515,2712 reactions / 1516 genes,cross-species over-rescue audit
+Keio essential gene candidates,Baba 2006 PMID 16738554 Suppl Table 6,300 essential candidates,cross-species essentiality labels
