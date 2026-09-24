@@ -41,3 +41,71 @@ repeat 2 fold 1: fba_rule MCC=0.320, logreg MCC=0.320, gcn MCC=0.381, cnn MCC=0.
 repeat 2 fold 2: fba_rule MCC=0.431, logreg MCC=0.412, gcn MCC=0.446, cnn MCC=0.000, gcn_cnn MCC=0.406
 /home/sandbox/mega27/item5-yeast/src/yeasttwin/ml.py:108: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
   tr = torch.tensor(train_idx, dtype=torch.long)
+repeat 2 fold 3: fba_rule MCC=0.605, logreg MCC=0.605, gcn MCC=0.593, cnn MCC=0.000, gcn_cnn MCC=0.529
+/home/sandbox/mega27/item5-yeast/src/yeasttwin/ml.py:108: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  tr = torch.tensor(train_idx, dtype=torch.long)
+repeat 2 fold 4: fba_rule MCC=0.617, logreg MCC=0.617, gcn MCC=0.551, cnn MCC=0.075, gcn_cnn MCC=0.507
+{
+  "per_model": {
+    "cnn": {
+      "mcc_mean": 0.0076690660902006815,
+      "mcc_std": 0.03798649283988767,
+      "auc_mean": 0.5595964298440246
+    },
+    "fba_rule": {
+      "mcc_mean": 0.5279571055878128,
+      "mcc_std": 0.10840331124885247,
+      "auc_mean": 0.6966872696226827
+    },
+    "gcn": {
+      "mcc_mean": 0.5110863696087885,
+      "mcc_std": 0.10004958972928865,
+      "auc_mean": 0.83138009113285
+    },
+    "gcn_cnn": {
+      "mcc_mean": 0.32359237396529994,
+      "mcc_std": 0.15888178393770153,
+      "auc_mean": 0.8155836031985579
+    },
+    "logreg": {
+      "mcc_mean": 0.5245266143267405,
+      "mcc_std": 0.10898992140004508,
+      "auc_mean": 0.7885481690711246
+    }
+  },
+  "delta_vs_fba": {
+    "cnn": {
+      "mean": -0.5202880394976123,
+      "ci95": [
+        -0.5759650913584415,
+        -0.46017556080039196
+      ],
+      "gate_pass": false
+    },
+    "gcn": {
+      "mean": -0.016870735979024404,
+      "ci95": [
+        -0.052452620829030606,
+        0.02163359188702183
+      ],
+      "gate_pass": false
+    },
+    "gcn_cnn": {
+      "mean": -0.20436473162251304,
+      "ci95": [
+        -0.29217064315241054,
+        -0.12332171720089397
+      ],
+      "gate_pass": false
+    },
+    "logreg": {
+      "mean": -0.0034304912610724474,
+      "ci95": [
+        -0.01407667173231097,
+        0.0064556728132570615
+      ],
+      "gate_pass": false
+    }
+  }
+}
+EXIT_0
