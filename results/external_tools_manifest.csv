@@ -18,3 +18,4 @@ PubMed / NCBI,service,-,prior-art novelty checks (Raab 2010; Otero 2013)
 AlphaFold DB,service,v2 API,structure evidence for over-rescued genes
 BiGG Models,database,iML1515 release,cross-species model source
 Europe PMC REST API,service,-,supplementary-file retrieval (Keio table)
+PaxDb,database,v4.2,protein abundance evidence

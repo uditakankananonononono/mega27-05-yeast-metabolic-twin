@@ -1,0 +1,10 @@
+{
+  "n_pairs": 28,
+  "n_backup_lower": 17,
+  "frac_backup_lower": 0.6071428571428571,
+  "median_log2_ratio": 0.6272611018019107,
+  "wilcoxon_p": 0.038234317100676006,
+  "genome_median_ppm": 20.05,
+  "backup_median_ppm": 68.05000000000001,
+  "essential_median_ppm": 148.0
+}
