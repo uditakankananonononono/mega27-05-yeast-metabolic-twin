@@ -386,6 +386,20 @@ p = \sum_{k:\,P(k)\le P(a)}
 \end{equation}
 \end{remark}
 
+\begin{remark}[Wilcoxon signed-rank statistic]
+For the paired abundance comparison (essential vs backup, pairs $i =
+1,\dots,m$ with log-ratio $d_i = \log_2(A^{\mathrm{ess}}_i /
+A^{\mathrm{bak}}_i)$), the one-sided statistic ranks the magnitudes:
+\begin{equation}
+W^{+} = \sum_{i:\,d_i > 0} \operatorname{rank}|d_i|,
+\qquad
+Z = \frac{W^{+} - \tfrac{m(m+1)}{4}}
+{\sqrt{\tfrac{m(m+1)(2m+1)}{24}}}, \label{eq:wilcoxon}
+\end{equation}
+with ties in $|d_i|$ assigned average ranks and zero pairs dropped; the
+normal approximation $Z$ gives the reported $p$-values.
+\end{remark}
+
 \section{Results}
 \subsection{The published benchmark reproduces exactly}
 On Kennedy Y7 medium our single-gene-deletion screen recovers the published

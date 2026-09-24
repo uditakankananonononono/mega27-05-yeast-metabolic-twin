@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# overrescue-audit - audit a genome-scale model for isozyme over-rescue.
+# Requires: python3 with cobra, pandas, scipy (see requirements.txt).
+cd "$(dirname "$0")" && PYTHONPATH=src exec python3 -m yeasttwin.cli "$@"

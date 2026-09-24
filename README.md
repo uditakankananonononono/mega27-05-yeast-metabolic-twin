@@ -35,3 +35,24 @@ PYTHONPATH=src python -m yeasttwin.evaluate     # locked-gate CV
 PYTHONPATH=src python -m yeasttwin.overrescue   # auditor
 PYTHONPATH=src python scripts/run_strain_scan.py
 ```
+
+## overrescue-audit (CLI tool)
+
+Audits any genome-scale metabolic model for **isozyme over-rescue**:
+essential genes the model calls viable only because an alternative-isozyme
+GPR clause offers a backup that does not exist in vivo. Discovered in
+yeast-GEM (OR 16.2), replicated in E. coli iML1515 (OR 11.5),
+B. subtilis iYO844 (OR 22.7), and the older iMM904 yeast reconstruction.
+
+```bash
+./overrescue-audit --model model.json --essentials essentials.txt --out report.json
+```
+
+- `--model`: SBML (.xml) or JSON, COBRApy-readable
+- `--essentials`: one essential gene ID per line (model gene IDs)
+- report: Fisher odds ratio + p-value, missed/caught isozyme-backed
+  fractions, and the named over-rescued genes
+
+Verified: the CLI output on iML1515 + the Keio essential list
+(`data/raw/keio_essential_baba2006_supTable6.xls`) reproduces
+`results/overrescue_audit_ecoli.json` exactly.
