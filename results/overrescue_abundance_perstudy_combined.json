@@ -1,0 +1,42 @@
+{
+  "4932": {
+    "n_studies": 18,
+    "n_testable": 15,
+    "n_significant": 2,
+    "fisher_X2": 37.71100511408602,
+    "fisher_df": 30,
+    "fisher_combined_p": 0.15731144045274484
+  },
+  "511145": {
+    "n_studies": 18,
+    "n_testable": 12,
+    "n_significant": 10,
+    "fisher_X2": 95.16340927123711,
+    "fisher_df": 24,
+    "fisher_combined_p": 1.9817944320333203e-10
+  },
+  "224308": {
+    "n_studies": 3,
+    "n_testable": 0,
+    "n_significant": 0,
+    "fisher_X2": NaN,
+    "fisher_df": 0,
+    "fisher_combined_p": NaN
+  },
+  "83332": {
+    "n_studies": 8,
+    "n_testable": 7,
+    "n_significant": 5,
+    "fisher_X2": 40.42844675982437,
+    "fisher_df": 14,
+    "fisher_combined_p": 0.00021867890009653597
+  },
+  "99287": {
+    "n_studies": 3,
+    "n_testable": 3,
+    "n_significant": 1,
+    "fisher_X2": 11.384343080247055,
+    "fisher_df": 6,
+    "fisher_combined_p": 0.07719977772004365
+  }
+}

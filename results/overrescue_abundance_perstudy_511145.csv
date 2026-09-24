@@ -1,0 +1,19 @@
+study,n_pairs,median_log2_ratio,frac_backup_lower,wilcoxon_p,note
+511145-E_coli_Wisniewski_2014_cpc.txt,13,3.218305463813205,0.8461538461538461,0.021484375,
+511145-Ecoli_APEX_arike_2012.txt,4,,,,underpowered (<6 pairs)
+511145-Ecoli_Krug_2013.txt,16,2.541493815045141,0.75,0.010986328125,
+511145-Ecoli_Krug_2013_emPAI.txt,16,1.7840652739667282,0.75,0.0155029296875,
+511145-Ecoli_emPAI_arike_2012.txt,5,,,,underpowered (<6 pairs)
+511145-Ecoli_iBAQ_arike_2012.txt,5,,,,underpowered (<6 pairs)
+511145-Ecoli_strainK12_PRIDE.txt,10,1.9014910447020126,0.8,0.009765625,
+511145-Escherichia_coli_SC_biomart_12189_E__2reps.txt,13,2.917537839808027,0.8461538461538461,0.008056640625,
+511145-Escherichia_coli_SC_biomart_17112_E__2reps.txt,6,2.7459053574589776,0.6666666666666666,0.3125,
+511145-Escherichia_coli_SC_biomart_18119_E__5reps.txt,11,3.270986529224187,0.8181818181818182,0.0419921875,
+511145-Escherichia_coli_SC_biomart_29780_E_BTO0000214cellculture_2reps.txt,8,2.1184909743167593,0.625,0.109375,
+511145-GPM_201408.txt,17,3.689498855330437,0.8235294117647058,0.00384521484375,
+511145-Lu_ecoli_2007.txt,0,,,,underpowered (<6 pairs)
+511145-Taniguchi_2010_Table_S6.txt,7,5.331059106639491,1.0,0.015625,
+511145-WHOLE_ORGANISM-integrated.txt,19,4.734666478076618,0.8421052631578947,0.007144927978515625,
+511145-WT-lewis-peptide_count.txt,2,,,,underpowered (<6 pairs)
+511145-ecoli1_HCD_CID_PRIDE.txt,3,,,,underpowered (<6 pairs)
+511145-ecoli2_resolutionCombination_PRIDE.txt,12,4.312245839635882,0.75,0.01220703125,

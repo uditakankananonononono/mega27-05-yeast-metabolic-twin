@@ -1,0 +1,4 @@
+study,n_pairs,wilcoxon_p,note
+224308-BacillusSubtilisSubsp_PRIDE.txt,0,,underpowered (<6 pairs)
+224308-GPM_201408.txt,0,,underpowered (<6 pairs)
+224308-WHOLE_ORGANISM-integrated.txt,0,,underpowered (<6 pairs)

@@ -39,3 +39,8 @@ RefSeq GFF H. pylori 26695 (GCF_000008525.1),NCBI Datasets,1495 genes,DEG-to-mod
 RefSeq GFF E. coli MG1655 (GCF_000005845.2),NCBI Datasets,-,DEG-to-model gene mapping
 RefSeq GFF B. subtilis 168 (GCF_000009045.1),NCBI Datasets,-,DEG-to-model gene mapping
 RefSeq GFF M. tuberculosis H37Rv (GCF_000195955.2),NCBI Datasets,-,DEG-to-model gene mapping
+PaxDb per-study proteomics S. cerevisiae (17 studies),PaxDb v4.2 taxid 4932,17 identifier-backed study files,per-study abundance replication
+PaxDb per-study proteomics E. coli (17 studies),PaxDb v4.2 taxid 511145,17 identifier-backed study files,per-study abundance replication
+PaxDb per-study proteomics M. tuberculosis (8 studies),PaxDb v4.2 taxid 83332,8 identifier-backed study files,per-study abundance replication
+PaxDb per-study proteomics B. subtilis (2 studies),PaxDb v4.2 taxid 224308,2 identifier-backed study files,per-study abundance replication
+PaxDb per-study proteomics S. Typhimurium (3 studies),PaxDb v4.2 taxid 99287,3 identifier-backed study files,per-study abundance replication
