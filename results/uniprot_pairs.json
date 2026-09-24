@@ -1,0 +1,22 @@
+{
+  "yeast": {
+    "tag": "yeast",
+    "organism": 559292,
+    "n_pairs": 28,
+    "n_entries_fetched": 39,
+    "both_family_similarity_frac": 0.9285714285714286,
+    "essential_catalytic_frac": 0.75,
+    "backup_catalytic_frac": 0.7142857142857143,
+    "backup_negative_language_frac": 0.07142857142857142
+  },
+  "ecoli": {
+    "tag": "ecoli",
+    "organism": 83333,
+    "n_pairs": 20,
+    "n_entries_fetched": 31,
+    "both_family_similarity_frac": 1.0,
+    "essential_catalytic_frac": 0.6,
+    "backup_catalytic_frac": 0.9,
+    "backup_negative_language_frac": 0.0
+  }
+}

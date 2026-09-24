@@ -26,3 +26,6 @@ DEG 15.2 (Database of Essential Genes),database,15.2,accession-level essentialit
 NCBI Datasets API,service,v2,RefSeq genome annotation GFFs
 Expression Atlas (EBI GXA),database+API,-,baseline expression experiments
 STRING network API,service,v12,evidence-channel decomposition of pairs
+UniProt REST API,service,2026-09,curated entry retrieval per gene
+NCBI E-utilities,service,-,assembly accession resolution
+MEMOTE,benchmark suite,0.20,model quality benchmarking (in progress)

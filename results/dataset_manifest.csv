@@ -46,3 +46,5 @@ PaxDb per-study proteomics B. subtilis (2 studies),PaxDb v4.2 taxid 224308,2 ide
 PaxDb per-study proteomics S. Typhimurium (3 studies),PaxDb v4.2 taxid 99287,3 identifier-backed study files,per-study abundance replication
 Expression Atlas E-MTAB-8621 (yeast cell cycle, ethanol),EBI GXA baseline RNA-seq,21 assays / 7 condition groups,isozyme co-expression test
 Expression Atlas E-MTAB-8626 (yeast cell cycle, glucose),EBI GXA baseline RNA-seq,27 assays / 8 condition groups,isozyme co-expression test
+UniProt entries yeast over-rescue pairs (39),UniProtKB accessions organism 559292,39 curated entries fetched per gene,annotation-transfer provenance
+UniProt entries E. coli over-rescue pairs (31),UniProtKB accessions organism 83333,31 curated entries fetched per gene,annotation-transfer provenance
