@@ -821,6 +821,28 @@ yeast failures likely mix low abundance with wrong-condition expression
 and annotation transfer; \emph{B. subtilis} remains untestable per-study
 (fewer than six quantified pairs in all three studies).
 
+
+\subsection{Co-expression and evidence channels: annotation transfer in yeast}
+Two further tests sharpen the mechanism split. First, co-regulation: a
+backup can only cover if expressed in the same conditions as the
+essential gene. In the only two baseline yeast RNA-seq experiments in
+Expression Atlas (E-MTAB-8621, cell cycle on ethanol; E-MTAB-8626, on
+glucose), over-rescued pairs are \emph{not} less co-expressed than
+expression-matched null pairs (median Spearman 0.46/0.40; null
+percentiles 0.74/0.55; combined Fisher $p=0.999$,
+\texttt{results/overrescue\_coexpression\_gxa.csv}) -- an honest
+negative. Second, evidence provenance via STRING's channel
+decomposition: the same pairs are strongly \emph{database}-channel
+linked (median 0.90) but barely \emph{co-expression}-channel linked
+(median 0.071; paired Wilcoxon $p=7.5\times10^{-5}$;
+\texttt{results/string\_channels\_4932.csv}), while \emph{E. coli}
+pairs show no such contrast ($p=0.14$). The yeast backups thus enter
+GPRs through pathway curation, not through evidence of covering
+expression -- annotation transfer, convergent with the KEGG provenance
+signature. The two species classes fail differently: bacteria through
+barely-expressed backups, yeast through annotation transfer of
+non-covering isozymes.
+
 \section{Discussion}
 The honest negative on MCC is scientifically informative: with 159
 positives among 1{,}107 genes, a per-fold threshold tuned on training
