@@ -442,6 +442,18 @@ $p=0.038$ (\texttt{results/overrescue\_abundance.csv}). The extremes
 are dramatic: PMA1 (4{,}368 ppm) is trusted to be backed up by an
 enzyme at 14.1 ppm---a 310-fold shortfall. The model assumes catalytic
 capacity that the cell never produces.
+\paragraph{The expression gap replicates in \emph{E. coli}, stronger.}
+PaxDb whole-organism abundances for \emph{E. coli} (4{,}093 proteins)
+show the same mechanism with a wider gap: across the 20 over-rescued
+essential--backup pairs, the backup is less abundant in 17 (85\%),
+median log$_2$ abundance ratio 4.73 (19 finite pairs, Wilcoxon
+$p=0.007$; \texttt{results/overrescue\_abundance\_ecoli.csv}). The
+model-trusted backups sit at a median 24 ppm against 799 ppm for the
+essentials---a roughly 30-fold median shortfall. One exception
+(tnaB, 1.4 ppm, with more abundant partners) is retained as-is.
+The expression-blindness failure is thus cross-species, like the
+phenomenon itself.
+
 \paragraph{Genetic evidence: overexpressed backups do rescue.}
 If the failure is expression rather than chemistry, forcing backup
 expression should restore viability. Curated interactions (BioGRID

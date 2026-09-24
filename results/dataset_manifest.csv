@@ -14,3 +14,4 @@ Keio essential gene candidates,Baba 2006 PMID 16738554 Suppl Table 6,300 essenti
 PaxDb S. cerevisiae whole-organism abundances,PaxDb v4.2 dataset 1329501331,6443 proteins (ppm),backup-isozyme expression mechanism test
 BioGRID curated interactions,BioGRID 5.0.261 S. cerevisiae,10436 interactions (49 backup-pair),genetic rescue evidence for backups
 SGD phenotype data,SGD download 2026-09-24,201521 annotations,essentiality triangulation (inviable curation)
+PaxDb E. coli whole-organism abundances,PaxDb v4.2 species 511145,4093 proteins (ppm),cross-species backup expression test
