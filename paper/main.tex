@@ -849,6 +849,25 @@ backup's catalytic claim is itself similarity-propagated. The two species classe
 barely-expressed backups, yeast through annotation transfer of
 non-covering isozymes.
 
+
+\subsection{Enrichment and structural coverage: scattered generic enzymes}
+If over-rescued genes formed a functional program, they would enrich for
+specific pathways. They do not. g:Profiler finds only 8 generic terms
+for the yeast set (catalytic activity, ion binding; $p<10^{-3}$) while
+the 65 FBA-caught essentials enrich for 131 terms
+(\texttt{results/gprofiler\_summary.json}); the over-rescued set is
+functionally impoverished, as expected of annotation-transfer scatter.
+KEGG pathway hypergeometric enrichment (eq. 12) over the five bacterial
+sets is significant only for \emph{S. aureus} glycolysis
+(sau00010, Bonferroni $p<0.05$); the other four species show no pathway
+enrichment (\texttt{results/kegg\_enrich\_summary.json}). Structural
+coverage agrees: only 7 of 27 backup genes have any experimental
+structure (7/16 essentials do), so 74\% of the trusted backups carry
+catalytic annotations with no structure ever determined
+(\texttt{results/pdb\_pairs.json}). Model quality does not confound the
+audit: MEMOTE total scores (0.499 yeast-GEM, 0.523 iML1515;
+\texttt{results/memote\_*.html}) sit in the normal published range.
+
 \section{Discussion}
 The honest negative on MCC is scientifically informative: with 159
 positives among 1{,}107 genes, a per-fold threshold tuned on training
