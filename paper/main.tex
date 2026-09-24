@@ -121,6 +121,15 @@ yeast table by alias-token mapping (coverage 1{,}143/1{,}143).
 Kennedy synthetic complete medium (Y7) is imposed by exchange-reaction
 bounds identical to the published benchmark, so all numbers are directly
 comparable.
+\subsection{External validation datasets}
+Three published experimental datasets, stored verbatim under
+\texttt{data/raw/}, validate the model outside the essentiality task:
+the aerobic glucose-limited chemostat compendium of Tobias~2013
+(32 steady states with measured uptake and growth rates), the anaerobic
+chemostat study of Van~Hoek~1998 (4 steady states with growth and
+CO$_2$/glucose ratios), and the Biolog substrate panel (383 substrates
+with experimental growth/no-growth calls; one accession-level dataset,
+383 conditions).
 
 \section{Methods}
 \subsection{Flux balance analysis}
@@ -423,6 +432,15 @@ Figure~\ref{fig:overrescue} visualises the effect.
 backups at 13$\times$ the rate of FBA-caught essentials.}
 \label{fig:overrescue}
 \end{figure}
+\paragraph{Mechanism: annotation-driven paralog backups.}
+Global pairwise alignment (Biopython) of each over-rescued gene against
+its model isozyme partners shows 9 of 19 carry a close-paralog
+``backup'' (identity $>0.30$; \texttt{results/overrescued\_paralog\_identity.csv}).
+PMA1's trusted backup is its paralog PMA2 at 0.87 identity---an enzyme
+reported to be poorly expressed and unable to substitute \emph{in vivo}.
+The pair YDR302W/YLL031C trusts each other reciprocally at 3\% identity,
+a mutual false backup. The pattern fits annotation transfer between
+paralogs as the dominant false-backup mechanism.
 \subsection{The nineteen over-rescued genes}
 \label{sec:nineteen}
 Table~\ref{tab:overrescued} names every essential gene whose model
@@ -522,6 +540,19 @@ growth simultaneously.}
 \input{tab_strain_singles}
 \input{tab_strain_5th}
 \input{tab_strain_pairs}
+
+\subsection{External experimental validation}
+Against data never used in training, the model reproduces anaerobic
+chemostat growth almost exactly (Van~Hoek 1998: $R^2=0.965$ on growth,
+4 steady states), but misses the CO$_2$/glucose yield ratio
+($R^2=-2.8$) and aerobic chemostat growth rates (Tobias 2013:
+$R^2=-0.51$, RMSE 0.12~h$^{-1}$, 32 steady states). On the Biolog panel,
+recomputing every call live---each substrate as sole carbon source, one
+model with a history context---matches 187 of 383 substrates to a named
+exchange and scores 61.5\% growth/no-growth agreement on those, below
+the 81.7\% stored with the panel; the unmatched 196 substrates have no
+corresponding named exchange in the model
+(\texttt{results/external\_validations.csv}).
 
 \section{Negative results and failed approaches}
 \label{sec:negatives}
@@ -628,4 +659,12 @@ Full scan outputs: \texttt{results/strain\_design\_*.csv}.
 \input{tab_essential_scores}
 \section{Full tool output: all benchmark genes}
 \input{tab_all_gene_scores}
+\section{External tools and dataset manifest}
+Honest counts: 17 external tools and 10 accession-level datasets
+(\texttt{results/external\_tools\_manifest.csv},
+\texttt{results/dataset\_manifest.csv}). Dataset counting follows the
+program rule: one study's condition matrix is one dataset (Biolog = 1
+dataset with 383 conditions; each chemostat compendium = 1). The
+manifests list every tool and dataset with version/accession, condition
+counts, and where each is used.
 \end{document}
