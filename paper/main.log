@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.14)  24 SEP 2026 21:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.14)  24 SEP 2026 21:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -269,9 +269,6 @@ LaTeX Warning: Label `tab:allscores' multiply defined.
 
 LaTeX Warning: Label `tab:allscores' multiply defined.
 
-
-LaTeX Warning: Label `tab:allscores' multiply defined.
-
 )
 \openout1 = `main.aux'.
 
@@ -409,8 +406,13 @@ File: ../figures/fig_overrescue.png Graphic file (type png)
 Package pdftex.def Info: ../figures/fig_overrescue.png  used on input line 430.
 
 (pdftex.def)             Requested size: 234.8775pt x 190.13702pt.
+<../figures/fig_abundance.png, id=55, 332.08064pt x 303.534pt>
+File: ../figures/fig_abundance.png Graphic file (type png)
+<use ../figures/fig_abundance.png>
+Package pdftex.def Info: ../figures/fig_abundance.png  used on input line 446.
+(pdftex.def)             Requested size: 258.36668pt x 236.16734pt.
 
-Overfull \hbox (118.9473pt too wide) in paragraph at lines 436--445
+Overfull \hbox (118.9473pt too wide) in paragraph at lines 436--453
 \OT1/ptm/m/n/12 17 cases (60.7%), me-dian log$[]$ abun-dance ra-tio 0.63, Wilco
 xon $\OML/cmm/m/it/12 p \OT1/cmr/m/n/12 = 0\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 03
 8$ \OT1/ptm/m/n/12 (\OT1/pcr/m/n/12 results/overrescue[]abundance.csv\OT1/ptm/m
@@ -418,66 +420,70 @@ xon $\OML/cmm/m/it/12 p \OT1/cmr/m/n/12 = 0\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 03
  []
 
 
-Overfull \hbox (29.86885pt too wide) in paragraph at lines 447--456
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (29.86885pt too wide) in paragraph at lines 455--464
 \OT1/ptm/m/n/12 11.5, $\OML/cmm/m/it/12 p \OT1/cmr/m/n/12 = 1\OML/cmm/m/it/12 :
 \OT1/cmr/m/n/12 2 \OMS/cmsy/m/n/12 ^^B \OT1/cmr/m/n/12 10[]$\OT1/ptm/m/n/12 ; 1
 3 named over-rescued genes, \OT1/pcr/m/n/12 results/overrescue[]audit[]ecoli.js
 on\OT1/ptm/m/n/12 ).
  []
 
-[11 <../figures/fig_roc.png>] [12 <../figures/fig_overrescue.png>]
-Overfull \hbox (137.04419pt too wide) in paragraph at lines 537--542
+[11 <../figures/fig_roc.png>] [12 <../figures/fig_overrescue.png>] [13 <../figu
+res/fig_abundance.png>]
+Overfull \hbox (137.04419pt too wide) in paragraph at lines 545--550
 \OT1/ptm/m/n/12 so the pair is a cer-ti-fied lo-cal op-ti-mum of the obligatory
 -flux land-scape (\OT1/pcr/m/n/12 results/strain[]design[]triples.csv\OT1/ptm/m
 /n/12 ). 
  []
 
-<../figures/fig_envelope.png, id=63, 303.534pt x 245.718pt>
+<../figures/fig_envelope.png, id=69, 303.534pt x 245.718pt>
 File: ../figures/fig_envelope.png Graphic file (type png)
 <use ../figures/fig_envelope.png>
-Package pdftex.def Info: ../figures/fig_envelope.png  used on input line 548.
+Package pdftex.def Info: ../figures/fig_envelope.png  used on input line 556.
 (pdftex.def)             Requested size: 234.8775pt x 190.13702pt.
-<../figures/fig_strain_designs.png, id=64, 505.89pt x 274.626pt>
+<../figures/fig_strain_designs.png, id=70, 505.89pt x 274.626pt>
 File: ../figures/fig_strain_designs.png Graphic file (type png)
 <use ../figures/fig_strain_designs.png>
 Package pdftex.def Info: ../figures/fig_strain_designs.png  used on input line 
-554.
+562.
 (pdftex.def)             Requested size: 399.29463pt x 216.76358pt.
-(./tab_cv_folds.tex [13]) (./tab_overrescued.tex
+(./tab_cv_folds.tex [14 <../figures/fig_envelope.png>]) (./tab_overrescued.tex
 Overfull \hbox (18.06499pt too wide) in alignment at lines 1--26
  [] [] 
  []
 
-) (./tab_strain_singles.tex [14]) (./tab_strain_5th.tex [15 <../figures/fig_env
-elope.png>]) (./tab_strain_pairs.tex) [16] [17 <../figures/fig_strain_designs.p
-ng>] [18]
-Overfull \hbox (35.89604pt too wide) in paragraph at lines 676--678
+) (./tab_strain_singles.tex [15]) (./tab_strain_5th.tex)
+(./tab_strain_pairs.tex [16]) [17] [18 <../figures/fig_strain_designs.png>]
+[19]
+Overfull \hbox (35.89604pt too wide) in paragraph at lines 684--686
 \OT1/ptm/m/n/12 Full per-gene fea-ture ta-ble (1,143 genes $\OMS/cmsy/m/n/12 ^^
 B$ \OT1/ptm/m/n/12 11 fea-tures) at \OT1/pcr/m/n/12 results/gene[]features[]par
 tial.csv\OT1/ptm/m/n/12 . 
  []
 
-(./tab_essential_scores.tex [19] [20] [21] [22]) (./tab_all_gene_scores.tex
-[23] [24] [25] [26] [27] [28] [29] [30] [31] [32] [33] [34] [35] [36] [37]
-[38] [39] [40] [41] [42] [43] [44] [45] [46] [47] [48] [49] [50])
-Overfull \hbox (87.70172pt too wide) in paragraph at lines 685--692
+(./tab_essential_scores.tex [20] [21] [22] [23]) (./tab_all_gene_scores.tex
+[24] [25] [26] [27] [28] [29] [30] [31] [32] [33] [34] [35] [36] [37] [38]
+[39] [40] [41] [42] [43] [44] [45] [46] [47] [48] [49] [50])
+Overfull \hbox (87.70172pt too wide) in paragraph at lines 693--700
 \OT1/ptm/m/n/12 Honest counts: 17 ex-ter-nal tools and 10 accession-level datas
 ets (\OT1/pcr/m/n/12 results/external[]tools[]manifest.csv\OT1/ptm/m/n/12 ,
  []
 
-[51] (./main.aux)
+[51] [52] (./main.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3544 strings out of 480247
- 53039 string characters out of 5896151
- 488780 words of memory out of 5000000
- 21416 multiletter control sequences out of 15000+600000
+ 3552 strings out of 480247
+ 53270 string characters out of 5896151
+ 478941 words of memory out of 5000000
+ 21423 multiletter control sequences out of 15000+600000
  496299 words of font info for 88 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 55i,10n,62p,299b,253s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,10n,62p,355b,253s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
@@ -494,10 +500,10 @@ live/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri
 8a.pfb>
-Output written on main.pdf (51 pages, 418115 bytes).
+Output written on main.pdf (52 pages, 481646 bytes).
 PDF statistics:
- 262 PDF objects out of 1000 (max. 8388607)
- 165 compressed objects within 2 object streams
+ 267 PDF objects out of 1000 (max. 8388607)
+ 167 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 

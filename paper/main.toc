@@ -36,7 +36,7 @@
 \contentsline {paragraph}{Mechanism: annotation-driven paralog backups.}{12}{}%
 \contentsline {subsection}{\numberline {6.6}The nineteen over-rescued genes}{12}{}%
 \contentsline {subsection}{\numberline {6.7}Strain design for succinate overproduction}{13}{}%
-\contentsline {subsection}{\numberline {6.8}External experimental validation}{16}{}%
+\contentsline {subsection}{\numberline {6.8}External experimental validation}{17}{}%
 \contentsline {section}{\numberline {7}Negative results and failed approaches}{17}{}%
 \contentsline {paragraph}{CNN on sequence alone.}{17}{}%
 \contentsline {paragraph}{MCC gate.}{17}{}%
@@ -44,12 +44,12 @@
 \contentsline {paragraph}{Complete-medium screening.}{18}{}%
 \contentsline {section}{\numberline {8}Discussion}{18}{}%
 \contentsline {subsection}{\numberline {8.1}Limitations}{18}{}%
-\contentsline {subsection}{\numberline {8.2}Future work}{18}{}%
-\contentsline {section}{\numberline {9}Per-model fold analysis}{18}{}%
+\contentsline {subsection}{\numberline {8.2}Future work}{19}{}%
+\contentsline {section}{\numberline {9}Per-model fold analysis}{19}{}%
 \contentsline {section}{\numberline {10}Conclusion}{19}{}%
-\contentsline {section}{\numberline {A}Reproducibility}{19}{}%
-\contentsline {section}{\numberline {B}Feature definitions}{19}{}%
-\contentsline {section}{\numberline {C}Strain-design tables}{19}{}%
+\contentsline {section}{\numberline {A}Reproducibility}{20}{}%
+\contentsline {section}{\numberline {B}Feature definitions}{20}{}%
+\contentsline {section}{\numberline {C}Strain-design tables}{20}{}%
 \contentsline {section}{\numberline {D}Per-gene essentiality scores}{20}{}%
-\contentsline {section}{\numberline {E}Full tool output: all benchmark genes}{23}{}%
-\contentsline {section}{\numberline {F}External tools and dataset manifest}{51}{}%
+\contentsline {section}{\numberline {E}Full tool output: all benchmark genes}{24}{}%
+\contentsline {section}{\numberline {F}External tools and dataset manifest}{52}{}%
