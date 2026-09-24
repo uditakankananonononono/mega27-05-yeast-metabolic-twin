@@ -1,0 +1,30 @@
+{
+  "n_essential": 159,
+  "n_missed": 94,
+  "n_caught": 65,
+  "missed_isozyme_backed_frac": 0.20212765957446807,
+  "caught_isozyme_backed_frac": 0.015384615384615385,
+  "fisher_odds_ratio": 16.213333333333335,
+  "fisher_p": 0.0003752524889093159,
+  "overrescued_genes": [
+    "YAL038W",
+    "YBL030C",
+    "YBR002C",
+    "YBR038W",
+    "YBR252W",
+    "YDR023W",
+    "YDR302W",
+    "YDR353W",
+    "YDR376W",
+    "YGL008C",
+    "YGR191W",
+    "YJL026W",
+    "YKL035W",
+    "YKL141W",
+    "YLL031C",
+    "YLR305C",
+    "YML125C",
+    "YMR108W",
+    "YPL252C"
+  ]
+}
