@@ -1,0 +1,20 @@
+{
+  "n_genes": 107,
+  "n_mapped": 85,
+  "n_groups_recurrent": 3,
+  "max_species_per_group": 2,
+  "recurrent_groups": {
+    "784331": [
+      "bsubtilis:BSU34790",
+      "yeast:YDR353W"
+    ],
+    "1458801": [
+      "bsubtilis:BSU36760",
+      "saureus:SA_RS10945"
+    ],
+    "1496537": [
+      "mtb:Rv3003c",
+      "yeast:YMR108W"
+    ]
+  }
+}
