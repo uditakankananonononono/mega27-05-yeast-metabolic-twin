@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.14)  24 SEP 2026 20:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.14)  24 SEP 2026 21:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -404,26 +404,31 @@ Package pdftex.def Info: ../figures/fig_overrescue.png  used on input line 421.
 (pdftex.def)             Requested size: 234.8775pt x 190.13702pt.
  [10 <../figures/fig_cv_metrics.png>] [11 <../figures/fig_roc.png>] [12 <../fig
 ures/fig_overrescue.png>]
+Overfull \hbox (137.04419pt too wide) in paragraph at lines 497--502
+\OT1/ptm/m/n/12 so the pair is a cer-ti-fied lo-cal op-ti-mum of the obligatory
+-flux land-scape (\OT1/pcr/m/n/12 results/strain[]design[]triples.csv\OT1/ptm/m
+/n/12 ). 
+ []
+
 <../figures/fig_envelope.png, id=63, 303.534pt x 245.718pt>
 File: ../figures/fig_envelope.png Graphic file (type png)
 <use ../figures/fig_envelope.png>
-Package pdftex.def Info: ../figures/fig_envelope.png  used on input line 503.
+Package pdftex.def Info: ../figures/fig_envelope.png  used on input line 508.
 (pdftex.def)             Requested size: 234.8775pt x 190.13702pt.
 <../figures/fig_strain_designs.png, id=64, 505.89pt x 274.626pt>
 File: ../figures/fig_strain_designs.png Graphic file (type png)
 <use ../figures/fig_strain_designs.png>
 Package pdftex.def Info: ../figures/fig_strain_designs.png  used on input line 
-509.
+514.
 (pdftex.def)             Requested size: 399.29463pt x 216.76358pt.
- (./tab_cv_folds.tex [13 <../figures/fig_envelope.png>]) (./tab_overrescued.tex
-
+(./tab_cv_folds.tex [13 <../figures/fig_envelope.png>]) (./tab_overrescued.tex
 Overfull \hbox (18.06499pt too wide) in alignment at lines 1--26
  [] [] 
  []
 
 ) (./tab_strain_singles.tex [14]) (./tab_strain_5th.tex)
 (./tab_strain_pairs.tex [15]) [16] [17 <../figures/fig_strain_designs.png>]
-Overfull \hbox (35.89604pt too wide) in paragraph at lines 618--620
+Overfull \hbox (35.89604pt too wide) in paragraph at lines 623--625
 \OT1/ptm/m/n/12 Full per-gene fea-ture ta-ble (1,143 genes $\OMS/cmsy/m/n/12 ^^
 B$ \OT1/ptm/m/n/12 11 fea-tures) at \OT1/pcr/m/n/12 results/gene[]features[]par
 tial.csv\OT1/ptm/m/n/12 . 
@@ -440,7 +445,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  3544 strings out of 480247
  53039 string characters out of 5896151
- 488778 words of memory out of 5000000
+ 488780 words of memory out of 5000000
  21416 multiletter control sequences out of 15000+600000
  496299 words of font info for 88 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -461,7 +466,7 @@ live/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri
 8a.pfb>
-Output written on main.pdf (50 pages, 413164 bytes).
+Output written on main.pdf (50 pages, 413524 bytes).
 PDF statistics:
  259 PDF objects out of 1000 (max. 8388607)
  163 compressed objects within 2 object streams
