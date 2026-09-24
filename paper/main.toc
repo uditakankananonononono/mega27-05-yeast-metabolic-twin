@@ -54,9 +54,9 @@
 \contentsline {subsection}{\numberline {8.2}Future work}{20}{}%
 \contentsline {section}{\numberline {9}Per-model fold analysis}{20}{}%
 \contentsline {section}{\numberline {10}Conclusion}{21}{}%
-\contentsline {section}{\numberline {A}Reproducibility}{21}{}%
-\contentsline {section}{\numberline {B}Feature definitions}{21}{}%
-\contentsline {section}{\numberline {C}Strain-design tables}{21}{}%
-\contentsline {section}{\numberline {D}Per-gene essentiality scores}{21}{}%
-\contentsline {section}{\numberline {E}Full tool output: all benchmark genes}{25}{}%
-\contentsline {section}{\numberline {F}External tools and dataset manifest}{53}{}%
+\contentsline {section}{\numberline {A}Reproducibility}{22}{}%
+\contentsline {section}{\numberline {B}Feature definitions}{22}{}%
+\contentsline {section}{\numberline {C}Strain-design tables}{22}{}%
+\contentsline {section}{\numberline {D}Per-gene essentiality scores}{22}{}%
+\contentsline {section}{\numberline {E}Full tool output: all benchmark genes}{26}{}%
+\contentsline {section}{\numberline {F}External tools and dataset manifest}{54}{}%
