@@ -1,0 +1,10 @@
+{
+  "yeast-GEM": {
+    "memote_total_score": 0.498559429853954,
+    "consistency_suite": "skipped (non-terminating on 4k-rxn model; documented)"
+  },
+  "iML1515": {
+    "memote_total_score": 0.523357703038364,
+    "consistency_suite": "skipped (non-terminating on 4k-rxn model; documented)"
+  }
+}

@@ -28,7 +28,7 @@ Expression Atlas (EBI GXA),database+API,-,baseline expression experiments
 STRING network API,service,v12,evidence-channel decomposition of pairs
 UniProt REST API,service,2026-09,curated entry retrieval per gene
 NCBI E-utilities,service,-,assembly accession resolution
-MEMOTE,benchmark suite,0.20,model quality benchmarking (in progress)
+MEMOTE,benchmark suite,0.20,model quality benchmarking (consistency suite skipped - non-terminating)
 g:Profiler g:GOSt API,service,2026-09,functional enrichment (yeast)
 PubChem PUG-REST,service,-,compound property records
 RCSB PDB search API,service,-,structural coverage of pairs
