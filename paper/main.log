@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.14)  24 SEP 2026 21:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.14)  24 SEP 2026 22:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -503,12 +503,12 @@ m/n/12 ). The
  []
 
 [19]
-Overfull \hbox (75.89784pt too wide) in paragraph at lines 758--772
+Overfull \hbox (75.89784pt too wide) in paragraph at lines 758--775
  [][] 
  []
 
 
-Overfull \hbox (19.22015pt too wide) in paragraph at lines 745--775
+Overfull \hbox (19.22015pt too wide) in paragraph at lines 745--778
 \OT1/ptm/m/n/12 cov-er-age gap, not a fail-ure (\OT1/pcr/m/n/12 data/raw/biogri
 d[]ecoli[]overrescue[]interactions.tsv\OT1/ptm/m/n/12 ).
  []
@@ -516,22 +516,29 @@ d[]ecoli[]overrescue[]interactions.tsv\OT1/ptm/m/n/12 ).
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[20 <../figures/fig_strain_designs.png>] [21] [22]
-Overfull \hbox (35.89604pt too wide) in paragraph at lines 880--882
+[20 <../figures/fig_strain_designs.png>]
+Overfull \hbox (176.814pt too wide) in paragraph at lines 801--807
+\OT1/ptm/m/n/12 for the au-dited or-gan-isms (each an identifier-backed taxid--
+study record, \OT1/pcr/m/n/12 results/overrescue[]abundance[]perstudy[]*.csv\OT
+1/ptm/m/n/12 )
+ []
+
+[21] [22] [23]
+Overfull \hbox (35.89604pt too wide) in paragraph at lines 928--930
 \OT1/ptm/m/n/12 Full per-gene fea-ture ta-ble (1,143 genes $\OMS/cmsy/m/n/12 ^^
 B$ \OT1/ptm/m/n/12 11 fea-tures) at \OT1/pcr/m/n/12 results/gene[]features[]par
 tial.csv\OT1/ptm/m/n/12 . 
  []
 
-(./tab_essential_scores.tex [23] [24] [25] [26]) (./tab_all_gene_scores.tex
-[27] [28] [29] [30] [31] [32] [33] [34] [35] [36] [37] [38] [39] [40] [41]
-[42] [43] [44] [45] [46] [47] [48] [49] [50] [51] [52] [53] [54])
-Overfull \hbox (87.70172pt too wide) in paragraph at lines 889--896
+(./tab_essential_scores.tex [24] [25] [26] [27]) (./tab_all_gene_scores.tex
+[28] [29] [30] [31] [32] [33] [34] [35] [36] [37] [38] [39] [40] [41] [42]
+[43] [44] [45] [46] [47] [48] [49] [50] [51] [52] [53] [54] [55])
+Overfull \hbox (87.70172pt too wide) in paragraph at lines 937--944
 \OT1/ptm/m/n/12 Honest counts: 17 ex-ter-nal tools and 10 accession-level datas
 ets (\OT1/pcr/m/n/12 results/external[]tools[]manifest.csv\OT1/ptm/m/n/12 ,
  []
 
-[55] (./main.aux)
+[56] (./main.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -539,7 +546,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  3566 strings out of 480247
  53405 string characters out of 5896151
- 483335 words of memory out of 5000000
+ 481240 words of memory out of 5000000
  21435 multiletter control sequences out of 15000+600000
  497928 words of font info for 90 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -560,10 +567,10 @@ live/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr
 8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (55 pages, 506775 bytes).
+Output written on main.pdf (56 pages, 511023 bytes).
 PDF statistics:
- 282 PDF objects out of 1000 (max. 8388607)
- 177 compressed objects within 2 object streams
+ 285 PDF objects out of 1000 (max. 8388607)
+ 179 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  31 words of extra memory for PDF output out of 10000 (max. 10000000)
 

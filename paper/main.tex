@@ -741,7 +741,7 @@ we tested, including the published quadruple, shows obligatory succinate.
 A screen run on the wrong medium would have reported the entire design
 space as empty.
 
-\subsection{Synthesis: a four-link mechanism chain, two species}
+\subsection{Synthesis: a four-link mechanism chain, six species}
 Table~\ref{tab:chain} collects the evidence. In both yeast and
 \emph{E. coli}, genome-scale models miss essential genes specifically
 where an isozyme clause offers a backup (link 1--2); in both species the
@@ -765,6 +765,9 @@ chain link & \emph{S. cerevisiae} & \emph{E. coli} & \emph{B. subtilis} \\
 4. overexpression rescues (curated) & 4 pairs (BioGRID) & untested (no curation) & untested \\
 \hline
 \multicolumn{4}{l}{\emph{M. tuberculosis} (link 1--2): OR 7.5, $p=3.5\times10^{-6}$; 36 genes} \\
+\multicolumn{4}{l}{\emph{S. aureus} (link 1--2): 10/36 missed backed vs 0/18 caught, $p=2.1\times10^{-2}$; 10 genes} \\
+\multicolumn{4}{l}{\emph{S. Typhimurium} (link 1--2): 14/47 missed backed vs 0/33 caught, $p=2.4\times10^{-4}$; 14 genes} \\
+\multicolumn{4}{l}{\emph{H. pylori} (link 1--2): underpowered (34 in-model essentials, $p=0.29$) -- honest negative} \\
 \hline
 \end{tabular}
 \caption{The isozyme over-rescue chain across three species. Link 3
@@ -772,6 +775,51 @@ abundances from PaxDb v4.2; link 4 from BioGRID 5.0.261 rescue-type
 interactions between model backup pairs.}
 \label{tab:chain}
 \end{table}
+
+
+\subsection{Cross-study replication: the DEG panel}
+A single essentiality study could manufacture the signal through its own
+biases, so we re-ran the audit against seven accession-level essentiality
+sets from DEG 15.2 (Database of Essential Genes), mapping study gene
+names to model genes through RefSeq GFFs (current and old locus tags).
+Three add new species and four are independent studies of already-audited
+organisms (\texttt{results/deg\_panel\_summary.csv}): \emph{S. aureus}
+N315/iSB619 vs Ji 2001 (DEG1002), $p=2.1\times10^{-2}$, 10 genes;
+\emph{S. Typhimurium} LT2/STM\_v1\_0 vs Knuth 2004 (DEG1011),
+$p=2.4\times10^{-4}$, 14 genes; \emph{H. pylori} 26695/iIT341 vs Salama
+2004 (DEG1008), underpowered (34 in-model essentials, $p=0.29$);
+\emph{E. coli} vs Gerdes 2003 (DEG1018, independent of Keio): OR 9.0,
+$p=1.5\times10^{-7}$, 45 genes; \emph{B. subtilis} vs Kobayashi 2003
+(DEG1001, independent of Koo 2017): OR 9.2, $p=1.8\times10^{-3}$, 8
+genes; \emph{M. tuberculosis} vs Griffin 2011 Tn-seq (DEG1025): OR 9.1,
+$p=3.0\times10^{-8}$, 48 genes, and vs Zhang 2012 (DEG1027): OR 8.2,
+$p=3.2\times10^{-7}$, 44 genes. The signal therefore survives both new
+species (six in total) and independent essentiality studies in all three
+organisms where a second study exists.
+
+\subsection{Per-study abundance replication; a tempered yeast claim}
+The integrated-abundance mechanism test pools studies; we re-ran the
+paired essential-vs-backup abundance test separately in each of the 47
+individual proteomics datasets deposited in PaxDb v4.2 for the audited
+organisms (each an identifier-backed taxid--study record,
+\texttt{results/overrescue\_abundance\_perstudy\_*.csv}) and combined
+per-organism evidence with Fisher's method,
+\begin{equation}
+X^2 = -2 \sum_{i=1}^{k} \ln p_i, \qquad X^2 \sim \chi^2_{2k},
+\end{equation}
+where $p_i$ are the per-study Wilcoxon $p$-values and $k$ the number of
+testable studies. The mechanism is strongly robust in bacteria:
+\emph{E. coli} 10 of 12 testable studies individually significant,
+combined $p=2.0\times10^{-10}$; \emph{M. tuberculosis} 5 of 7, combined
+$p=2.2\times10^{-4}$; \emph{S. Typhimurium} a trend (1 of 3, combined
+$p=0.077$). In yeast it is \emph{not} robust: only 2 of 15 testable
+studies reach significance (combined $p=0.16$), so the marginal
+integrated result ($p=0.038$) does not replicate study-by-study. We
+temper the yeast mechanism claim accordingly: low backup abundance is
+the dominant explanation in bacteria with deep proteomics, while the
+yeast failures likely mix low abundance with wrong-condition expression
+and annotation transfer; \emph{B. subtilis} remains untestable per-study
+(fewer than six quantified pairs in all three studies).
 
 \section{Discussion}
 The honest negative on MCC is scientifically informative: with 159

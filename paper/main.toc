@@ -51,15 +51,17 @@
 \contentsline {paragraph}{MCC gate.}{19}{}%
 \contentsline {paragraph}{Naive strain-design metrics.}{20}{}%
 \contentsline {paragraph}{Complete-medium screening.}{20}{}%
-\contentsline {subsection}{\numberline {7.1}Synthesis: a four-link mechanism chain, two species}{20}{}%
-\contentsline {section}{\numberline {8}Discussion}{20}{}%
-\contentsline {subsection}{\numberline {8.1}Limitations}{21}{}%
-\contentsline {subsection}{\numberline {8.2}Future work}{21}{}%
-\contentsline {section}{\numberline {9}Per-model fold analysis}{21}{}%
+\contentsline {subsection}{\numberline {7.1}Synthesis: a four-link mechanism chain, six species}{20}{}%
+\contentsline {subsection}{\numberline {7.2}Cross-study replication: the DEG panel}{20}{}%
+\contentsline {subsection}{\numberline {7.3}Per-study abundance replication; a tempered yeast claim}{21}{}%
+\contentsline {section}{\numberline {8}Discussion}{22}{}%
+\contentsline {subsection}{\numberline {8.1}Limitations}{22}{}%
+\contentsline {subsection}{\numberline {8.2}Future work}{22}{}%
+\contentsline {section}{\numberline {9}Per-model fold analysis}{22}{}%
 \contentsline {section}{\numberline {10}Conclusion}{22}{}%
-\contentsline {section}{\numberline {A}Reproducibility}{23}{}%
-\contentsline {section}{\numberline {B}Feature definitions}{23}{}%
-\contentsline {section}{\numberline {C}Strain-design tables}{23}{}%
-\contentsline {section}{\numberline {D}Per-gene essentiality scores}{23}{}%
-\contentsline {section}{\numberline {E}Full tool output: all benchmark genes}{27}{}%
-\contentsline {section}{\numberline {F}External tools and dataset manifest}{55}{}%
+\contentsline {section}{\numberline {A}Reproducibility}{24}{}%
+\contentsline {section}{\numberline {B}Feature definitions}{24}{}%
+\contentsline {section}{\numberline {C}Strain-design tables}{24}{}%
+\contentsline {section}{\numberline {D}Per-gene essentiality scores}{24}{}%
+\contentsline {section}{\numberline {E}Full tool output: all benchmark genes}{28}{}%
+\contentsline {section}{\numberline {F}External tools and dataset manifest}{56}{}%
