@@ -1,0 +1,28 @@
+{
+  "n_essential": 54,
+  "n_missed": 36,
+  "n_caught": 18,
+  "missed_isozyme_backed_frac": 0.2777777777777778,
+  "caught_isozyme_backed_frac": 0.0,
+  "fisher_odds_ratio": Infinity,
+  "fisher_p": 0.021343778197145977,
+  "overrescued_genes": [
+    "SA_RS00490",
+    "SA_RS01095",
+    "SA_RS01375",
+    "SA_RS04140",
+    "SA_RS06085",
+    "SA_RS08505",
+    "SA_RS10820",
+    "SA_RS10945",
+    "SA_RS11010",
+    "SA_RS13335"
+  ],
+  "species": "Staphylococcus aureus N315 (iSB619) vs Ji2001+Forsyth2002+Ko2006 (DEG1002)",
+  "deg_accession": "DEG1002",
+  "study": "Ji2001+Forsyth2002+Ko2006",
+  "n_deg_essentials": 302,
+  "n_mapped": 404,
+  "n_unmapped": 77,
+  "n_in_model": 54
+}

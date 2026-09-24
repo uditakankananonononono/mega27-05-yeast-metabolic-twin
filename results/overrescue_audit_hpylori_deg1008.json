@@ -1,0 +1,19 @@
+{
+  "n_essential": 34,
+  "n_missed": 10,
+  "n_caught": 24,
+  "missed_isozyme_backed_frac": 0.1,
+  "caught_isozyme_backed_frac": 0.0,
+  "fisher_odds_ratio": Infinity,
+  "fisher_p": 0.2941176470588235,
+  "overrescued_genes": [
+    "HP1552"
+  ],
+  "species": "Helicobacter pylori 26695 (iIT341) vs Salama2004 (DEG1008)",
+  "deg_accession": "DEG1008",
+  "study": "Salama2004",
+  "n_deg_essentials": 323,
+  "n_mapped": 458,
+  "n_unmapped": 98,
+  "n_in_model": 34
+}

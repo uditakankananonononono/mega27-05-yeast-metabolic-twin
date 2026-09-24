@@ -1,0 +1,26 @@
+{
+  "n_essential": 82,
+  "n_missed": 24,
+  "n_caught": 58,
+  "missed_isozyme_backed_frac": 0.3333333333333333,
+  "caught_isozyme_backed_frac": 0.05172413793103448,
+  "fisher_odds_ratio": 9.166666666666666,
+  "fisher_p": 0.0017833341516873128,
+  "overrescued_genes": [
+    "BSU31600",
+    "BSU31610",
+    "BSU31620",
+    "BSU31630",
+    "BSU31650",
+    "BSU34790",
+    "BSU36760",
+    "BSU37120"
+  ],
+  "species": "Bacillus subtilis 168 (iYO844) vs Kobayashi2003 (DEG1001)",
+  "deg_accession": "DEG1001",
+  "study": "Kobayashi2003",
+  "n_deg_essentials": 271,
+  "n_mapped": 444,
+  "n_unmapped": 50,
+  "n_in_model": 82
+}

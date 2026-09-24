@@ -23,3 +23,19 @@ iMM904 older yeast genome-scale model,BiGG Models iMM904,1577 reactions / 905 ge
 iNJ661 M. tuberculosis genome-scale model,BiGG Models iNJ661,1025 reactions / 661 genes,fourth-species over-rescue audit
 Sassetti 2003 Mtb TraSH essentiality (via Griffin 2011 Table S2),DOI 10.1371/journal.ppat.1002251.s002,613 essential genes,fourth-species essentiality labels
 E. coli K-12 reconstruction panel (4 models),BiGG e_coli_core/iAF1260/iAF1260b/iJO1366,4 model generations,cross-generation robustness audit
+DEG1002 S. aureus N315 essentiality (Ji 2001 + Forsyth 2002 + Ko 2006),DEG 15.2,302 essential genes,fifth-species over-rescue audit
+DEG1011 S. Typhimurium LT2 essentiality (Knuth 2004),DEG 15.2,230 essential genes,sixth-species over-rescue audit
+DEG1008 H. pylori 26695 essentiality (Salama 2004),DEG 15.2,323 essential genes,seventh-species audit (underpowered - honest negative)
+DEG1018 E. coli MG1655 essentiality (Gerdes 2003),DEG 15.2,609 essential genes,cross-study replication (independent of Keio)
+DEG1001 B. subtilis 168 essentiality (Kobayashi 2003),DEG 15.2,271 essential genes,cross-study replication (independent of Koo 2017)
+DEG1025 M. tuberculosis essentiality (Griffin 2011 Tn-seq),DEG 15.2,771 essential genes,cross-study replication (independent of Sassetti)
+DEG1027 M. tuberculosis essentiality (Zhang 2012),DEG 15.2,687 essential genes,cross-study replication
+iSB619 S. aureus genome-scale model,BiGG Models iSB619,619 genes,fifth-species over-rescue audit
+STM_v1_0 S. Typhimurium genome-scale model,BiGG Models STM_v1_0,1271 genes,sixth-species over-rescue audit
+iIT341 H. pylori genome-scale model,BiGG Models iIT341,339 genes,seventh-species over-rescue audit
+RefSeq GFF S. Typhimurium LT2 (GCF_000006945.2),NCBI Datasets,4678 genes,DEG-to-model gene mapping
+RefSeq GFF S. aureus N315 (GCF_000009645.1),NCBI Datasets,2738 genes,DEG-to-model gene mapping
+RefSeq GFF H. pylori 26695 (GCF_000008525.1),NCBI Datasets,1495 genes,DEG-to-model gene mapping
+RefSeq GFF E. coli MG1655 (GCF_000005845.2),NCBI Datasets,-,DEG-to-model gene mapping
+RefSeq GFF B. subtilis 168 (GCF_000009045.1),NCBI Datasets,-,DEG-to-model gene mapping
+RefSeq GFF M. tuberculosis H37Rv (GCF_000195955.2),NCBI Datasets,-,DEG-to-model gene mapping

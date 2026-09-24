@@ -1,0 +1,32 @@
+{
+  "n_essential": 80,
+  "n_missed": 47,
+  "n_caught": 33,
+  "missed_isozyme_backed_frac": 0.2978723404255319,
+  "caught_isozyme_backed_frac": 0.0,
+  "fisher_odds_ratio": Infinity,
+  "fisher_p": 0.0002449364189257642,
+  "overrescued_genes": [
+    "STM0122",
+    "STM0130",
+    "STM0169",
+    "STM0622",
+    "STM1473",
+    "STM1556",
+    "STM1578",
+    "STM1749",
+    "STM1763",
+    "STM2083",
+    "STM2427",
+    "STM3915",
+    "STM3978",
+    "STM4106"
+  ],
+  "species": "Salmonella typhimurium LT2 (STM_v1_0) vs Knuth2004 (DEG1011)",
+  "deg_accession": "DEG1011",
+  "study": "Knuth2004",
+  "n_deg_essentials": 230,
+  "n_mapped": 227,
+  "n_unmapped": 6,
+  "n_in_model": 80
+}
