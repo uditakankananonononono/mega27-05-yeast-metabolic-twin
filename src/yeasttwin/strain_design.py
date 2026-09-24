@@ -108,3 +108,48 @@ def growth_coupled_scan(model, genes: list[str] | None = None,
             rows.append({"gene": gid, "growth": g,
                          "succinate_coupled": max(s, 0.0), "viable": True})
     return pd.DataFrame(rows).sort_values("succinate_coupled", ascending=False)
+
+
+def envelope_shift_scan(model, genes: list[str] | None = None,
+                        growth_frac: float = 0.5,
+                        background: tuple[str, ...] = ()) -> pd.DataFrame:
+    """Envelope-shift scan at a fixed absolute growth floor.
+
+    For each knockout (on top of *background*), maximize succinate flux
+    subject to growth >= growth_frac * WILD-TYPE maximal growth (absolute,
+    not relative to the mutant). Mutants too sick to reach the floor are
+    scored 0. Ranked deltas vs the wild-type value identify true envelope
+    shifters, free of the growth-defect confound of relative coupling.
+    """
+    m = complete_y7(model)
+    wt = m.slim_optimize()
+    floor = growth_frac * wt
+    # WT reference value at the same floor
+    with m:
+        m.reactions.get_by_id("r_2111").lower_bound = floor
+        m.objective = m.reactions.get_by_id(find_succinate_exchange(m))
+        wt_val = max(m.slim_optimize(error_value=0.0), 0.0)
+    for bg in background:
+        m.genes.get_by_id(bg).knock_out()
+    ex_id = find_succinate_exchange(m)
+    genes = genes or [g.id for g in m.genes if g.id not in background]
+    rows = []
+    for gid in genes:
+        with m:
+            try:
+                m.genes.get_by_id(gid).knock_out()
+            except KeyError:
+                continue
+            g = m.slim_optimize(error_value=0.0)
+            if g < floor:
+                rows.append({"gene": gid, "growth": g, "succinate_at_floor": 0.0,
+                             "reaches_floor": False})
+                continue
+            m.reactions.get_by_id("r_2111").lower_bound = floor
+            m.objective = m.reactions.get_by_id(ex_id)
+            s = m.slim_optimize(error_value=0.0)
+            rows.append({"gene": gid, "growth": g,
+                         "succinate_at_floor": max(s, 0.0), "reaches_floor": True})
+    df = pd.DataFrame(rows)
+    df["shift_vs_wt"] = df["succinate_at_floor"] - wt_val
+    return df.sort_values("shift_vs_wt", ascending=False), wt_val
