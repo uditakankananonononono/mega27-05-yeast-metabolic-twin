@@ -1,0 +1,75 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{times}           % Times New Roman body text
+\usepackage{graphicx,booktabs,amsmath,amssymb,amsthm,hyperref}
+\usepackage[font=small]{caption}
+\newtheorem{proposition}{Proposition}
+\newtheorem{remark}{Remark}
+\title{A Virtual Yeast Cell for Metabolic Engineering:\\
+Genome-Scale FBA plus Graph and Sequence Deep Learning\\
+for Gene Essentiality and Strain Design}
+\author{MEGA-PROGRAM-27, Item 5}
+\date{\today}
+\begin{document}
+\maketitle
+\begin{abstract}
+We combine the consensus yeast genome-scale metabolic model (yeast-GEM,
+4{,}105 reactions / 2{,}748 metabolites / 1{,}143 genes) with a graph
+convolutional network over the metabolic gene graph and a convolutional
+sequence model to predict gene essentiality, benchmarked against the
+published FBA knockout rule under a locked, gene-held-out cross-validation
+protocol, and we apply the same model to strain design for succinate
+overproduction, validated against published experimental deletions.
+\end{abstract}
+
+\section{Introduction}
+% genome-scale models; FBA essentiality benchmark (acc 0.9015, MCC 0.532,
+% 94/159 essentials missed); hypothesis: network + sequence context recovers
+% FBA-missed essentials without reading labels.
+
+\section{Methods}
+\subsection{Model and media}
+% yeast-GEM SBML in-repo, sha256 recorded; Kennedy Y7 medium reproducing the
+% published benchmark; solver and reproducibility.
+\subsection{Flux balance analysis}
+\begin{align}
+\max_{v}\quad & c^{\top} v \\
+\text{s.t.}\quad & S v = 0, \quad l \le v \le u .
+\end{align}
+\subsection{Label-free mechanistic features}
+% GPR isozyme redundancy, pFBA flux carriage, KO growth ratio, topology.
+\subsection{Graph convolutional network}
+\begin{equation}
+H^{(l+1)} = \mathrm{ReLU}\!\left(\hat{D}^{-1/2}\hat{A}\hat{D}^{-1/2} H^{(l)} W^{(l)}\right)
+\end{equation}
+\subsection{Sequence CNN}
+\subsection{Locked evaluation protocol}
+% repeated stratified 5-fold gene-held-out CV; shared folds; train-only
+% scaling and thresholds; paired bootstrap CI on delta-MCC.
+\subsection{Strain design}
+% succinate production envelope; single-KO scan at a growth floor;
+% validation set from Raab et al. 2010 (SDH1, SDH2, IDH1, IDP1).
+
+\section{Mathematical results}
+\begin{proposition}[Weak duality bound for growth]
+% shadow prices; dual of FBA LP; proof.
+\end{proposition}
+\begin{proposition}[Envelope monotonicity]
+% max product flux is nonincreasing in the enforced growth fraction; proof
+% by feasible-set nesting.
+\end{proposition}
+
+\section{Results}
+\subsection{FBA benchmark reproduction}
+\subsection{Cross-validated essentiality prediction}
+\subsection{Strain-design validation}
+
+\section{Discussion}
+\section{Conclusion}
+\bibliographystyle{plain}
+\begin{thebibliography}{9}
+\bibitem{raab2010} Raab et al., Metab.\ Eng.\ 12(6):518--525 (2010).
+\bibitem{kipf2017} Kipf \& Welling, ICLR (2017).
+\bibitem{yeastgem} Lu et al., Nat.\ Commun.\ 10:2390 (2019).
+\end{thebibliography}
+\end{document}
