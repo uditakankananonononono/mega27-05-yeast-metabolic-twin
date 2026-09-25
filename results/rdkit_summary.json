@@ -1,0 +1,9 @@
+{
+  "n_compounds": 5,
+  "n_tpsa_agree_pubchem": 5,
+  "dianion_set": [
+    "succinate",
+    "fumarate",
+    "alpha-ketoglutarate"
+  ]
+}

@@ -1,0 +1,6 @@
+query,CID,smiles,rdkit_exact_mw,rdkit_tpsa,rdkit_hbd,rdkit_hba,rdkit_rotatable,rdkit_formal_charge,rdkit_fraction_csp3,pubchem_mw,pubchem_tpsa,tpsa_agree
+succinate,160419,C(CC(=O)[O-])C(=O)[O-],116.012,80.26,0,4,3,-2,0.5,116.07,80.3,True
+fumarate,5460307,C(=CC(=O)[O-])C(=O)[O-],113.996,80.26,0,4,2,-2,0.0,114.06,80.3,True
+malate,525,C(C(C(=O)O)O)C(=O)O,134.022,94.83,3,3,3,0,0.5,134.09,94.8,True
+alpha-ketoglutarate,164533,C(CC(=O)[O-])C(=O)C(=O)[O-],144.007,97.33,0,5,4,-2,0.4,144.08,97.3,True
+glyoxylate,760,C(=O)C(=O)O,74.0,54.37,1,2,1,0,0.0,74.04,54.4,True

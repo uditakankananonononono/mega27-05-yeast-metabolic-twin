@@ -1,0 +1,20 @@
+orf,ensembl_id,display_name,biotype,seq_region,start,end,source
+YAL038W,YAL038W,CDC19,protein_coding,I,71786,73288,sgd
+YBL030C,YBL030C,PET9,protein_coding,II,163041,163997,sgd
+YBR002C,YBR002C,RER2,protein_coding,II,241708,242568,sgd
+YBR038W,YBR038W,CHS2,protein_coding,II,311898,314789,sgd
+YBR252W,YBR252W,DUT1,protein_coding,II,722611,723054,sgd
+YDR023W,YDR023W,SES1,protein_coding,IV,489508,490896,sgd
+YDR302W,,,ERROR HTTP Error 500: Internal Server Error,,,,
+YDR353W,,,ERROR HTTP Error 500: Internal Server Error,,,,
+YDR376W,,,ERROR HTTP Error 500: Internal Server Error,,,,
+YGL008C,,,ERROR HTTP Error 500: Internal Server Error,,,,
+YGR191W,,,ERROR HTTP Error 500: Internal Server Error,,,,
+YJL026W,YJL026W,RNR2,protein_coding,X,392404,393603,sgd
+YKL035W,YKL035W,UGP1,protein_coding,XI,369891,371390,sgd
+YKL141W,YKL141W,SDH3,protein_coding,XI,179667,180263,sgd
+YLL031C,YLL031C,GPI13,protein_coding,XII,77152,80205,sgd
+YLR305C,YLR305C,STT4,protein_coding,XII,738161,743863,sgd
+YML125C,YML125C,PGA3,protein_coding,XIII,20761,21699,sgd
+YMR108W,YMR108W,ILV2,protein_coding,XIII,484084,486147,sgd
+YPL252C,YPL252C,YAH1,protein_coding,XVI,73363,73881,sgd

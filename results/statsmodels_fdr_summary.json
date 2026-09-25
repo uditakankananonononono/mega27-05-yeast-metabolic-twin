@@ -1,0 +1,7 @@
+{
+  "panel_size": 12,
+  "n_significant_raw": 11,
+  "n_significant_fdr05": 11,
+  "yeast_discovery_padj": 0.0005628787333639739,
+  "method": "Benjamini-Hochberg via statsmodels.stats.multitest.multipletests"
+}

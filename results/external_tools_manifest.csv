@@ -39,3 +39,11 @@ Rhea,database,-,curated reaction records for design enzymes
 EBI OLS4 (Ontology Lookup Service),service,v4,ChEBI term resolution for design metabolites
 Crossref REST API,service,-,bibliography verification of the paper's references
 OrthoDB,database+API,v12,sequence-cluster paralogy replication of domain-sharing (honest cross-resource check)
+statsmodels,software,0.14,panel-wide Benjamini-Hochberg FDR control across the 12 over-rescue audits
+QuickGO (EBI GO annotation API),service,2026-09,molecular-function annotation of over-rescued genes and backups (SGD/g:Profiler-independent)
+Ensembl REST API,service,2026-09,independent ORF cross-reference check of the over-rescued set (5 merged/dubious ORFs recorded)
+EBI Complex Portal API,service,2026-09,co-complex membership test of backup pairs (honest null retained)
+IntAct via EBI PSICQUIC,service,2026-09,physical-interaction counts for pairs (orthogonal to BioGRID genetic lane)
+PANTHER classification API,service,v19,protein-family/subfamily classification of the 19 over-rescued genes
+RDKit,software,2026.03,descriptor recomputation for design metabolites (cross-check of PubChem records)
+PRIDE Archive API,service,v3,accession-level (PXD) provenance for PaxDb per-study abundance sets

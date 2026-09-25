@@ -1,0 +1,17 @@
+{
+  "n_paxdb_yeast_study_files": 18,
+  "n_tokens_with_pride_hits": 15,
+  "n_distinct_pxd": 10,
+  "pxd_accessions": [
+    "PXD000026",
+    "PXD000027",
+    "PXD000030",
+    "PXD000035",
+    "PXD000045",
+    "PXD000047",
+    "PXD001357",
+    "PXD001359",
+    "PXD001362",
+    "PXD002694"
+  ]
+}

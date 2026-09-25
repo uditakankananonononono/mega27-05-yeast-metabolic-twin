@@ -1,0 +1,296 @@
+resource,accession,source_study_or_release,used_for,evidence_file
+UniProtKB,P00549,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (yeast),results/uniprot_entries_yeast.csv
+UniProtKB,P18239,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (yeast),results/uniprot_entries_yeast.csv
+UniProtKB,P35196,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (yeast),results/uniprot_entries_yeast.csv
+UniProtKB,P29465,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (yeast),results/uniprot_entries_yeast.csv
+UniProtKB,P14180,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (yeast),results/uniprot_entries_yeast.csv
+UniProtKB,P38085,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (yeast),results/uniprot_entries_yeast.csv
+UniProtKB,P18238,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (yeast),results/uniprot_entries_yeast.csv
+UniProtKB,P33317,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (yeast),results/uniprot_entries_yeast.csv
+UniProtKB,P32903,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (yeast),results/uniprot_entries_yeast.csv
+UniProtKB,P07284,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (yeast),results/uniprot_entries_yeast.csv
+UniProtKB,Q06636,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (yeast),results/uniprot_entries_yeast.csv
+UniProtKB,P48360,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (yeast),results/uniprot_entries_yeast.csv
+UniProtKB,P40975,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (yeast),results/uniprot_entries_yeast.csv
+UniProtKB,P40009,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (yeast),results/uniprot_entries_yeast.csv
+UniProtKB,P21524,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (yeast),results/uniprot_entries_yeast.csv
+UniProtKB,P40086,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (yeast),results/uniprot_entries_yeast.csv
+UniProtKB,P05030,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (yeast),results/uniprot_entries_yeast.csv
+UniProtKB,P49723,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (yeast),results/uniprot_entries_yeast.csv
+UniProtKB,P06775,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (yeast),results/uniprot_entries_yeast.csv
+UniProtKB,P38709,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (yeast),results/uniprot_entries_yeast.csv
+UniProtKB,P38705,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (yeast),results/uniprot_entries_yeast.csv
+UniProtKB,P38626,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (yeast),results/uniprot_entries_yeast.csv
+UniProtKB,P21672,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (yeast),results/uniprot_entries_yeast.csv
+UniProtKB,P09938,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (yeast),results/uniprot_entries_yeast.csv
+UniProtKB,P42951,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (yeast),results/uniprot_entries_yeast.csv
+UniProtKB,P47119,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (yeast),results/uniprot_entries_yeast.csv
+UniProtKB,P32861,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (yeast),results/uniprot_entries_yeast.csv
+UniProtKB,P36060,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (yeast),results/uniprot_entries_yeast.csv
+UniProtKB,P19145,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (yeast),results/uniprot_entries_yeast.csv
+UniProtKB,Q07830,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (yeast),results/uniprot_entries_yeast.csv
+UniProtKB,P37297,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (yeast),results/uniprot_entries_yeast.csv
+UniProtKB,Q12746,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (yeast),results/uniprot_entries_yeast.csv
+UniProtKB,P04710,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (yeast),results/uniprot_entries_yeast.csv
+UniProtKB,Q03175,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (yeast),results/uniprot_entries_yeast.csv
+UniProtKB,P08004,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (yeast),results/uniprot_entries_yeast.csv
+UniProtKB,Q08269,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (yeast),results/uniprot_entries_yeast.csv
+UniProtKB,P52489,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (yeast),results/uniprot_entries_yeast.csv
+UniProtKB,P19657,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (yeast),results/uniprot_entries_yeast.csv
+UniProtKB,Q12184,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (yeast),results/uniprot_entries_yeast.csv
+UniProtKB,P0ABQ4,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (E. coli),results/uniprot_entries_ecoli.csv
+UniProtKB,P15993,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (E. coli),results/uniprot_entries_ecoli.csv
+UniProtKB,P61517,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (E. coli),results/uniprot_entries_ecoli.csv
+UniProtKB,P0A7E9,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (E. coli),results/uniprot_entries_ecoli.csv
+UniProtKB,P0ABE9,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (E. coli),results/uniprot_entries_ecoli.csv
+UniProtKB,P23871,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (E. coli),results/uniprot_entries_ecoli.csv
+UniProtKB,P61949,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (E. coli),results/uniprot_entries_ecoli.csv
+UniProtKB,P0ABJ9,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (E. coli),results/uniprot_entries_ecoli.csv
+UniProtKB,P0A6I0,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (E. coli),results/uniprot_entries_ecoli.csv
+UniProtKB,P26459,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (E. coli),results/uniprot_entries_ecoli.csv
+UniProtKB,P26458,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (E. coli),results/uniprot_entries_ecoli.csv
+UniProtKB,P31545,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (E. coli),results/uniprot_entries_ecoli.csv
+UniProtKB,P52647,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (E. coli),results/uniprot_entries_ecoli.csv
+UniProtKB,P0AFS3,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (E. coli),results/uniprot_entries_ecoli.csv
+UniProtKB,P52006,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (E. coli),results/uniprot_entries_ecoli.csv
+UniProtKB,P15042,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (E. coli),results/uniprot_entries_ecoli.csv
+UniProtKB,P76536,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (E. coli),results/uniprot_entries_ecoli.csv
+UniProtKB,P0AFL6,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (E. coli),results/uniprot_entries_ecoli.csv
+UniProtKB,P62620,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (E. coli),results/uniprot_entries_ecoli.csv
+UniProtKB,P24224,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (E. coli),results/uniprot_entries_ecoli.csv
+UniProtKB,P0A840,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (E. coli),results/uniprot_entries_ecoli.csv
+UniProtKB,P0ABY4,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (E. coli),results/uniprot_entries_ecoli.csv
+UniProtKB,P0AAD2,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (E. coli),results/uniprot_entries_ecoli.csv
+UniProtKB,P37623,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (E. coli),results/uniprot_entries_ecoli.csv
+UniProtKB,P06968,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (E. coli),results/uniprot_entries_ecoli.csv
+UniProtKB,P23173,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (E. coli),results/uniprot_entries_ecoli.csv
+UniProtKB,P28861,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (E. coli),results/uniprot_entries_ecoli.csv
+UniProtKB,P32664,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (E. coli),results/uniprot_entries_ecoli.csv
+UniProtKB,P0A7A9,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (E. coli),results/uniprot_entries_ecoli.csv
+UniProtKB,P0A9N8,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (E. coli),results/uniprot_entries_ecoli.csv
+UniProtKB,P28903,UniProtKB/Swiss-Prot release 2026-09,over-rescue pair annotation (E. coli),results/uniprot_entries_ecoli.csv
+RCSB PDB,1A3W,RCSB PDB release 2026-09,structural coverage of pair (YAL038W),results/pdb_structures_yeast_pairs.csv
+RCSB PDB,1A3X,RCSB PDB release 2026-09,structural coverage of pair (YAL038W),results/pdb_structures_yeast_pairs.csv
+RCSB PDB,4C9G,RCSB PDB release 2026-09,structural coverage of pair (YBL030C),results/pdb_structures_yeast_pairs.csv
+RCSB PDB,4C9H,RCSB PDB release 2026-09,structural coverage of pair (YBL030C),results/pdb_structures_yeast_pairs.csv
+RCSB PDB,nan,RCSB PDB release 2026-09,structural coverage of pair (YBR002C),results/pdb_structures_yeast_pairs.csv
+RCSB PDB,4WJW,RCSB PDB release 2026-09,structural coverage of pair (YBR023C),results/pdb_structures_yeast_pairs.csv
+RCSB PDB,4C9J,RCSB PDB release 2026-09,structural coverage of pair (YBR085W),results/pdb_structures_yeast_pairs.csv
+RCSB PDB,4C9Q,RCSB PDB release 2026-09,structural coverage of pair (YBR085W),results/pdb_structures_yeast_pairs.csv
+RCSB PDB,3F4F,RCSB PDB release 2026-09,structural coverage of pair (YBR252W),results/pdb_structures_yeast_pairs.csv
+RCSB PDB,3HHQ,RCSB PDB release 2026-09,structural coverage of pair (YBR252W),results/pdb_structures_yeast_pairs.csv
+RCSB PDB,3P48,RCSB PDB release 2026-09,structural coverage of pair (YBR252W),results/pdb_structures_yeast_pairs.csv
+RCSB PDB,1ZYZ,RCSB PDB release 2026-09,structural coverage of pair (YER070W),results/pdb_structures_yeast_pairs.csv
+RCSB PDB,1ZZD,RCSB PDB release 2026-09,structural coverage of pair (YER070W),results/pdb_structures_yeast_pairs.csv
+RCSB PDB,2CVS,RCSB PDB release 2026-09,structural coverage of pair (YER070W),results/pdb_structures_yeast_pairs.csv
+RCSB PDB,7VH5,RCSB PDB release 2026-09,structural coverage of pair (YGL008C),results/pdb_structures_yeast_pairs.csv
+RCSB PDB,7VH6,RCSB PDB release 2026-09,structural coverage of pair (YGL008C),results/pdb_structures_yeast_pairs.csv
+RCSB PDB,9UGB,RCSB PDB release 2026-09,structural coverage of pair (YGL008C),results/pdb_structures_yeast_pairs.csv
+RCSB PDB,1JK0,RCSB PDB release 2026-09,structural coverage of pair (YGR180C),results/pdb_structures_yeast_pairs.csv
+RCSB PDB,1SMS,RCSB PDB release 2026-09,structural coverage of pair (YGR180C),results/pdb_structures_yeast_pairs.csv
+RCSB PDB,7ROM,RCSB PDB release 2026-09,structural coverage of pair (YIL043C),results/pdb_structures_yeast_pairs.csv
+RCSB PDB,1SMQ,RCSB PDB release 2026-09,structural coverage of pair (YJL026W),results/pdb_structures_yeast_pairs.csv
+RCSB PDB,2CVY,RCSB PDB release 2026-09,structural coverage of pair (YJL026W),results/pdb_structures_yeast_pairs.csv
+RCSB PDB,2I5K,RCSB PDB release 2026-09,structural coverage of pair (YKL035W),results/pdb_structures_yeast_pairs.csv
+RCSB PDB,7XS6,RCSB PDB release 2026-09,structural coverage of pair (YNL192W),results/pdb_structures_yeast_pairs.csv
+RCSB PDB,7XS7,RCSB PDB release 2026-09,structural coverage of pair (YNL192W),results/pdb_structures_yeast_pairs.csv
+RCSB PDB,8K3P,RCSB PDB release 2026-09,structural coverage of pair (YNL192W),results/pdb_structures_yeast_pairs.csv
+RCSB PDB,2MJD,RCSB PDB release 2026-09,structural coverage of pair (YPL252C),results/pdb_structures_yeast_pairs.csv
+RCSB PDB,2MJE,RCSB PDB release 2026-09,structural coverage of pair (YPL252C),results/pdb_structures_yeast_pairs.csv
+InterPro (Pfam),PF02887,InterPro release 2026-09,domain-sharing test of backup pairs,results/interpro_pair_domains.csv
+InterPro (Pfam),PF00224,InterPro release 2026-09,domain-sharing test of backup pairs,results/interpro_pair_domains.csv
+InterPro (Pfam),PF00153,InterPro release 2026-09,domain-sharing test of backup pairs,results/interpro_pair_domains.csv
+InterPro (Pfam),PF01255,InterPro release 2026-09,domain-sharing test of backup pairs,results/interpro_pair_domains.csv
+InterPro (Pfam),PF08407,InterPro release 2026-09,domain-sharing test of backup pairs,results/interpro_pair_domains.csv
+InterPro (Pfam),PF03142,InterPro release 2026-09,domain-sharing test of backup pairs,results/interpro_pair_domains.csv
+InterPro (Pfam),PF01644,InterPro release 2026-09,domain-sharing test of backup pairs,results/interpro_pair_domains.csv
+InterPro (Pfam),PF22997,InterPro release 2026-09,domain-sharing test of backup pairs,results/interpro_pair_domains.csv
+InterPro (Pfam),PF00587,InterPro release 2026-09,domain-sharing test of backup pairs,results/interpro_pair_domains.csv
+InterPro (Pfam),PF02403,InterPro release 2026-09,domain-sharing test of backup pairs,results/interpro_pair_domains.csv
+InterPro (Pfam),PF00702,InterPro release 2026-09,domain-sharing test of backup pairs,results/interpro_pair_domains.csv
+InterPro (Pfam),PF00690,InterPro release 2026-09,domain-sharing test of backup pairs,results/interpro_pair_domains.csv
+InterPro (Pfam),PF00122,InterPro release 2026-09,domain-sharing test of backup pairs,results/interpro_pair_domains.csv
+InterPro (Pfam),PF00324,InterPro release 2026-09,domain-sharing test of backup pairs,results/interpro_pair_domains.csv
+InterPro (Pfam),PF00268,InterPro release 2026-09,domain-sharing test of backup pairs,results/interpro_pair_domains.csv
+InterPro (Pfam),PF01704,InterPro release 2026-09,domain-sharing test of backup pairs,results/interpro_pair_domains.csv
+InterPro (Pfam),PF00175,InterPro release 2026-09,domain-sharing test of backup pairs,results/interpro_pair_domains.csv
+InterPro (Pfam),PF00970,InterPro release 2026-09,domain-sharing test of backup pairs,results/interpro_pair_domains.csv
+OMA Browser,YEAST00027,OMA release 2026-09,ortholog-group recurrence (yeast:YAL038W),results/oma_groups_overrescued.csv
+OMA Browser,YEAST00481,OMA release 2026-09,ortholog-group recurrence (yeast:YBL030C),results/oma_groups_overrescued.csv
+OMA Browser,YEAST00217,OMA release 2026-09,ortholog-group recurrence (yeast:YBR002C),results/oma_groups_overrescued.csv
+OMA Browser,YEAST00283,OMA release 2026-09,ortholog-group recurrence (yeast:YBR038W),results/oma_groups_overrescued.csv
+OMA Browser,YEAST00199,OMA release 2026-09,ortholog-group recurrence (yeast:YBR252W),results/oma_groups_overrescued.csv
+OMA Browser,YEAST01099,OMA release 2026-09,ortholog-group recurrence (yeast:YDR023W),results/oma_groups_overrescued.csv
+OMA Browser,YEAST00842,OMA release 2026-09,ortholog-group recurrence (yeast:YDR302W),results/oma_groups_overrescued.csv
+OMA Browser,YEAST01454,OMA release 2026-09,ortholog-group recurrence (yeast:YDR353W),results/oma_groups_overrescued.csv
+OMA Browser,YEAST01301,OMA release 2026-09,ortholog-group recurrence (yeast:YDR376W),results/oma_groups_overrescued.csv
+OMA Browser,YEAST02532,OMA release 2026-09,ortholog-group recurrence (yeast:YGL008C),results/oma_groups_overrescued.csv
+OMA Browser,YEAST02475,OMA release 2026-09,ortholog-group recurrence (yeast:YGR191W),results/oma_groups_overrescued.csv
+OMA Browser,YEAST03518,OMA release 2026-09,ortholog-group recurrence (yeast:YJL026W),results/oma_groups_overrescued.csv
+OMA Browser,YEAST03719,OMA release 2026-09,ortholog-group recurrence (yeast:YKL035W),results/oma_groups_overrescued.csv
+OMA Browser,YEAST03781,OMA release 2026-09,ortholog-group recurrence (yeast:YKL141W),results/oma_groups_overrescued.csv
+OMA Browser,YEAST04130,OMA release 2026-09,ortholog-group recurrence (yeast:YLL031C),results/oma_groups_overrescued.csv
+OMA Browser,YEAST04493,OMA release 2026-09,ortholog-group recurrence (yeast:YLR305C),results/oma_groups_overrescued.csv
+OMA Browser,YEAST04566,OMA release 2026-09,ortholog-group recurrence (yeast:YML125C),results/oma_groups_overrescued.csv
+OMA Browser,YEAST04906,OMA release 2026-09,ortholog-group recurrence (yeast:YMR108W),results/oma_groups_overrescued.csv
+OMA Browser,YEAST06405,OMA release 2026-09,ortholog-group recurrence (yeast:YPL252C),results/oma_groups_overrescued.csv
+OMA Browser,nan,OMA release 2026-09,ortholog-group recurrence (ecoli:b0048),results/oma_groups_overrescued.csv
+OMA Browser,ECOLI00439,OMA release 2026-09,ortholog-group recurrence (ecoli:b0475),results/oma_groups_overrescued.csv
+OMA Browser,ECOLI02277,OMA release 2026-09,ortholog-group recurrence (ecoli:b2411),results/oma_groups_overrescued.csv
+OMA Browser,ECOLI02433,OMA release 2026-09,ortholog-group recurrence (ecoli:b2563),results/oma_groups_overrescued.csv
+OMA Browser,BACSU01377,OMA release 2026-09,ortholog-group recurrence (bsubtilis:BSU13300),results/oma_groups_overrescued.csv
+OMA Browser,BACSU01709,OMA release 2026-09,ortholog-group recurrence (bsubtilis:BSU16510),results/oma_groups_overrescued.csv
+OMA Browser,BACSU01734,OMA release 2026-09,ortholog-group recurrence (bsubtilis:BSU16760),results/oma_groups_overrescued.csv
+OMA Browser,BACSU02951,OMA release 2026-09,ortholog-group recurrence (bsubtilis:BSU28390),results/oma_groups_overrescued.csv
+OMA Browser,BACSU03273,OMA release 2026-09,ortholog-group recurrence (bsubtilis:BSU31600),results/oma_groups_overrescued.csv
+OMA Browser,BACSU03274,OMA release 2026-09,ortholog-group recurrence (bsubtilis:BSU31610),results/oma_groups_overrescued.csv
+OMA Browser,BACSU03275,OMA release 2026-09,ortholog-group recurrence (bsubtilis:BSU31620),results/oma_groups_overrescued.csv
+OMA Browser,BACSU03276,OMA release 2026-09,ortholog-group recurrence (bsubtilis:BSU31630),results/oma_groups_overrescued.csv
+OMA Browser,BACSU03277,OMA release 2026-09,ortholog-group recurrence (bsubtilis:BSU31640),results/oma_groups_overrescued.csv
+OMA Browser,BACSU03278,OMA release 2026-09,ortholog-group recurrence (bsubtilis:BSU31650),results/oma_groups_overrescued.csv
+OMA Browser,BACSU03279,OMA release 2026-09,ortholog-group recurrence (bsubtilis:BSU31660),results/oma_groups_overrescued.csv
+OMA Browser,BACSU03323,OMA release 2026-09,ortholog-group recurrence (bsubtilis:BSU32110),results/oma_groups_overrescued.csv
+OMA Browser,BACSU03600,OMA release 2026-09,ortholog-group recurrence (bsubtilis:BSU34790),results/oma_groups_overrescued.csv
+OMA Browser,BACSU03765,OMA release 2026-09,ortholog-group recurrence (bsubtilis:BSU36370),results/oma_groups_overrescued.csv
+OMA Browser,BACSU03807,OMA release 2026-09,ortholog-group recurrence (bsubtilis:BSU36760),results/oma_groups_overrescued.csv
+OMA Browser,MYCTU00112,OMA release 2026-09,ortholog-group recurrence (mtb:Rv0112),results/oma_groups_overrescued.csv
+OMA Browser,MYCTU00340,OMA release 2026-09,ortholog-group recurrence (mtb:Rv0337c),results/oma_groups_overrescued.csv
+OMA Browser,MYCTU00466,OMA release 2026-09,ortholog-group recurrence (mtb:Rv0462),results/oma_groups_overrescued.csv
+OMA Browser,MYCTU00822,OMA release 2026-09,ortholog-group recurrence (mtb:Rv0808),results/oma_groups_overrescued.csv
+OMA Browser,MYCTU00836,OMA release 2026-09,ortholog-group recurrence (mtb:Rv0824c),results/oma_groups_overrescued.csv
+OMA Browser,MYCTU00985,OMA release 2026-09,ortholog-group recurrence (mtb:Rv0973c),results/oma_groups_overrescued.csv
+OMA Browser,MYCTU01107,OMA release 2026-09,ortholog-group recurrence (mtb:Rv1094),results/oma_groups_overrescued.csv
+OMA Browser,MYCTU01136,OMA release 2026-09,ortholog-group recurrence (mtb:Rv1122),results/oma_groups_overrescued.csv
+OMA Browser,MYCTU01202,OMA release 2026-09,ortholog-group recurrence (mtb:Rv1187),results/oma_groups_overrescued.csv
+OMA Browser,MYCTU01428,OMA release 2026-09,ortholog-group recurrence (mtb:Rv1415),results/oma_groups_overrescued.csv
+OMA Browser,MYCTU01618,OMA release 2026-09,ortholog-group recurrence (mtb:Rv1600),results/oma_groups_overrescued.csv
+OMA Browser,MYCTU01620,OMA release 2026-09,ortholog-group recurrence (mtb:Rv1602),results/oma_groups_overrescued.csv
+OMA Browser,MYCTU01627,OMA release 2026-09,ortholog-group recurrence (mtb:Rv1609),results/oma_groups_overrescued.csv
+OMA Browser,MYCTU01734,OMA release 2026-09,ortholog-group recurrence (mtb:Rv1714),results/oma_groups_overrescued.csv
+OMA Browser,MYCTU02199,OMA release 2026-09,ortholog-group recurrence (mtb:Rv2182c),results/oma_groups_overrescued.csv
+OMA Browser,MYCTU02249,OMA release 2026-09,ortholog-group recurrence (mtb:Rv2231c),results/oma_groups_overrescued.csv
+OMA Browser,MYCTU02264,OMA release 2026-09,ortholog-group recurrence (mtb:Rv2247),results/oma_groups_overrescued.csv
+OMA Browser,MYCTU02418,OMA release 2026-09,ortholog-group recurrence (mtb:Rv2397c),results/oma_groups_overrescued.csv
+OMA Browser,MYCTU02419,OMA release 2026-09,ortholog-group recurrence (mtb:Rv2398c),results/oma_groups_overrescued.csv
+OMA Browser,MYCTU02420,OMA release 2026-09,ortholog-group recurrence (mtb:Rv2399c),results/oma_groups_overrescued.csv
+OMA Browser,MYCTU02421,OMA release 2026-09,ortholog-group recurrence (mtb:Rv2400c),results/oma_groups_overrescued.csv
+OMA Browser,MYCTU02703,OMA release 2026-09,ortholog-group recurrence (mtb:Rv2682c),results/oma_groups_overrescued.csv
+OMA Browser,MYCTU02768,OMA release 2026-09,ortholog-group recurrence (mtb:Rv2746c),results/oma_groups_overrescued.csv
+OMA Browser,MYCTU02776,OMA release 2026-09,ortholog-group recurrence (mtb:Rv2754c),results/oma_groups_overrescued.csv
+OMA Browser,MYCTU02987,OMA release 2026-09,ortholog-group recurrence (mtb:Rv2967c),results/oma_groups_overrescued.csv
+OMA Browser,MYCTU03017,OMA release 2026-09,ortholog-group recurrence (mtb:Rv2996c),results/oma_groups_overrescued.csv
+OMA Browser,MYCTU03025,OMA release 2026-09,ortholog-group recurrence (mtb:Rv3003c),results/oma_groups_overrescued.csv
+OMA Browser,MYCTU03063,OMA release 2026-09,ortholog-group recurrence (mtb:Rv3042c),results/oma_groups_overrescued.csv
+OMA Browser,MYCTU03282,OMA release 2026-09,ortholog-group recurrence (mtb:Rv3257c),results/oma_groups_overrescued.csv
+OMA Browser,MYCTU03300,OMA release 2026-09,ortholog-group recurrence (mtb:Rv3275c),results/oma_groups_overrescued.csv
+OMA Browser,MYCTU03306,OMA release 2026-09,ortholog-group recurrence (mtb:Rv3281),results/oma_groups_overrescued.csv
+OMA Browser,MYCTU03310,OMA release 2026-09,ortholog-group recurrence (mtb:Rv3285),results/oma_groups_overrescued.csv
+OMA Browser,MYCTU03488,OMA release 2026-09,ortholog-group recurrence (mtb:Rv3464),results/oma_groups_overrescued.csv
+OMA Browser,MYCTU03633,OMA release 2026-09,ortholog-group recurrence (mtb:Rv3608c),results/oma_groups_overrescued.csv
+OMA Browser,MYCTU03659,OMA release 2026-09,ortholog-group recurrence (mtb:Rv3634c),results/oma_groups_overrescued.csv
+OMA Browser,MYCTU03740,OMA release 2026-09,ortholog-group recurrence (mtb:Rv3713),results/oma_groups_overrescued.csv
+OMA Browser,STAAN00064,OMA release 2026-09,ortholog-group recurrence (saureus:SA_RS00490),results/oma_groups_overrescued.csv
+OMA Browser,STAAN00181,OMA release 2026-09,ortholog-group recurrence (saureus:SA_RS01095),results/oma_groups_overrescued.csv
+OMA Browser,STAAN00233,OMA release 2026-09,ortholog-group recurrence (saureus:SA_RS01375),results/oma_groups_overrescued.csv
+OMA Browser,STAAN00735,OMA release 2026-09,ortholog-group recurrence (saureus:SA_RS04140),results/oma_groups_overrescued.csv
+OMA Browser,STAAN01093,OMA release 2026-09,ortholog-group recurrence (saureus:SA_RS06085),results/oma_groups_overrescued.csv
+OMA Browser,STAAN01538,OMA release 2026-09,ortholog-group recurrence (saureus:SA_RS08505),results/oma_groups_overrescued.csv
+OMA Browser,STAAN01923,OMA release 2026-09,ortholog-group recurrence (saureus:SA_RS10820),results/oma_groups_overrescued.csv
+OMA Browser,STAAN01944,OMA release 2026-09,ortholog-group recurrence (saureus:SA_RS10945),results/oma_groups_overrescued.csv
+OMA Browser,STAAN01956,OMA release 2026-09,ortholog-group recurrence (saureus:SA_RS11010),results/oma_groups_overrescued.csv
+OMA Browser,STAAN02380,OMA release 2026-09,ortholog-group recurrence (saureus:SA_RS13335),results/oma_groups_overrescued.csv
+OMA Browser,SALTY00121,OMA release 2026-09,ortholog-group recurrence (styphimurium:STM0122),results/oma_groups_overrescued.csv
+OMA Browser,SALTY00168,OMA release 2026-09,ortholog-group recurrence (styphimurium:STM0169),results/oma_groups_overrescued.csv
+OrthoDB,294132at2759,OrthoDB v12,sequence-cluster paralogy check,results/orthodb_pair_groups.csv
+OrthoDB,5017627at2759,OrthoDB v12,sequence-cluster paralogy check,results/orthodb_pair_groups.csv
+OrthoDB,140549at2759,OrthoDB v12,sequence-cluster paralogy check,results/orthodb_pair_groups.csv
+OrthoDB,2644757at2759,OrthoDB v12,sequence-cluster paralogy check,results/orthodb_pair_groups.csv
+OrthoDB,319730at2759,OrthoDB v12,sequence-cluster paralogy check,results/orthodb_pair_groups.csv
+OrthoDB,5004893at2759,OrthoDB v12,sequence-cluster paralogy check,results/orthodb_pair_groups.csv
+OrthoDB,2709213at2759,OrthoDB v12,sequence-cluster paralogy check,results/orthodb_pair_groups.csv
+OrthoDB,2433086at2759,OrthoDB v12,sequence-cluster paralogy check,results/orthodb_pair_groups.csv
+OrthoDB,5012972at2759,OrthoDB v12,sequence-cluster paralogy check,results/orthodb_pair_groups.csv
+OrthoDB,5000462at2759,OrthoDB v12,sequence-cluster paralogy check,results/orthodb_pair_groups.csv
+OrthoDB,2672645at2759,OrthoDB v12,sequence-cluster paralogy check,results/orthodb_pair_groups.csv
+OrthoDB,5023775at2759,OrthoDB v12,sequence-cluster paralogy check,results/orthodb_pair_groups.csv
+Rhea,RHEA:13713,Rhea release 2026-09,design reaction curation,results/rhea_design_reactions.csv
+Rhea,RHEA:27834,Rhea release 2026-09,design reaction curation,results/rhea_design_reactions.csv
+Rhea,RHEA:40523,Rhea release 2026-09,design reaction curation,results/rhea_design_reactions.csv
+Rhea,RHEA:75711,Rhea release 2026-09,design reaction curation,results/rhea_design_reactions.csv
+Rhea,RHEA:20289,Rhea release 2026-09,design reaction curation,results/rhea_design_reactions.csv
+Rhea,RHEA:16845,Rhea release 2026-09,design reaction curation,results/rhea_design_reactions.csv
+ChEBI via EBI OLS4,CHEBI:26806,ChEBI release via OLS4,design metabolite ontology,results/ols_chebi_design_metabolites.csv
+ChEBI via EBI OLS4,CHEBI:68542,ChEBI release via OLS4,design metabolite ontology,results/ols_chebi_design_metabolites.csv
+ChEBI via EBI OLS4,CHEBI:15351,ChEBI release via OLS4,design metabolite ontology,results/ols_chebi_design_metabolites.csv
+ChEBI via EBI OLS4,CHEBI:15346,ChEBI release via OLS4,design metabolite ontology,results/ols_chebi_design_metabolites.csv
+ChEBI via EBI OLS4,CHEBI:38503,ChEBI release via OLS4,design metabolite ontology,results/ols_chebi_design_metabolites.csv
+PubChem,CID160419,PubChem release 2026-09,design redox/charge context,results/pubchem_tca_compounds.csv
+PubChem,CID5460307,PubChem release 2026-09,design redox/charge context,results/pubchem_tca_compounds.csv
+PubChem,CID525,PubChem release 2026-09,design redox/charge context,results/pubchem_tca_compounds.csv
+PubChem,CID164533,PubChem release 2026-09,design redox/charge context,results/pubchem_tca_compounds.csv
+PubChem,CID760,PubChem release 2026-09,design redox/charge context,results/pubchem_tca_compounds.csv
+NCBI RefSeq (Datasets API),GCF_000009045.1,RefSeq annotation release,DEG-to-model gene mapping,data/raw/gff_bsubtilis_168.gff
+NCBI RefSeq (Datasets API),GCF_000005845.2,RefSeq annotation release,DEG-to-model gene mapping,data/raw/gff_ecoli_mg1655.gff
+NCBI RefSeq (Datasets API),GCF_000008525.1,RefSeq annotation release,DEG-to-model gene mapping,data/raw/gff_hpylori_26695.gff
+NCBI RefSeq (Datasets API),GCF_000195955.2,RefSeq annotation release,DEG-to-model gene mapping,data/raw/gff_mtb_h37rv.gff
+NCBI RefSeq (Datasets API),GCF_000006945.2,RefSeq annotation release,DEG-to-model gene mapping,data/raw/gff_salmonella_lt2.gff
+NCBI RefSeq (Datasets API),GCF_000009645.1,RefSeq annotation release,DEG-to-model gene mapping,data/raw/gff_saureus_n315.gff
+PaxDb per-study proteomics,224308-BacillusSubtilisSubsp_PRIDE,PaxDb v4.2 per-study dataset (taxid 224308),per-study abundance replication,data/raw/paxdb_perstudy/224308-BacillusSubtilisSubsp_PRIDE.txt
+PaxDb per-study proteomics,224308-GPM_201408,PaxDb v4.2 per-study dataset (taxid 224308),per-study abundance replication,data/raw/paxdb_perstudy/224308-GPM_201408.txt
+PaxDb per-study proteomics,4932-GPM_2012_09_Saccharomyces_cerevisiae,PaxDb v4.2 per-study dataset (taxid 4932),per-study abundance replication,data/raw/paxdb_perstudy/4932-GPM_2012_09_Saccharomyces_cerevisiae.txt
+PaxDb per-study proteomics,4932-GPM_201408,PaxDb v4.2 per-study dataset (taxid 4932),per-study abundance replication,data/raw/paxdb_perstudy/4932-GPM_201408.txt
+PaxDb per-study proteomics,4932-Ghaemmaghami_et_al_yeast_data,PaxDb v4.2 per-study dataset (taxid 4932),per-study abundance replication,data/raw/paxdb_perstudy/4932-Ghaemmaghami_et_al_yeast_data.txt
+PaxDb per-study proteomics,4932-Newman_et_al_yeast_data_SD,PaxDb v4.2 per-study dataset (taxid 4932),per-study abundance replication,data/raw/paxdb_perstudy/4932-Newman_et_al_yeast_data_SD.txt
+PaxDb per-study proteomics,4932-Newman_et_al_yeast_data_YEPD,PaxDb v4.2 per-study dataset (taxid 4932),per-study abundance replication,data/raw/paxdb_perstudy/4932-Newman_et_al_yeast_data_YEPD.txt
+PaxDb per-study proteomics,4932-PA_201303,PaxDb v4.2 per-study dataset (taxid 4932),per-study abundance replication,data/raw/paxdb_perstudy/4932-PA_201303.txt
+PaxDb per-study proteomics,4932-Saccharomyces-cerevisiae_PA_2013-3,PaxDb v4.2 per-study dataset (taxid 4932),per-study abundance replication,data/raw/paxdb_perstudy/4932-Saccharomyces-cerevisiae_PA_2013-3.txt
+PaxDb per-study proteomics,4932-Saccharomyces_cerevisiae_SC_biomart_17916_O__1reps,PaxDb v4.2 per-study dataset (taxid 4932),per-study abundance replication,data/raw/paxdb_perstudy/4932-Saccharomyces_cerevisiae_SC_biomart_17916_O__1reps.txt
+PaxDb per-study proteomics,4932-Saccharomyces_cerevisiae_SC_biomart_18097_O__1reps,PaxDb v4.2 per-study dataset (taxid 4932),per-study abundance replication,data/raw/paxdb_perstudy/4932-Saccharomyces_cerevisiae_SC_biomart_18097_O__1reps.txt
+PaxDb per-study proteomics,4932-Yeast_2009-0522,PaxDb v4.2 per-study dataset (taxid 4932),per-study abundance replication,data/raw/paxdb_perstudy/4932-Yeast_2009-0522.txt
+PaxDb per-study proteomics,4932-Yeast_GeneName_Intensity_Breker_2103,PaxDb v4.2 per-study dataset (taxid 4932),per-study abundance replication,data/raw/paxdb_perstudy/4932-Yeast_GeneName_Intensity_Breker_2103.txt
+PaxDb per-study proteomics,4932-Yeast_Lu_2007_YMD,PaxDb v4.2 per-study dataset (taxid 4932),per-study abundance replication,data/raw/paxdb_perstudy/4932-Yeast_Lu_2007_YMD.txt
+PaxDb per-study proteomics,4932-Yeast_Lu_2007_YPD,PaxDb v4.2 per-study dataset (taxid 4932),per-study abundance replication,data/raw/paxdb_perstudy/4932-Yeast_Lu_2007_YPD.txt
+PaxDb per-study proteomics,4932-Yeast_ORF_intensity_Denervaud_2013,PaxDb v4.2 per-study dataset (taxid 4932),per-study abundance replication,data/raw/paxdb_perstudy/4932-Yeast_ORF_intensity_Denervaud_2013.txt
+PaxDb per-study proteomics,4932-deGodoy_et_al_yeast_data,PaxDb v4.2 per-study dataset (taxid 4932),per-study abundance replication,data/raw/paxdb_perstudy/4932-deGodoy_et_al_yeast_data.txt
+PaxDb per-study proteomics,4932-peptidesatalas_build_April_2009_yeast.new,PaxDb v4.2 per-study dataset (taxid 4932),per-study abundance replication,data/raw/paxdb_perstudy/4932-peptidesatalas_build_April_2009_yeast.new.txt
+PaxDb per-study proteomics,4932-yeast_Nagaraj_2012,PaxDb v4.2 per-study dataset (taxid 4932),per-study abundance replication,data/raw/paxdb_perstudy/4932-yeast_Nagaraj_2012.txt
+PaxDb per-study proteomics,511145-E_coli_Wisniewski_2014_cpc,PaxDb v4.2 per-study dataset (taxid 511145),per-study abundance replication,data/raw/paxdb_perstudy/511145-E_coli_Wisniewski_2014_cpc.txt
+PaxDb per-study proteomics,511145-Ecoli_APEX_arike_2012,PaxDb v4.2 per-study dataset (taxid 511145),per-study abundance replication,data/raw/paxdb_perstudy/511145-Ecoli_APEX_arike_2012.txt
+PaxDb per-study proteomics,511145-Ecoli_Krug_2013,PaxDb v4.2 per-study dataset (taxid 511145),per-study abundance replication,data/raw/paxdb_perstudy/511145-Ecoli_Krug_2013.txt
+PaxDb per-study proteomics,511145-Ecoli_Krug_2013_emPAI,PaxDb v4.2 per-study dataset (taxid 511145),per-study abundance replication,data/raw/paxdb_perstudy/511145-Ecoli_Krug_2013_emPAI.txt
+PaxDb per-study proteomics,511145-Ecoli_emPAI_arike_2012,PaxDb v4.2 per-study dataset (taxid 511145),per-study abundance replication,data/raw/paxdb_perstudy/511145-Ecoli_emPAI_arike_2012.txt
+PaxDb per-study proteomics,511145-Ecoli_iBAQ_arike_2012,PaxDb v4.2 per-study dataset (taxid 511145),per-study abundance replication,data/raw/paxdb_perstudy/511145-Ecoli_iBAQ_arike_2012.txt
+PaxDb per-study proteomics,511145-Ecoli_strainK12_PRIDE,PaxDb v4.2 per-study dataset (taxid 511145),per-study abundance replication,data/raw/paxdb_perstudy/511145-Ecoli_strainK12_PRIDE.txt
+PaxDb per-study proteomics,511145-Escherichia_coli_SC_biomart_12189_E__2reps,PaxDb v4.2 per-study dataset (taxid 511145),per-study abundance replication,data/raw/paxdb_perstudy/511145-Escherichia_coli_SC_biomart_12189_E__2reps.txt
+PaxDb per-study proteomics,511145-Escherichia_coli_SC_biomart_17112_E__2reps,PaxDb v4.2 per-study dataset (taxid 511145),per-study abundance replication,data/raw/paxdb_perstudy/511145-Escherichia_coli_SC_biomart_17112_E__2reps.txt
+PaxDb per-study proteomics,511145-Escherichia_coli_SC_biomart_18119_E__5reps,PaxDb v4.2 per-study dataset (taxid 511145),per-study abundance replication,data/raw/paxdb_perstudy/511145-Escherichia_coli_SC_biomart_18119_E__5reps.txt
+PaxDb per-study proteomics,511145-Escherichia_coli_SC_biomart_29780_E_BTO0000214cellculture_2reps,PaxDb v4.2 per-study dataset (taxid 511145),per-study abundance replication,data/raw/paxdb_perstudy/511145-Escherichia_coli_SC_biomart_29780_E_BTO0000214cellculture_2reps.txt
+PaxDb per-study proteomics,511145-GPM_201408,PaxDb v4.2 per-study dataset (taxid 511145),per-study abundance replication,data/raw/paxdb_perstudy/511145-GPM_201408.txt
+PaxDb per-study proteomics,511145-Lu_ecoli_2007,PaxDb v4.2 per-study dataset (taxid 511145),per-study abundance replication,data/raw/paxdb_perstudy/511145-Lu_ecoli_2007.txt
+PaxDb per-study proteomics,511145-Taniguchi_2010_Table_S6,PaxDb v4.2 per-study dataset (taxid 511145),per-study abundance replication,data/raw/paxdb_perstudy/511145-Taniguchi_2010_Table_S6.txt
+PaxDb per-study proteomics,511145-WT-lewis-peptide_count,PaxDb v4.2 per-study dataset (taxid 511145),per-study abundance replication,data/raw/paxdb_perstudy/511145-WT-lewis-peptide_count.txt
+PaxDb per-study proteomics,511145-ecoli1_HCD_CID_PRIDE,PaxDb v4.2 per-study dataset (taxid 511145),per-study abundance replication,data/raw/paxdb_perstudy/511145-ecoli1_HCD_CID_PRIDE.txt
+PaxDb per-study proteomics,511145-ecoli2_resolutionCombination_PRIDE,PaxDb v4.2 per-study dataset (taxid 511145),per-study abundance replication,data/raw/paxdb_perstudy/511145-ecoli2_resolutionCombination_PRIDE.txt
+PaxDb per-study proteomics,83332-GPM_201408,PaxDb v4.2 per-study dataset (taxid 83332),per-study abundance replication,data/raw/paxdb_perstudy/83332-GPM_201408.txt
+PaxDb per-study proteomics,83332-M.tuberculosis_atlas_build_330,PaxDb v4.2 per-study dataset (taxid 83332),per-study abundance replication,data/raw/paxdb_perstudy/83332-M.tuberculosis_atlas_build_330.txt
+PaxDb per-study proteomics,83332-Mtuberculosis_Albrethsen_2013,PaxDb v4.2 per-study dataset (taxid 83332),per-study abundance replication,data/raw/paxdb_perstudy/83332-Mtuberculosis_Albrethsen_2013.txt
+PaxDb per-study proteomics,83332-My_PXD000483_Cortes_2013,PaxDb v4.2 per-study dataset (taxid 83332),per-study abundance replication,data/raw/paxdb_perstudy/83332-My_PXD000483_Cortes_2013.txt
+PaxDb per-study proteomics,83332-Mycobacterium-tuberculosis_PA_2013-7,PaxDb v4.2 per-study dataset (taxid 83332),per-study abundance replication,data/raw/paxdb_perstudy/83332-Mycobacterium-tuberculosis_PA_2013-7.txt
+PaxDb per-study proteomics,83332-MycobacteriumTuberculosis,PaxDb v4.2 per-study dataset (taxid 83332),per-study abundance replication,data/raw/paxdb_perstudy/83332-MycobacteriumTuberculosis.txt
+PaxDb per-study proteomics,83332-PA_201307,PaxDb v4.2 per-study dataset (taxid 83332),per-study abundance replication,data/raw/paxdb_perstudy/83332-PA_201307.txt
+PaxDb per-study proteomics,85962-GPM_201408,PaxDb v4.2 per-study dataset (taxid 85962),per-study abundance replication,data/raw/paxdb_perstudy/85962-GPM_201408.txt
+PaxDb per-study proteomics,85962-Helicobacter_pylori_SC_biomart_27551_E__5reps,PaxDb v4.2 per-study dataset (taxid 85962),per-study abundance replication,data/raw/paxdb_perstudy/85962-Helicobacter_pylori_SC_biomart_27551_E__5reps.txt
+PaxDb per-study proteomics,99287-GPM_201408,PaxDb v4.2 per-study dataset (taxid 99287),per-study abundance replication,data/raw/paxdb_perstudy/99287-GPM_201408.txt
+PaxDb per-study proteomics,99287-SalmonellaTyphimurium_PRIDE,PaxDb v4.2 per-study dataset (taxid 99287),per-study abundance replication,data/raw/paxdb_perstudy/99287-SalmonellaTyphimurium_PRIDE.txt
+EBI Expression Atlas,E-MTAB-8621,Expression Atlas baseline RNA-seq,isozyme co-expression test,data/raw/gxa_yeast/E-MTAB-8621-tpms.tsv
+EBI Expression Atlas,E-MTAB-8626,Expression Atlas baseline RNA-seq,isozyme co-expression test,data/raw/gxa_yeast/E-MTAB-8626-tpms.tsv
+PRIDE Archive,PXD001357,PRIDE Archive 2026-09,provenance for PaxDb study Ghaemmaghami,results/pride_yeast_projects.csv
+PRIDE Archive,PXD000035,PRIDE Archive 2026-09,provenance for PaxDb study Ghaemmaghami,results/pride_yeast_projects.csv
+PRIDE Archive,PXD000030,PRIDE Archive 2026-09,provenance for PaxDb study Ghaemmaghami,results/pride_yeast_projects.csv
+PRIDE Archive,PXD000027,PRIDE Archive 2026-09,provenance for PaxDb study Ghaemmaghami,results/pride_yeast_projects.csv
+PRIDE Archive,PXD000045,PRIDE Archive 2026-09,provenance for PaxDb study Ghaemmaghami,results/pride_yeast_projects.csv
+PRIDE Archive,PXD001362,PRIDE Archive 2026-09,provenance for PaxDb study Ghaemmaghami,results/pride_yeast_projects.csv
+PRIDE Archive,PXD001359,PRIDE Archive 2026-09,provenance for PaxDb study Ghaemmaghami,results/pride_yeast_projects.csv
+PRIDE Archive,PXD000026,PRIDE Archive 2026-09,provenance for PaxDb study Ghaemmaghami,results/pride_yeast_projects.csv
+PRIDE Archive,PXD000047,PRIDE Archive 2026-09,provenance for PaxDb study Ghaemmaghami,results/pride_yeast_projects.csv
+PRIDE Archive,PXD002694,PRIDE Archive 2026-09,provenance for PaxDb study Ghaemmaghami,results/pride_yeast_projects.csv

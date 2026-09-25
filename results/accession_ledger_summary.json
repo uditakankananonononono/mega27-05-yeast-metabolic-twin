@@ -1,0 +1,24 @@
+{
+  "total_distinct_accession_level_records": 295,
+  "by_resource": {
+    "ChEBI via EBI OLS4": 5,
+    "EBI Expression Atlas": 2,
+    "InterPro (Pfam)": 18,
+    "NCBI RefSeq (Datasets API)": 6,
+    "OMA Browser": 86,
+    "OrthoDB": 12,
+    "PRIDE Archive": 10,
+    "PaxDb per-study proteomics": 47,
+    "PubChem": 5,
+    "RCSB PDB": 28,
+    "Rhea": 6,
+    "UniProtKB": 70
+  },
+  "collapse_rules": [
+    "duplicate (resource, accession) rows count once",
+    "PaxDb whole-organism integrated files excluded as re-deposits of the counted per-study files",
+    "distinct source studies count individually even within one resource",
+    "Crossref/literature DOIs excluded (not datasets)"
+  ],
+  "gate_120": true
+}
