@@ -317,3 +317,38 @@ reported to the program lead.
    code), for 50 seeded collapsed environments (seed 777). G3 unchanged:
    at least one bottleneck cluster supported by both binding/dual evidence
    and FVA across >= 10% of collapsed environments.
+
+## Amendment 3 - 2026-09-26 (appended after judge round 1, before any A5/A7/A8 outcome data)
+
+Prompted by judge round 1 (docs/JUDGE_ROUNDS.md) and folded back under the
+novelty rule. Locked BEFORE the analyses it names are run.
+
+1. **Claim reframing.** The central claim is downgraded from "combined
+   stress creates universal nonlinear productivity collapse" (G2 framing,
+   which FAILED and is not parameter-robust) to: "combined climate stresses
+   drive yeast into discrete, condition-dependent metabolic failure regimes
+   characterized by competing resource-allocation demands." G2 remains
+   reported as failed; no re-gating of G2 is attempted.
+2. **A7 (new, runs BEFORE A5): stress-regime topology + conservation.**
+   Regimes are defined from the A4 binding-constraint vectors over the
+   locked 5,000-environment surface (regime = dominant binding-constraint
+   cluster, v1 labels locked in results/climate/a4_regimes.json).
+   Validation: concordance between model regimes and published single-stress
+   expression programs (glycerol GPD1/GPD2/GPP1/GPP2, heat-shock HSP and
+   glycolytic genes, NCR nitrogen genes) from public transcriptome datasets
+   (Gasch 2000 is context; the locked validation datasets of Section 8 stay
+   as they are). Concordance metric locked: direction-of-change agreement of
+   the regime's signature pathway against the matching stress transcriptome,
+   reported as a binomial test vs 0.5 with 95% CI. No parameter is refit.
+3. **A8 (new): minimal dynamic arm.** A static-optimization dynamic-FBA
+   heat-wave trajectory (30 C baseline, 40 C ramp, 42 C peak, 30 C recovery)
+   on the locked medium, tracking ethanol, glycerol, growth, and maintenance
+   burden over time. Claim limited to: cumulative-exposure threshold
+   behavior vs the static A2 surface. No new parameters beyond the locked
+   stress layers; trajectory grid locked in code before the run.
+4. **A5 reorder + plausibility filter.** A5 strain design now runs after A7
+   and adds a locked biological-plausibility screen before any design is
+   reported: (a) not essential under the target regime per the model's own
+   essentiality call; (b) deletion-screen concordance where the Section 8
+   datasets cover the gene; (c) reported with the regime it targets. Designs
+   failing the screen are reported as screened-out, never as candidates.

@@ -1,0 +1,19 @@
+{
+  "amendment": 3,
+  "version": "regime topology v1 (locked labels)",
+  "source": "a4_binding.csv (369 collapsed envs, 199 solvable; flags re-verified 0 mismatches)",
+  "regime_labels": [
+    "thermal carbon starvation",
+    "osmotic carbon diversion",
+    "ethanol detoxification failure",
+    "multi-constraint collapse"
+  ],
+  "note": "ethanol detoxification failure regime is dominated by the model-imposed ethanol cap and is expected by construction; biological weight falls on the glycerol/thermal regimes",
+  "regime_counts_solvable_collapsed": {
+    "multi-constraint collapse": 69,
+    "osmotic carbon diversion": 69,
+    "thermal carbon starvation": 49,
+    "ethanol detoxification failure": 12
+  },
+  "nonviable_or_infeasible": 170
+}
