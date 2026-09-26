@@ -294,3 +294,26 @@ generated; the original text above is unchanged.
 
 SHA-256 of this amended file is recorded in the commit message and
 reported to the program lead.
+
+---
+
+## Amendment 2 - 2026-09-26 (appended before the sweep and A4 runs)
+
+1. **Sensitivity-sweep design** (Section 4 rule made precise): one-at-a-time
+   sweeps of the three ASSUMED parameters - k_gly {0.5, 2.0} (nominal 1.0),
+   ethanol n {0.75, 2.25} (nominal 1.5), T_max {40, 44} (nominal 42) - plus
+   the nominal set: 7 parameter sets total. Each set is evaluated on the
+   A1 grid curves and a seeded 1,000-environment subsample of the locked
+   5,000-environment LHS sample (subsample = every 5th environment by
+   sample index, deterministic). The full-5,000 nominal-parameter A3 result
+   already reported stands as the nominal verdict; sweeps quantify
+   parameter uncertainty around it and are never used to retune nominals.
+2. **A4 bounded protocol**: binding-constraint identification at every
+   collapsed environment of the subsample (which of: glucose cap, ethanol
+   cap, growth cap, NGAM, glycerol drain, ammonium bound binds at the
+   optimum, with dual values where the solver provides them), clustered
+   across the collapsed set. FVA is run on a declared subset: central
+   carbon + fermentation + glycerol + ammonium reactions (locked list in
+   code), for 50 seeded collapsed environments (seed 777). G3 unchanged:
+   at least one bottleneck cluster supported by both binding/dual evidence
+   and FVA across >= 10% of collapsed environments.
