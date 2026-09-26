@@ -1,0 +1,16 @@
+{
+  "analysis": "A3 Bliss-independence non-additivity (WT, nominal parameters)",
+  "prereg_sha256_amended": "5256070ccb71617a6f88b15550f392332c2ea342e0e2c1e04782a0334a1bd8ae",
+  "n_environments": 5000,
+  "n_collapsed": 1857,
+  "collapsed_fraction": 0.3714,
+  "collapsed_with_negative_deviation": 450,
+  "fraction_negative_deviation_in_collapsed": 0.24232633279483037,
+  "bootstrap95_ci_fraction_negative": [
+    0.22294022617124395,
+    0.2611739364566505
+  ],
+  "mean_deviation_collapsed": 0.002340166548756995,
+  "parameter_uncertainty_bootstrap": "PENDING (pre-registered ASSUMED-parameter sweeps, separate run)",
+  "gate_G2_threshold": "fraction >= 0.25 with CI excluding 0"
+}
