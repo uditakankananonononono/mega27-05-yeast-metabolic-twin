@@ -89,9 +89,10 @@ def applied(model: cobra.Model, env: Environment,
                 set_bounds(ETHANOL_EX, ub=ref.ethanol_max * f_e)
             # growth cap (heat x ethanol)
             set_bounds(GROWTH_RXN, ub=ref.growth_max * f)
-            # Amendment 1: maintenance rises inversely with relative growth
-            ngam = NGAM_VALUE / max(f, VIABILITY_FRACTION)
-            if ngam != NGAM_VALUE:
+            # Amendment 1: maintenance rises inversely with relative growth;
+            # never below the unstressed baseline (clamp at f >= 1)
+            ngam = NGAM_VALUE / max(min(f, 1.0), VIABILITY_FRACTION)
+            if ngam > NGAM_VALUE:
                 set_bounds(NGAM_RXN, lb=ngam, ub=ngam)
         if env.osmotic_m > 0:
             set_bounds(GLYCEROL_EX, lb=params.osmotic.k_gly * env.osmotic_m)
@@ -100,7 +101,12 @@ def applied(model: cobra.Model, env: Environment,
         yield model
     finally:
         for r, lb, ub in reversed(changed):
-            r.lower_bound, r.upper_bound = lb, ub
+            if lb > r.upper_bound:
+                r.upper_bound = ub
+                r.lower_bound = lb
+            else:
+                r.lower_bound = lb
+                r.upper_bound = ub
 
 
 def _optimize(model: cobra.Model, rid: str) -> float:

@@ -1,0 +1,7 @@
+{
+  "analysis": "A1 single-stress dose-response (WT)",
+  "prereg_sha256": "b2235b022fc90d8791d524e9133507e688480651bd2c7551015f38662816dfc5",
+  "n_rows": 66,
+  "sbml_sha256": "30842b15eefb0ef7e36cbdea86a9efddfacf69a871c8b054165faa9af9f6c8eb",
+  "reference_relative_yield": 1.0
+}

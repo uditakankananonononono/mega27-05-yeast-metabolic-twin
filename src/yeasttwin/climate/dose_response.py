@@ -17,13 +17,13 @@ AXES = ("temperature_c", "ethanol_pct", "osmotic_m", "nitrogen_frac")
 def run_a1() -> list[dict]:
     model = load_model()
     stats = model_stats(model)
-    ref = prepare(model)
+    reference = prepare(model)
     rows: list[dict] = []
-    ref = None
+    ref_ethanol = None
     for axis in AXES:
         for v in grid_axes()[axis]:
             env = Environment(**{axis: float(v)})
-            r = ethanol_yield(model, env, ref)
+            r = ethanol_yield(model, env, reference)
             row = {
                 "axis": axis,
                 "value": float(v),
@@ -32,10 +32,10 @@ def run_a1() -> list[dict]:
                 "sbml_sha256": stats["sbml_sha256"],
             }
             if env == Environment():
-                ref = r.ethanol
+                ref_ethanol = r.ethanol
             rows.append(row)
-    if ref is None or ref <= 0:
+    if ref_ethanol is None or ref_ethanol <= 0:
         raise RuntimeError("reference environment missing or zero-yield in A1")
     for row in rows:
-        row["relative_yield"] = row["ethanol"] / ref if row["feasible"] else 0.0
+        row["relative_yield"] = row["ethanol"] / ref_ethanol if row["feasible"] else 0.0
     return rows
