@@ -1,0 +1,22 @@
+{
+  "n_collapsed_input": 369,
+  "n_optimal": 199,
+  "collapse_flag_mismatches": 0,
+  "binding_set_counts": {
+    "ethanol_cap;glycerol_drain": 66,
+    "glucose_cap;ethanol_cap;glycerol_drain": 49,
+    "glucose_cap;ethanol_cap": 34,
+    "glucose_cap;ethanol_cap;growth_cap;glycerol_drain": 18,
+    "glucose_cap;ethanol_cap;growth_cap": 15,
+    "ethanol_cap": 9,
+    "ethanol_cap;growth_cap;glycerol_drain": 3,
+    "ethanol_cap;growth_cap": 3,
+    "glucose_cap;glycerol_drain": 2
+  },
+  "constraint_counts": {
+    "ethanol_cap": 197,
+    "glycerol_drain": 138,
+    "glucose_cap": 118,
+    "growth_cap": 39
+  }
+}
