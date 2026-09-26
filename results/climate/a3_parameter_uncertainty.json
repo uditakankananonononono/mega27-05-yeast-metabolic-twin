@@ -1,0 +1,85 @@
+{
+  "amendment": 2,
+  "gate": "G2",
+  "gate_threshold": 0.25,
+  "a3_primary_5000env": 0.242,
+  "a3_primary_ci95": [
+    0.223,
+    0.261
+  ],
+  "sweep_envs_per_set": 1000,
+  "sets": {
+    "nominal": {
+      "set": "nominal",
+      "n_envs": 1000,
+      "n_collapsed": 369,
+      "collapsed_fraction": 0.369,
+      "fraction_negative_deviation_in_collapsed": 0.26287262872628725,
+      "mean_deviation_collapsed": 0.003203313508503416
+    },
+    "kgly_lo": {
+      "set": "kgly_lo",
+      "n_envs": 1000,
+      "n_collapsed": 367,
+      "collapsed_fraction": 0.367,
+      "fraction_negative_deviation_in_collapsed": 0.2724795640326976,
+      "mean_deviation_collapsed": 0.002404429188960247
+    },
+    "kgly_hi": {
+      "set": "kgly_hi",
+      "n_envs": 1000,
+      "n_collapsed": 374,
+      "collapsed_fraction": 0.374,
+      "fraction_negative_deviation_in_collapsed": 0.25935828877005346,
+      "mean_deviation_collapsed": 0.0031517975973095404
+    },
+    "n_lo": {
+      "set": "n_lo",
+      "n_envs": 1000,
+      "n_collapsed": 167,
+      "collapsed_fraction": 0.167,
+      "fraction_negative_deviation_in_collapsed": 0.33532934131736525,
+      "mean_deviation_collapsed": 0.0018737835068734056
+    },
+    "n_hi": {
+      "set": "n_hi",
+      "n_envs": 1000,
+      "n_collapsed": 501,
+      "collapsed_fraction": 0.501,
+      "fraction_negative_deviation_in_collapsed": 0.27345309381237526,
+      "mean_deviation_collapsed": 0.0008636508552261571
+    },
+    "tmax_lo": {
+      "set": "tmax_lo",
+      "n_envs": 1000,
+      "n_collapsed": 465,
+      "collapsed_fraction": 0.465,
+      "fraction_negative_deviation_in_collapsed": 0.1870967741935484,
+      "mean_deviation_collapsed": 0.0011501340535452146
+    },
+    "tmax_hi": {
+      "set": "tmax_hi",
+      "n_envs": 1000,
+      "n_collapsed": 337,
+      "collapsed_fraction": 0.337,
+      "fraction_negative_deviation_in_collapsed": 0.12759643916913946,
+      "mean_deviation_collapsed": 0.009576853397548823
+    }
+  },
+  "fraction_negative_deviation_range": [
+    0.12759643916913946,
+    0.33532934131736525
+  ],
+  "sets_meeting_G2": [
+    "nominal",
+    "kgly_lo",
+    "kgly_hi",
+    "n_lo",
+    "n_hi"
+  ],
+  "sets_not_meeting_G2": [
+    "tmax_lo",
+    "tmax_hi"
+  ],
+  "verdict": "NOT ROBUST: G2 (>=0.25) holds at nominal, kgly_lo/hi and n_lo/hi but fails under both temperature-margin perturbations (tmax_lo, tmax_hi) and on the primary 5000-env A3 run (0.242). The negative-deviation excess in collapsed environments is real but its magnitude is sensitive to the thermal-death shape parameter; it is not a parameter-robust law."
+}

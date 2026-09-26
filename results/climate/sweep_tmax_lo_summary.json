@@ -1,0 +1,8 @@
+{
+  "set": "tmax_lo",
+  "n_envs": 1000,
+  "n_collapsed": 465,
+  "collapsed_fraction": 0.465,
+  "fraction_negative_deviation_in_collapsed": 0.1870967741935484,
+  "mean_deviation_collapsed": 0.0011501340535452146
+}

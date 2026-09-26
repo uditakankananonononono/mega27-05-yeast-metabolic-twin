@@ -1,0 +1,8 @@
+{
+  "set": "kgly_lo",
+  "n_envs": 1000,
+  "n_collapsed": 367,
+  "collapsed_fraction": 0.367,
+  "fraction_negative_deviation_in_collapsed": 0.2724795640326976,
+  "mean_deviation_collapsed": 0.002404429188960247
+}

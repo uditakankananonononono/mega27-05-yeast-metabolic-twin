@@ -1,0 +1,8 @@
+{
+  "set": "nominal",
+  "n_envs": 1000,
+  "n_collapsed": 369,
+  "collapsed_fraction": 0.369,
+  "fraction_negative_deviation_in_collapsed": 0.26287262872628725,
+  "mean_deviation_collapsed": 0.003203313508503416
+}
