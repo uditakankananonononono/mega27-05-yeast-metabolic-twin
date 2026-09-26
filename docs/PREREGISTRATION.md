@@ -256,3 +256,41 @@ usage terms checked at acquisition and recorded in the dataset manifest.
 No ChatGPT usage anywhere in this project (owner order). No wet-lab claims:
 every prediction is computational, validated only against existing
 experimental data.
+
+---
+
+## Amendment 1 - 2026-09-26 (appended before the first outcome run)
+
+Precise implementation rules for the Section-4 stress mappings and the
+Section-6 viability constraint. Locked before any outcome data was
+generated; the original text above is unchanged.
+
+1. **Heat mapping**: f_T (CTMI) scales glycolytic capacity through the
+   glucose uptake lower bound (base -20 mmol/gDW/h in the complete_y7
+   medium) and, together with f_E, caps growth at f_T x f_E x reference
+   max. Rationale: temperature-dependent enzyme turnover/Vmax decline.
+2. **Ethanol mapping**: f_E (Levenspiel-type) caps the ethanol exchange
+   upper bound at f_E x reference max (product inhibition of the
+   fermentation rate, as measured by the cited kinetics literature) and,
+   with f_T, caps growth.
+3. **Maintenance scaling**: NGAM(env) = 0.7 / max(f_T x f_E, 0.01)
+   mmol ATP/gDW/h (stress raises maintenance energy; ASSUMED functional
+   form, swept +-50% per Section 4). Declared empirical note: under the
+   locked microaerobic base, NGAM rises alone do not reduce max ethanol
+   (respiration of non-sugar carbon absorbs it); the productive couplings
+   are rules 1 and 2. This was discovered in pre-run implementation
+   testing, before any A1-A6 outcome run.
+4. **Viability floor**: an environment is nonviable when
+   f_T x f_E < 0.01 (growth/no-growth boundary convention from predictive
+   microbiology). Nonviable environments are collapsed by definition. This
+   refines the Section-6 "ATP maintenance feasible" clause; it does not
+   replace it.
+5. **Base-medium correction**: standard ammonium availability in the
+   complete_y7 base is the benchmark medium's free ammonium exchange
+   (lb -1000); nitrogen fractions of Section 5 scale that bound.
+6. **Base oxygen**: microaerobic lb -0.5. Fully anaerobic growth is
+   infeasible in this medium (verified pre-run); industrial bioethanol
+   fermentation is microaerobic. Documented modeling choice.
+
+SHA-256 of this amended file is recorded in the commit message and
+reported to the program lead.
