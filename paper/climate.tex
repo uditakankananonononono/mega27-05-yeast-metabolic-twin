@@ -1397,6 +1397,67 @@ boundary, not a model defect: the same model that misses every gene-
 level hit reproduces the process-level carbon economics (A1--A4) and
 points the same way as the cell's transcriptional program (A7).
 
+
+\subsection{A6 dataset by dataset}
+\label{sec:a6detail}
+
+\paragraph{GSE151784 (acute lethal ethanol, barcode counts).} The
+universe is the 705 genes shared by the model and the library's
+measurable set. Model-side stress is the locked ethanol exemplar
+(8\% v/v at 30\,$^{\circ}$C); dataset hits are the 604 genes whose
+mean $\log_2$ depletion across triplicates falls below $-1$. The
+contingency table is degenerate - 0 model-sensitive genes against 604
+experimental hits - giving Fisher one-sided $p=1.0$ and MCC $=0$
+with CI $[0,0]$. The ethanol regime is where the A4 mechanism is
+most purely boundary-driven (the ethanol cap binds in 197 of 199
+solvable collapsed environments), so the degeneracy here is the
+mechanism's gene-side shadow: no deletion can become
+stress-conditionally sensitive through a constraint that is not a
+gene.
+
+\paragraph{Gibney 2013 (heat-shock survival, Bar-seq).} Universe 678
+genes; model heat exemplar 39\,$^{\circ}$C; 536 dataset hits on the
+authors' own significance call; overlap 0, same degenerate shape.
+The heat case adds one interpretive wrinkle: this is the regime where
+the cell's own transcriptional response is loudest (A7 arm B,
+10/10 markers), so the model--screen disagreement and the
+model--transcriptome agreement coexist in the same stress - further
+evidence that the disagreement is layer-specific (flux bounds vs
+survival biology), not a generic failure of the thermal mapping.
+
+\paragraph{GSE59659 (osmotic, two arms).} Universe 1{,}060 genes
+(processed series matrix mapped through GPL9825); sorbitol arm at
+1\,M (141 hits) and high-glucose arm at 1.1\,M-equivalent (146 hits).
+Here alone the model produces any sensitive calls at all: 3 genes,
+overlapping 0 of the experimental hits in both arms. The
+near-degeneracy is again mechanistic: the osmotic lever is a glycerol
+carbon tax, and only deletions that graze the glycerol branch can
+shift a stress-conditional growth ratio under it.
+
+\paragraph{AJEV named genes (qualitative).} The five resolvable named
+genes, with SGD-verified identifiers frozen in code before any model
+call: ADH1 (YOL086C) - deletion grows at wild-type rate under both
+reference and 8\% ethanol (sensitivity ratio 1.0), discordant with
+the screen, with isozyme redundancy (ADH2--5) as the model's internal
+explanation; GSH1 (YJL101C) - unconditionally lethal in the model,
+excluded by the locked rule and declared a likely artifact of absent
+glutathione salvage; CLC1 (YGR167W), UME6 (YDR207C), VPS24 (YKL041W)
+- channel, transcription factor, and ESCRT functions with no
+metabolic-model counterpart, recorded as outside the model's
+vocabulary; TDP3 - unresolvable through the SGD API, recorded as
+unresolved rather than substituted. Score: 0 concordant of 1
+evaluable, reported per the locked rule.
+
+\paragraph{Nutrient checks (E-GEOD-1723, E-MTAB-8245).} Not evaluable,
+with the root cause measured rather than asserted: under the locked
+25\% nitrogen regime, growth (0.5733511135347423 vs
+0.5733511135347452), ammonium flux (+3.76, excreted), phosphate,
+sulfate, and glucose fluxes are bit-identical to reference, and the
+ammonium bound is nowhere near active. The nitrogen-limited state the
+checks were designed to probe does not exist in the model, so no
+comparison is possible; the checks are reported as not evaluable, and
+the flat nitrogen axis is declared wherever it appears.
+
 \subsection{A7 in detail: what concordance can and cannot certify}
 
 The four concordance arms were designed to separate layers. The
