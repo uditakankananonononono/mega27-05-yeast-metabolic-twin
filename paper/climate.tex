@@ -722,6 +722,119 @@ with the batch substrate-exhaustion confound declared and the
 very-high-gravity variant labeled exploratory (post-run, Section-12
 rule).
 
+
+\subsection{Stage protocols in detail}
+\label{sec:stageprotocols}
+
+The stage summaries above are the contract; the protocols below are
+the execution. Every stage runs as an independent driver with its own
+artifact directory, writes a summary JSON carrying the
+pre-registration hash it answers to, and can be resumed after machine
+interruption without recomputation.
+
+\paragraph{A1 protocol.} For each single axis, the environment is
+varied over its locked levels with all other axes at reference. At
+each point the stress layers are applied to a fresh copy of the model
+(models are never mutated cumulatively), feasibility is checked, and
+maximal ethanol exchange is solved. The relative yield is the ratio
+to the same-day reference solve. The 66-row artifact
+(\texttt{a1\_dose\_response.csv}) records the axis, level, absolute
+yield, feasibility, the SBML hash, and the relative yield, so the
+dose-response figure is a join, not a reconstruction.
+
+\paragraph{A2 protocol.} The 5{,}000 four-axis environments are drawn
+by Latin-hypercube sampling over the locked ranges (seed 20260926),
+partitioned into 200-environment shards, and each shard is solved
+independently with shard-level checkpointing - the shard files are
+part of the repository. An environment is collapsed when its relative
+ethanol yield falls below 0.20; the flag, the yield, and the solver
+status are recorded per environment. The collapse surface is then a
+pure query over the joined artifact, which is what makes the A4
+re-verification (below) meaningful.
+
+\paragraph{A3 protocol.} For every sampled environment, the three
+single-stressor yields at its axis values are looked up from the A1
+grid (bilinear interpolation is prohibited; environments off the A1
+knots use their own single-axis solves), the Bliss baseline is the
+product, and the deviation is the observed combined yield minus the
+baseline. The locked statistic is the fraction of collapsed
+environments with negative deviation, with a bootstrap CI over
+environments (seed 20260927). The Amendment-2 sweep arm re-runs the
+statistic on 1{,}000-environment samples under each one-at-a-time
+parameter perturbation - seven sets total - so the gate decision
+sees the statistic's parameter sensitivity, not a point estimate.
+
+\paragraph{A4 protocol.} The collapsed set is subsampled
+deterministically (every fifth environment, 369 of the sample), and
+every subsampled flag is re-verified by a fresh solve before any
+analysis - this re-verification caught and quarantined an indexing
+bug in an early run, before any results were kept. For each
+re-verified collapsed environment, the solver's bound activity at the
+optimum is read directly: a constraint binds when its flux equals its
+bound within tolerance, and its shadow price (reduced cost) is
+recorded from the dual. Binding-set clusters are counted over
+environments. The FVA arm fixes the objective at its optimum and
+varies each member of the locked 121-reaction subset over 50 seeded
+environments (seed 777), of which 25 were solvable; both the strict
+forced-width criterion and the direction-aware check (does the optimum
+sit at the bound for lower-bound constraints?) were locked in advance,
+and both are reported, including where they disagree.
+
+\paragraph{A5 protocol.} The design campaign is staged to protect the
+TEST region: screens ran on the 40-environment screen sample, the
+top-30 per arm confirmed on the 150-environment design sample, and
+only confirmed candidates (25) touched the 150-environment TEST
+sample, exactly once. Singles: all 1{,}143 genes with model reactions,
+deletion by GPR knock-out. Doubles: 435 seeded pairs from the locked
+candidate pool. Scalings: 36 reaction-bound multipliers
+(0.25$\times$, 0.5$\times$, 2$\times$, 4$\times$ on a locked
+nine-reaction list covering glycerol, glycolytic, fermentative, and
+membrane-transport nodes). Evolutionary search: three seeds, twelve
+generations, population 24, genome over the top-30 confirmed
+modifications, selection on mean DESIGN-relative yield with collapse
+penalty. The random baseline draws 150 budget-2 designs (30 seeds)
+under identical evaluation, giving the null distribution G4(b)
+compares against. Plausibility filters were locked before outcomes:
+filter (a) excludes designs essential under the target-regime
+exemplar; filter (b) - dataset concordance - was pending at design
+time by construction (the datasets are A6's subject) and is recorded
+as such. Every evaluation ran under a hard per-design timeout with
+the solver-timeout register of Appendix~\ref{app:solver}.
+
+\paragraph{A6 protocol.} For each dataset, the locked universe is the
+intersection of model genes and measured genes; the model side is the
+locked stress-conditional sensitivity call of
+Section~\ref{sec:datasets} (growth-based, exclusion rule for
+unconditionally sick knockouts recorded per gene); the dataset side is
+the locked hit call. The overlap is a Fisher exact test (one-sided
+greater) per comparison with BH-FDR 5\% across the four comparisons,
+plus the MCC with bootstrap CI. The qualitative arm froze the named
+genes of the AJEV screen in code with SGD-verified systematic
+identifiers before any model call; unresolved identifiers (TDP3) were
+recorded as unresolved, not substituted.
+
+\paragraph{A7 protocol.} Marker gene sets for the four regimes were
+locked with citations (glycerol biosynthesis; heat-shock proteins;
+glycolysis; nitrogen-catabolite targets), systematic identifiers
+SGD-verified and frozen in code, and each marker's log2 ratio read
+from the locked Gasch-2000 column for its regime's shock. Agreement
+is directional (induction where the regime is active), scored by
+one-sided binomial test per arm. The ethanol arm was locked as
+untestable - Gasch-2000 contains no ethanol-stress experiment - and
+was not retrofitted.
+
+\paragraph{A8 protocol.} Dynamic FBA over the locked time grid
+(0.25\,h steps, 16\,h), with the environment (temperature) updated
+per phase of the locked heat-wave profile, batch mass balances
+integrated explicitly (biomass, glucose, ethanol, glycerol; 1\,L,
+0.1\,gDW/L inoculum, 111\,mmol/L initial glucose), and declared unit
+constants. Dynamic collapse onset is the first step at which the
+relative ethanol flux falls below the collapse threshold; the static
+prediction is the same threshold applied to the static surface along
+the trajectory. The batch substrate-exhaustion confound was declared
+in the amendment, and the very-high-gravity variant
+(1{,}665\,mmol/L) is labeled exploratory per the post-run rule.
+
 \subsection{Gates}
 \label{sec:gates}
 
@@ -828,6 +941,79 @@ subsampled deterministically (every fifth environment of the sample,
 solve with zero mismatches; an earlier indexing bug in this subsample
 mapping was caught by that re-verification and fixed before any
 results were kept.
+
+
+\subsection{A1 in detail: the shape of each axis}
+
+The temperature curve deserves a careful reading because it is the
+axis on which the G2 fragility later turns. From 28\,$^{\circ}$C
+(relative yield 0.948) the curve rises to its optimum plateau across
+30--33\,$^{\circ}$C, where the CTMI normalization holds it at the
+reference value; the decline then steepens through 34\,$^{\circ}$C
+(0.996), 36\,$^{\circ}$C (0.914), and 38\,$^{\circ}$C (0.757), passes
+the half-yield point just above 40\,$^{\circ}$C (0.502 at
+40\,$^{\circ}$C exactly), and reaches infeasibility at
+42\,$^{\circ}$C. Two properties of this shape matter downstream.
+First, the plateau means that in the mild corner of the grid,
+temperature is a non-stressor: nearly a third of the sampled
+environments sit on the plateau side of the surface. Second, the
+steep terminal fall means that the placement of $T_{\max}$ - the one
+cardinal parameter without a tight published consensus - moves the
+collapse boundary by whole percentage points of ethanol tolerance,
+which is precisely the mechanism by which the $T_{\max}$ sweeps break
+the G2 statistic (Section~\ref{sec:a3}). The fragility is not hidden
+in the fit; it is the physics of the cardinal form near its maximum.
+
+The ethanol curve is the Levenspiel law operating as declared:
+relative yield 0.895 at 1\%, 0.794 at 2\%, 0.604 at 4\%, 0.515 at
+5\%, 0.354 at 7\%, 0.281 at 8\%, 0.153 at 10\%, 0.054 at 12\%, and
+infeasibility at 13\% - one percentage point below the locked
+$P_{\max}=14\%$, the gap being the joint effect of the growth-cap and
+maintenance terms as $f_E\to 0$. We flag the obvious consequence:
+because the 20\%-collapse threshold is crossed at about 5.4\% ethanol
+on this curve, a large fraction of the A2 collapse set is
+ethanol-driven, and the collapse map's ethanol edge is a mapping
+edge. What the map adds beyond the single-axis law is the interaction
+structure of Section~\ref{sec:a2detail}, not the edge itself.
+
+The osmotic curve is shallow by design of the locked coefficient:
+relative yield declines linearly from 1.000 at 0\,M through 0.989 at
+0.5\,M to 0.968 at 1.0\,M and 0.957 at 1.5\,M - a 4.3\% carbon tax at
+the grid's osmotic maximum, far above the 20\% collapse threshold on
+its own. The osmotic axis therefore cannot create collapse in
+isolation under the locked $k_{\mathrm{gly}}$, and its role in the
+combined surface is as a boundary-shifter: it subtracts from the
+carbon budget of environments already near the edge. The nitrogen
+curve is flat at 1.000 across all twenty levels, which is the visible
+signature of the inert-lever limitation declared in
+Section~\ref{sec:stresslayers}; we keep the twenty rows in the
+artifact because the flatness is evidence.
+
+\subsection{A2 in detail: the geography of collapse}
+\label{sec:a2detail}
+
+Marginal collapse frequencies across the 5{,}000-environment sample
+make the interaction structure quantitative. Temperature: 44.3\% of
+environments at or above 38\,$^{\circ}$C are collapsed, against
+32.1\% at or below 32\,$^{\circ}$C. Ethanol: 100\% of environments at
+or above 10\% v/v are collapsed - the mapping edge - against 3.8\%
+at or below 2\%. Osmolarity: 38.1\% at or above 1.2\,M against
+34.5\% at or below 0.2\,M, a modest but real shift consistent with
+the shallow single-axis tax. The mild corner (temperature
+$\le 32\,^{\circ}$C, ethanol $\le 2\%$, 191 sampled environments)
+contains zero collapses; the hostile corner (temperature
+$\ge 38\,^{\circ}$C, ethanol $\ge 10\%$, 415 environments) is
+entirely collapsed. Between the corners, the surface is a smooth
+ramp whose gradient is set jointly by the thermal and ethanol terms,
+with the osmotic term translating it.
+
+Read as an operational map, the surface says: there is no free
+headline temperature gain to be had against ethanol, and no free
+ethanol gain against heat - the joint region where a producer would
+want to run hot (to save cooling) and push titer (to save
+distillation energy) is exactly the region where the model's carbon
+economy closes. This is the map the design campaign then tried, and
+failed, to move.
 
 \subsection{A3: non-additivity is real but not parameter-robust}
 \label{sec:a3}
@@ -956,6 +1142,91 @@ with environment-imposed caps can see. The model is a valid map of
 carbon-flow economics under stress (Sections A1--A4) and an invalid
 predictor of gene-level stress sensitivity (A6). Both statements are
 results of this paper.
+
+
+\subsection{A5 in detail: anatomy of a null}
+
+The null deserves its own inspection, because ``nothing works'' can
+mean a weak search, a broken evaluation, or a true boundary, and only
+the third is worth publishing. Three internal checks say the third.
+
+First, the evaluation could see effects where effects exist. The
+matched random baseline - 150 budget-2 designs drawn under identical
+code - does not sit uniformly at 1.0: its median mean-relative yield
+is 1.0, but 44\% of random designs score below it, some substantially
+(the weakest random pairs land near 0.97 with up to 92 newly collapsed
+environments across the 150-environment design sample; the mean random
+design newly collapses about one environment). The measurement
+pipeline therefore resolves both damage and neutrality at the
+per-environment level; what it never sees, from any arm, is gain.
+
+Second, the search was broad in kind, not only in count. Deletions
+remove function; scalings move capacity in both directions
+(0.25$\times$ to 4$\times$) on a reaction list chosen to cover the
+glycerol branch, glycolysis, fermentation, and membrane transport -
+the very nodes the A4 mechanism implicates; the evolutionary search
+recombined the best of all of it for twelve generations under three
+seeds. If a network-internal lever existed anywhere near the confirmed
+modification set, the evolutionary stage - which starts from it - is
+the stage that should have found it. It found exactly the same 1.0.
+
+Third, the explanation pre-dates the result. A4's mechanism says
+collapse is enforced at the boundary - uptake capacity, product cap,
+obligatory glycerol drain - and boundary constraints in FBA are
+properties of the environment mapping, not of the network, so no GPR
+rule can delete them and no internal scaling can relax them. The A5
+null is what A4 predicts. When a search outcome is the deductive
+consequence of an independently gated finding, the negative is a
+measurement, not an absence.
+
+The one literal pass in the TEST evaluation deserves its sentence of
+record: YGL248W deletion printed $1+8\times10^{-15}$ on mean relative
+yield, a number eight orders of magnitude inside any conceivable
+biological effect and inside the declared solver-noise band, with
+wild-type-identical tolerances. We report it because the locked rules
+require counting it, and we score G4 failed because the same locked
+rules require passing to mean something.
+
+\subsection{A6 in detail: the shape of the disagreement}
+
+The overlap null is not a near-miss, and its structure is
+informative. On the model side, stress-conditional sensitivity -
+the growth cost of a deletion under stress relative to reference -
+is almost never triggered, because under stress the binding
+constraints are the environment caps, which deletions do not touch:
+0 sensitive genes of the 705-gene ethanol universe, 0 of the 678-gene
+heat universe, 3 of the 1{,}060-gene osmotic universe. On the dataset
+side, the screens are rich: 604 ethanol hits, 536 heat hits, 141 and
+146 osmotic hits. The contingency tables are therefore degenerate in
+the model's sensitive row, and no statistic can manufacture overlap
+from an empty set - which is itself the finding: the gene-level
+sensitivity the screens measure does not pass through the flux
+bottlenecks the model carries. Gene ontology of the screen hits
+(protein synthesis, vacuole, mitochondria, trafficking) points at the
+proteostasis and organelle layer, exactly the layer a stoichiometric
+model does not represent. We state this as a representational
+boundary, not a model defect: the same model that misses every gene-
+level hit reproduces the process-level carbon economics (A1--A4) and
+points the same way as the cell's transcriptional program (A7).
+
+\subsection{A7 in detail: what concordance can and cannot certify}
+
+The four concordance arms were designed to separate layers. The
+heat-shock arm is the cleanest possible signal - ten markers chosen
+from the canonical program, all ten induced, $p=9.8\times10^{-4}$ -
+and it certifies that the model's thermal regime and the cell's
+thermal response are the same regime. The glycerol arm's single
+dissenter (GPD2 flat at $-0.01$ while GPD1, GPP1, GPP2 induce) is
+itself biologically literate: the GPD1/GPD2 and GPP1/GPP2 paralog
+pairs are differentially regulated, and the osmotic arm's markers
+split exactly along the published regulatory division, which is why a
+3/4 with the right 3 is more informative than its binomial $p=0.31$
+suggests. The glycolytic arm (9/14) and nitrogen-catabolite arm
+(6/7, $p=0.06$) are directional context, reported at their evidential
+weight. What A7 does not do is validate flux predictions: the locked
+design grades the dataset as context, the concordance is over
+directions of transcriptional response, and we use it to certify
+regimes, not numbers.
 
 \subsection{A7: regime--transcriptome concordance is directionally right}
 \label{sec:a7}
