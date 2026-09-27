@@ -336,7 +336,7 @@ def stage_evo():
         all_rows.extend(scored[:5])
     uniq = {}
     for mods, rel, nc in all_rows:
-        uniq[tuple(mods)] = (rel, nc)
+        uniq[tuple(tuple(m) for m in mods)] = (rel, nc)
     finalists = sorted(uniq.items(), key=lambda kv: -kv[1][0])[:10]
     rows = confirm([list(m) for m, _ in finalists], load_subsamples()
                    ["design150"], wt, "evo_conf")
