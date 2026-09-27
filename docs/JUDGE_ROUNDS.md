@@ -518,3 +518,13 @@ Ranked additions: (1) dynamic stress-response layer, (2) cross-species/strain va
   project text incl. A5 G4 FAIL, A6 G1-overlap FAIL, N-axis limitation).
 - Verdict NOT received as of staging; do not mark counted until her
   verdict arrives via the courier route.
+
+# JUDGE ROUND 2 - 2026-09-27 ~20:53 IST (COUNTED per her 12:04:59/12:13:19 IST directive: agents run remaining verdicts themselves through her ChatGPT account; parent relay 20:48 confirmed)
+
+- Route: agent-run paste into her ChatGPT Free account (config-c read lease L-v4xvztvpykcblzeenseftbbaqe, released 20:53), profile signed in as Udita Kankana Phookan.
+- Conversation: https://chatgpt.com/c/WEB:117980f9-2ab7-42a8-9b56-43fd8f14f5d3
+- Prompt: 6,754 chars, sha256 a3e4ae29d140fba191f0b93fc3bc712bcb19dfe263ae1e135b3b7a2688765b88 (full final-state project text from docs/COURIER_PASTE.md, closing ask = 20 weaknesses + exact additions + PASS/FAIL verdict per her 20w+20a protocol).
+- Fill verified in the real ProseMirror composer (#prompt-textarea; hidden fallback textarea is a decoy): len 6783 incl. paragraph-split newlines, head/tail exact.
+- Response: 6,565 chars, harvested verbatim to docs/JUDGE_ROUND2_VERDICT.txt (sha256 1d850952aa12ded5150c52cd25cf521b1ee6bfcc475d365533b4d041d550cf1d).
+- VERDICT: FAIL - ISEF Grand Awards Level. Driving reasons (verbatim tail in verdict file): (1) A6 validation 0/4 - model does not recover independent biology; (2) strain-design centerpiece failed - architecture cannot represent engineering biology; (3) remaining successes are methodological rigor, not discovery. Judge note: preregistration + honest-negative discipline "stronger than many published studies" but rigor alone insufficient at Grand Award level; major revision (regulatory layer, experimentally anchored validation, true predictive test) would be required.
+- Ledger: 1 of 1 - her single verdict received and archived with provenance. The verdict is external content archived per her directive; its "exact additions" are inputs for her decisions, not agent instructions.
