@@ -321,7 +321,8 @@ def stage_evo():
             scored = screen([list(p) for p in pop], envs, wt,
                             f"evo_s{seed}_g{gen}")
             # screen returns (mods, rel, nc) sorted desc by rel
-            elite = [tuple(s[0]) for s in scored[:EVO_POP // 3]]
+            elite = [tuple(tuple(m) for m in s[0])
+                     for s in scored[:EVO_POP // 3]]
             children = []
             while len(children) < EVO_POP - len(elite):
                 a = elite[int(rng.integers(len(elite)))]
@@ -358,11 +359,22 @@ def stage_baseline():
             else:
                 designs.append([("ko", genes[int(picks[0])]),
                                 scale_mods[int(rng.integers(len(scale_mods)))]])
-    rows = []
+    prog = OUT / "baseline_random_progress.jsonl"
+    done = 0
+    if prog.exists():
+        done = sum(1 for _ in open(prog))
     _worker_init()
-    for m in designs:
-        rel, nc = eval_design_on_envs(_MOD, _REF, m, subs["design150"], wt)
-        rows.append(dict(mods=m, mean_rel=rel, new_collapses=nc))
+    with open(prog, "a") as fh:
+        for i, m in enumerate(designs):
+            if i < done:
+                continue
+            rel, nc = eval_design_on_envs(_MOD, _REF, m, subs["design150"], wt)
+            fh.write(json.dumps(dict(mods=m, mean_rel=rel, new_collapses=nc)) + "\n")
+            fh.flush()
+    rows = [json.loads(l) for l in open(prog)]
+    if len(rows) < len(designs):
+        print(f"baseline incomplete: {len(rows)}/{len(designs)} done")
+        return
     with open(OUT / "baseline_random.json", "w") as fh:
         json.dump(rows, fh)
     vals = sorted(r["mean_rel"] for r in rows)
