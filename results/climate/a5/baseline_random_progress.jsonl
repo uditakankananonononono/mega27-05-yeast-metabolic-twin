@@ -1,0 +1,14 @@
+{"mods": [["ko", "YJL121C"], ["ko", "YDL247W"]], "mean_rel": 0.9753409019811602, "new_collapses": 2}
+{"mods": [["ko", "YMR015C"], ["ko", "YGR282C"]], "mean_rel": 1.0000000000000002, "new_collapses": 0}
+{"mods": [["ko", "YNL071W"], ["ko", "YNL202W"]], "mean_rel": 1.0000000000000002, "new_collapses": 0}
+{"mods": [["ko", "YGR202C"], ["ko", "YJL221C"]], "mean_rel": 1.0000000000000002, "new_collapses": 0}
+{"mods": [["ko", "YDL004W"], ["ko", "YER119C"]], "mean_rel": 0.966035574350312, "new_collapses": 4}
+{"mods": [["ko", "YML081C-A"], ["ko", "YHR063C"]], "mean_rel": 0.9660355743503121, "new_collapses": 4}
+{"mods": [["ko", "YDL205C"], ["ko", "YLL043W"]], "mean_rel": 1.0, "new_collapses": 0}
+{"mods": [["ko", "YLR350W"], ["scale", "r_0491", 0.5]], "mean_rel": 1.0000000000000002, "new_collapses": 0}
+{"mods": [["ko", "YLR133W"], ["scale", "r_1115", 0.25]], "mean_rel": 1.0, "new_collapses": 0}
+{"mods": [["ko", "YNL029C"], ["scale", "r_1115", 4.0]], "mean_rel": 1.0, "new_collapses": 0}
+{"mods": [["ko", "YLL062C"], ["ko", "YPL059W"]], "mean_rel": 1.0000000000000002, "new_collapses": 0}
+{"mods": [["ko", "YBR004C"], ["ko", "YDR503C"]], "mean_rel": 1.0000000000000013, "new_collapses": 0}
+{"mods": [["ko", "YOR176W"], ["ko", "YLR058C"]], "mean_rel": 1.0, "new_collapses": 0}
+{"mods": [["ko", "YGL009C"], ["ko", "YDL100C"]], "mean_rel": 0.9999999999999991, "new_collapses": 0}
