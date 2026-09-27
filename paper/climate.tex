@@ -136,6 +136,53 @@ a property of the biology or of the mathematics used to describe it? We
 treat these as separate, testable questions, and we built the study so
 that each gets its own pre-registered gate.
 
+
+\subsection{The climate coupling, made concrete}
+
+The phrase ``climate-resilient fermentation'' compresses three
+distinct couplings between a warming climate and an ethanol plant,
+and the model's axes map onto them one-to-one. The first is direct
+thermal exposure: fermentation is exothermic, jacket cooling has
+finite duty, and a heat wave arriving mid-campaign pushes vessel
+temperatures into the organism's decline region for days at a time -
+the temperature axis, and the degree-hour framing of A8. The second
+is feedstock stress: drought- and heat-affected harvests change mash
+composition, and the industry's economic response is to push toward
+very-high-gravity operation to amortize distillation energy - the
+osmotic axis, with its glycerol invoice, and the ethanol axis, since
+higher gravity means higher endogenous product toxicity. The third is
+input cost: water, cooling energy, and nutrient supplementation all
+tighten under climate pressure - the nutrient axis, which this model
+could not make real, and which the defined-medium continuation exists
+to fix. A resilience question posed about one axis alone is, by now,
+an artificial question; the industry's actual question is the joint
+corner, and the joint corner is exactly where the single-stressor
+literature runs out. That gap - not any algorithmic novelty - is the
+paper's reason to exist.
+
+\subsection{Positioning against the strain-engineering record}
+
+The experimental strain-engineering literature on stress tolerance in
+yeast is rich, and its shape is worth stating because it frames what
+an in silico campaign can and cannot add. Successful tolerance
+engineering has largely come from three directions: membrane and
+cell-wall composition edits, which act at the physical interface the
+model does not represent; chaperone and proteostasis augmentation,
+which acts at the survival layer the A6 null shows the model cannot
+see; and adaptive laboratory evolution, which finds polygenic
+solutions whose mechanisms are often regulatory. Targeted metabolic
+edits of the kind FBA proposes - knockouts, flux redirections - have
+their successes primarily in growth-coupled production regimes. Our
+exhaustive null is consistent with that record read at the
+constraint level: the levers that have worked experimentally live in
+layers above the stoichiometry, and the levers the stoichiometry
+offers are, in this regime, already saturated by the wild type. The
+paper's design null should therefore not be read as pessimism about
+stress-tolerant strains; it is a precision statement about which
+model class can propose which kind of design, and an argument that
+the next in silico gains in this regime come from representing the
+layers the screens keep pointing at.
+
 \subsection{What this paper does}
 
 We construct a virtual \emph{S.\ cerevisiae} cell for combined-stress
@@ -183,6 +230,58 @@ paper - about what combined-stress collapse is not, and about what
 steady-state strain design cannot do - are as much a part of the
 scientific record as the positive map and mechanism, and they are
 established here with the same evidentiary discipline.
+
+
+\subsection{Summary of the campaign, in one paragraph per stage}
+
+A1 solved 66 single-axis environments and produced the three active
+dose laws the rest of the paper divides by - thermal, ethanol,
+osmotic - plus the flat nitrogen curve that later proved to be
+evidence. A2 solved 5{,}000 four-axis environments in 25 shards and
+mapped collapse: 1{,}857 environments (37.1\%) below the locked
+productivity threshold, structured by heat and ethanol, translated by
+osmolarity. A3 asked whether combined stress exceeds the
+multiplicative single-stressor baseline and answered: a negative-deviation
+tail exists in every parameter set, but its size rides the
+thermal-death margin, so the locked 25\% gate fails (24.2\% primary,
+12.8--33.5\% across sweeps). A4 re-verified every collapse flag in a
+369-environment subsample (zero mismatches, one caught indexing bug)
+and named the mechanism: co-limitation by the glucose-uptake cap and
+the obligatory glycerol drain, with shadow prices 0.58 and 0.37, the
+growth cap degenerate, and the ethanol cap binding by construction.
+A5 searched everything the network could offer - 1{,}143 deletions,
+435 pairs, 36 scalings, three twelve-generation evolutionary runs,
+against a 150-design random baseline - and found nothing beyond
+solver noise, 0/25 at TEST, with 16 solver hangs registered. A6 faced
+the model with three accession-level deletion screens and a
+qualitative gene set: overlap 0/4 quantitative, 0/1 qualitative,
+nutrient checks not evaluable with the nitrogen lever proven inert
+by bit-identical fluxes. A7 checked the regimes against the cell's
+own stress program and found 10/10 heat-shock markers induced
+($p=9.8\times10^{-4}$), with the glycerol, glycolytic, and
+nitrogen-catabolite arms directionally concordant. A8 lifted the
+surface into time and found the dynamic collapse arriving an hour
+ahead of the static prediction under a locked heat-wave profile, with
+the batch confound declared and the high-gravity variant labeled
+exploratory. The gates: G1 partial, G2 failed, G3 met in substance,
+G4 failed - the ledger is printed, not summarized away.
+
+\subsection{What is new here, stated modestly}
+
+We claim four novelties, in ascending order of ambition. Procedural:
+a fully hashed pre-registration lifecycle for a genome-scale modeling
+campaign, with amendments, solver registers, and a judge archive,
+published whole. Empirical: the first four-axis collapse map of a
+genome-scale fermentation model at this sampling density, with its
+co-limitation mechanism quantified in binding, dual, and variability
+evidence. Methodological: an exhaustive strain-design campaign whose
+matched random baseline lets a total null be distinguished from a
+weak search - and a demonstration that in the boundary-capped regime
+the null is the deductive consequence of the mechanism. And cultural:
+a validation campaign that reports a clean, degenerate, unrescuable
+null against three independent screens, with the layer diagnosis
+that makes it informative. None of these requires the reader to trust
+us; every one of them is checkable from the pinned commit.
 
 \subsection{Summary of principal findings}
 
@@ -597,6 +696,55 @@ this application area that ships its negative gate ledger; we argue
 in Section~\ref{sec:discussion} that the negatives here are the more
 durable contribution.
 
+
+\subsection{Prior computational work on combined stress}
+
+The computational literature on combined-stress fermentation is
+smaller than the problem. Flux-based studies have mapped single
+stressors at genome scale - temperature through enzyme-constrained
+variants, ethanol through inhibition-adjusted bounds, osmolarity
+through glycerol-pathway demand - and a handful of two-axis studies
+exist, mostly as pairwise interaction screens over a handful of
+levels. We are aware of no prior study that does what this one
+attempts: a four-axis environment space at accession-level sampling,
+stress layers with published anchoring and declared assumed
+parameters, interaction quantification with pre-registered parameter
+sweeps, an exhaustive design search with a matched random baseline,
+and independent validation against three deletion-screen datasets with
+locked statistics - all under a hashed pre-registration with the
+negative gates printed. The closest methodological relatives are the
+enzyme-constrained modeling literature (which adds protein-mass
+budgets and would be the natural host of our regulatory continuation)
+and the environmental-stress transcriptome literature (which supplies
+our concordance benchmark but no flux predictions). The gap this
+paper occupies is therefore not algorithmic - every technique here is
+standard - but procedural and empirical: the combination of scale,
+locks, and honest scoring is what the application area lacked.
+
+\subsection{Why flux balance, given its known limits}
+
+A fair question for this program is why a constraint-based model at
+all, when kinetic and whole-cell approaches carry more mechanism. The
+answer is the same bargain the field has made for twenty years,
+taken with open eyes. Kinetic models of the stress response exist in
+modules - glycolysis under temperature, the HOG pathway, the
+heat-shock regulon - but their parameters are organism-, strain-,
+and condition-specific to a degree that makes joint, genome-scale,
+multi-stressor kinetic simulation an exercise in parameter
+fabrication; a model with two hundred fitted constants cannot be
+pre-registered in any meaningful sense, because its constants absorb
+whatever the data demand. Whole-cell models are the honest long-term
+answer and are not yet available for this organism at this coverage.
+Flux balance is the one model class in which every assumption is a
+declared bound, every parameter is enumerable (ours fit in
+Appendix~\ref{app:params}), and every prediction is a polytope
+statement that can be checked at accession scale against public
+screens. We chose the class whose assumptions we could lock and whose
+failures we could measure, over classes whose assumptions we would
+have to estimate. The A6 null is the measured cost of that choice,
+and the A4 mechanism is its payoff; a program that cannot afford the
+first should not claim the second.
+
 \section{Methods}
 \label{sec:methods}
 
@@ -620,6 +768,43 @@ wild-type reference state - maximal growth $g^{\mathrm{WT}}_{\mathrm{ref}}
 environment - is computed once from the pinned model and cached; every
 yield reported in the paper is relative to that same-environment
 wild-type value, never to a global constant.
+
+
+\subsection{Base medium, biomass objective, and reference state}
+\label{sec:basemedium}
+
+The complete-Y7 base medium deserves a full description because it
+quietly determines two of the paper's biggest results. It is the
+community's rich aerobic/anaerobic-capable formulation: glucose as
+the principal carbon source (uptake capped at 20\,mmol/gDW/h), the
+full amino-acid complement available at bounded uptake (several at
+$-0.5$), nucleobases, lipids, and minerals effectively unconstrained,
+and oxygen capped at 0.5\,mmol/gDW/h to place the reference state in
+the microaerobic regime characteristic of industrial fermentation
+modeling, where respiration is oxygen-limited and the fermentative
+program carries the carbon economy. Two consequences follow directly.
+First, nitrogen enters through amino-acid uptakes, ammonium is
+excreted (+3.76 in the reference state), and the ammonium lever of
+the environment mapping binds nothing - the inert-axis limitation,
+declared wherever it matters. Second, the reference state itself is
+healthy and fermentation-dominant: maximal growth
+$0.573\,h^{-1}$ and maximal ethanol exchange $45.46$ in the locked
+units at 30\,$^{\circ}$C, recomputed fresh at every session start and
+cached with the SBML hash, so a corrupted model file would change
+every downstream number loudly rather than silently.
+
+The biomass reaction is the curated consensus biomass of the model
+release, used unmodified; we do not adjust biomass composition under
+stress, and we declare the consequence: stress-dependent biomass
+reallocation (trehalose, membrane sterol shifts) is one of the
+physiology layers the model does not carry, adjacent to the
+proteostasis layer the A6 null identifies. The growth cap and
+maintenance terms of Section~\ref{sec:stresslayers} act on top of
+this fixed biomass, which is deliberate: the environment mapping
+modulates capacities and costs, never the definition of what the
+cell is made of. That choice keeps the mapping's parameter count
+small and its assumptions inspectable, at the declared price of
+missing composition-level adaptation.
 
 \subsection{Stress layers: forms, parameters, and provenance}
 \label{sec:stresslayers}
@@ -1226,6 +1411,35 @@ criterion carries the weight it does. Every statistic that resamples
 (bootstrap CIs, the random baseline, the LHS, the splits) names its
 seed in the methods, and all seeds are single-use.
 
+
+\subsection{Statistical methods, collected}
+\label{sec:statsdetail}
+
+Every inferential statement in the paper uses one of five locked
+procedures, collected here so the results sections can simply cite
+them. (i) \emph{Bootstrap over environments}: confidence intervals
+for fractions defined on the environment sample (the A3
+negative-deviation fraction) are percentile bootstrap intervals over
+10{,}000 resamples of environments, seed 20260927. (ii) \emph{Fisher
+exact overlap}: dataset concordance in A6 is a one-sided (greater)
+Fisher exact test on the locked $2\times2$ table (model-sensitive or
+not $\times$ dataset hit or not) over the locked universe, with
+Benjamini--Hochberg correction at 5\% across the four comparisons.
+(iii) \emph{Matthews correlation}: effect size for the same tables is
+MCC with a 95\% bootstrap CI (10{,}000 resamples, same seed);
+degenerate margins produce MCC 0 with CI $[0,0]$, which we report
+rather than suppress. (iv) \emph{Binomial concordance}: A7 arms are
+scored by one-sided binomial tests against chance directional
+agreement, with Clopper--Pearson intervals. (v) \emph{Empirical
+baseline}: G4(b) is an empirical-percentile comparison against the
+150-design random baseline, no distributional assumption. Thresholds
+(0.20 collapse, 0.8 sensitivity, $-1$ log2 depletion, $10^{-14}$
+noise) are locked constants, never tuned; two of them (0.20, 0.8)
+are conventional, and the threats-to-validity section owns their
+sensitivity. No p-value anywhere in the paper is computed on data
+that informed its own hypothesis: the A6 universes, hit calls, and
+model calls were all locked before the first overlap was computed.
+
 \section{Results}
 \label{sec:results}
 
@@ -1314,6 +1528,48 @@ curve is flat at 1.000 across all twenty levels, which is the visible
 signature of the inert-lever limitation declared in
 Section~\ref{sec:stresslayers}; we keep the twenty rows in the
 artifact because the flatness is evidence.
+
+
+\subsection{A1 numbers walk: the three active curves and the flat fourth}
+
+The temperature curve's full sixteen points, because they carry the
+A3 fragility: 28\,$^{\circ}$C 0.948, 29 0.977, 30--33 the 1.000
+plateau, 34 0.996, 35 0.963, 36 0.914, 37 0.846, 38 0.757, 39 0.643,
+40 0.502, 41 0.329, 42 infeasible. Note the plateau's width - four
+grid points - and the fall's acceleration: the curve loses the last
+half of its value in two degrees. The ethanol curve's thirteen
+points: 0\% 1.000, 1 0.895, 2 0.794, 3 0.696, 4 0.604, 5 0.515, 6
+0.432, 7 0.354, 8 0.281, 9 0.213, 10 0.153, 11 0.099, 12 0.054, 13
+infeasible; the 0.20 collapse threshold sits between 8\% and 9\% on
+this axis alone. The osmotic curve declines at 0.0022 relative yield
+per 0.1\,M across its sixteen levels, reaching 0.957 at 1.5\,M -
+never collapse-capable in isolation, always a budget subtraction.
+The nitrogen curve is 1.000 at all twenty levels, the flatness that
+A6 root-caused. These 66 solves are the cheapest in the campaign and
+the most quoted: every relative number downstream divides by a curve
+defined here, which is why A1 runs first in the dependency chain and
+why its artifact carries the reference hash every later stage cites.
+
+\subsection{The DESIGN/TEST discipline, quantified}
+
+The split protocol's guarantees are worth stating as numbers. The
+DESIGN region (70\% of each locked sample) absorbed: all 1,143 single
+screens, all 435 double screens, all 36 scaling screens, all 864
+evolutionary evaluations (3 seeds $\times$ 12 generations $\times$ 24),
+all 150 baseline designs across 30 seeds, and every confirm-stage
+evaluation (90 candidates across four arms) - on the order of four
+thousand model evaluations across the campaign. The TEST region
+absorbed exactly 25 evaluations, once each, at the final stage, plus
+the wild-type reference needed to score them. No threshold, filter,
+or selection rule was adjusted after a TEST result existed; the one
+rule that touched TEST outcomes - the noise-band discount on the
+YGL248W literal pass - was locked in the methods before the TEST run.
+The asymmetry is the point: the campaign was free to explore as
+aggressively as its compute allowed precisely because the verdict
+stage was rationed. We recommend the pattern to any in silico design
+study: the budget that matters is not solver time, it is how many
+times the held-out region is touched, and the honest answer to that
+question here is once.
 
 \subsection{A2 in detail: the geography of collapse}
 \label{sec:a2detail}
@@ -2116,6 +2372,58 @@ failed and was declared failed rather than relaxed.
 
 
 
+
+\subsection{The validation literature, and where this study sits in it}
+
+Genome-scale models are usually validated in one of three modes, and
+the modes differ enormously in what they certify. The commonest is
+retrodiction of the model's own training neighborhood - growth rates
+on media similar to those used in curation - which certifies mostly
+that the curation took. The second is large-scale phenotype
+comparison, typically deletion viability on rich reference media,
+where yeast models post their well-known high accuracies; this
+certifies the network's essentiality structure under unstressed
+conditions, and it is the mode our GSH1 exclusion rule illustrates:
+unconditional lethality under reference is a curation statement, not
+a stress statement. The third and rarest mode is condition-shifted
+validation: predictions under conditions the model was not curated
+against, scored with statistics locked before the comparison. Our A6
+campaign is deliberately the third mode, and its null is precisely
+the information the third mode exists to deliver. The literature's
+scarcity of third-mode studies is not evidence that models transfer;
+it is evidence that transfer is rarely tested, and the few published
+condition-shifted comparisons we can point to report, like ours, that
+performance degrades sharply outside the curation neighborhood. We
+would rather add a well-documented null to that small literature than
+a favorable retrodiction to the large one. The A7 concordance
+complements it from the other side: at the layer the model does
+claim - which regimes dominate - the cell's own response program
+agrees. A model's validity is a layer-indexed statement, and this
+study's contribution to the validation culture is a fully documented
+instance of that statement being made honestly in both directions.
+
+\subsection{Interpretation guardrails}
+
+Several numbers in this paper invite over-reading, and we mark the
+guardrails explicitly. The 37.1\% collapse fraction is a property of
+the declared grid and mapping, not a forecast for any real plant;
+real exposure distributions are unknown to us and plant-specific.
+The shadow prices (0.58, 0.37) are marginal values at the model's
+optimum under declared bounds, not process-economics estimates; they
+rank mechanisms, they do not price retrofits. The one-hour dynamic
+gap is measured against this model's own static surface, so it is
+immune to absolute-calibration error but bounded by the mapping's
+shape assumptions. The A7 concordance certifies regimes, not
+magnitudes. The design null covers network-internal modifications
+under the locked objective; it says nothing about process
+engineering, medium design, or regulatory-layer intervention, and
+nothing about other organisms. And the gate ledger's ``met in
+substance'' on G3 is a declared judgment with its strict criterion
+recorded as failed - a reader who requires the strict criterion
+should read G3 as failed and the mechanism as supported by binding
+and dual evidence alone, which changes no headline claim. The paper's
+claims are exactly as strong as these sentences say, and no stronger.
+
 \subsection{The three continuations, specified}
 
 The outlook items of Section~\ref{sec:discussion} are concrete enough
@@ -2309,6 +2617,44 @@ validation target; (iii) a fed-batch dynamic stage with locked feeding
 policy, taking the heat-wave dose finding toward an operational
 decision tool. Each is a small, pre-registrable increment on a
 codebase that has already survived one honest redirect.
+
+\subsection{Scope restated: what this paper is not}
+
+Because the redirect changed what the paper claims, we close the
+discussion by restating its boundaries in negative form. This is not
+a strain-design paper: it reports the exhaustive failure of one,
+with the mechanism of the failure. It is not a kinetic or whole-cell
+model: it is a stoichiometric study whose dynamic stage is a bounded
+extension, confounds declared. It is not a validation of yeast
+genome-scale models in general: it is one model, one objective, one
+regime, with the layer-boundary of its validity measured. It is not a
+climate forecast: its environment grid is a declared design space,
+not an exposure distribution. It is not a negative-result anecdote:
+the negatives are gated, quantified, and mechanistically explained,
+and the positive mechanism they surround is the paper's core. And it
+is not finished: the three continuations are specified at
+pre-registration level, and the program that owns this paper owns
+them. What it is - a validated regime map with an honest ledger - we
+regard as the appropriate deliverable for a virtual-cell program
+reporting to a scientific audience in a competition context: the
+strongest claim the evidence could carry, no stronger, with the
+audit trail attached.
+
+\subsection{Data and code availability}
+
+Everything is in the repository at the pinned commit: the pinned
+SBML model and its hash; the pre-registration and its four amendments
+with their hashes; all analysis code under \texttt{src/yeasttwin/};
+every stage artifact under \texttt{results/climate/} including shard
+files, run logs, the solver-timeout register, and the A5 screen,
+confirm, baseline, and TEST records; the Section-8 dataset manifest
+with accession-level SHA-256 hashes; the judge rounds and the
+verbatim round-2 verdict with provenance; and this paper's source.
+Re-execution requires Python with COBRApy, SciPy, and GLPK on a
+commodity machine; the full campaign re-runs in hours. No data were
+generated for this paper beyond the model evaluations described, and
+no third-party dataset was modified from its accession form.
+
 \section{Conclusion}
 \label{sec:conclusion}
 
