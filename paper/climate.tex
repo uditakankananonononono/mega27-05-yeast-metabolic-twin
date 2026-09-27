@@ -1114,6 +1114,59 @@ of the model. We note for the record that the mean deviation in
 collapsed environments is small in absolute terms (0.2\% of
 reference); the negative tail is concentrated, not pervasive.
 
+
+\subsection{A3 in detail: reading the sweep table}
+
+The parameter-uncertainty arm is the honest core of the
+non-additivity analysis, and its table rewards a slow reading. At
+nominal parameters, the 1{,}000-environment resample gives 369
+collapsed environments with a negative-deviation fraction of 26.3\% -
+above the locked 25\% gate, as are both glycerol-cost perturbations
+(27.2\% and 25.9\%) and both maintenance-exponent perturbations
+(33.5\% and 27.3\%). Under $T_{\max}=40\,^{\circ}$C the fraction
+falls to 18.7\%, and under $T_{\max}=44\,^{\circ}$C to 12.8\%; the
+primary 5{,}000-environment run at nominal parameters gives 24.2\%
+(CI [22.3\%, 26.1\%]), a hair under the gate. The pattern across the
+seven sets is not noise around a stable mean - it is a monotone
+sensitivity to one parameter family, the thermal-death margin, with
+the collapse fraction itself swinging from 16.7\% to 50.1\% of
+sampled environments as the temperature margin moves. The
+interpretation we print is the one the table forces: a
+negative-deviation excess in collapsed environments is a real feature
+of this model's joint response surface - it appears in every set -
+but its magnitude relative to any fixed threshold is set by the
+thermal-death shape, so the gate, which was locked as a magnitude
+claim, fails. A weaker gate (``is the fraction ever above zero?'')
+would pass trivially and prove nothing; a stronger one (``is it above
+25\% robustly?'') fails informatively. We also record, against
+over-reading, that the mean signed deviation across collapsed
+environments is positive and small in every set (0.09--0.96\% of
+reference): the sub-additivity is a concentrated tail, not a
+pervasive synergy, and the paper makes no claim of general
+stress synergy anywhere.
+
+\subsection{Stage interlocks: how the results depend on each other}
+
+The stages were designed as a dependency chain, and the chain's
+structure is part of the result. A1 calibrates nothing but defines
+everything: the single-axis laws are the denominators of every
+relative quantity in the paper. A2 consumes A1's grid to locate
+collapse; A3 consumes both to score deviation from independence; A4
+consumes A2's collapse flags - re-verified, with the indexing bug
+that re-verification caught on record - and explains them; A5's
+search space and its null only make sense given A4's mechanism, and
+A6's degenerate overlap tables are the same mechanism seen from the
+gene side; A7 independently confirms the regimes A4 attributes; A8
+lifts the static surface into time. Two consequences follow for
+readers re-using parts of this work. First, the artifacts compose:
+any stage can be re-run against the pinned model and the upstream
+artifacts without rerunning the campaign, and every summary JSON
+names the pre-registration hash it answers to. Second, the failure
+modes also compose: the inert nitrogen lever propagates flatness into
+every N-indexed row downstream, and it is labeled at each stage
+rather than corrected once, because a single silent correction would
+have made the propagation invisible.
+
 \subsection{A4: what actually binds when productivity collapses}
 \label{sec:a4}
 
