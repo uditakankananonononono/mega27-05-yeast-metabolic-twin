@@ -653,6 +653,85 @@ nitrogen-axis results should be read as flat-by-construction, and the
 pre-registered nitrogen-tolerance objective is reported as a mapping
 artifact, never as a finding.
 
+
+\subsection{Derivation notes for the stress layers}
+\label{sec:derivations}
+
+\paragraph{CTMI normalization.} The cardinal temperature model with
+inflection is a three-parameter growth-rate law: zero below
+$T_{\min}$, maximal at $T_{\mathrm{opt}}$, zero at $T_{\max}$, with a
+smooth asymmetric rise and a steep terminal fall - the asymmetry being
+the point, since microbial thermal death is much sharper than thermal
+limitation. We use the published form directly and normalize by its
+value at the 30\,$^{\circ}$C reference, so $f_T$ is a pure
+capacity factor centered at one in the reference environment and the
+reference environment is exactly the base model. The cardinal values
+are anchored to published \emph{S.\ cerevisiae} fits rather than
+fitted by us; the one we treat as fragile, $T_{\max}=42\,^{\circ}$C,
+is swept to 40 and 44 in the locked uncertainty arm, and
+Section~\ref{sec:a3} shows the G2 statistic's fate rides on that
+sweep. We regard that transparency - the fragile parameter is named,
+swept, and allowed to break a gate - as the correct handling of a
+parameter the literature has not pinned.
+
+\paragraph{Levenspiel anchoring.} The product-inhibition factor
+$(1-P/P_{\max})^{n}$ is the classical generalization of Monod
+kinetics to product inhibition, and its anchoring here uses published
+ethanol-inhibition kinetics for \emph{S.\ cerevisiae}: biomass yield
+falling from 0.156 to 0.026 over 0--107\,g/L ethanol, which the form
+reproduces qualitatively with $P_{\max}$ at the locked 14\% v/v. The
+exponent $n=1.5$ is marked ASSUMED: the literature constrains the
+endpoints of the curve, not its curvature, and the $\pm 50\%$ sweep
+(0.75--2.25) covers concave-through-convex shapes. The locked decision
+to apply $f_E$ to the ethanol-exchange upper bound - rather than to
+the growth cap alone - is what makes product toxicity a fermentation-
+rate phenomenon in the model, and it is declared as a modeling choice
+with its alternative noted.
+
+\paragraph{Maintenance form.} Classical chemostat physiology shows
+maintenance energy demand rising as conditions deteriorate, but no
+consensus functional form exists for stress-dependent maintenance in
+this organism. We chose the reciprocal form
+$0.7/\max(\min(f,1),0.01)$ because it is the simplest form with the
+required signs - flat and equal to the base NGAM (0.7\,mmol ATP/gDW/h)
+when unstressed, rising without bound as the combined capacity factor
+approaches the viability floor - and we marked it ASSUMED in
+Amendment 1 with the floor $f_{\mathrm{floor}}=0.01$ declared. The
+viability boundary itself (environments with $f<0.01$ classified
+nonviable rather than collapsed) exists so that ``the cell is dead''
+and ``the cell is alive but unproductive'' are different rows in
+every table; 73 of the 369 re-verified collapsed environments are of
+the former kind.
+
+\paragraph{Glycerol physiology.} Osmoadaptation in yeast is glycerol:
+the HOG pathway induces the GPD1/GPP1 branch, glycerol accumulates
+intracellularly to balance external water activity, and its
+biosynthesis diverts carbon from the glycolytic mid-point. The locked
+form - an obligatory export lower bound linear in external osmolarity,
+$k_{\mathrm{gly}}=1.0$ mmol/gDW/h per M - is the cheapest
+parameterization of that carbon invoice. The coefficient is ASSUMED
+(swept 0.5--2.0) because published glycerol yields under osmotic
+stress span a wide range across strain and regime; what the
+literature does fix is the sign and the approximate magnitude of the
+tax, and the A4 result (drain binding in 69\% of solvable collapsed
+environments) is robust across the sweep. We note the deliberate
+absence of a HOG regulatory layer: the model assumes the adaptation
+happens and charges for it; it does not model the signaling.
+
+\paragraph{Medium and objective.} Two base-model choices carry more
+weight than their one-line declarations suggest. The rich
+complete-Y7 medium is the industrial-faithful choice - molasses and
+cane-juice mashes are not minimal media - and it is also the root
+cause of the inert nitrogen lever, since rich media feed nitrogen
+through amino acids; the paper's largest limitation is the price of
+the same choice that makes the carbon economics realistic. The
+objective throughout is maximal ethanol exchange, never growth:
+growth appears only as the joint cap and through maintenance. This is
+the industrial objective (a producer buys titer, not biomass), and it
+is also what makes the design campaign's question sharp, because
+growth-coupled design heuristics do not apply and every candidate is
+scored on the product objective directly.
+
 \subsection{Environment space, sampling, and the locked split}
 
 The environment space is the Cartesian product of four locked axes:
@@ -1267,6 +1346,43 @@ post-run rule: there the confound lifts, the heat wave's dynamic onset
 diverge (7.48\% vs 11.52\% v/v). The exploratory label stands;
 Section~\ref{sec:discussion} draws no locked conclusion from it.
 
+
+\subsection{A8 in detail: reading a heat wave as an integral}
+
+The dynamic stage converts the static surface into a time course, and
+the conversion is where the operationally relevant number appears.
+Along the locked heat-wave profile - two hours at 30\,$^{\circ}$C, a
+four-hour ramp to 40, a two-hour hold, a one-hour push to 42, a
+two-hour hold, then recovery to 30 - thermal exposure accumulates to
+22.9 degree-hours above 37\,$^{\circ}$C. The static collapse surface,
+queried along the same trajectory, predicts collapse when the
+instantaneous environment crosses the boundary, at 9.0\,h. The
+dynamic simulation collapses at 8.0\,h, after only 7.4 of the 22.9
+degree-hours. The gap is the paper's simplest dynamic statement: the
+cell's productive capacity is spent by the integral of thermal dose,
+not by the crossing of a boundary, so any operational rule written
+against the static surface alone reads the campaign as safe for an
+hour after it has, in model terms, already failed.
+
+The declared confound disciplines the rest of the reading. At the
+locked 111\,mmol/L initial glucose, the isothermal control exhausts
+substrate and its collapse onset (6.5\,h) is substrate-driven, not
+thermal; both trajectories end glucose-limited (final glucose 0 in
+both), with final titers of 1.34\% (control) and 1.41\% (heat wave)
+v/v that differ by trajectory shape rather than by a clean thermal
+penalty, and with full recovery deficit in the heat-wave arm - after
+the wave, production does not resume its pre-wave trajectory. The
+exploratory very-high-gravity variant (1{,}665\,mmol/L initial
+glucose, labeled post-run per the Section-12 rule) shows what the
+locked batch cannot: with substrate no longer limiting, the heat wave
+still collapses dynamically at 8.75\,h against the static 9.0\,h
+prediction, final titers now separate cleanly (7.48\% vs 11.52\%
+v/v), and the heat-wave arm still produces at 14.5\,mmol/L at the
+final step against the control's ongoing fermentation. We draw no
+locked conclusion from the variant; we note that its direction agrees
+with the locked stage's, and that a fed-batch protocol with a locked
+feeding policy is the amendment that would settle it.
+
 \subsection{Gate ledger}
 
 \begin{center}
@@ -1365,6 +1481,65 @@ genetics at the same time; this paper is the demonstration. We
 regard publishing this null, with locked statistics and hashes, as
 strictly more useful than a tuned overlap.
 
+
+\subsection{The co-limitation mechanism, mechanistically}
+
+It is worth stating the A4 mechanism in biochemical terms, because the
+constraint names are model artifacts and the biology underneath them
+is not. The glucose-cap mechanism is the thermal erosion of glycolytic
+throughput: as temperature rises toward the CTMI maximum, the
+declared capacity factor contracts the uptake bound, which is the
+model's stand-in for the experimental fact that heat damages the
+enzyme cohort - membrane-embedded transporters and glycolytic enzymes
+alike - faster than the cell can replace it. The shadow price of 0.58
+units of ethanol per unit of uptake capacity quantifies what a
+chaperone-mediated stabilization of that cohort would be worth in
+product terms, and it is the largest number on the binding set. The
+glycerol-drain mechanism is osmoadaptation's carbon invoice: the cell
+balances external water activity by accumulating glycerol, and in the
+model that obligation is a fixed lower bound on glycerol export -
+carbon that is paid before the objective is optimized. Its shadow
+price of 0.37 quantifies what cheaper osmoprotection would be worth.
+That the two mechanisms co-bind in the largest clusters is the
+combined-stress story in one line: heat shrinks the carbon inflow
+while osmolarity taxes the outflow, and the fermentation objective is
+squeezed from both sides until the collapse threshold is crossed. The
+ethanol cap, which binds almost everywhere, is the third participant
+but not an intervention target - it is the environment's statement of
+product toxicity, and relieving it in the model would mean declaring
+a yeast that does not exist. This is also why the design search was
+doomed: every one of these constraints is a bound, and bounds in FBA
+are axioms, not genes.
+
+\subsection{Design implications that survive the null}
+
+A null design campaign is not the same as no design guidance. The
+mechanism analysis inverts naturally into an intervention ranking,
+and we state it as such - as model-derived hypotheses for
+experimental programs, each attached to the evidence that supports it
+and the limitation that bounds it. First in rank: reduce the osmotic
+carbon tax. The glycerol drain binds in 69\% of solvable collapsed
+environments with shadow price 0.37, and the intervention space it
+points to is real - osmoprotectant supplementation, feedstock
+pre-treatment to lower mash osmolarity, or process scheduling that
+keeps the osmotic peak away from the thermal peak. Crucially, these
+are process interventions, not strain interventions, which is exactly
+the redirect the A5 null prescribes. Second: protect glycolytic
+capacity under heat - the glucose-cap cluster's 0.58 shadow price is
+the largest single number in the study - where the realistic levers
+are again process-level (cooling duty allocated by degree-hour
+forecast, not by instantaneous temperature) alongside the genuinely
+genetic direction of thermostable glycolytic isozymes, which our
+model cannot evaluate because its thermal response is a bound, not a
+kinetic model. Third - and negative, but valuable: do not spend
+strain-engineering budget on internal-network knockouts for this
+regime. The exhaustive null, backed by the baseline distribution,
+says the expected yield of that spend is zero beyond solver noise.
+What the model cannot rank - because the layer is absent - are the
+proteostasis, membrane-composition, and signaling interventions that
+the deletion screens implicate (A6); those enter through the
+regulatory-layer continuation of the outlook, not through this model.
+
 \subsection{Limitations}
 
 Every limitation below was produced by the analysis itself, most of
@@ -1407,6 +1582,68 @@ A7 concordance shows the price is layer-specific, not total.
 \paragraph{FVA coverage.} Directional variability evidence covers 25
 solved environments; the strict pre-declared forced-width criterion
 failed and was declared failed rather than relaxed.
+
+
+\subsection{On pre-registration and the economics of negative results}
+
+We close the interpretive part of the paper with the methodological
+claim we feel strongest, because this study is also an existence
+proof for it. Computational modeling has an asymmetry that
+experimental biology does not: the marginal cost of another run is
+nearly zero, so the temptation to adjust after outcomes - retune a
+parameter, relax a threshold, redefine a hit - is constant, invisible,
+and undetectable in the published record. The defenses are
+organizational, not mathematical: lock the design before outcomes,
+hash the lock, amend only forward, and score the gates as they fall.
+This program did all four, and the consequence is on the front page:
+three of four gates did not pass, the validation is a null, and the
+paper is better for it, because the surviving positive (the
+co-limitation mechanism) is now the output of a process that was
+demonstrably willing to print its own failures. A positive result
+from a process that never shows a negative carries no information
+about its own reliability; a positive result from this one carries
+the ledger with it.
+
+The negative results themselves have an economics worth stating
+plainly. The strain-design null (G4) is a map of where not to spend:
+every knockout and scaling the campaign evaluated is one an
+experimental program no longer needs to build. The interaction
+fragility (G2) is a warning about a statistic: Bliss-style
+non-additivity fractions in this model class are parameter-shaped,
+and any future paper quoting one without a parameter sweep should be
+asked for the sweep. The validation null (A6) is a boundary on a
+method: flux balance with environment caps does not see the
+gene-level stress biology that deletion screens measure, so its
+predictions should be consumed at the process layer where this paper
+validates it, and not at the genetic layer where it does not. None of
+these required new experiments; all of them required the discipline
+to run the losing comparisons and print them. We suggest that the
+field's bottleneck in in silico strain design is no longer search
+algorithms - it is the willingness to publish the ledger.
+
+\subsection{Threats to validity, self-assessed}
+
+Beyond the limitations the analysis produced
+(Section~\ref{sec:discussion}), we record the threats we cannot
+retire from inside the study. Construct validity: relative ethanol
+yield is a flux ratio under a stated objective, and its mapping to
+titer in an industrial batch is mediated by kinetics the model does
+not carry; the A8 dynamic stage is the partial bridge, with its
+confound declared. Internal validity: the collapse threshold (0.20)
+and the sensitivity threshold (0.8) are locked but conventional, and
+while gate decisions here are not threshold-fragile at the margins
+that matter (the A5 null is total, the A6 null is degenerate), the
+A2 collapse fractions move with the threshold by construction.
+External validity: a single curated reconstruction of one species'
+laboratory strain, however versioned, is not the diversity of
+production strains; the qualitative mechanism (boundary co-limitation)
+should transfer, the quantitative shadow prices should not be assumed
+to. Conclusion validity: every inferential statement here rests on
+locked statistics over finite samples (5{,}000 environments; 369
+collapsed; 25 FVA-solved environments), and the FVA coverage gap is
+the weakest of these. We regard the preregistration ledger as the
+correct container for all four: the threats are named, quantified
+where possible, and inseparable from the claims.
 
 \subsection{Reproducibility and integrity}
 
