@@ -1375,6 +1375,68 @@ wild-type-identical tolerances. We report it because the locked rules
 require counting it, and we score G4 failed because the same locked
 rules require passing to mean something.
 
+
+\subsection{A5 arm by arm}
+
+\paragraph{Singles.} All 1{,}143 model genes were deleted under the
+locked GPR semantics and screened on the 40-environment screen
+sample; the 60 top candidates confirmed on the 150-environment design
+sample at mean relative yield 1.0, zero new collapses, and
+wild-type-identical tolerances (37\,$^{\circ}$C, 1\% ethanol, 5\%
+nitrogen). The singles null is the strongest statement in the
+campaign: there is no single gene whose removal improves the
+fermentation objective anywhere in the screened combined-stress
+space, under any of the regimes the collapse map identifies.
+
+\paragraph{Doubles.} The seeded double-knockout screen (435 pairs)
+asked whether pairs escape the singles null - the standard route by
+which synthetic rescue appears in flux models. Ten finalists
+confirmed, again at 1.0 with zero new collapses. The doubles null
+rules out the cheap version of epistasis in this regime: no pair of
+deletions in the screened space unlocks yield the singles hide.
+
+\paragraph{Scalings.} The 36 reaction-bound scalings targeted the
+mechanism directly: glycerol-branch bounds (GPD/GPP nodes),
+glycolytic and fermentative capacity (including PDC and the MEP
+route), and membrane/flavodoxin-side transports (FPS1, ALD6, TPS
+among the locked list), each at 0.25$\times$, 0.5$\times$, 2$\times$,
+and 4$\times$. This is the arm where a positive result would have
+contradicted A4 - down-scaling the glycerol branch is the direct
+attempt to cut the osmotic carbon tax. All confirmed scalings scored
+1.0: the drain is an exchange lower bound imposed by the environment,
+and shrinking internal branch capacity cannot relax it - the model
+pays the tax through whichever route remains open. The scaling null
+is therefore not a surprise but a confirmation, and it is the arm
+that most cleanly demonstrates the difference between network
+capacity and boundary obligation.
+
+\paragraph{Evolutionary search.} Three seeds, twelve generations,
+population 24, genome over the top-30 confirmed modifications,
+selection on mean DESIGN-relative yield with collapse penalty. All
+evolved finalists confirmed at 1.0 with zero new collapses. The
+engineering record matters here because evolution amplifies
+implementation noise: sandbox interruptions killed the runner
+mid-generation several times, and the resume path (deterministic
+re-breeding from recorded scores plus seed stream, replay of
+completed generations from cache, deduplicated screen files) was
+locked before the affected runs; two list-hashability fixes in that
+path were committed pre-outcome and are recorded. The evolutionary
+null closes the search: recombination of the best available building
+blocks still cannot find gain, because there is no gain in the
+building blocks.
+
+\paragraph{Baseline and TEST.} The matched random baseline (150
+budget-2 designs, 30 seeds) distributes around 1.0 with a 95th
+percentile at $1+1.8\times10^{-15}$ - the null distribution against
+which G4(b) is scored - and its spread below 1.0 (down to 0.966,
+with up to 92 newly collapsed environments for the weakest random
+pairs) certifies the evaluation's resolving power. On the single
+TEST evaluation, the 25 confirmed candidates all scored within the
+noise band of the wild type; the literal 1/25 pass (YGL248W,
+$1+8\times10^{-15}$) is recorded and discounted under the declared
+noise rule, and all tolerances are wild-type-identical. G4 fails on
+both clauses, and the failure is total rather than marginal.
+
 \subsection{A6 in detail: the shape of the disagreement}
 
 The overlap null is not a near-miss, and its structure is
