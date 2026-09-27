@@ -112,13 +112,14 @@ def model_sensitivity(genes):
                 done[r["gene"]] = r
         res[tag] = done
         todo = [g for g in genes if g not in done]
-        if not todo:
-            continue
-        pool = Pool(2, initializer=_worker_init)
         main_mod = load_model()
         main_ref = prepare(main_mod)
         wt = _growth(main_mod, main_ref, env)  # WT growth under env (once)
         del main_mod, main_ref
+        res[tag]["__wt__"] = dict(gene="__wt__", growth=wt)
+        if not todo:
+            continue
+        pool = Pool(2, initializer=_worker_init)
         def restart():
             nonlocal pool
             pool.terminate(); pool.join()
@@ -140,7 +141,6 @@ def model_sensitivity(genes):
                         res[tag][gg] = row
                     pend = []
         pool.terminate(); pool.join()
-        res[tag]["__wt__"] = dict(gene="__wt__", growth=wt)
     return res
 
 
