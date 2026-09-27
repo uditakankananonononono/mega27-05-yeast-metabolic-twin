@@ -1,0 +1,80 @@
+{
+ "analysis": "A6 nutrient qualitative checks (locked design)",
+ "declared_scope_limitation": "Only the nitrogen lever is implemented in the env mapping; P/S limitation not parameterized.",
+ "rows": [
+  {
+   "env": "ref",
+   "status": "optimal",
+   "growth": 0.5733511135347452,
+   "ammonium": {
+    "rxn": "r_1654",
+    "flux": 3.7555341286045785,
+    "lb": -1000.0,
+    "ub": 1000.0,
+    "shadow_price": 0.0,
+    "at_bound": false
+   },
+   "phosphate": {
+    "rxn": "r_2005",
+    "flux": -0.15996877432908815,
+    "lb": -1000.0,
+    "ub": 1000.0,
+    "shadow_price": 0.0,
+    "at_bound": false
+   },
+   "glucose": {
+    "rxn": "r_1714",
+    "flux": -20.0,
+    "lb": -20.0,
+    "ub": 1000.0,
+    "shadow_price": 0.0,
+    "at_bound": true
+   },
+   "sulfate": {
+    "rxn": "r_2060",
+    "flux": -0.011467022014387002,
+    "lb": -1000.0,
+    "ub": 1000.0,
+    "shadow_price": 0.0,
+    "at_bound": false
+   }
+  },
+  {
+   "env": "N_lim_0.25",
+   "status": "optimal",
+   "growth": 0.5733511135347423,
+   "ammonium": {
+    "rxn": "r_1654",
+    "flux": 3.7555341286045874,
+    "lb": -250.0,
+    "ub": 1000.0,
+    "shadow_price": 0.0,
+    "at_bound": false
+   },
+   "phosphate": {
+    "rxn": "r_2005",
+    "flux": -0.1599687743291641,
+    "lb": -1000.0,
+    "ub": 1000.0,
+    "shadow_price": 0.0,
+    "at_bound": false
+   },
+   "glucose": {
+    "rxn": "r_1714",
+    "flux": -20.0,
+    "lb": -20.0,
+    "ub": 1000.0,
+    "shadow_price": 0.0,
+    "at_bound": true
+   },
+   "sulfate": {
+    "rxn": "r_2060",
+    "flux": -0.011467022014386945,
+    "lb": -1000.0,
+    "ub": 1000.0,
+    "shadow_price": 0.0,
+    "at_bound": false
+   }
+  }
+ ]
+}

@@ -48,3 +48,22 @@
   and glycolytic/TCA flux distributions; qualitatively compare against
   the published finding of translational/metabolic capacity reserves
   under N limitation (documented as narrative concordance, no fitting).
+
+## Nutrient checks result (2026-09-27 ~20:40 IST) - MATERIAL LIMITATION FOUND
+- E-GEOD-1723 direction check: NOT EVALUABLE. Under locked N-limitation
+  (nitrogen_frac=0.25) all fluxes and growth are bit-identical to ref:
+  the ammonium lever (r_1654 lb = -1000*frac) is INERT because the locked
+  rich base medium supplies nitrogen via amino-acid uptakes (glutamate,
+  glutamine, etc., several at their -0.5 bounds); ammonium is EXCRETED
+  (flux +3.76), never consumed, so restricting its uptake binds nothing.
+- Consequence (declared, not silently fixed): the entire nitrogen axis of
+  the locked environment grid is effectively unperturbed in A2/A4/A5.
+  The previously declared "N-tol saturates at 5% grid edge" mapping
+  artifact is hereby root-caused: the N lever does nothing in this
+  medium. Retrofitting the medium/lever post-outcome would violate the
+  locked-mapping discipline; flagged to parent as material for the
+  courier paste and the redirect paper (limitation + possible future
+  amendment: scale amino-acid N or use defined minimal medium).
+- E-MTAB-8245 spare-capacity check: also not evaluable for the same
+  reason (no N-limited state exists in the model).
+- Script note: glucose exchange corrected to r_1714, sulphate r_2060.

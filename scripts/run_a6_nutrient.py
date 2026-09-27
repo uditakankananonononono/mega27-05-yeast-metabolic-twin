@@ -25,12 +25,12 @@ from yeasttwin.climate.environment import Environment  # noqa: E402
 from yeasttwin.climate.parameters import (GROWTH_RXN, LOCKED, AMMONIUM_EX,
                                           PHOSPHATE_EX)  # noqa: E402
 
-GLUCOSE_EX = "r_1146"
+GLUCOSE_EX = "r_1714"  # D-glucose exchange (verified; r_1146 is episterol)
 
 
 def find_sulfate_ex(model):
     for r in model.exchanges:
-        if "sulfate" in (r.name or "").lower():
+        if "sulphate" in (r.name or "").lower() or "sulfate" in (r.name or "").lower():
             return r.id
     return None
 
