@@ -172,10 +172,18 @@ def design_ref_yield(model, ref, mods):
 
 
 def confirm(mods_list, envs, wt_vals, tag):
-    """design150/test150 confirmation + tolerances + own-reference yields."""
+    """design150/test150 confirmation + tolerances + own-reference yields.
+    Resume-safe: completed designs persist in confirm_<tag>.json."""
     _worker_init()
+    fp = OUT / f"confirm_{tag}.json"
     rows = []
+    done = set()
+    if fp.exists():
+        rows = json.load(open(fp))
+        done = {json.dumps(r["mods"]) for r in rows}
     for mods in mods_list:
+        if json.dumps(mods) in done:
+            continue
         mean_rel, new_coll = eval_design_on_envs(_MOD, _REF, mods, envs,
                                                  wt_vals)
         own_ref = design_ref_yield(_MOD, _REF, mods)
@@ -198,8 +206,8 @@ def confirm(mods_list, envs, wt_vals, tag):
                 if passing else None
         rows.append(dict(mods=mods, mean_rel=mean_rel, new_collapses=new_coll,
                          own_ref_yield=own_ref, tolerances=tols))
-    with open(OUT / f"confirm_{tag}.json", "w") as fh:
-        json.dump(rows, fh, indent=1)
+        with open(fp, "w") as fh:
+            json.dump(rows, fh, indent=1)
     return rows
 
 
