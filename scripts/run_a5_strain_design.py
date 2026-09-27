@@ -38,6 +38,7 @@ SCALING = {"r_0491": "GPD1/GPD2", "r_0489": "GPP1/GPP2", "r_1172": "FPS1",
            "r_1166": "HXT", "r_1115": "MEP", "r_0195": "TPS-complex"}
 FOLDS = [0.25, 0.5, 2.0, 4.0]
 EVO_SEEDS = [42, 123, 2026]
+DESIGN_TIMEOUT_S = 45
 EVO_POP, EVO_GEN = 24, 12
 BASELINE_SEEDS = 30
 BASELINE_PER_SEED = 5
@@ -237,22 +238,48 @@ def screen(mods_list, envs, wt_vals, tag):
             done[json.dumps(r["mods"])] = r
     todo = [m for m in mods_list if json.dumps(m) not in done]
     rows = list(done.values())
-    batch = max(1, len(todo) // 6)
-    for i in range(0, len(todo), batch):
-        part = todo[i:i + batch]
-        args = [(m, envs, wt_vals) for m in part]
-        with Pool(2, initializer=_worker_init) as pool:
-            got = pool.map(_screen_one, args, chunksize=2)
-        rows.extend(dict(mods=r[0], mean_rel=r[1], new_collapses=r[2])
-                    for r in got)
-        with open(fp, "w") as fh:
-            json.dump(rows, fh)
-    rows.sort(key=lambda r: (-r["mean_rel"], r["new_collapses"]))
+    # per-design hard timeout: GLPK can hang in native code where Python
+    # signals do not reach, so each design runs on a worker whose result is
+    # awaited with a timeout; a hung worker is terminated and the design is
+    # RECORDED as solver_timeout (never silently skipped - honest register).
+    pool = Pool(2, initializer=_worker_init)
+
+    def restart():
+        nonlocal pool
+        pool.terminate()
+        pool.join()
+        pool = Pool(2, initializer=_worker_init)
+
+    pending = []
+    for m in todo:
+        pending.append((m, pool.apply_async(_screen_one,
+                                            [(m, envs, wt_vals)])))
+        if len(pending) == 2 or m is todo[-1]:
+            for mm, ar in pending:
+                try:
+                    r = ar.get(timeout=DESIGN_TIMEOUT_S)
+                    rows.append(dict(mods=r[0], mean_rel=r[1],
+                                     new_collapses=r[2]))
+                except Exception:
+                    rows.append(dict(mods=mm, mean_rel=None,
+                                     new_collapses=None,
+                                     solver_timeout=True))
+                    restart()
+            pending = []
+            with open(fp, "w") as fh:
+                json.dump(rows, fh)
+    pool.terminate()
+    pool.join()
+    rows.sort(key=lambda r: (r["mean_rel"] is None,
+                             -(r["mean_rel"] or 0.0),
+                             r["new_collapses"] or 0))
     with open(fp, "w") as fh:
         json.dump(rows, fh)
     out = [(r["mods"], r["mean_rel"], r["new_collapses"]) for r in rows]
-    print(f"screen {tag}: {len(rows)} designs ({len(todo)} new) "
-          f"{time.time()-t0:.0f}s; top: {out[0][0]} rel={out[0][1]:.4f}")
+    n_to = sum(1 for r in rows if r.get("solver_timeout"))
+    print(f"screen {tag}: {len(rows)} designs ({len(todo)} new, "
+          f"{n_to} solver-timeout) {time.time()-t0:.0f}s; "
+          f"top: {out[0][0]} rel={out[0][1]:.4f}")
     return out
 
 
@@ -359,7 +386,7 @@ def main():
         n_genes = len(load_model().genes)
         if len(rows) < n_genes:
             raise SystemExit(f"singles incomplete: {len(rows)}/{n_genes}")
-        rows.sort(key=lambda r: (-r["mean_rel"], r["new_collapses"]))
+        rows.sort(key=lambda r: (r["mean_rel"] is None, -(r["mean_rel"] or 0.0), r["new_collapses"] or 0))
         top = [r["mods"] for r in rows[:60]]
         confirm(top, subs["design150"], wt, "singles_conf")
     elif a.stage == "doubles":
@@ -377,6 +404,7 @@ def main():
         mods = [[("scale", rid, f)] for rid in SCALING for f in FOLDS]
         screen(mods, subs["screen40"], wt, "scaling")
         rows = json.load(open(OUT / "screen_scaling.json"))
+        rows.sort(key=lambda r: (r["mean_rel"] is None, -(r["mean_rel"] or 0.0)))
         confirm([r["mods"] for r in rows[:10]], subs["design150"], wt,
                 "scaling_conf")
     elif a.stage == "evo":
@@ -387,7 +415,7 @@ def main():
         rows = []
         for c in range(a.nchunks):
             rows.extend(json.load(open(OUT / f"screen_doubles_{c}.json")))
-        rows.sort(key=lambda r: (-r["mean_rel"], r["new_collapses"]))
+        rows.sort(key=lambda r: (r["mean_rel"] is None, -(r["mean_rel"] or 0.0), r["new_collapses"] or 0))
         confirm([r["mods"] for r in rows[:10]], subs["design150"], wt,
                 "doubles_conf")
     elif a.stage == "baseline":
