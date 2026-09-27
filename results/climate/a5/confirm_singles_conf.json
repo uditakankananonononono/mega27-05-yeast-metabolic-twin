@@ -1,0 +1,610 @@
+[
+ {
+  "mods": [
+   [
+    "ko",
+    "YDR531W"
+   ]
+  ],
+  "mean_rel": 1.0000000000000953,
+  "new_collapses": 0,
+  "own_ref_yield": 45.45833333347544,
+  "tolerances": {
+   "temperature_c": 37.0,
+   "ethanol_pct": 1.0,
+   "nitrogen_frac": 0.05
+  }
+ },
+ {
+  "mods": [
+   [
+    "ko",
+    "YMR202W"
+   ]
+  ],
+  "mean_rel": 1.0000000000000002,
+  "new_collapses": 0,
+  "own_ref_yield": 45.458333333333336,
+  "tolerances": {
+   "temperature_c": 37.0,
+   "ethanol_pct": 1.0,
+   "nitrogen_frac": 0.05
+  }
+ },
+ {
+  "mods": [
+   [
+    "ko",
+    "YOR025W"
+   ]
+  ],
+  "mean_rel": 1.0,
+  "new_collapses": 0,
+  "own_ref_yield": 45.458333333333314,
+  "tolerances": {
+   "temperature_c": 37.0,
+   "ethanol_pct": 1.0,
+   "nitrogen_frac": 0.05
+  }
+ },
+ {
+  "mods": [
+   [
+    "ko",
+    "YKL148C"
+   ]
+  ],
+  "mean_rel": 1.0,
+  "new_collapses": 0,
+  "own_ref_yield": 45.45833333333328,
+  "tolerances": {
+   "temperature_c": 37.0,
+   "ethanol_pct": 1.0,
+   "nitrogen_frac": 0.05
+  }
+ },
+ {
+  "mods": [
+   [
+    "ko",
+    "YOR381W"
+   ]
+  ],
+  "mean_rel": 0.9999999999999998,
+  "new_collapses": 0,
+  "own_ref_yield": 45.45833333333328,
+  "tolerances": {
+   "temperature_c": 37.0,
+   "ethanol_pct": 1.0,
+   "nitrogen_frac": 0.05
+  }
+ },
+ {
+  "mods": [
+   [
+    "ko",
+    "YER055C"
+   ]
+  ],
+  "mean_rel": 0.9999999999999991,
+  "new_collapses": 0,
+  "own_ref_yield": 45.45833333333367,
+  "tolerances": {
+   "temperature_c": 37.0,
+   "ethanol_pct": 1.0,
+   "nitrogen_frac": 0.05
+  }
+ },
+ {
+  "mods": [
+   [
+    "ko",
+    "YJL088W"
+   ]
+  ],
+  "mean_rel": 1.0,
+  "new_collapses": 0,
+  "own_ref_yield": 45.45833333333332,
+  "tolerances": {
+   "temperature_c": 37.0,
+   "ethanol_pct": 1.0,
+   "nitrogen_frac": 0.05
+  }
+ },
+ {
+  "mods": [
+   [
+    "ko",
+    "YLR372W"
+   ]
+  ],
+  "mean_rel": 1.0000000000000002,
+  "new_collapses": 0,
+  "own_ref_yield": 45.45833333333332,
+  "tolerances": {
+   "temperature_c": 37.0,
+   "ethanol_pct": 1.0,
+   "nitrogen_frac": 0.05
+  }
+ },
+ {
+  "mods": [
+   [
+    "ko",
+    "YOL136C"
+   ]
+  ],
+  "mean_rel": 1.0000000000000002,
+  "new_collapses": 0,
+  "own_ref_yield": 45.45833333333333,
+  "tolerances": {
+   "temperature_c": 37.0,
+   "ethanol_pct": 1.0,
+   "nitrogen_frac": 0.05
+  }
+ },
+ {
+  "mods": [
+   [
+    "ko",
+    "YKL024C"
+   ]
+  ],
+  "mean_rel": 1.0,
+  "new_collapses": 0,
+  "own_ref_yield": 45.45833333333335,
+  "tolerances": {
+   "temperature_c": 37.0,
+   "ethanol_pct": 1.0,
+   "nitrogen_frac": 0.05
+  }
+ },
+ {
+  "mods": [
+   [
+    "ko",
+    "YOR384W"
+   ]
+  ],
+  "mean_rel": 1.0,
+  "new_collapses": 0,
+  "own_ref_yield": 45.4583333333334,
+  "tolerances": {
+   "temperature_c": 37.0,
+   "ethanol_pct": 1.0,
+   "nitrogen_frac": 0.05
+  }
+ },
+ {
+  "mods": [
+   [
+    "ko",
+    "YER023W"
+   ]
+  ],
+  "mean_rel": 1.0,
+  "new_collapses": 0,
+  "own_ref_yield": 45.458333333333385,
+  "tolerances": {
+   "temperature_c": 37.0,
+   "ethanol_pct": 1.0,
+   "nitrogen_frac": 0.05
+  }
+ },
+ {
+  "mods": [
+   [
+    "ko",
+    "YHR216W"
+   ]
+  ],
+  "mean_rel": 0.9999999999999999,
+  "new_collapses": 0,
+  "own_ref_yield": 45.45833333333334,
+  "tolerances": {
+   "temperature_c": 37.0,
+   "ethanol_pct": 1.0,
+   "nitrogen_frac": 0.05
+  }
+ },
+ {
+  "mods": [
+   [
+    "ko",
+    "YOR311C"
+   ]
+  ],
+  "mean_rel": 1.0000000000000002,
+  "new_collapses": 0,
+  "own_ref_yield": 45.458333333333314,
+  "tolerances": {
+   "temperature_c": 37.0,
+   "ethanol_pct": 1.0,
+   "nitrogen_frac": 0.05
+  }
+ },
+ {
+  "mods": [
+   [
+    "ko",
+    "YHR174W"
+   ]
+  ],
+  "mean_rel": 0.9999999999999948,
+  "new_collapses": 0,
+  "own_ref_yield": 45.4583333333333,
+  "tolerances": {
+   "temperature_c": 37.0,
+   "ethanol_pct": 1.0,
+   "nitrogen_frac": 0.05
+  }
+ },
+ {
+  "mods": [
+   [
+    "ko",
+    "YOR175C"
+   ]
+  ],
+  "mean_rel": 0.9999999999999998,
+  "new_collapses": 0,
+  "own_ref_yield": 45.458333333333336,
+  "tolerances": {
+   "temperature_c": 37.0,
+   "ethanol_pct": 1.0,
+   "nitrogen_frac": 0.05
+  }
+ },
+ {
+  "mods": [
+   [
+    "ko",
+    "YJL130C"
+   ]
+  ],
+  "mean_rel": 1.0,
+  "new_collapses": 0,
+  "own_ref_yield": 45.458333333333336,
+  "tolerances": {
+   "temperature_c": 37.0,
+   "ethanol_pct": 1.0,
+   "nitrogen_frac": 0.05
+  }
+ },
+ {
+  "mods": [
+   [
+    "ko",
+    "YLL018C"
+   ]
+  ],
+  "mean_rel": 1.0,
+  "new_collapses": 0,
+  "own_ref_yield": 45.45833333333331,
+  "tolerances": {
+   "temperature_c": 37.0,
+   "ethanol_pct": 1.0,
+   "nitrogen_frac": 0.05
+  }
+ },
+ {
+  "mods": [
+   [
+    "ko",
+    "YNR050C"
+   ]
+  ],
+  "mean_rel": 1.0,
+  "new_collapses": 0,
+  "own_ref_yield": 45.45833333333333,
+  "tolerances": {
+   "temperature_c": 37.0,
+   "ethanol_pct": 1.0,
+   "nitrogen_frac": 0.05
+  }
+ },
+ {
+  "mods": [
+   [
+    "ko",
+    "YHR020W"
+   ]
+  ],
+  "mean_rel": 1.0000000000000002,
+  "new_collapses": 0,
+  "own_ref_yield": 45.458333333332924,
+  "tolerances": {
+   "temperature_c": 37.0,
+   "ethanol_pct": 1.0,
+   "nitrogen_frac": 0.05
+  }
+ },
+ {
+  "mods": [
+   [
+    "ko",
+    "YPL097W"
+   ]
+  ],
+  "mean_rel": 1.0000000000000002,
+  "new_collapses": 0,
+  "own_ref_yield": 45.45833333333338,
+  "tolerances": {
+   "temperature_c": 37.0,
+   "ethanol_pct": 1.0,
+   "nitrogen_frac": 0.05
+  }
+ },
+ {
+  "mods": [
+   [
+    "ko",
+    "YHL016C"
+   ]
+  ],
+  "mean_rel": 1.0000000000000024,
+  "new_collapses": 0,
+  "own_ref_yield": 45.45833333333332,
+  "tolerances": {
+   "temperature_c": 37.0,
+   "ethanol_pct": 1.0,
+   "nitrogen_frac": 0.05
+  }
+ },
+ {
+  "mods": [
+   [
+    "ko",
+    "YDR376W"
+   ]
+  ],
+  "mean_rel": 0.9999999999999998,
+  "new_collapses": 0,
+  "own_ref_yield": 45.45833333333332,
+  "tolerances": {
+   "temperature_c": 37.0,
+   "ethanol_pct": 1.0,
+   "nitrogen_frac": 0.05
+  }
+ },
+ {
+  "mods": [
+   [
+    "ko",
+    "YLR092W"
+   ]
+  ],
+  "mean_rel": 1.000000000000074,
+  "new_collapses": 0,
+  "own_ref_yield": 45.45833333333331,
+  "tolerances": {
+   "temperature_c": 37.0,
+   "ethanol_pct": 1.0,
+   "nitrogen_frac": 0.05
+  }
+ },
+ {
+  "mods": [
+   [
+    "ko",
+    "YLR438W"
+   ]
+  ],
+  "mean_rel": 1.0000000000000002,
+  "new_collapses": 0,
+  "own_ref_yield": 45.45833333333334,
+  "tolerances": {
+   "temperature_c": 37.0,
+   "ethanol_pct": 1.0,
+   "nitrogen_frac": 0.05
+  }
+ },
+ {
+  "mods": [
+   [
+    "ko",
+    "YMR241W"
+   ]
+  ],
+  "mean_rel": 1.0,
+  "new_collapses": 0,
+  "own_ref_yield": 45.458333333333336,
+  "tolerances": {
+   "temperature_c": 37.0,
+   "ethanol_pct": 1.0,
+   "nitrogen_frac": 0.05
+  }
+ },
+ {
+  "mods": [
+   [
+    "ko",
+    "YOL011W"
+   ]
+  ],
+  "mean_rel": 1.0,
+  "new_collapses": 0,
+  "own_ref_yield": 45.45833333333333,
+  "tolerances": {
+   "temperature_c": 37.0,
+   "ethanol_pct": 1.0,
+   "nitrogen_frac": 0.05
+  }
+ },
+ {
+  "mods": [
+   [
+    "ko",
+    "YOR176W"
+   ]
+  ],
+  "mean_rel": 1.0,
+  "new_collapses": 0,
+  "own_ref_yield": 45.45833333333331,
+  "tolerances": {
+   "temperature_c": 37.0,
+   "ethanol_pct": 1.0,
+   "nitrogen_frac": 0.05
+  }
+ },
+ {
+  "mods": [
+   [
+    "ko",
+    "YCR053W"
+   ]
+  ],
+  "mean_rel": 1.0,
+  "new_collapses": 0,
+  "own_ref_yield": 45.45833333333332,
+  "tolerances": {
+   "temperature_c": 37.0,
+   "ethanol_pct": 1.0,
+   "nitrogen_frac": 0.05
+  }
+ },
+ {
+  "mods": [
+   [
+    "ko",
+    "YJL129C"
+   ]
+  ],
+  "mean_rel": 1.0,
+  "new_collapses": 0,
+  "own_ref_yield": 45.4583333333333,
+  "tolerances": {
+   "temperature_c": 37.0,
+   "ethanol_pct": 1.0,
+   "nitrogen_frac": 0.05
+  }
+ },
+ {
+  "mods": [
+   [
+    "ko",
+    "YJR069C"
+   ]
+  ],
+  "mean_rel": 0.9999999999999997,
+  "new_collapses": 0,
+  "own_ref_yield": 45.45833333331083,
+  "tolerances": {
+   "temperature_c": 37.0,
+   "ethanol_pct": 1.0,
+   "nitrogen_frac": 0.05
+  }
+ },
+ {
+  "mods": [
+   [
+    "ko",
+    "YPL252C"
+   ]
+  ],
+  "mean_rel": 0.9999999999999964,
+  "new_collapses": 0,
+  "own_ref_yield": 45.45833333333359,
+  "tolerances": {
+   "temperature_c": 37.0,
+   "ethanol_pct": 1.0,
+   "nitrogen_frac": 0.05
+  }
+ },
+ {
+  "mods": [
+   [
+    "ko",
+    "YGL202W"
+   ]
+  ],
+  "mean_rel": 0.9999999999999994,
+  "new_collapses": 0,
+  "own_ref_yield": 45.458333333333144,
+  "tolerances": {
+   "temperature_c": 37.0,
+   "ethanol_pct": 1.0,
+   "nitrogen_frac": 0.05
+  }
+ },
+ {
+  "mods": [
+   [
+    "ko",
+    "YIL155C"
+   ]
+  ],
+  "mean_rel": 0.9999999999999957,
+  "new_collapses": 0,
+  "own_ref_yield": 45.458333333333535,
+  "tolerances": {
+   "temperature_c": 37.0,
+   "ethanol_pct": 1.0,
+   "nitrogen_frac": 0.05
+  }
+ },
+ {
+  "mods": [
+   [
+    "ko",
+    "YGR106C"
+   ]
+  ],
+  "mean_rel": 0.9999999999999952,
+  "new_collapses": 0,
+  "own_ref_yield": 45.458333333333286,
+  "tolerances": {
+   "temperature_c": 37.0,
+   "ethanol_pct": 1.0,
+   "nitrogen_frac": 0.05
+  }
+ },
+ {
+  "mods": [
+   [
+    "ko",
+    "YOR209C"
+   ]
+  ],
+  "mean_rel": 0.9999999999999997,
+  "new_collapses": 0,
+  "own_ref_yield": 45.458333333333215,
+  "tolerances": {
+   "temperature_c": 37.0,
+   "ethanol_pct": 1.0,
+   "nitrogen_frac": 0.05
+  }
+ },
+ {
+  "mods": [
+   [
+    "ko",
+    "YLR047C"
+   ]
+  ],
+  "mean_rel": 0.9999999999999969,
+  "new_collapses": 0,
+  "own_ref_yield": 45.4583333333334,
+  "tolerances": {
+   "temperature_c": 37.0,
+   "ethanol_pct": 1.0,
+   "nitrogen_frac": 0.05
+  }
+ },
+ {
+  "mods": [
+   [
+    "ko",
+    "YDR040C"
+   ]
+  ],
+  "mean_rel": 1.0000000000000042,
+  "new_collapses": 0,
+  "own_ref_yield": 45.45833333333335,
+  "tolerances": {
+   "temperature_c": 37.0,
+   "ethanol_pct": 1.0,
+   "nitrogen_frac": 0.05
+  }
+ }
+]

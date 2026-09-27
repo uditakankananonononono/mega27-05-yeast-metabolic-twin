@@ -166,9 +166,7 @@ def design_ref_yield(model, ref, mods):
         with model:
             apply_mods(model, mods)
             model.objective = ETHANOL_EX
-            sol = model.optimize()
-            return float(max(sol.objective_value, 0.0)) \
-                if sol.status == "optimal" else 0.0
+            return float(max(model.slim_optimize(error_value=0.0), 0.0))
 
 
 def confirm(mods_list, envs, wt_vals, tag):
@@ -197,9 +195,8 @@ def confirm(mods_list, envs, wt_vals, tag):
                     with _MOD:
                         apply_mods(_MOD, mods)
                         _MOD.objective = ETHANOL_EX
-                        sol = _MOD.optimize()
-                        y = float(max(sol.objective_value, 0.0)) \
-                            if sol.status == "optimal" else 0.0
+                        y = float(max(_MOD.slim_optimize(error_value=0.0),
+                                      0.0))
                 if own_ref > 0 and y >= 0.8 * own_ref:
                     passing.append(float(v))
             tols[axis] = (max(passing) if mode == "max" else min(passing)) \
