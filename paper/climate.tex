@@ -1,24 +1,25 @@
 \documentclass[12pt]{article}
 \usepackage[margin=1in]{geometry}
-\usepackage{fontspec}
-\setmainfont{Times New Roman}[Path=/home/sandbox/fonts/,Extension=.TTF,UprightFont=Times,BoldFont=Timesbd,ItalicFont=Timesi,BoldItalicFont=Timesbi]
-\usepackage{graphicx,longtable,amsmath,amssymb,amsthm,booktabs}
-\usepackage[colorlinks=true,linkcolor=black,citecolor=black,urlcolor=blue]{hyperref}
+\usepackage{mathptmx}
+\usepackage{graphicx,longtable,amsmath,amssymb,amsthm}
+
 \newtheorem{proposition}{Proposition}
 \newtheorem{remark}{Remark}
 \newtheorem{definition}{Definition}
 \title{Virtual Yeast for Climate-Resilient Fermentation:\\[4pt]
 {\large A Pre-Registered Constraint-Based Map of Combined-Stress Collapse
 in \emph{Saccharomyces cerevisiae}, its Co-Limitation Mechanism, and a
-Demonstrated Boundary of Steady-State Strain Design}}
+Demonstrated Boundary of Steady-State Strain Design}\\[8pt]
+{\normalsize ISEF category: Computational Biology and Bioinformatics (CBIO)}}
 \author{MEGA-PROGRAM-27, Item 5}
 \date{\today}
 \begin{document}
 \maketitle
 
 \begin{abstract}
-\noindent Industrial bioethanol fermentations fail when climate-driven
-stresses combine: heat waves, accumulating ethanol, osmotic pressure from
+\noindent\emph{Category: Computational Biology and
+Bioinformatics (CBIO).} Industrial bioethanol fermentations fail when
+climate-driven stresses combine: heat waves, accumulating ethanol, osmotic pressure from
 concentrated feedstocks, and nutrient limitation interact inside the same
 tank, yet each stress is usually studied one factor at a time. We built a
 virtual \emph{Saccharomyces cerevisiae} cell on the consensus genome-scale
@@ -251,3 +252,123 @@ verdicts and what they changed. Section~\ref{sec:conclusion} concludes.
 Appendices carry the locked pre-registration record, parameter tables,
 solver-timeout registers, run logs, and the verbatim judge archive.
 
+
+
+\section{Related work}
+\label{sec:related}
+
+\subsection{Ethanol inhibition and the kinetics of product toxicity}
+
+The quantitative study of ethanol's effect on yeast fermentation is older
+than genome-scale modeling by half a century. The inhibitory effect of
+ethanol on growth and fermentation was formalized in the Levenspiel
+framework, in which the specific rate declines with product concentration
+according to a power law whose exponent and critical concentration are
+fitted per strain and condition. Classical chemostat and batch studies
+established that biomass yield declines steeply across the 0--107\,g/L
+ethanol range and that maintenance requirements rise as viability falls.
+These studies supply two facts this paper builds on directly: ethanol
+inhibition is smooth and dose-dependent rather than threshold-like across
+most of the industrial range, and its physiological signature couples
+growth, fermentation rate, and viability rather than acting on any one of
+them alone. What the classical literature cannot supply is a whole-cell
+mechanism: the models are intentionally phenomenological, and their
+parameters move when the background medium, strain, or stress combination
+changes. Our treatment follows the same functional tradition - a
+Levenspiel-type inhibition mapped onto growth-coupled flux bounds - but
+embeds it in a genome-scale stoichiometric model so that its interaction
+with carbon drain and temperature can be read out mechanistically at the
+level of individual constraints.
+
+\subsection{Temperature kinetics: from Arrhenius to cardinal models}
+
+The temperature dependence of microbial rates has been described at
+several levels of resolution. Arrhenius-style laws capture the rising
+limb of the rate--temperature curve but fail at the denaturation edge;
+the cardinal-temperature model with inflection (CTMI) of Rosso and
+colleagues repairs this with three interpretable parameters - minimum,
+optimum, and maximum temperatures - joined by a smooth asymmetric curve
+that has been fitted to yeast growth and fermentation repeatedly,
+including systematic studies of wine and industrial strains across the
+full viable range. Salvado and co-workers extended such fits to mixed
+populations and to fermentation-relevant rates rather than growth alone.
+For a whole-cell model, the CTMI form has a decisive advantage over a raw
+Arrhenius law: it can be applied as a single dimensionless multiplier to
+enzyme-catalyzed capacity while remaining honest about its aggregate
+character. We adopt exactly that mapping, with parameters taken from the
+published yeast fits and locked before any run, and we treat the
+maintenance-energy response to falling relative growth as a separate,
+declared assumption - the cell pays more to stay alive as conditions
+worsen - because the published evidence for the direction of that effect
+is strong and for its exact form weak. The sensitivity of every
+temperature-driven conclusion to the CTMI margin parameters is reported
+in Section~\ref{sec:results} as a first-class result, since it proved to
+be the fragile axis of the non-additivity claim.
+
+\subsection{Osmotic stress and the cost of glycerol}
+
+The osmoregulatory program of \emph{S.\ cerevisiae} is among the
+best-characterized stress responses in any eukaryote: hyperosmotic shock
+activates the high-osmolarity glycerol (HOG) pathway, induces glycerol
+production through GPD1/GPD2, and closes the Fps1 aquaglyceroporin to
+retain the polyol. Hohmann's reviews place the carbon cost of this program
+at the center of osmotic physiology: glycerol is not a by-product here but
+a requirement, and its synthesis diverts flux from glycolysis and,
+relevantly for industry, from ethanol. Fermentation-science studies of
+very-high-gravity mashes have repeatedly associated osmotic load with
+sluggish and stuck fermentations and with altered glycerol--ethanol
+partitioning. The modeling tradition, however, has rarely charged this
+cost explicitly to the cell in flux terms. Our osmotic layer does exactly
+that: an obligatory glycerol-production demand proportional to external
+osmolarity, parameterized from published osmotic physiology and locked,
+so that the carbon drain appears in the model as a constraint that can
+bind, carry a shadow price, and be counted - which is precisely what
+makes the A4 bottleneck analysis of Section~\ref{sec:results} possible.
+
+\subsection{Combined stress in fermentation science}
+
+The industrial fermentation literature has long acknowledged combined
+stress without mapping it. Reviews of VHG bioethanol operation list heat,
+ethanol, osmotic, and nutrient stress as the canonical burden set and
+document that strains selected for one tolerance often disappoint under
+the others. Systematic multi-stress tolerance panels exist for a handful
+of strains and conditions, and adaptive-laboratory-evolution campaigns
+have produced multiply tolerant isolates whose mechanisms are usually
+resolved only partially and after the fact. Two features of this
+literature motivate the present study. First, its evidence is
+overwhelmingly one-factor-at-a-time at the mechanism level: even when
+strains are challenged jointly, the analysis attributes failure to a
+single dominant stress rather than to an interaction topology. Second,
+its computational counterpart is thin: genome-scale models have been
+applied to ethanol tolerance mostly through gene-essentiality or
+flux-coupling analyses in single stress conditions. The joint,
+pre-registered mapping of collapse across a four-axis stress space, with
+mechanism attribution and validation against published deletion screens,
+appears to be absent from the literature, and it is the hole this paper
+aims to fill - including, explicitly, the parts of the hole we could not
+fill and now mark on the map.
+
+\subsection{Genome-scale models, their validation culture, and this
+paper's stance}
+
+The consensus yeast-GEM used here is the product of an unusually open
+community process, with versioned releases and a pinned SBML artifact
+that we carry in the repository with its hash recorded. Flux balance
+analysis on such models has a well-known strengths ledger - constraint
+accounting at genome scale, cheap and reproducible predictions, direct
+mechanistic readouts through shadow prices and variability analysis - and
+an equally well-known list of blind spots: no regulation, no damage or
+repair dynamics, and a steady-state assumption that is at best an
+averaging device under stress. The validation culture of the field has
+historically leaned on gene-essentiality benchmarks, which our own prior
+work examined critically and which this study deliberately complements
+with stress-conditional deletion screens as the validation target. The
+choice proved consequential: the pre-registered overlap tests against
+those screens return a null, and that null, reported plainly in
+Section~\ref{sec:results}, is one of the paper's results rather than a
+failed preliminary. A growing methodological literature argues that
+negative results of exactly this kind - where a widely used model class
+fails a fair, pre-registered test - are necessary for the field's
+self-correction; this paper is written in that tradition.
+
+\end{document}
