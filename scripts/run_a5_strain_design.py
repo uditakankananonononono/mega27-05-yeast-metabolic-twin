@@ -469,8 +469,17 @@ def stage_test():
     b95 = sorted(r["mean_rel"] for r in baseline)[
         int(0.95 * (len(baseline) - 1))]
     out_rows = []
+    prog = OUT / "test_progress.jsonl"
+    done_keys = set()
+    if prog.exists():
+        for line in open(prog):
+            row = json.loads(line)
+            done_keys.add(json.dumps(row["mods"]))
+            out_rows.append(row)
     for r in sorted(cands.values(), key=lambda x: -x["mean_rel"])[:25]:
         mods = r["mods"]
+        if json.dumps(mods) in done_keys:
+            continue
         # target-regime exemplar: collapsed screen40 env of largest rel gain
         screen_envs = subs["screen40"]
         best_env, best_gain = None, -1.0
@@ -528,6 +537,11 @@ def stage_test():
             filter_b="PENDING (Section-8 datasets not yet acquired)",
             g4a_dominates_wt=g4a, g4b_beats_baseline_p95=g4b,
             baseline_p95=b95))
+        with open(prog, "a") as fh:
+            fh.write(json.dumps(out_rows[-1]) + "\n")
+    if len(out_rows) < min(25, len(cands)):
+        print(f"test incomplete: {len(out_rows)} candidates done")
+        return
     verdict = dict(
         analysis="A5 strain design - TEST stage G4 verdict (Amendment 4)",
         wt_tolerances=wt_tols, wt_ref_yield=wt_ref, baseline_p95=b95,
