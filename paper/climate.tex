@@ -254,6 +254,81 @@ solver-timeout registers, run logs, and the verbatim judge archive.
 
 
 
+
+\subsection{Why ``virtual yeast,'' and why now}
+
+Two trends collide over the next decades of industrial fermentation.
+On the demand side, fuel ethanol remains the largest fermentation
+process on Earth by volume, and its decarbonization role keeps it
+anchored in every net-zero pathway that includes liquid fuels. On the
+supply side, the production environment is destabilizing: heat waves
+that used to be seasonal tail risk now arrive mid-campaign, feedstock
+quality swings with drought-stressed harvests, and cooling water -
+the process's thermal sink - is itself becoming a constrained,
+expensive resource in the regions where production is expanding. A
+fermentation organism specified for the climate of the late twentieth
+century is increasingly being asked to run in the climate of the
+mid-twenty-first. The engineering response the industry would like is
+a strain: a yeast that holds productivity through heat, product
+toxicity, and osmotic load simultaneously, on thinner nutrient
+budgets. This program set out to look for one in silico, and the
+honest report of that search - including why the search could not
+succeed as posed - is this paper.
+
+The ``virtual yeast'' framing deserves precision, because the term is
+overloaded. We do not simulate a cell in the whole-cell sense; we
+instantiate a specific, pinned, publicly curated reconstruction of
+yeast carbon metabolism, equip it with declared mappings from
+environmental axes to model constraints, and treat the resulting
+system as an experimental object: one that can be interrogated across
+72{,}000 environments at zero marginal cost, subjected to every
+single-gene deletion in an afternoon, and validated against real
+deletion screens the next morning. The value of the virtual object is
+not that it is the cell - Section~\ref{sec:a6} documents, with locked
+statistics, exactly where it is not - but that its failures are
+cheap, total, and auditable. A strain-design hypothesis that dies in
+this system dies before anyone builds a bioreactor around it, and a
+mechanism that survives here arrives at the bench with quantified
+shadow prices attached.
+
+\subsection{The redirect: from strain hunt to regime map}
+
+This paper exists because the program it reports changed direction
+under its own evidence, and we consider the redirect itself a
+deliverable worth documenting. The original aim, stated in the
+pre-registration, was a climate-resilient strain design dominating
+the wild type on four industrial objectives. The staged campaign
+executed that aim in full: the collapse map (A2), the interaction
+analysis (A3), the bottleneck attribution (A4), an exhaustive design
+search (A5), independent validation (A6), transcriptome concordance
+(A7), and dynamic heat-wave simulation (A8). The design stage
+returned an exhaustive negative, the validation stage returned an
+honest null, and the mechanism stage returned a positive,
+gate-passing result. A program that reported only the design stage
+would have nothing; a program that reported only the mechanism would
+have something unverified. Reporting all three, with the gates
+scored as locked, converts a failed strain hunt into a validated
+regime map plus a measured boundary on the method. That is the shape
+of the contribution, and it dictates the shape of the paper.
+
+\subsection{Reader's guide}
+
+Section~\ref{sec:methods} is written to be sufficient: the model, the
+four stress-layer equations with parameter provenance, the
+environment grid and sampling seeds, the objectives, the stage
+protocols, the gates, and the validation statistics are all stated
+with their locked values, so that no result depends on a detail
+buried in code. Section~\ref{sec:results} walks the stages in
+campaign order - A1 through A8 - and ends with the gate ledger.
+Section~\ref{sec:discussion} separates what the model knows from what
+it cannot know, states the limitations the analysis itself produced,
+and lays out the three continuations the evidence points to.
+Appendices carry the pre-registration record, the locked parameter
+register, the solver-timeout register, the judge archive, and the
+repository map. A reader with ninety seconds should read the gate
+ledger; a reader with ninety minutes can re-derive every number from
+the pinned commit.
+
 \section{Related work}
 \label{sec:related}
 
@@ -370,6 +445,106 @@ failed preliminary. A growing methodological literature argues that
 negative results of exactly this kind - where a widely used model class
 fails a fair, pre-registered test - are necessary for the field's
 self-correction; this paper is written in that tradition.
+
+
+\subsection{The virtual-cell idea and its yeast lineage}
+
+The ambition to simulate a cell end to end is old enough to have
+failed instructively several times. Early whole-cell efforts in the
+1990s (E-CELL and its successors) established that a cell could be
+represented as coupled kinetic modules, and equally that kinetic
+parameter uncertainty compounds faster than biological insight. The
+field's pragmatic answer, consolidated over the following decade, was
+to give up kinetics where it was not knowable and keep stoichiometry,
+which is: constraint-based reconstruction and analysis (COBRA)
+trades dynamic detail for a steady-state flux polytope defined by
+mass balance, thermodynamic directionality, and measured or declared
+capacity bounds, and flux balance analysis (FBA) picks optima within
+it under a stated objective \cite{fba}. The bargain has held for
+twenty years because the parts it keeps - network structure, nutrient
+and secretion economics, gene--reaction linkage - are exactly the
+parts that engineering questions about production tend to load on.
+
+\emph{Saccharomyces cerevisiae} is the natural chassis for this
+program. It was the first eukaryote sequenced, it carries the densest
+phenotype-genotype map of any eukaryote, and its industrial role in
+ethanol production is measured in tens of billions of liters per year.
+Its genome-scale metabolic models have matured through a public,
+versioned lineage: from the first consensus reconstruction unifying
+competing models, through successive community releases curated under
+version control, to the yeast-GEM 8.7.x series used here
+\cite{yeastgem}, in which every reaction is annotated, GPR rules are
+explicit, and the model itself is a software artifact with releases,
+diffs, and hashes. That last property is what makes a study like ours
+auditable: the ``organism'' is a file whose identity can be pinned.
+
+\subsection{Stress biology of the production yeast}
+
+The three active stress axes of this paper are the three that
+industrial fermentations actually fight. Temperature: ethanol
+fermentations are exothermic and cooling-limited; every degree above
+the low-30s optimum costs rate, and the organism's own response -
+the heat-shock program of chaperone induction documented from Gasch
+onward \cite{gasch,verghese} - is protein-homeostasis triage, not a
+free repair. Ethanol: the product is itself the principal toxin of
+the process, acting on membrane integrity and protein stability with
+kinetics well fit by Levenspiel-type product-inhibition laws
+\cite{levenspiel,etohinhib}. Osmotic pressure: very-high-gravity
+mashes begin above 300\,g/L sugar, and the cell pays for water
+balance in glycerol, a carbon tax characterized mechanistically
+through the HOG pathway and the glycerol-production branch
+\cite{hohmann}. Each axis has a deep single-stressor literature;
+what the literature lacks, and what climate volatility now forces, is
+a quantitative account of their combination.
+
+The combination problem is where empirical studies thin out. Factorial
+multi-stress experiments are expensive, their design spaces are
+four-dimensional or worse, and published two-stressor studies already
+show that interactions are regime-dependent: heat and ethanol are
+synergistic in some windows and merely additive in others. The
+classical statistical frame for such questions is Bliss independence
+\cite{bliss}, and our G2 analysis is deliberately that: a locked
+deviation statistic against the multiplicative single-stressor
+baseline, with the honesty amendment that its magnitude be reported
+across declared parameter perturbations.
+
+\subsection{In silico strain design and its known failure modes}
+
+The strain-design literature built on FBA is large and genuinely
+successful inside its lane: bilevel formulations (OptKnock and its
+successors) couple growth-coupled production to knockouts
+\cite{optknock}; evolutionary and heuristic searches scale the design
+space; flux-scanning and response-based methods identify amplification
+targets. The lane's boundaries are also known, if less often printed:
+designs inherit every error of the underlying bounds, objectives are
+usually growth-coupled by construction, and validation against
+independent phenotype screens is rare enough to be notable when it
+happens. Our A5 campaign was designed as much to measure those
+boundaries as to find a strain: exhaustive singles, a seeded doubles
+screen, flux scalings, an evolutionary search, and a matched random
+baseline, all under locked plausibility filters, so that a negative
+answer - the one we got - would be informative about the method and
+not merely about our search effort.
+
+\subsection{Validation culture and pre-registration in computational biology}
+
+Computational biology has a replication problem of a specific kind:
+not that computations are irreproducible, but that they are
+revisable - parameters, thresholds, and even objectives can drift
+after outcomes are visible, and nothing in a PDF records the drift.
+The remedy imported from clinical and behavioral science is
+pre-registration: lock the design, hash the lock, and report against
+it. Its adoption in modeling studies is still the exception. We treat
+it as the load-bearing method of this paper: grid, response forms,
+parameters, stages, gates, datasets, and statistics were locked in a
+hashed document before outcomes existed; amendments were themselves
+locked before their first runs; and the three outcomes that failed
+their gates are printed next to the ones that passed. The judge
+archive in Appendix~\ref{app:judge} extends the same discipline to
+evaluation. We are aware of no prior genome-scale modeling study in
+this application area that ships its negative gate ledger; we argue
+in Section~\ref{sec:discussion} that the negatives here are the more
+durable contribution.
 
 \section{Methods}
 \label{sec:methods}
