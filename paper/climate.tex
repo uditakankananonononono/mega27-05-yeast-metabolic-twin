@@ -371,4 +371,245 @@ negative results of exactly this kind - where a widely used model class
 fails a fair, pre-registered test - are necessary for the field's
 self-correction; this paper is written in that tradition.
 
+\section{Methods}
+\label{sec:methods}
+
+\subsection{Base model and reproducibility contract}
+
+The starting point is the consensus yeast genome-scale metabolic model
+(yeast-GEM, SysBioChalmers releases 8.7.x): 4{,}105 reactions, 2{,}748
+metabolites, and 1{,}143 genes. The exact SBML artifact is carried inside
+this repository and pinned by SHA-256; every computation in the paper
+loads that file, so the model cannot silently drift between runs or
+between readers. All optimization uses COBRApy with the GLPK simplex
+solver; every stage writes its own artifacts under
+\texttt{results/climate/} so that progress, intermediate state, and any
+solver irregularity survive machine interruption. The base medium is the
+community complete-Y7 formulation with glucose uptake capped at
+20\,mmol/gDW/h and oxygen uptake capped at 0.5\,mmol/gDW/h, the
+microaerobic regime typical of industrial fermentation modeling; both
+values are declared modeling choices, not fitted quantities. The
+wild-type reference state - maximal growth $g^{\mathrm{WT}}_{\mathrm{ref}}
+= 0.573\,h^{-1}$ and maximal ethanol exchange flux under the reference
+environment - is computed once from the pinned model and cached; every
+yield reported in the paper is relative to that same-environment
+wild-type value, never to a global constant.
+
+\subsection{Stress layers: forms, parameters, and provenance}
+\label{sec:stresslayers}
+
+Four stress layers map environment axes onto model constraints. Each
+layer is a deliberately simple functional form with published anchoring,
+locked in code before any outcome run. Parameters without a direct
+published value are marked ASSUMED, swept one-at-a-time over
+pre-registered ranges ($\pm 50\%$), and never fitted to any result.
+
+\paragraph{Temperature.} Enzyme-level temperature response follows the
+cardinal temperature model with inflection (CTMI), with cardinal values
+$T_{\min}=5$, $T_{\mathrm{opt}}=32$, $T_{\max}=42\,^{\circ}$C anchored to
+published \emph{S.\ cerevisiae} fits and normalized to unity at the
+30\,$^{\circ}$C reference:
+\begin{equation}
+f_T(T) \;=\; \frac{\mathrm{CTMI}(T)}{\mathrm{CTMI}(T_{\mathrm{ref}})},
+\qquad
+\mathrm{CTMI}(T)=\frac{(T-T_{\max})(T-T_{\min})^{2}}
+{(T_{\mathrm{opt}}-T_{\min})\left[(T_{\mathrm{opt}}-T_{\min})(T-T_{\mathrm{opt}})
+-(T_{\mathrm{opt}}-T_{\max})(T_{\mathrm{opt}}+T_{\min}-2T)\right]} .
+\end{equation}
+The factor $f_T$ scales glycolytic capacity through the glucose-uptake
+bound ($\mathrm{lb}_{\mathrm{glc}} \leftarrow -20 \cdot f_T$), our
+declared $V_{\max}$ proxy for thermal loss of glycolytic throughput, and
+jointly with ethanol scales the growth cap (below). The $T_{\max}$
+margin is swept over 40--44\,$^{\circ}$C per the sensitivity rule; this
+proved to be the fragile axis of the non-additivity result
+(Section~\ref{sec:results}).
+
+\paragraph{Ethanol.} Product inhibition follows a Levenspiel-type law
+anchored to published inhibition kinetics of \emph{S.\ cerevisiae}
+(biomass yield declining from 0.156 to 0.026 over 0--107\,g/L ethanol):
+\begin{equation}
+f_E(P) \;=\; \left(1-\frac{P}{P_{\max}}\right)^{n},
+\qquad P_{\max}=14\%\,\mathrm{v/v},\; n=1.5\;(\mathrm{ASSUMED,\;swept}\;0.75\text{--}2.25),
+\end{equation}
+with $f_E$ scaling the ethanol-exchange upper bound
+($\mathrm{ub}_{\mathrm{EtOH}} \leftarrow \mathrm{EtOH}_{\max}^{\mathrm{ref}}
+\cdot f_E$), the model's product-inhibition channel on fermentation rate.
+
+\paragraph{Growth and maintenance coupling.} The growth reaction is
+capped jointly by temperature and ethanol,
+\begin{equation}
+\mathrm{ub}_{\mathrm{growth}} \;=\; g^{\mathrm{WT}}_{\mathrm{ref}} \cdot f_T \cdot f_E ,
+\end{equation}
+and non-growth-associated maintenance (NGAM) rises inversely with the
+resulting relative growth factor $f=f_T f_E$, clamped to never fall below
+the unstressed baseline and floored at the viability boundary
+$f_{\mathrm{floor}}=0.01$:
+\begin{equation}
+\mathrm{NGAM}(f) \;=\; \frac{0.7}{\max(\min(f,1),\;0.01)}
+\quad \mathrm{mmol\;ATP/gDW/h,}
+\end{equation}
+a declared ASSUMED form (Amendment 1): the direction - maintenance rises
+as conditions worsen - is supported by the classical viability
+literature; the exact reciprocal form is ours and is swept accordingly.
+Environments with $f<0.01$ are classified nonviable rather than
+collapsed; the distinction is kept throughout the analysis (of 369
+collapsed environments, 97 are infeasible, 73 nonviable, 199 solvable).
+
+\paragraph{Osmotic.} External osmolarity imposes an obligatory
+osmoregulatory glycerol-production demand, parameterized from published
+osmotic-stress physiology:
+\begin{equation}
+\mathrm{lb}_{\mathrm{gly}} \;=\; k_{\mathrm{gly}} \cdot M,
+\qquad k_{\mathrm{gly}} = 1.0\;\mathrm{mmol/gDW/h\;per\;M}
+\;\mathrm{(ASSUMED,\;swept}\;0.5\text{--}2.0\mathrm{)},
+\end{equation}
+charged to the glycerol exchange as a lower bound: carbon that must leave
+as glycerol before any objective is optimized.
+
+\paragraph{Nitrogen.} Nitrogen availability scales the ammonium-uptake
+lower bound as a locked fraction of the base level
+($\mathrm{lb}_{\mathrm{NH_4}} \leftarrow -1000 \cdot \phi_N$). During
+validation (Section~\ref{sec:results}, A6) we established that this lever
+is inert in the rich base medium - nitrogen enters through amino-acid
+uptakes and ammonium is excreted - so the nitrogen axis of the grid is
+effectively unperturbed in every stage of this paper. We declare this
+here in the methods rather than in a footnote of the limitations: all
+nitrogen-axis results should be read as flat-by-construction, and the
+pre-registered nitrogen-tolerance objective is reported as a mapping
+artifact, never as a finding.
+
+\subsection{Environment space, sampling, and the locked split}
+
+The environment space is the Cartesian product of four locked axes:
+temperature 28--42\,$^{\circ}$C (15 levels), ethanol 0--14\% v/v (15
+levels), osmolarity 0--1.5\,M sorbitol-equivalent (16 levels), and
+nitrogen 5--100\% of standard (20 levels): 72{,}000 environments.
+Single-axis and pairwise maps use the full grid; the combined-stress
+collapse surface uses a Latin-hypercube sample of 5{,}000 four-axis
+combinations (seed 20260926). Before any optimization, the sampled
+environments were split 70/30 into DESIGN and TEST regions by a
+stratified seeded split (seed 424242) committed in code; all search,
+tuning, and exploration used DESIGN only, and TEST was touched exactly
+once, at the final claim stage of the strain-design campaign. Two smaller
+locked subsamples serve the design campaign's staging: a 40-environment
+screen sample (seed 557) for high-throughput screens and a
+150-environment confirm sample (seed 558) for candidate confirmation,
+with a 150-environment test sample (seed 559) for the final verdict.
+
+\subsection{Objectives}
+\label{sec:objectives}
+
+The four locked objectives are the industrial ones: (O1) ethanol yield -
+the maximal ethanol-exchange flux relative to the same-environment wild
+type; (O2) temperature tolerance - the highest temperature at which a
+reference yield fraction remains feasible; (O3) ethanol tolerance - the
+highest ethanol concentration likewise; (O4) low nutrient requirement -
+the lowest nitrogen fraction likewise. Growth is never an objective; it
+appears only as a feasibility constraint. Tolerance metrics are defined
+relative to locked yield thresholds, and we warn in the methods that on
+this model class the tolerance readouts are mapping-limited: ethanol
+tolerance is governed by the $f_E$ crossing of the Levenspiel cap,
+temperature tolerance by the CTMI maximum, and nitrogen tolerance by the
+(inert) ammonium lever. They are reported as declared consequences of the
+mapping, never as biological discoveries; the objectives that carry the
+paper's claims are O1 and the constraint-level analyses built on it.
+
+\subsection{Analysis stages}
+\label{sec:stages}
+
+The program is staged A1--A8, each stage pre-registered, each artifact
+checksummed, and each gate reported as landed. A1: single-stressor dose
+responses on the full locked grid. A2: the combined-stress collapse
+surface on the 5{,}000-environment sample, with collapse defined as
+ethanol yield below 20\% of reference. A3: non-additivity - the fraction
+of collapsed environments whose combined yield falls below the product of
+the single-stressor yields, with bootstrap confidence intervals and, per
+amendment, one-at-a-time parameter sweeps (7 sets $\times$ 1{,}000
+environments). A4: bottleneck attribution on the collapsed set - every
+collapse flag re-verified by fresh solve (0 mismatches), binding
+constraints counted with shadow prices, and flux-variability analysis on
+a locked 121-reaction subset over 25 solvable seed-777 environments. A5:
+strain design under Amendment 4 - all 1{,}143 single-gene deletions; a
+seeded double-knockout screen (435 designs); 36 reaction-bound scalings
+(0.25$\times$--4$\times$ on a locked reaction list); an evolutionary
+search (3 seeds $\times$ 12 generations $\times$ population 24, genome =
+top-30 confirmed modifications); a matched random baseline (150 random
+budget-2 designs, 30 seeds); staged screen/confirm/test evaluation; and
+locked plausibility filters (essentiality under the target-regime
+exemplar; dataset concordance pending at design time). A6: validation
+against the locked deletion-screen datasets (Section~\ref{sec:datasets})
+with locked overlap statistics. A7: regime--transcriptome concordance
+against the Gasch-2000 environmental-stress expression program over
+locked marker gene sets (heat-shock, nitrogen-catabolite, glycerol,
+glycolytic), with SGD-verified gene identifiers frozen in code. A8:
+dynamic heat-wave simulations (dynamic FBA over a locked time grid),
+with the batch substrate-exhaustion confound declared and the
+very-high-gravity variant labeled exploratory (post-run, Section-12
+rule).
+
+\subsection{Gates}
+\label{sec:gates}
+
+Four binary gates were locked before outcomes. G1 (model validity):
+wild-type dose responses qualitatively reproduce known stress physiology
+(monotonic decline per axis; heat--ethanol interaction consistent with
+the industrial literature) AND predicted stress-conditional sensitivity
+significantly overlaps deletion-screen hits (Fisher odds ratio $>1$,
+BH-FDR 5\%) in at least 2 of the 4 quantitative comparisons. G2
+(non-additivity): the sub-additive fraction exceeds 25\% of collapsed
+environments with bootstrap CI excluding zero. G3 (bottlenecks):
+collapse is attributable to named constraints with consistent
+shadow-price and variability evidence. G4 (strain design): at least one
+candidate dominates the wild type on all four objectives with strict
+improvement on at least one (G4a) and exceeds the 95th percentile of the
+matched random baseline on ethanol yield (G4b), under the plausibility
+filters. The gates are reported in Section~\ref{sec:results} exactly as
+they landed: G1 partial (dose-response clause met; overlap clause failed
+0/4), G2 not met (24.2\%, parameter-fragile), G3 met, G4 not met (0/25
+beyond solver noise).
+
+\subsection{Validation datasets and statistics}
+\label{sec:datasets}
+
+Validation uses existing experimental data only, at accession level, with
+hashes recorded in the dataset manifest and no parameter fitted to any
+validation outcome. Quantitative: GSE151784 (pooled deletion-library
+barcode counts before/after acute lethal ethanol, triplicate), the
+Gibney-2013 Bar-seq heat-shock survival screen (PNAS,
+doi:10.1073/pnas.1318100110; supplements mirrored via PMC), and GSE59659
+(deletion fitness under 20\% glucose and 1\,M sorbitol; processed
+series-matrix values with the GPL9825 probe map). The locked overlap
+metric is the stress-conditional sensitivity overlap: Fisher exact odds
+ratio (one-sided greater) with Benjamini--Hochberg FDR at 5\% across the
+four comparisons, and the Matthews correlation coefficient with a 95\%
+bootstrap CI (10{,}000 resamples, seed 20260927). Model-side sensitivity
+is locked as a growth-based call: for gene $g$,
+$\mathrm{sens}(g)=[g_{\mathrm{KO}}(\mathrm{stress})/
+g_{\mathrm{KO}}(\mathrm{ref})]/[g_{\mathrm{WT}}(\mathrm{stress})/
+g_{\mathrm{WT}}(\mathrm{ref})]$, sensitive when $\mathrm{sens}(g)<0.8$;
+unconditionally sick or essential knockouts (reference growth
+$\le 10^{-6}$) are excluded and recorded. Dataset-side hit calls are
+locked per dataset: GSE151784 mean $\log_2$ depletion $<-1$ across
+replicates; Gibney the authors' own significance call; GSE59659 per-ORF
+median log-ratio $<-1$ averaged across replicates. Qualitative: the named
+genes of the AJEV 59(4):401 ethanol screen (concordance stated per gene),
+and the two nutrient datasets E-GEOD-1723 and E-MTAB-8245, which proved
+not evaluable because the nitrogen lever is inert
+(Section~\ref{sec:stresslayers}). The Gasch-2000 expression program is
+context for A7 and is never used as validation of flux predictions.
+
+\subsection{Pre-registration protocol and integrity register}
+
+The full design above - grid, forms, parameters, stages, gates,
+datasets, and statistics - was locked in \texttt{docs/PREREGISTRATION.md}
+with its SHA-256 recorded at lock time, before any outcome run. Later
+amendments (viability boundary and maintenance form; the parameter-sweep
+arm; the A5 staging and filters) were themselves committed before their
+first runs, with their own hashes. Solver irregularities are a registered
+category, not an inconvenience: GLPK can hang in native code on certain
+perturbed models, so every candidate evaluation runs under a hard
+per-design timeout and a hang is recorded as \texttt{solver\_timeout} -
+16 occurrences across the campaign - never silently skipped or imputed.
+All code, data, run logs, and the judge archive are in the repository;
+the paper's every number can be regenerated from the pinned commit.
 \end{document}
