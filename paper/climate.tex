@@ -1021,6 +1021,93 @@ the trajectory. The batch substrate-exhaustion confound was declared
 in the amendment, and the very-high-gravity variant
 (1{,}665\,mmol/L) is labeled exploratory per the post-run rule.
 
+
+\subsection{Objective definitions and tolerance metrics}
+\label{sec:objectivedetail}
+
+The four locked objectives share one measurement discipline: every
+quantity is evaluated per environment against a same-environment
+wild-type reference solved in the same session, so no comparison ever
+crosses a solver, a parameter set, or a day.
+
+\emph{O1, ethanol yield}, is the maximal ethanol-exchange flux under
+the environment's full constraint set, divided by the wild type's
+under the same constraints. Collapse is the locked 0.20 relative-yield
+threshold. We chose relative rather than absolute yield because
+absolute flux scales with the medium's carbon supply, and relative
+yield isolates the stress effect; the cost of the choice is that
+relative yield saturates at 1.0 for any modification whose effect is
+already realized by the wild type - which is precisely the
+measurement regime A5 found itself in, and one reason the null is
+informative rather than an artifact of scale.
+
+\emph{O2 and O3, temperature and ethanol tolerance}, are threshold
+readouts: the highest axis value at which a locked reference yield
+fraction remains feasible, scanned on the single-axis grid. They are
+declared mapping artifacts wherever reported (the Levenspiel crossing
+for ethanol, the CTMI maximum for temperature), and their role in the
+gates is limited to G4's dominance test, where identical-to-WT
+tolerances are the expected outcome under a null - which is what was
+observed, 25/25.
+
+\emph{O4, low nutrient requirement}, is the lowest nitrogen fraction
+at which the locked yield fraction remains feasible. It saturates at
+the 5\% grid edge for every design and the wild type alike - the
+flat-axis artifact, root-caused in A6 to the inert ammonium lever and
+declared wherever the objective appears.
+
+The dominance test of G4(a) requires a candidate to match or exceed
+the wild type on all four objectives with strict improvement on at
+least one, beyond the declared $10^{-14}$ solver-noise band. The band
+exists because COBRA solutions carry floating-point path dependence
+at the $10^{-15}$ scale, and counting an $8\times10^{-15}$ difference
+as a biological improvement would be the exact failure mode
+pre-registration exists to prevent.
+
+\subsection{Dataset acquisition and processing}
+\label{sec:acquisition}
+
+All validation data are public, pre-existing, and acquired at
+accession level with SHA-256 hashes recorded in
+\texttt{data/raw/SECTION8\_MANIFEST.json}; no dataset was filtered,
+normalized, or subset after outcomes were visible.
+
+\emph{GSE151784} was pulled from GEO as raw barcode-count tables
+(pooled deletion library, before/after acute lethal ethanol,
+triplicate), parsed per ORF, averaged across replicates on the
+$\log_2$ depletion scale, and thresholded at the locked $-1$ hit
+call; replicate agreement was inspected before locking the call and
+is recorded in the processing script.
+
+\emph{Gibney 2013} (PNAS, doi:10.1073/pnas.1318100110) was obtained
+as the published supplementary Bar-seq tables; the publisher's site
+refuses automated access, so the supplements were mirrored through
+the PubMed Central instance's binary endpoints, with the access path
+recorded. The authors' own per-gene significance calls were used as
+the locked hit definition - no re-derivation.
+
+\emph{GSE59659} was taken as the processed series matrix (per-ORF
+log-ratios for the 20\%-glucose and 1\,M-sorbitol arms) mapped to
+systematic identifiers through the GPL9825 platform table; per-ORF
+medians across replicates were thresholded at the locked $-1$ call.
+
+\emph{AJEV 59(4):401} is paywalled; the named genes were taken from
+the abstract and public indexing, verified against SGD, and frozen in
+code with their systematic identifiers before any model evaluation.
+One name (TDP3) could not be resolved through the SGD API and is
+recorded as unresolved; the paper's attribution note (Renuka Kumar
+et al., Bisson laboratory, not van Voorst) is on record in the A6 run
+log.
+
+\emph{Gasch 2000} was recovered as the authors' complete dataset file
+from a Wayback Machine capture of the Stanford site (SHA-256 recorded),
+used only for A7 concordance, and graded context by the
+pre-registration - never validation.
+
+\emph{E-GEOD-1723} and \emph{E-MTAB-8245} were acquired for the
+nutrient checks and became not evaluable with the inert-lever finding;
+their accession records stand in the manifest.
+
 \subsection{Gates}
 \label{sec:gates}
 
