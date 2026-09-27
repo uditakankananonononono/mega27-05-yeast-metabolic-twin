@@ -1,0 +1,39 @@
+{
+  "analysis": "A8 VHG variant - EXPLORATORY (Section 12; locked A8 stands)",
+  "difference_from_locked": "initial glucose 1665 mmol/L (~300 g/L VHG) vs locked 111 mmol/L; all else identical",
+  "glucose0_mmol_l": 1665.0,
+  "sbml_sha256": "30842b15eefb0ef7e36cbdea86a9efddfacf69a871c8b054165faa9af9f6c8eb",
+  "heatwave": {
+    "trajectory": "heatwave",
+    "collapse_onset_dynamic_h": 8.75,
+    "collapse_onset_static_surface_h": 9.0,
+    "degree_hours_above_37C_total": 22.9375,
+    "degree_hours_above_37C_before_dynamic_collapse": 10.0625,
+    "final_biomass_gdw_l": 14.727021678361833,
+    "final_ethanol_mmol_l": 1280.9068802641232,
+    "final_ethanol_pct": 7.4751479807458345,
+    "final_glucose_mmol_l": 1041.2160474873772,
+    "final_glycerol_mmol_l": -7.996822022469773e-17,
+    "final_ethanol_flux": 14.463635052970355,
+    "final_static_ethanol": 14.463635052970355,
+    "recovery_deficit_final": 0.0,
+    "ref_ethanol_max": 45.45833333333332
+  },
+  "control": {
+    "trajectory": "control",
+    "collapse_onset_dynamic_h": 13.0,
+    "collapse_onset_static_surface_h": 13.0,
+    "degree_hours_above_37C_total": 0.0,
+    "degree_hours_above_37C_before_dynamic_collapse": 0.0,
+    "final_biomass_gdw_l": 23.494330740925566,
+    "final_ethanol_mmol_l": 1974.6185158846056,
+    "final_ethanol_pct": 11.523527462600963,
+    "final_glucose_mmol_l": 585.5075684139323,
+    "final_glycerol_mmol_l": 0.03264034271829078,
+    "final_ethanol_flux": 3.3819854105685514,
+    "final_static_ethanol": 3.3819854105685514,
+    "recovery_deficit_final": 0.0,
+    "ref_ethanol_max": 45.45833333333332
+  },
+  "runtime_s": 28.2
+}

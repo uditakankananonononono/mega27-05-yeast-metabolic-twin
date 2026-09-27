@@ -1,0 +1,99 @@
+{
+  "analysis": "A8 minimal dynamic heat-wave dFBA (Amendment 3)",
+  "locked_grid": {
+    "dt_h": 0.25,
+    "t_end_h": 16.0,
+    "phases": [
+      [
+        0.0,
+        2.0,
+        30.0,
+        30.0
+      ],
+      [
+        2.0,
+        6.0,
+        30.0,
+        40.0
+      ],
+      [
+        6.0,
+        8.0,
+        40.0,
+        40.0
+      ],
+      [
+        8.0,
+        9.0,
+        40.0,
+        42.0
+      ],
+      [
+        9.0,
+        11.0,
+        42.0,
+        42.0
+      ],
+      [
+        11.0,
+        12.0,
+        42.0,
+        30.0
+      ],
+      [
+        12.0,
+        16.000000000001,
+        30.0,
+        30.0
+      ]
+    ],
+    "control_T": 30.0
+  },
+  "batch": {
+    "volume_l": 1.0,
+    "x0_gdw_l": 0.1,
+    "glucose0_mmol_l": 111.0,
+    "osmotic_m": 0.0,
+    "nitrogen_frac": 1.0
+  },
+  "declared_constants": {
+    "etoh_g_per_l_per_pct": 7.894,
+    "mw_glc": 180.156,
+    "mw_etoh": 46.068,
+    "mw_gly": 92.094
+  },
+  "sbml_sha256": "30842b15eefb0ef7e36cbdea86a9efddfacf69a871c8b054165faa9af9f6c8eb",
+  "heatwave": {
+    "trajectory": "heatwave",
+    "collapse_onset_dynamic_h": 8.0,
+    "collapse_onset_static_surface_h": 9.0,
+    "degree_hours_above_37C_total": 22.9375,
+    "degree_hours_above_37C_before_dynamic_collapse": 7.4375,
+    "final_biomass_gdw_l": 2.848251051637501,
+    "final_ethanol_mmol_l": 241.0358686545348,
+    "final_ethanol_pct": 1.4066430703289978,
+    "final_glucose_mmol_l": 0.0,
+    "final_glycerol_mmol_l": 0.0,
+    "final_ethanol_flux": 0.0,
+    "final_static_ethanol": 38.782314534230174,
+    "recovery_deficit_final": 1.0,
+    "ref_ethanol_max": 45.45833333333332
+  },
+  "control": {
+    "trajectory": "control",
+    "collapse_onset_dynamic_h": 6.5,
+    "collapse_onset_static_surface_h": null,
+    "degree_hours_above_37C_total": 0.0,
+    "degree_hours_above_37C_before_dynamic_collapse": 0.0,
+    "final_biomass_gdw_l": 2.789189219411134,
+    "final_ethanol_mmol_l": 229.0122640344712,
+    "final_ethanol_pct": 1.336475421781102,
+    "final_glucose_mmol_l": 0.0,
+    "final_glycerol_mmol_l": 0.0,
+    "final_ethanol_flux": 0.0,
+    "final_static_ethanol": 39.10689648272321,
+    "recovery_deficit_final": 1.0,
+    "ref_ethanol_max": 45.45833333333332
+  },
+  "runtime_s": 20.6
+}
