@@ -1,0 +1,44 @@
+{
+ "manifest": "A6 Section-8 locked validation datasets",
+ "acquired": "2026-09-27",
+ "datasets": {
+  "ethanol_gse151784": {
+   "source": "GEO https://ftp.ncbi.nlm.nih.gov/geo/series/GSE151nnn/GSE151784/suppl/GSE151784_RAW.tar",
+   "description": "Pooled haploid deletion library barcode counts, pre/post acute lethal ethanol (24.5%), triplicates",
+   "files": {
+    "gse151784/GSE151784_RAW.tar": "886f15a3b002137dd4e4e547d51d78f6ba9e2280da32632a7f2386c6e18c4b13",
+    "gse151784/GSM4590920_pre_rep_1_counts.txt.gz": "a451262ee23de7baf36ccba68efd34975cda8d2bf052ff6fc1017bfb2eaa70b9",
+    "gse151784/GSM4590921_pre_rep_2_counts.txt.gz": "9dcbf200df8de20054dfad485341272c8a56ca2aff1adeb76724959f30931ee2",
+    "gse151784/GSM4590922_pre_rep_3_counts.txt.gz": "e45ccee5bf0553f78618dd81b47f85d3140b38b7e8b31c9af1a7652e019be0da",
+    "gse151784/GSM4590923_post_rep_1_counts.txt.gz": "6f6c04eb4d77e56e1a9c820fbbb455ff16eabf6e87c6be64dc6b5a36ba71099a",
+    "gse151784/GSM4590924_post_rep_2_counts.txt.gz": "4517a6bb4a18708c52f431c1626de2570b134fc53e1a1db72c718d3aacdb1a53",
+    "gse151784/GSM4590925_post_rep_3_counts.txt.gz": "0868b473bba4cbde82eb7a39d7f383cda7e8e8196e750eeb854d5368d19ef121"
+   },
+   "status": "complete (pre/post barcode counts, 6 files + tar)"
+  },
+  "heat_gibney2013": {
+   "source": "PMC3831991 instance bin (doi 10.1073/pnas.1318100110; PMC interstitial PoW solved; pnas.org mirrors blocked)",
+   "description": "Bar-seq deletion-pool heat-shock survival: sd01/sd02 per-ORF death rates + significance, sd03.xlsx, sapp.pdf",
+   "files": {
+    "gibney2013/1318100110_sapp.pdf": "f64f50b240daf0a4a468efb3d3952d6eb80336b92715433d7131c6ee036c132b",
+    "gibney2013/1318100110_sd01.txt": "1444a5f0ff8cf3eea00c7d2a410e7ae30e152d103e9e887fac0cf06765fe0f27",
+    "gibney2013/1318100110_sd02.txt": "b1984e30aaaf1f5ef16b854a13e8d8047c2d893862064749744107533f0477e9",
+    "gibney2013/1318100110_sd03.xlsx": "3b7a238038f5c42920a0123ecb6d932a419993c65399354ddab7efda6e0e6835"
+   },
+   "status": "complete (sd01 has ORF/Name/Significant/death-rate/p-value columns)"
+  },
+  "osmotic_gse59659": {
+   "source": "GEO https://ftp.ncbi.nlm.nih.gov/geo/series/GSE59nnn/GSE59659/suppl/GSE59659_RAW.tar",
+   "description": "Yoshikawa 2009 deletion fitness, 20% glucose (YP20) and 1M sorbitol; SGD S000128535",
+   "files": {
+    "gse59659/GPL9825_old_annotations.txt.gz": "82bf2af2f33b0af228da97f899287164b27d2ae686193ef95c2f7037ee2b87c0",
+    "gse59659/GSE59659_RAW.tar": "9bfba6aa0838019c7f1ad0dcd8d377032607fcc269ba0ddf6995b4f8626623f1",
+    "gse59659/GSM1442008_YPD5-WT2_vs_SORB-WT2.txt.gz": "b18e18ac9a5dafdb8e28fe13930fddf05508b39cbf58cc31bc4c725d8c69a721",
+    "gse59659/GSM1442009_SORB-WT3_vs_YPD5-WT3.txt.gz": "581afd11f1f45e6fa8afedf088ed5a51991e38bbe1a5fd4a89fda4ea9aebb619",
+    "gse59659/GSM1442010_YPDG-WT2_vs_YP20-WT2.txt.gz": "77b0da688daf61ff7c8861bb1a398fedb607b121ec83f52d8a60ac8e9e451281",
+    "gse59659/GSM1442011_YP20-WT3_vs_YPDG-WT3.txt.gz": "caba05465c7a761a6acf65c7a6ec431e93f84eb46e3eaf8d4911a62587271bae"
+   },
+   "status": "PARTIAL: GEO RAW holds raw GPR array scans, not processed fitness values; processed values still needed (GEO series matrix or SGD S000128535 download)"
+  }
+ }
+}
