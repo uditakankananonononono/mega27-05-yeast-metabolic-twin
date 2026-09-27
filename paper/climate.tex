@@ -750,6 +750,62 @@ screen sample (seed 557) for high-throughput screens and a
 150-environment confirm sample (seed 558) for candidate confirmation,
 with a 150-environment test sample (seed 559) for the final verdict.
 
+
+\subsection{Mapping environments to constraints: implementation contract}
+
+The four stress layers are applied to the model in a fixed order on a
+fresh copy of the base reconstruction per environment, and the order
+and freshness are part of the method, not an implementation detail.
+Freshness guarantees that no state leaks between environments - each
+solve sees exactly the pinned SBML plus one environment's worth of
+constraint changes - which is what makes the per-environment rows of
+every artifact independent records, re-solvable in isolation. The
+application order (temperature, ethanol, osmotic, nitrogen, then the
+joint growth cap and maintenance computed from the combined factor)
+fixes the semantics of interaction: interactions in this model arise
+from the arithmetic of shared capacity factors and from the solver's
+allocation of a shrinking carbon budget, never from hidden cross-terms
+in the code. When Section~\ref{sec:a3} reports sub-additivity, it is
+therefore reporting a property of the declared forms and the network,
+not of an interaction term we inserted - there is none to insert.
+Every layer application is logged with the parameter set hash, so the
+sweep arm (which changes parameter values) and the nominal arm differ
+only in their parameter records, and a reader can diff them.
+
+The sampling design follows the same contract. Latin-hypercube
+sampling over the four axes (seed 20260926) gives uniform marginal
+coverage with far fewer points than the full grid - 5{,}000 against
+72{,}000 - and the seeded DESIGN/TEST split (70/30, seed 424242)
+stratifies on collapse status so neither region is accidentally
+enriched in easy or hostile environments. The three nested subsamples
+(screen 40, design 150, test 150; seeds 557--559) exist for one
+reason: to bound how often the design campaign's selection step could
+see the environments its final verdict would be scored on. The
+numbers are locked and small by design; we would rather defend a
+40-environment screen than explain why a larger one was safe.
+
+\subsection{Engineering for auditability}
+
+Because the campaign ran on commodity sandbox machines subject to
+interruption, the compute layer was engineered around one requirement:
+no machine event may be able to silently change a result. Concretely:
+models are loaded fresh per evaluation; environments are evaluated in
+shards that checkpoint to disk (the A2 shard files are in the
+repository); long stages write progress journals
+(\texttt{test\_progress.jsonl} and its siblings) so a resumed stage
+re-evaluates only unfinished designs; the evolutionary runner rebuilds
+its breeding population deterministically from the previous
+generation's recorded scores plus the seed stream, so a mid-generation
+restart cannot change what gets bred; and every summary artifact
+carries the SBML hash and the pre-registration hash it answers to.
+The two bug classes this caught are on the record: a subsample-index
+mapping error caught by A4's mandatory collapse-flag re-verification
+before any results were kept, and two list-hashability defects in the
+evolutionary resume path, fixed pre-outcome and recorded. The sixteen
+solver timeouts of Appendix~\ref{app:solver} are the residual
+irregularity the engineering could not prevent, only bound - hence
+the register rather than a retry policy.
+
 \subsection{Objectives}
 \label{sec:objectives}
 
@@ -1712,6 +1768,49 @@ and provenance - ships in the repository (\texttt{docs/JUDGE\_ROUNDS.md})
 so that the evaluation trail is as inspectable as the compute trail.
 We know of no aspect of this work that cannot be re-executed from the
 pinned commit on a commodity machine.
+
+
+\subsection{Relation to empirical combined-stress studies}
+
+The empirical literature on combined stress in production yeast, though
+thinner than the single-stressor canon, frames the regime question this
+paper answers in silico. Adaptive laboratory evolution under sequential
+or paired stressors repeatedly recovers cross-protection - adaptation
+to one stressor conferring tolerance to another - consistent with a
+shared downstream bottleneck; our co-limitation result is the
+constraint-level analog of that observation: two carbon gates whose
+simultaneous closure looks, from the phenotype side, like one failure.
+Industrial studies of heat waves during ethanol campaigns report
+exactly the dose-accumulation phenomenology our A8 stage produces -
+productivity losses that arrive before the temperature record crosses
+any alarm threshold, and incomplete recovery after the wave passes -
+which is why we describe the degree-hour formulation as operational
+rather than academic. And the deletion-screen literature we validate
+against (A6) is itself the empirical map of the layer our model
+cannot see; reading our null and their hits together locates the
+stress response's division of labor: carbon economics at the flux
+layer, survival biology at the proteostasis layer, with the
+transcriptional program (A7) as the cell's own bridge between them.
+
+\subsection{What a fair critic should attack first}
+
+In the spirit of the ledger, we name the weakest joints. A critic
+should start with the environment mapping: the entire superstructure
+rests on four declared functional forms, one of which (maintenance)
+is unconstrained by direct measurement and one of which (the thermal
+margin) demonstrably moves a gate. They should then attack the
+objective choice - maximal ethanol exchange is industrial but not
+unique, and a growth-coupled or ATP-yield objective would draw a
+different, possibly more gene-visible, map. Third, the collapse
+threshold and the 369-environment bottleneck subsample, where our own
+FVA coverage (25 solved environments) is the thinnest evidence in the
+paper. Fourth, the judge protocol: a single-question evaluation of a
+long technical record, however archived, is a coarse instrument, and
+we treat its verdict as one input among several, not a court. What we
+ask the critic to grant is the ledger itself: given the locked
+process, the failures are as much measurements as the successes, and
+the whole of it - code, hashes, artifacts, verdicts - is available
+for re-execution and disagreement.
 
 \subsection{Outlook}
 
