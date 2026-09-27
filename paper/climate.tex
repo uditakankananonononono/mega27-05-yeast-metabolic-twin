@@ -697,6 +697,48 @@ in Section~\ref{sec:discussion} that the negatives here are the more
 durable contribution.
 
 
+
+\subsection{Dynamic and enzyme-constrained extensions in the literature}
+
+Two methodological literatures border this work and define its
+upgrade paths. Dynamic FBA, introduced for diauxie and batch
+fermentation modeling and now standard, replaces the steady-state
+snapshot with an iterated solve-and-integrate scheme: uptake bounds
+are evaluated at the current environment, the optimum is taken as the
+instantaneous flux state, and extracellular concentrations are
+integrated forward. Its known pathologies are ours to declare:
+the static-optimum assumption at each step is a myopia (the cell is
+assumed to re-optimize instantly, which under a heat wave is exactly
+the assumption biology violates), and batch configurations exhaust
+substrate and confound stress signatures with starvation - the
+confound our A8 stage declares and our exploratory variant relaxes.
+Where dFBA studies report stress dynamics, they typically tune the
+stress mapping to a reference time course; we deliberately did not,
+because a fitted mapping cannot then serve as an independent stress
+statement, and the pre-registration forbids post-outcome fitting in
+any case. The price is the confound; the payoff is that the
+degree-hour gap we report is a property of a locked mapping, not of
+a calibration.
+
+Enzyme-constrained models attach protein-mass budgets to the
+stoichiometry - each flux costs enzyme capacity at a
+turnover-number-denominated price, with a total protein pool - and
+they demonstrably improve predictions where overflow, saturation,
+and protein allocation drive the phenotype. They are the natural
+home of our regulatory continuation for three reasons: temperature
+enters kinetically (turnover numbers are Arrhenius- or
+CTMI-modulated), so the thermal layer becomes a parameterization
+rather than a bound; protein-cost competition gives proteostasis
+stress a representational hook, addressing the layer the A6 null
+localizes; and the protein pool is itself a carbon-and-energy tax, a
+formal relative of our glycerol drain. The cost is parameter count:
+enzyme-constrained models carry thousands of turnover numbers, most
+transferred across conditions or organisms, and a pre-registered
+study must either lock them wholesale or declare which are fitted.
+Our continuation spec chooses the former: lock the published set,
+validate against the A7 arms, and report overlap against A6 with no
+fitting - the same discipline contract, one layer up.
+
 \subsection{Prior computational work on combined stress}
 
 The computational literature on combined-stress fermentation is
@@ -2443,47 +2485,103 @@ regulatory-layer continuation of the outlook, not through this model.
 
 Every limitation below was produced by the analysis itself, most of
 them by the validation stage, and each is load-bearing for how the
-positive results may be used.
+positive results may be used. For each we state the mechanism, the
+evidence, the consequence for the paper's claims, and the amendment
+that would retire it.
 
-\paragraph{The nitrogen axis is flat by construction.} In the locked
-rich medium, nitrogen enters through amino-acid uptakes and ammonium
-is excreted, so the ammonium lever perturbs nothing. Every result
-indexed on the nitrogen axis - one grid axis of A2, one tolerance
-objective, both nutrient validation checks - is uninformative, and we
-have labeled it so at each occurrence rather than dropping the axis,
-because the grid was locked. A future amendment (defined minimal
-medium, or scaling amino-acid nitrogen) is the correct fix, and it is
-a new experiment, not a patch.
+\paragraph{The inert nitrogen lever.} \emph{Mechanism:} the rich base
+medium supplies nitrogen through amino-acid uptakes at their bounds,
+so ammonium is excreted (+3.76 in the reference state) and the locked
+ammonium-uptake scaling binds nothing. \emph{Evidence:} under the
+locked 25\% nitrogen regime, growth, all tracked exchange fluxes, and
+the objective are bit-identical to reference (A6 nutrient artifact);
+the A1 nitrogen curve is flat at all twenty levels. \emph{Consequence:}
+every nitrogen-indexed row of the grid (one axis of A2/A3/A4/A5), the
+low-nutrient objective O4 (saturated at the grid edge for all
+designs), and both nutrient validation checks (not evaluable) are
+uninformative, and the paper says so at each occurrence rather than
+dropping the axis, because the grid was locked before the finding.
+\emph{Retirement:} the defined-medium amendment - one paragraph of
+medium constraints plus a re-run of the affected stages - is
+specified in the outlook.
 
-\paragraph{Tolerance readouts are mapping artifacts.} Temperature,
-ethanol, and nitrogen tolerances (37\,$^{\circ}$C, 1\% v/v, 5\%) are
-where the declared response laws cross their thresholds, not learned
-properties of yeast. They are reported because the objectives were
-locked, and are never interpreted biologically.
+\paragraph{Tolerance readouts are mapping artifacts.}
+\emph{Mechanism:} temperature, ethanol, and nitrogen tolerances
+(37\,$^{\circ}$C, 1\% v/v, 5\%) are where the declared response laws
+cross their locked thresholds, not learned properties of yeast.
+\emph{Consequence:} they are reported because the objectives were
+locked, are identical across the wild type and all 25 TEST candidates
+(the expected null signature), and are never interpreted
+biologically. \emph{Retirement:} none possible within this model
+class; tolerance as a biological quantity belongs to the kinetic and
+regulatory layers.
 
-\paragraph{The maintenance and osmotic-cost forms are assumed.} The
-reciprocal maintenance law and the linear glycerol-cost coefficient
-are declared ASSUMED forms, swept $\pm 50\%$ per the amendment; the
-co-limitation finding is robust across those sweeps, but its
-quantitative shadow prices are not.
+\paragraph{Assumed functional forms.} \emph{Mechanism:} the
+maintenance law (reciprocal in the combined capacity factor), the
+glycerol-cost coefficient (linear, 1.0 per M), and the Levenspiel
+exponent ($n=1.5$) are declared ASSUMED parameters; the literature
+fixes signs and rough magnitudes, not forms. \emph{Evidence:} the
+locked $\pm 50\%$ sweeps show the headline mechanism (G3) robust and
+the interaction statistic (G2) not robust - the latter failure driven
+by the thermal margin rather than the assumed forms, which is itself
+informative: the most damaging parameter is the one with the best
+literature, not the ones we assumed. \emph{Consequence:} quantitative
+shadow prices and collapse fractions are mapping-conditioned; the
+paper's mechanistic rankings are not. \emph{Retirement:} direct
+measurement of stress-dependent maintenance and osmotic glycerol
+yield in the production regime.
 
-\paragraph{Batch confinement.} The dynamic stage operates in batch
-with the declared substrate-exhaustion confound at industrial-realistic
-gravity; the very-high-gravity variant that lifts it is exploratory
-by rule. Fed-batch dynamics with a locked feeding policy is the
-natural next stage.
+\paragraph{The objective is a flux, not a titer.} \emph{Mechanism:}
+maximal ethanol exchange under steady-state constraints is a capacity
+statement; industrial titer is a time-integral through kinetics the
+model does not carry. \emph{Evidence:} the A8 dynamic stage is the
+partial bridge, and its declared batch confinement - substrate
+exhaustion at the locked gravity - marks exactly where the bridge
+ends; the very-high-gravity variant that lifts the confound is
+exploratory by rule. \emph{Consequence:} process recommendations are
+stated as rankings and rules (degree-hours, mechanism targets), never
+as predicted titers. \emph{Retirement:} the fed-batch continuation
+with a locked feeding policy.
 
-\paragraph{No regulatory layer.} The model contains no
-transcriptional regulation, no signaling, and no protein-cost
-economics. The A6 null is the empirical price of that choice, and the
-A7 concordance shows the price is layer-specific, not total.
+\paragraph{No regulatory layer.} \emph{Mechanism:} the model contains
+no transcriptional regulation, no signaling, and no protein-cost
+economics. \emph{Evidence:} the A6 null (0/4 quantitative overlaps)
+is the empirical price of that absence; the A7 concordance shows the
+price is layer-specific, not total. \emph{Consequence:} the paper's
+gene-level claims are exclusively negative and boundary-stating; its
+positive claims live at the process layer. \emph{Retirement:} the
+regulatory or protein-cost continuation, validated first against the
+A7 marker arms.
 
-\paragraph{FVA coverage.} Directional variability evidence covers 25
-solved environments; the strict pre-declared forced-width criterion
-failed and was declared failed rather than relaxed.
+\paragraph{FVA coverage.} \emph{Mechanism:} directional variability
+evidence covers 25 solved environments of the 50 sampled (25
+nonviable or infeasible at FVA time), 6.8\% of the collapsed
+subsample. \emph{Evidence:} the strict forced-width criterion failed
+under this coverage and is declared failed; the directional check is
+unanimous (25/25) but unanimity on a thin sample is still thin.
+\emph{Consequence:} G3 is scored ``met in substance'' on binding +
+dual + directional evidence, with the strict criterion's failure on
+record; a reader requiring the strict criterion should read the
+mechanism as supported by binding and duals alone, which changes no
+headline claim. \emph{Retirement:} full-coverage FVA on the 199
+solvable collapsed environments, a compute-bounded extension the
+artifacts already stage.
 
+\paragraph{Single model, single strain, single objective.}
+\emph{Mechanism:} one curated reconstruction of a laboratory strain,
+one industrial objective, one environment mapping. \emph{Consequence:}
+the qualitative mechanism (boundary co-limitation) should transfer
+across strains and model versions; the quantitative values should not
+be assumed to; and a growth- or energy-coupled objective would draw a
+different, possibly more gene-visible, map. \emph{Retirement:}
+cross-model replication and multi-objective re-scoring, both cheap
+against the staged artifacts.
 
-
+\paragraph{The judge protocol.} The independent evaluation is a
+single-question protocol run through a general-purpose model account,
+archived verbatim; it is a coarse instrument by design, and the paper
+treats its verdict as one input, not a referee. We record this as a
+limitation of the evaluation trail, not of the science.
 
 \subsection{The validation literature, and where this study sits in it}
 
