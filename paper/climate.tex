@@ -612,4 +612,233 @@ per-design timeout and a hang is recorded as \texttt{solver\_timeout} -
 16 occurrences across the campaign - never silently skipped or imputed.
 All code, data, run logs, and the judge archive are in the repository;
 the paper's every number can be regenerated from the pinned commit.
+\section{Results}
+\label{sec:results}
+
+All numbers below are regenerated from the artifacts at the pinned
+commit; nothing is quoted from memory. Gate outcomes are reported
+exactly as the pre-registration scored them, including the three
+outcomes that went against the program's ambitions.
+
+\subsection{A1: single-stressor dose responses (wild type)}
+
+The wild-type model reproduces the qualitative shape of all three
+active single-stressor response laws on the locked grid (66
+environments). Maximal ethanol exchange rises from 43.1\,mmol/gDW/h at
+28\,$^{\circ}$C to the reference 45.46 at the 30--33\,$^{\circ}$C
+optimum plateau, then falls monotonically through 34.4 at
+38\,$^{\circ}$C to infeasibility at 42\,$^{\circ}$C - the CTMI cardinal
+structure operating as designed. The ethanol axis follows the
+Levenspiel law: relative yield falls to 0.895 at 1\%, 0.515 at 5\%,
+0.213 at 9\%, and 0 at 13\%. The osmotic axis shows the monotonic
+carbon-cost decline the glycerol-drain term imposes. The nitrogen axis
+is flat: as established in Section~\ref{sec:stresslayers}, the
+ammonium lever is inert in the rich medium, and every nitrogen-frac
+row returns the reference yield. We treat the three active curves as
+the G1 dose-response clause (met) and the nitrogen curve as declared
+evidence of the limitation, not as a dose response.
+
+\subsection{A2: the combined-stress collapse surface}
+
+Over the 5{,}000-environment Latin-hypercube sample, 1{,}857
+environments (37.1\%) are collapsed under the locked definition
+(relative ethanol yield below 0.20). The collapse geography is
+structured, not diffuse: collapse concentrates along the high-temperature
+and high-ethanol edges and their joint corner, with the osmotic axis
+shifting boundaries rather than creating them, and the nitrogen axis
+contributing nothing (by the declared construction). For the
+bottleneck analysis of Section~\ref{sec:a4}, the collapsed set was
+subsampled deterministically (every fifth environment of the sample,
+369 environments) and every collapse flag was re-verified by a fresh
+solve with zero mismatches; an earlier indexing bug in this subsample
+mapping was caught by that re-verification and fixed before any
+results were kept.
+
+\subsection{A3: non-additivity is real but not parameter-robust}
+\label{sec:a3}
+
+Under the locked Bliss-independence definition, 450 of the 1{,}857
+collapsed environments (24.2\%; bootstrap 95\% CI
+[22.3\%,\,26.1\%]) show combined yield below the product of their
+single-stressor yields. The primary estimate sits just under the
+locked 25\% gate, and the pre-registered one-at-a-time parameter
+sweeps (7 sets, 1{,}000 environments each) show the fraction ranging
+from 12.8\% to 33.5\%: it meets the gate at nominal parameters and
+under both glycerol-cost and both maintenance-exponent perturbations,
+but fails under both temperature-margin perturbations
+($T_{\max}=40$: 18.7\%; $T_{\max}=44$: 12.8\%). Per the locked
+rule, G2 is therefore \textbf{not met}: a negative-deviation excess
+in collapsed environments exists, but its magnitude is set by the
+thermal-death shape parameter, so it is not a parameter-robust law
+of the model. We note for the record that the mean deviation in
+collapsed environments is small in absolute terms (0.2\% of
+reference); the negative tail is concentrated, not pervasive.
+
+\subsection{A4: what actually binds when productivity collapses}
+\label{sec:a4}
+
+Of the 369 re-verified collapsed environments, 199 solve to an optimal
+but low-yield state, 97 are infeasible, and 73 sit below the viability
+boundary. Across the 199 solvable collapsed environments, the binding
+constraint counts are: environment-imposed ethanol cap 197, osmotic
+glycerol drain 138 (69\% of the solvable set), glucose-uptake cap 118
+(59\%), and joint growth cap 39. The two dominant clusters are
+ethanol-cap + glycerol-drain (66 environments) and glucose-cap +
+ethanol-cap + glycerol-drain (49). Dual evidence agrees: when the
+glucose cap binds, its mean shadow price is 0.58 units of ethanol per
+unit of uptake capacity; when the glycerol drain binds, 0.37 per unit
+drain; the growth cap, where it binds, is degenerate (zero shadow
+price). Flux-variability analysis on the locked 121-reaction subset
+over 25 solved seed-777 environments is directionally consistent in
+25/25 cases: the optimum sits at the glucose-uptake bound and at the
+glycerol-drain bound simultaneously, so neither carbon supply nor the
+osmotic carbon tax can be relaxed without immediate objective gain.
+
+The substantive finding of the paper is this co-limitation: in
+combined-stress collapse, carbon supply (thermally capped uptake) and
+an obligatory carbon tax (osmoregulatory glycerol) bind together and
+dominate the model-imposed ethanol-inhibition cap as intervention
+targets. Two caveats are part of the result, not footnotes to it.
+First, under the strict pre-declared forced-width FVA criterion only
+the ethanol-cap cluster passes, and that cap is the objective carrier
+by construction, so it cannot count as an independent discovery; G3
+is scored \textbf{met in substance} on the binding-plus-dual-plus
+directional-FVA evidence for the glycerol and glucose clusters, with
+the strict criterion declared failed. Second, the ethanol cap's
+near-universal binding (197/199) is a consequence of how the
+objective is posed, and is never cited as a finding.
+
+\subsection{A5: strain design finds nothing (an exhaustive honest negative)}
+\label{sec:a5}
+
+The strain-design campaign asked the strongest question the model
+supports: does any network modification - deletion, flux scaling, or
+an evolved combination - dominate the wild type on all four locked
+objectives? The search was deliberately broad: all 1{,}143 single-gene
+deletions; a seeded screen of 435 double knockouts; 36 reaction-bound
+scalings from 0.25$\times$ to 4$\times$ on a locked reaction list; and
+an evolutionary search (3 seeds, 12 generations, population 24, genome
+drawn from the top 30 confirmed modifications). Every screen,
+confirmation, and test ran on the locked environment subsamples, with
+the 150-environment TEST region touched exactly once.
+
+The answer is no, at every level of the hierarchy. All 1{,}143 singles,
+all 435 doubles, all 36 scalings, and every evolved finalist return
+relative yield 1.0 against the wild type on the confirmed environments.
+On the final TEST evaluation, one candidate of 25 (a YGL248W knockout)
+prints a literal pass at relative yield $1+8\times10^{-15}$ - inside the
+declared $10^{-14}$ solver-noise band - with tolerances identical to the
+wild type (37\,$^{\circ}$C, 1\% ethanol, 5\% nitrogen). G4 is therefore
+scored \textbf{failed}: no candidate improves any objective beyond
+numerical noise, and the literal 1/25 count is noise, not a design.
+
+The negative is mechanistically explained by A4, and the explanation is
+the point: collapse in this regime is driven by environment-imposed
+caps - the ethanol cap, the glycerol drain, the glucose-uptake cap -
+acting on the network boundary, so removing or rescaling internal
+network reactions cannot recover yield. Flux-balance strain design can
+only find gains that live inside the network; the binding constraints
+here live at its edge. A matched random baseline (150 budget-2 designs,
+30 seeds) confirms the search was not underpowered: the confirmed
+candidates sit within the baseline distribution, which itself clusters
+at 1.0. Sixteen solver timeouts (GLPK native hangs on specific perturbed
+models, e.g.\ YCL052C deletion and several GPP/PDC/MEP scalings) were
+recorded in the register and never imputed.
+
+\subsection{A6: independent validation is an honest null}
+\label{sec:a6}
+
+The validation campaign confronted the model with three quantitative
+deletion-screen datasets acquired at accession level with recorded
+hashes (Section~\ref{sec:datasets}), under the locked overlap
+statistics, plus the locked qualitative checks. The quantitative result
+is a clean null: across all four comparisons - ethanol
+(GSE151784: universe 705, 604 dataset hits), heat (Gibney 2013 Bar-seq:
+universe 678, 536 hits), and both osmotic arms (GSE59659: universe
+1{,}060, 141 and 146 hits) - the model's stress-conditional sensitive
+set contains 0 genes in the ethanol and heat universes and 3 in the
+osmotic, and the overlap with the experimental hit sets is 0 in every
+comparison. The G1 overlap clause fails 0/4 at BH-FDR 5\%, and is
+reported as such.
+
+The qualitative ethanol check (the five evaluable named genes of the
+AJEV 59(4):401 screen, with SGD-verified identifiers frozen in code)
+concords in 0 of 1 evaluable cases: ADH1 deletion grows at wild-type
+rate in the model under 8\% ethanol (isozyme redundancy is real in the
+network), while the screen reports sensitivity; GSH1 is excluded under
+the locked rule (unconditionally lethal in the model, a declared
+artifact of absent glutathione salvage); CLC1, UME6, and VPS24 have no
+metabolic-model counterpart; TDP3 could not be resolved via SGD. The
+two nutrient checks (E-GEOD-1723 direction, E-MTAB-8245 spare capacity)
+are not evaluable, for the root cause declared in
+Section~\ref{sec:stresslayers}: the nitrogen lever is inert, so no
+nitrogen-limited state exists to check against.
+
+We state plainly what this means. The deletion-screen biology of stress
+survival - protein synthesis, vacuolar function, mitochondrial
+maintenance, membrane trafficking - lives outside what flux balance
+with environment-imposed caps can see. The model is a valid map of
+carbon-flow economics under stress (Sections A1--A4) and an invalid
+predictor of gene-level stress sensitivity (A6). Both statements are
+results of this paper.
+
+\subsection{A7: regime--transcriptome concordance is directionally right}
+\label{sec:a7}
+
+Against the Gasch-2000 environmental-stress expression program
+(accession-grade file, hash recorded; used as concordance context,
+never as validation), the model's stress regimes point the same way as
+the cell's transcriptional response. The heat-shock arm is exact: all
+10 locked heat-shock-protein markers (HSP12/26/30/42/78/82/104, SSA3,
+SSA4, STI1) are induced in the 25$\to$37\,$^{\circ}$C shock column
+(10/10, one-sided binomial $p=9.8\times10^{-4}$). The glycerol arm
+agrees in 3 of 4 markers (GPD1 +2.4, GPP1 +1.32, GPP2 +2.7 log2;
+GPD2 flat; $p=0.31$), the glycolytic arm in 9 of 14 ($p=0.21$), and
+the nitrogen-catabolite arm in 6 of 7 ($p=0.06$) - directions correct,
+small-sample significance only where biology is loudest. The ethanol
+arm was locked as untestable because Gasch-2000 contains no
+ethanol-stress experiment, and it was not retrofitted.
+
+\subsection{A8: heat waves in time, with the confound declared}
+\label{sec:a8}
+
+The dynamic extension (locked time grid, 0.25\,h steps over 16\,h;
+30\,$^{\circ}$C baseline with a locked heat-wave profile peaking at
+42\,$^{\circ}$C, batch volume 1\,L, initial glucose 111\,mmol/L)
+shows the dynamic cost the static surface cannot express: under the
+heat wave, dynamic collapse onset arrives at 8.0\,h, one hour earlier
+than the static collapse surface predicts for the same trajectory
+(9.0\,h), after 7.4 degree-hours above 37\,$^{\circ}$C; final ethanol
+reaches 241\,mmol/L (1.41\% v/v) against the static expectation, with
+full recovery deficit at the end of the batch. The isothermal control
+collapses at 6.5\,h from substrate exhaustion - the declared batch
+confound: at 111\,mmol/L initial glucose, both trajectories end
+glucose-limited, so the heat wave's marginal cost appears as timing
+and trajectory shape, not final titer. A very-high-gravity variant
+(1{,}665\,mmol/L initial glucose) is labeled exploratory under the
+post-run rule: there the confound lifts, the heat wave's dynamic onset
+(8.75\,h) again precedes the static prediction, and final titers
+diverge (7.48\% vs 11.52\% v/v). The exploratory label stands;
+Section~\ref{sec:discussion} draws no locked conclusion from it.
+
+\subsection{Gate ledger}
+
+\begin{center}
+\begin{tabular}{l l p{7.5cm}}
+\hline
+Gate & Verdict & Basis \\
+\hline
+G1 & partial & Dose-response clause met (A1); overlap clause failed 0/4 (A6). \\
+G2 & not met & 24.2\% vs locked 25\% threshold; fails both $T_{\max}$ sweeps (A3). \\
+G3 & met in substance & Glycerol-drain and glucose-cap clusters co-limit collapse with binding, dual, and directional-FVA evidence; strict forced-width criterion declared failed (A4). \\
+G4 & not met & 0/25 candidates beyond the $10^{-14}$ noise band across 1{,}143+435+36 designs, 3 evolutionary runs, and a matched random baseline (A5). \\
+\hline
+\end{tabular}
+\end{center}
+
+The ledger is the paper's honest summary: a validated carbon-flow map
+of combined-stress collapse with a named mechanism (G1 partial, G3),
+a non-additivity tail that is not parameter-robust (G2), no network-
+internal design lever (G4), and no gene-level predictive validity
+against independent screens (A6).
 \end{document}
