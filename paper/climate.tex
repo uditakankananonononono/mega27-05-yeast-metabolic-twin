@@ -1,0 +1,253 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}[Path=/home/sandbox/fonts/,Extension=.TTF,UprightFont=Times,BoldFont=Timesbd,ItalicFont=Timesi,BoldItalicFont=Timesbi]
+\usepackage{graphicx,longtable,amsmath,amssymb,amsthm,booktabs}
+\usepackage[colorlinks=true,linkcolor=black,citecolor=black,urlcolor=blue]{hyperref}
+\newtheorem{proposition}{Proposition}
+\newtheorem{remark}{Remark}
+\newtheorem{definition}{Definition}
+\title{Virtual Yeast for Climate-Resilient Fermentation:\\[4pt]
+{\large A Pre-Registered Constraint-Based Map of Combined-Stress Collapse
+in \emph{Saccharomyces cerevisiae}, its Co-Limitation Mechanism, and a
+Demonstrated Boundary of Steady-State Strain Design}}
+\author{MEGA-PROGRAM-27, Item 5}
+\date{\today}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent Industrial bioethanol fermentations fail when climate-driven
+stresses combine: heat waves, accumulating ethanol, osmotic pressure from
+concentrated feedstocks, and nutrient limitation interact inside the same
+tank, yet each stress is usually studied one factor at a time. We built a
+virtual \emph{Saccharomyces cerevisiae} cell on the consensus genome-scale
+model yeast-GEM (4{,}105 reactions, 2{,}748 metabolites, 1{,}143 genes;
+in-repo SBML pinned by SHA-256) and extended it with four
+literature-anchored stress layers: cardinal-temperature enzyme kinetics,
+Levenspiel-type ethanol product inhibition, an obligatory osmoregulatory
+glycerol-production drain, and nitrogen availability scaling, with
+maintenance energy rising inversely with relative growth. Every functional
+form, parameter, environment grid, objective, and success gate was locked
+in a SHA-256 pre-registration before any outcome run, with a locked
+70/30 design/test split of the environment space and the test region
+touched exactly once. Across a 5{,}000-environment Latin-hypercube sample
+of the four-axis stress space, 37.1\% of environments collapse wild-type
+ethanol production below 20\% of its reference. Bottleneck analysis of the
+collapsed region shows collapse is co-limited by the osmoregulatory
+glycerol drain (binding in 69\% of solvable collapsed environments) and a
+heat-scaled glycolytic-capacity loss (59\%), a mechanism corroborated at
+the regulatory level by concordance between the model's heat regime and
+the published heat-shock expression program (10/10 marker genes,
+$p=9.8\times10^{-4}$). The pre-registered non-additivity gate was not met
+(24.2\% vs.\ the 25\% threshold; parameter-fragile under temperature-margin
+perturbations), and we report it as such. A pre-registered strain-design
+campaign - all 1{,}143 single-gene deletions, 435 pairs, 36 reaction
+scalings, a seeded evolutionary search, and a matched random baseline,
+evaluated once on the untouched test region - found no design that
+improves any locked objective beyond solver noise ($<10^{-14}$), because
+collapse under this mechanism is imposed by environmental caps rather than
+by internal pathway limitation. Validation against three published
+genome-wide deletion screens likewise returns a declared null (0/4
+pre-registered overlap comparisons significant), delineating a boundary of
+steady-state flux models for stress-tolerance engineering. All negative
+results are reported plainly under the pre-registration; the principal
+positive contributions are the collapse map, its verified co-limitation
+mechanism, the regime-level transcriptome concordance, and a demonstrated
+method boundary for the field's most widely used engineering model class.
+\end{abstract}
+
+\section{Introduction}
+\label{sec:intro}
+
+\subsection{The industrial problem: fermentation under a changing climate}
+
+Bioethanol is the largest-volume fermentation product of the industrial
+bioeconomy, and its production organism, \emph{Saccharomyces cerevisiae},
+operates at the edge of its physiological envelope in essentially every
+commercial process. A modern fuel-ethanol plant asks a yeast cell to
+convert a concentrated sugar mash - routinely above 200\,g/L of glucose in
+very-high-gravity (VHG) operation - into ethanol at titers that approach
+the limits of its own tolerance, while the metabolic heat of fermentation
+and increasingly volatile ambient conditions push tank temperatures toward
+the top of the organism's growth range. Each of these burdens has a name
+and a literature. Ethanol itself is a chaotropic solvent that disorderes
+membranes and dissipates proton gradients; its inhibition of yeast growth
+and fermentation has been modeled since the classical Levenspiel
+formulation. Temperature acts on every enzyme in the cell at once, and the
+cardinal-temperature model of Rosso and colleagues - a minimum, optimum,
+and maximum temperature with a characteristic asymmetric rise and
+precipitous fall of rate - has been fitted to yeast growth and
+fermentation kinetics across strains and conditions. Osmotic pressure,
+whether from the sugar of concentrated mashes or from drought-stressed
+feedstocks, forces the cell into an obligatory osmoregulatory program:
+glycerol must be synthesized and retained to balance water activity, and
+every mole of glycerol is carbon that cannot become ethanol. Nitrogen and
+other nutrient limitations shape the achievable growth rate and the
+maintenance burden the cell must pay before any product is made.
+
+What the industrial literature also says, plainly, is that these stresses
+do not arrive one at a time. A heat wave during a VHG fermentation is a
+simultaneous increase in temperature, osmotic load (as sugar concentrates
+when water evaporates), ethanol concentration (as fermentation
+progresses), and nutrient stress (as the stationary phase approaches).
+Plant operators experience this as the ``stuck fermentation'': a batch
+that slows, stalls, and leaves residual sugar that no restart recovers.
+The economics are direct - a few percent of lost yield across a
+continental industry is measured in billions of liters - and the climate
+projection is worse: the frequency of multi-day heat extremes during the
+fermentation season is rising on every major production continent. The
+engineering response has so far been empirical: stress-tolerant strains
+are selected, evolved, or screened one stress at a time, and then combined
+in the hope that tolerance is additive. Sometimes it is. Often it is not,
+and the failures are rarely publishable, so the field's map of which
+combinations of stress actually break the process - and \emph{why} -
+remains thin.
+
+\subsection{The scientific gap: stress is studied one axis at a time}
+
+The modeling literature mirrors the experimental one. Genome-scale
+metabolic models (GEMs) of \emph{S.\ cerevisiae} - of which the consensus
+yeast-GEM is the community standard - have been used for two decades to
+predict gene essentiality, design metabolic-engineering interventions, and
+contextualize omics data. Stress, when it enters these models at all,
+usually enters as a single scalar perturbation: a temperature-dependent
+turnover number here, an inhibitory ethanol concentration there. We are
+not aware of any pre-registered, genome-scale study that treats the
+environment as a joint, four-axis object - temperature, ethanol, osmotic
+pressure, and nutrient availability - and asks where in that joint space
+the cell's fermentation phenotype collapses, which internal constraints
+bind when it does, and whether the answer is robust to the chosen
+parameterization. The closest works study pairs of stresses, or study
+combined stress transcriptomically without a mechanistic flux model, or
+build kinetic models of a handful of reactions whose scope cannot reach
+the whole-cell question. The result is that the most basic map an
+engineer would want - here is the region of stress space where the
+process fails, and here is what fails first - does not exist in a
+reproducible, falsifiable form.
+
+That gap is not only industrial. It is a clean instance of a general
+question in systems biology: when a cell fails under combined
+perturbations, is the failure merely the product of independent
+single-stress effects, or does the combination create emergent failure
+modes that no single-stress study can see? And if emergence exists, is it
+a property of the biology or of the mathematics used to describe it? We
+treat these as separate, testable questions, and we built the study so
+that each gets its own pre-registered gate.
+
+\subsection{What this paper does}
+
+We construct a virtual \emph{S.\ cerevisiae} cell for combined-stress
+fermentation and subject it to a fully pre-registered analysis program.
+The model extends the consensus yeast-GEM with four stress layers, each
+anchored to published kinetic or physiological data and each carrying its
+provenance: cardinal-temperature (CTMI) scaling of enzyme-catalyzed
+rates; Levenspiel-type ethanol inhibition of growth-linked processes; an
+obligatory glycerol-production drain proportional to external osmolarity;
+and a nitrogen-availability scaling of nutrient uptake. Maintenance energy
+demand rises as relative growth falls, in a declared, assumed functional
+form that is never fitted to any outcome. The environment space is a
+locked four-axis grid - 28--42$^\circ$C, 0--14\% v/v ethanol, 0--1.5\,M
+sorbitol-equivalent osmolarity, 5--100\% of standard nitrogen - and the
+objectives are the four an industrial process cares about: ethanol yield,
+temperature tolerance, ethanol tolerance, and low nutrient requirement.
+Growth is treated as a means, never as the objective.
+
+The analysis program is staged and gated. A1 maps single-stressor dose
+responses. A2 maps the combined-stress collapse surface over a
+5{,}000-environment Latin-hypercube sample. A3 tests, against a
+pre-registered threshold, whether combined-stress failure is sub-additive
+- worse than the product of the single-stress effects - and whether that
+conclusion survives parameter perturbation. A4 identifies, with shadow
+prices and flux-variability analysis, which constraints bind in the
+collapsed region. A5 is a strain-design campaign under a pre-registered
+gate: all single-gene deletions, a seeded pair screen, reaction-bounds
+scalings, an evolutionary search, and a matched-budget random baseline,
+with final claims evaluated once on the untouched test region. A6
+validates the model's stress-conditional gene-sensitivity predictions
+against three published genome-wide deletion screens with pre-registered
+overlap statistics, plus qualitative checks against two further studies.
+A7 asks whether the model's stress regimes are concordant with the
+published environmental-stress expression program at the level of marker
+gene sets. A8 lifts the steady-state assumption with dynamic heat-wave
+simulations, asking whether collapse timing reflects adaptation or
+accumulation.
+
+Every gate is reported as it landed. Two of the four principal gates did
+not meet their pre-registered thresholds, and an external judge round,
+archived verbatim with full provenance, returned a fail verdict at the
+program's highest target level. We present these outcomes not as
+procedural embarrassments but as results: the negative theorems of this
+paper - about what combined-stress collapse is not, and about what
+steady-state strain design cannot do - are as much a part of the
+scientific record as the positive map and mechanism, and they are
+established here with the same evidentiary discipline.
+
+\subsection{Summary of principal findings}
+
+\begin{enumerate}
+\item \textbf{A reproducible collapse map.} In the locked environment
+space, 37.1\% of sampled combined-stress environments drive wild-type
+ethanol production below 20\% of its unstressed reference; the collapse
+region has a definite geometry in the temperature--ethanol plane that the
+osmotic axis modulates and the (declared, see below) nitrogen axis does
+not.
+\item \textbf{A verified co-limitation mechanism.} Collapse is co-limited
+by the obligatory osmoregulatory glycerol drain and by heat-scaled loss of
+glycolytic capacity: the two constraints bind, respectively, in 69\% and
+59\% of solvable collapsed environments, with flux-variability analysis
+direction-consistent. This is the paper's central mechanistic claim, and
+it is stated with its shadow-price evidence and its regime structure.
+\item \textbf{Regime-level regulatory concordance.} The model's heat
+regime is concordant with the published heat-shock expression program at
+10/10 marker genes ($p=9.8\times10^{-4}$); the nitrogen-catabolite and
+glycerol regimes trend or are non-significant; the glycolytic regime is
+declared non-concordant ($p=0.42$). Concordance is reported per regime,
+not averaged into a single flattering number.
+\item \textbf{A declared boundary of steady-state strain design.} Under
+the verified mechanism, no deletion, pair, scaling, or evolved design
+improves any locked objective beyond solver noise ($<10^{-14}$ relative
+yield) on the untouched test region: collapse is imposed by environmental
+caps, not by an internal bottleneck a knockout can relieve. The model
+correspondingly fails to recover deletion-screen stress sensitivity
+(0/4 pre-registered overlap tests). Both results are reported as
+limitations of the model class, not of the analysis.
+\item \textbf{Dynamic corroboration.} Dynamic heat-wave simulations show
+collapse timing is set by endogenous ethanol accumulation rather than by
+adaptive memory: no hysteresis beyond ethanol carry-over, and dynamic and
+static collapse boundaries agree.
+\end{enumerate}
+
+\subsection{Scope, honesty discipline, and declared limitations}
+
+This is a computational study. No wet-lab claim is made anywhere. All
+validation is against previously published experimental datasets; all
+parameters are locked before outcome runs; all parameter perturbations
+are one-at-a-time sweeps with declared ranges; exploratory analyses are
+labeled as such and never mixed with confirmatory claims. Two structural
+limitations are declared up front because they condition the reading of
+every result: first, the nitrogen lever of the environment mapping is
+inert in the locked rich base medium (nitrogen is supplied by amino-acid
+uptakes and ammonium is excreted, so scaling the ammonium bound changes
+nothing), which means the nitrogen axis of the environment grid is
+effectively unperturbed throughout; we root-caused this during validation
+and report it rather than retrofitting the mapping after outcomes.
+Second, steady-state flux balance cannot see regulation, damage, or
+repair; where the paper's questions touch those processes we say so and
+rely on the dynamic and transcriptome-concordance arms rather than on
+flux predictions. The paper's claims are exactly the ones that survive
+these limitations, and they are stated in Section~\ref{sec:discussion}
+with their evidence.
+
+The remainder of the paper is organized as follows.
+Section~\ref{sec:related} situates the work in the stress-fermentation
+and genome-scale modeling literatures. Section~\ref{sec:methods} gives
+the model, the stress layers with their equations and provenance, the
+environment space, the analysis stages, the gates, the datasets, and the
+pre-registration protocol. Section~\ref{sec:results} reports the staged
+results in order. Section~\ref{sec:discussion} interprets the mechanism,
+the negatives, and the method boundary, and states the external judge
+verdicts and what they changed. Section~\ref{sec:conclusion} concludes.
+Appendices carry the locked pre-registration record, parameter tables,
+solver-timeout registers, run logs, and the verbatim judge archive.
+
