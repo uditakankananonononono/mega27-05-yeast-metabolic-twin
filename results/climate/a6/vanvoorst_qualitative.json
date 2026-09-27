@@ -1,0 +1,31 @@
+{
+ "CLC1": {
+  "yid": "YGR167W",
+  "status": "not in model (non-metabolic/TF/structural)"
+ },
+ "GSH1": {
+  "yid": "YJL101C",
+  "ref": 0.0,
+  "etoh": -2.5674764132802674e-29,
+  "sens": null,
+  "sensitive": false
+ },
+ "UME6": {
+  "yid": "YDR207C",
+  "status": "not in model (non-metabolic/TF/structural)"
+ },
+ "VPS24": {
+  "yid": "YKL041W",
+  "status": "not in model (non-metabolic/TF/structural)"
+ },
+ "ADH1": {
+  "yid": "YOL086C",
+  "ref": 0.5733511135347469,
+  "etoh": 0.1608627476057251,
+  "sens": 1.0,
+  "sensitive": false
+ },
+ "TDP3": {
+  "status": "SGD name unresolved"
+ }
+}

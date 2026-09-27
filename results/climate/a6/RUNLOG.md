@@ -18,3 +18,33 @@
 - Remaining Section-8 items: van Voorst 2008 qualitative gene-set
   concordance (named genes); E-GEOD-1723 and E-MTAB-8245 qualitative
   nutrient checks; held-out narrative checks (no fitting).
+
+## van Voorst/AJEV qualitative concordance (2026-09-27 ~20:35 IST)
+- Prereg attribution note: Am. J. Enol. Vitic. 59(4):401 is Renuka Kumar
+  et al. (Bisson lab) 2008, not van Voorst; the locked accession was used.
+- Named genes from the paper (abstract; full text paywalled): CLC1, GSH1,
+  UME6, TDP3, VPS24 (persistent weak growth under 5% ethanol), ADH1.
+- SGD-verified systematic IDs: CLC1=YGR167W, GSH1=YJL101C, UME6=YDR207C,
+  VPS24=YKL041W, ADH1=YOL086C; TDP3 unresolvable via SGD API (recorded).
+- Concordance (model ethanol exemplar 8%):
+  * ADH1: in model, KO grows = WT under both ref and ethanol (sens=1.0;
+    isozyme redundancy ADH2/3/4/5) -> model NOT sensitive, paper sensitive:
+    discordant.
+  * GSH1: KO unconditionally zero-growth in model (excluded per locked
+    rule); likely a model artifact (no GSH salvage/uptake); declared.
+  * CLC1, UME6, VPS24: not in the metabolic model (channel/TF/ESCRT).
+  * TDP3: unresolved.
+- Result: 0 of 1 evaluable named genes concordant - honest null, same
+  declared limitation as the quantitative overlap.
+
+## Nutrient qualitative checks - LOCKED DESIGN (pre-run)
+- E-GEOD-1723 direction check (locked rule): under locked N-, P-, S-
+  limited regimes (25% of standard), the model's limiting-nutrient uptake
+  must saturate its bound (uptake sign/shadow price positive on the
+  limiting nutrient) and non-limiting uptakes must not; compare sign
+  pattern to published C/N/P/S chemostat physiology qualitatively.
+- E-MTAB-8245 spare-capacity check (locked rule): identify predicted
+  bottleneck reactions under N-limitation via shadow prices on N uptake
+  and glycolytic/TCA flux distributions; qualitatively compare against
+  the published finding of translational/metabolic capacity reserves
+  under N limitation (documented as narrative concordance, no fitting).
