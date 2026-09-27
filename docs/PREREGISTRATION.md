@@ -352,3 +352,59 @@ novelty rule. Locked BEFORE the analyses it names are run.
    essentiality call; (b) deletion-screen concordance where the Section 8
    datasets cover the gene; (c) reported with the regime it targets. Designs
    failing the screen are reported as screened-out, never as candidates.
+
+## Amendment 4 - 2026-09-27 (appended BEFORE any A5 outcome data)
+
+Operationalization of A5 (Section 7) under the sandbox budget, plus the
+Amendment-3 plausibility filter wiring. Locked in code
+(scripts/run_a5_strain_design.py) and committed before any A5 run.
+
+1. **Evaluation subsamples (seeded, from the locked Section-5 split).**
+   screen40: 40 DESIGN envs (20 WT-collapsed + 20 non-collapsed, seed 557)
+   for search-stage screening; design150: 150 DESIGN envs (same collapse
+   stratification, seed 558) for candidate confirmation; test150: 150 TEST
+   envs (seed 559) touched once, for final claims. WT values per env are
+   computed once and cached; all design yields are relative to WT in the
+   SAME environment.
+2. **Staged search (declared, replaces nothing in Section 7; it is the
+   seeded-search budget made explicit).** Stage 1: all 1,143 single-gene
+   deletions screened on screen40. Stage 2: top 60 confirmed on design150
+   with full tolerance scans. Stage 3: doubles among the top 30 singles
+   (435 pairs) screened, top 10 confirmed. Stage 4: reaction-bound scaling
+   proxies, locked folds {0.25, 0.5, 2, 4} on the locked reaction list:
+   r_0491 (GPD1/GPD2 glycerol synthesis), r_0489 (GPP1/GPP2), r_1172 (FPS1
+   glycerol channel), r_2115 (ADH ethanol-forming), r_0959 (PDC), r_0173
+   (ALD6), r_1166 (HXT glucose transport), r_1115 (MEP ammonium transport),
+   r_0195 (TPS-complex trehalose synthesis); top 10 confirmed. Stage 5:
+   seeded evolutionary triples (genome = top-30 modifications union across
+   stages 2-4; population 24, 12 generations, seeds 42/123/2026, Pareto
+   selection on (mean relative yield, -new collapses) on screen40);
+   finalists confirmed on design150.
+3. **Objectives for ranking and G4.** O1 = mean relative ethanol yield over
+   the subsample (envs with WT yield > 0); O2/O3/O4 = temperature /
+   ethanol / nitrogen tolerance = extreme grid value where yield stays
+   >= 80% of the design's own reference (30 C, 0%, 0 M, 100% N), evaluated
+   over the full Section-5 axis (no early-exit bug: every level evaluated,
+   max-passing for T/EtOH, min-passing for N). G4(a) dominance = design
+   >= WT on all four and > WT on at least one, in test150 + tolerance
+   scans.
+4. **Random baseline.** 30 seeds x 5 matched-budget (2-modification)
+   random designs from the same universe (single-gene KOs + scaling list),
+   each confirmed on design150. G4(b): candidate's O1 exceeds the 95th
+   percentile of this baseline.
+5. **Plausibility filter (Amendment 3 item 4 wiring).** (a) essentiality:
+   a KO design is screened out if KO growth < 1% of WT growth in its
+   target-regime exemplar environment (the collapsed screen40 env with the
+   most regimes matching the design's target); (b) deletion-screen
+   concordance: the Section-8 stress-screen datasets are NOT yet acquired
+   at A5 lock time; filter (b) is reported as PENDING per gene and does
+   not block candidacy - declared gap, not hidden; (c) every candidate is
+   reported with the regime(s) it targets.
+6. **Declared deviation.** The Section-7 "GPR-consistent cofactor swaps"
+   class is NOT implemented in this locked run: yeast-GEM contains almost
+   no NADH<->NADPH isozyme pairs to swap within budget 3, and no honest
+   implementation fit the sandbox budget. Declared, not silently dropped.
+7. **Claim scope.** A5 tests H3 within the FBA feasibility frame only; all
+   designs are computational predictions, validation against Section-8
+   datasets follows in A6, and filter-(b) pendings are resolved there if
+   acquisition succeeds.
