@@ -512,3 +512,9 @@ Ranked additions: (1) dynamic stress-response layer, (2) cross-species/strain va
 
 1. Pre-reg Amendment 3 appended and SHA-256 locked: central claim reframed from "universal nonlinear collapse (G2)" to "discrete metabolic failure regimes, condition-dependent"; new analysis A7 (stress-regime topology mapping + evolutionary/transcriptome conservation against public stress transcriptomes) inserted BEFORE A5; new A8 minimal dynamic heat-wave dFBA arm; A5 gains a locked biological-plausibility filter (essentiality, expression support, deletion-screen agreement).
 2. Concrete artifact this round: results/climate/a4_regimes.json - named failure regimes from the A4 binding clusters (regime topology v1) computed from existing verified data.
+
+# JUDGE ROUND 2 (her single verdict, new rule 2026-09-27 10:00-10:01 IST)
+- Ledger: 0 of 1. Paste STAGED in docs/COURIER_PASTE.md (full final-state
+  project text incl. A5 G4 FAIL, A6 G1-overlap FAIL, N-axis limitation).
+- Verdict NOT received as of staging; do not mark counted until her
+  verdict arrives via the courier route.
