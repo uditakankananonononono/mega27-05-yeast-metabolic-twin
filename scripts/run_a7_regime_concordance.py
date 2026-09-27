@@ -84,6 +84,21 @@ ARMS = [
 ]
 
 
+GENE_UID = {  # SGD backend locus lookup, queried 2026-09-27 (grounded)
+    "GPD1": "YDL022W", "GPD2": "YOL059W", "GPP1": "YIL053W",
+    "GPP2": "YER062C", "HSP12": "YFL014W", "HSP26": "YBR072W",
+    "HSP30": "YCR021C", "HSP42": "YDR171W", "HSP78": "YDR258C",
+    "HSP82": "YPL240C", "HSP104": "YLL026W", "SSA3": "YBL075C",
+    "SSA4": "YER103W", "STI1": "YOR027W", "PGI1": "YBR196C",
+    "PFK1": "YGR240C", "PFK2": "YMR205C", "FBA1": "YKL060C",
+    "TPI1": "YDR050C", "GPM1": "YKL152C", "PGK1": "YCR012W",
+    "ENO1": "YGR254W", "ENO2": "YHR174W", "TDH3": "YGR192C",
+    "HXK2": "YGL253W", "CDC19": "YAL038W", "PDC1": "YLR044C",
+    "ADH1": "YOL086C", "GAP1": "YKR039W", "MEP2": "YNL142W",
+    "DAL5": "YJR152W", "PUT4": "YOR348C", "UGA4": "YDL210W",
+    "GDH2": "YDL215C", "GLT1": "YDL171C",
+}
+
 def binom_sf(k, n):
     """P[X >= k], X ~ Bin(n, 0.5), exact."""
     return sum(math.comb(n, i) for i in range(k, n + 1)) / 2 ** n
@@ -113,22 +128,20 @@ def main():
             col_idx[arm["column"]] = header.index(arm["column"])
         name_idx = header.index("NAME")
         rows = list(rdr)
-    # resolve each locked gene to exactly one row by exact standard-name
-    # token match on the NAME field (deterministic)
+    # resolve each locked gene to exactly one row by its SGD-verified
+    # systematic ORF id (GENE_UID; deterministic). 2000-era names differ
+    # (GPP1=RHR2, GPP2=HOR2) and name tokens are not unique (HSP26 is
+    # mentioned in HSP42's annotation), so name matching is not used.
     resolution = {}
+    uid_idx = header.index("UID")
     for arm in ARMS:
         for g in arm["genes"]:
-            hits = []
-            for r in rows:
-                if len(r) <= name_idx:
-                    continue
-                tokens = r[name_idx].replace("/", " ").split()
-                if g in tokens:
-                    hits.append(r)
+            uid = GENE_UID[g]
+            hits = [r for r in rows if len(r) > uid_idx and r[uid_idx] == uid]
             if len(hits) != 1:
                 raise SystemExit(
-                    f"gene {g}: {len(hits)} row matches (need exactly 1)")
-            resolution[g] = hits[0][0]  # UID
+                    f"gene {g} ({uid}): {len(hits)} row matches (need 1)")
+            resolution[g] = uid
     results = []
     for arm in ARMS:
         ci = col_idx[arm["column"]]
