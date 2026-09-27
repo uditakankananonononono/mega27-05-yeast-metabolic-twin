@@ -12,3 +12,114 @@
 {"mods": [["ko", "YBR004C"], ["ko", "YDR503C"]], "mean_rel": 1.0000000000000013, "new_collapses": 0}
 {"mods": [["ko", "YOR176W"], ["ko", "YLR058C"]], "mean_rel": 1.0, "new_collapses": 0}
 {"mods": [["ko", "YGL009C"], ["ko", "YDL100C"]], "mean_rel": 0.9999999999999991, "new_collapses": 0}
+{"mods": [["ko", "YOR335C"], ["scale", "r_0173", 2.0]], "mean_rel": 1.0, "new_collapses": 0}
+{"mods": [["ko", "YLR342W"], ["scale", "r_1166", 2.0]], "mean_rel": 1.000000000000002, "new_collapses": 0}
+{"mods": [["ko", "YDR483W"], ["ko", "YHR026W"]], "mean_rel": 1.0000000000000262, "new_collapses": 0}
+{"mods": [["ko", "YJL071W"], ["ko", "YJR153W"]], "mean_rel": 1.0000000000000007, "new_collapses": 0}
+{"mods": [["ko", "YGR243W"], ["ko", "YGR036C"]], "mean_rel": 0.9999999999999957, "new_collapses": 0}
+{"mods": [["ko", "YLR058C"], ["ko", "YDR380W"]], "mean_rel": 0.9999999999999952, "new_collapses": 0}
+{"mods": [["ko", "YOL058W"], ["ko", "YGR183C"]], "mean_rel": 0.9818746514714384, "new_collapses": 2}
+{"mods": [["ko", "YHR067W"], ["ko", "YER090W"]], "mean_rel": 1.0, "new_collapses": 0}
+{"mods": [["ko", "YDR428C"], ["ko", "YHL003C"]], "mean_rel": 1.0, "new_collapses": 0}
+{"mods": [["ko", "YDR452W"], ["scale", "r_0195", 4.0]], "mean_rel": 0.9999999999999999, "new_collapses": 0}
+{"mods": [["ko", "YER005W"], ["ko", "YLR214W"]], "mean_rel": 0.9999999999999998, "new_collapses": 0}
+{"mods": [["ko", "YDR284C"], ["scale", "r_1172", 4.0]], "mean_rel": 1.0000000000000002, "new_collapses": 0}
+{"mods": [["ko", "YMR083W"], ["ko", "YBL076C"]], "mean_rel": 1.0000000000000002, "new_collapses": 0}
+{"mods": [["ko", "YJL126W"], ["scale", "r_0489", 2.0]], "mean_rel": 1.0000000000000036, "new_collapses": 0}
+{"mods": [["ko", "YDR050C"], ["ko", "YJR069C"]], "mean_rel": 0.7080731899970651, "new_collapses": 21}
+{"mods": [["ko", "YLR081W"], ["ko", "YDR208W"]], "mean_rel": 1.0000000000000002, "new_collapses": 0}
+{"mods": [["ko", "YGL191W"], ["ko", "YDL066W"]], "mean_rel": 1.0000000000000004, "new_collapses": 0}
+{"mods": [["ko", "YML082W"], ["ko", "YMR162C"]], "mean_rel": 0.9999999999999959, "new_collapses": 0}
+{"mods": [["ko", "YPR047W"], ["ko", "YDR342C"]], "mean_rel": 1.0000000000000044, "new_collapses": 0}
+{"mods": [["ko", "YIL162W"], ["scale", "r_1172", 0.25]], "mean_rel": 1.0000000000000002, "new_collapses": 0}
+{"mods": [["ko", "YMR243C"], ["ko", "YGL067W"]], "mean_rel": 1.0000000000000007, "new_collapses": 0}
+{"mods": [["ko", "YDL141W"], ["ko", "YNR030W"]], "mean_rel": 1.0, "new_collapses": 0}
+{"mods": [["ko", "YBR058C-A"], ["ko", "YER086W"]], "mean_rel": 1.0000000000000002, "new_collapses": 0}
+{"mods": [["ko", "YPL212C"], ["ko", "YMR243C"]], "mean_rel": 1.0, "new_collapses": 0}
+{"mods": [["ko", "YDR343C"], ["scale", "r_0489", 4.0]], "mean_rel": 1.0, "new_collapses": 0}
+{"mods": [["ko", "YOR120W"], ["scale", "r_1166", 0.25]], "mean_rel": 1.0, "new_collapses": 0}
+{"mods": [["ko", "YKL060C"], ["ko", "YHR092C"]], "mean_rel": 0.10012658046301545, "new_collapses": 92}
+{"mods": [["ko", "YHR072W"], ["scale", "r_0489", 4.0]], "mean_rel": 1.0000000000000084, "new_collapses": 0}
+{"mods": [["ko", "YER024W"], ["ko", "YJL219W"]], "mean_rel": 1.0000000000000002, "new_collapses": 0}
+{"mods": [["ko", "YER061C"], ["ko", "YDR232W"]], "mean_rel": 1.0, "new_collapses": 0}
+{"mods": [["ko", "YPL262W"], ["ko", "YKL184W"]], "mean_rel": 0.9974726446640453, "new_collapses": 0}
+{"mods": [["ko", "YJL139C"], ["ko", "YNL169C"]], "mean_rel": 1.0, "new_collapses": 0}
+{"mods": [["ko", "YHR201C"], ["scale", "r_1172", 0.5]], "mean_rel": 1.0, "new_collapses": 0}
+{"mods": [["ko", "YHR037W"], ["ko", "YKL192C"]], "mean_rel": 0.9999999999999999, "new_collapses": 0}
+{"mods": [["ko", "YLR304C"], ["ko", "YDR315C"]], "mean_rel": 1.0000000000000009, "new_collapses": 0}
+{"mods": [["ko", "YGR208W"], ["ko", "YGR154C"]], "mean_rel": 1.000000000000001, "new_collapses": 0}
+{"mods": [["ko", "YCR053W"], ["scale", "r_0491", 0.5]], "mean_rel": 0.9999999999999999, "new_collapses": 0}
+{"mods": [["ko", "YPR170W-B"], ["ko", "YDL052C"]], "mean_rel": 1.0, "new_collapses": 0}
+{"mods": [["ko", "YPL189W"], ["ko", "YER061C"]], "mean_rel": 0.9999999999999999, "new_collapses": 0}
+{"mods": [["ko", "YER023W"], ["ko", "YGL067W"]], "mean_rel": 1.0, "new_collapses": 0}
+{"mods": [["ko", "YHR043C"], ["ko", "YIL172C"]], "mean_rel": 1.0, "new_collapses": 0}
+{"mods": [["ko", "YMR054W"], ["ko", "YIR029W"]], "mean_rel": 1.0000000000000004, "new_collapses": 0}
+{"mods": [["ko", "YIL134W"], ["ko", "YOR067C"]], "mean_rel": 0.9999999999999987, "new_collapses": 0}
+{"mods": [["ko", "YLR438W"], ["ko", "YGL184C"]], "mean_rel": 0.9999999999999996, "new_collapses": 0}
+{"mods": [["ko", "YNL275W"], ["scale", "r_0195", 0.25]], "mean_rel": 0.9999999999999978, "new_collapses": 0}
+{"mods": [["ko", "YLR043C"], ["ko", "YBL076C"]], "mean_rel": 0.9999999999999972, "new_collapses": 0}
+{"mods": [["ko", "YBR248C"], ["scale", "r_0489", 4.0]], "mean_rel": 0.9999999999999998, "new_collapses": 0}
+{"mods": [["ko", "YBR291C"], ["ko", "YBR299W"]], "mean_rel": 0.9999999999999984, "new_collapses": 0}
+{"mods": [["ko", "YCL069W"], ["scale", "r_1172", 0.5]], "mean_rel": 1.0000000000000007, "new_collapses": 0}
+{"mods": [["ko", "YDR111C"], ["ko", "YMR208W"]], "mean_rel": 0.9999999999999991, "new_collapses": 0}
+{"mods": [["ko", "YLR285W"], ["ko", "YKR097W"]], "mean_rel": 0.9999999999999987, "new_collapses": 0}
+{"mods": [["ko", "YHR201C"], ["ko", "YHR039C-A"]], "mean_rel": 1.0000000000000002, "new_collapses": 0}
+{"mods": [["ko", "YGL167C"], ["ko", "YKL001C"]], "mean_rel": 1.0000000000000002, "new_collapses": 0}
+{"mods": [["ko", "YKL085W"], ["ko", "YBR046C"]], "mean_rel": 1.0, "new_collapses": 0}
+{"mods": [["ko", "YCR107W"], ["ko", "YPR001W"]], "mean_rel": 1.0000000000000002, "new_collapses": 0}
+{"mods": [["ko", "YLR043C"], ["scale", "r_0959", 4.0]], "mean_rel": 0.9999999999999994, "new_collapses": 0}
+{"mods": [["ko", "YDR270W"], ["ko", "YCR053W"]], "mean_rel": 0.999999999999999, "new_collapses": 0}
+{"mods": [["ko", "YOR081C"], ["ko", "YNL267W"]], "mean_rel": 0.9999999999999962, "new_collapses": 0}
+{"mods": [["ko", "YIL162W"], ["scale", "r_0173", 0.25]], "mean_rel": 0.9999999999999966, "new_collapses": 0}
+{"mods": [["ko", "YGL055W"], ["ko", "YPL281C"]], "mean_rel": 1.0, "new_collapses": 0}
+{"mods": [["ko", "YGL063W"], ["ko", "YPL111W"]], "mean_rel": 0.9999999999999996, "new_collapses": 0}
+{"mods": [["ko", "YOR095C"], ["ko", "YIL078W"]], "mean_rel": 0.9704465899427153, "new_collapses": 2}
+{"mods": [["ko", "YHR020W"], ["ko", "YER174C"]], "mean_rel": 0.9999999999999998, "new_collapses": 0}
+{"mods": [["ko", "YER052C"], ["scale", "r_2115", 4.0]], "mean_rel": 0.9999999999999973, "new_collapses": 0}
+{"mods": [["ko", "YNL247W"], ["ko", "YJL137C"]], "mean_rel": 0.9999999999999988, "new_collapses": 0}
+{"mods": [["ko", "YDR294C"], ["ko", "YOR002W"]], "mean_rel": 0.9999999999999969, "new_collapses": 0}
+{"mods": [["ko", "YCL047C"], ["ko", "YLR410W"]], "mean_rel": 0.9999999999999925, "new_collapses": 0}
+{"mods": [["ko", "YBL042C"], ["ko", "YGR154C"]], "mean_rel": 0.9999999999999998, "new_collapses": 0}
+{"mods": [["ko", "YGR062C"], ["ko", "YOR202W"]], "mean_rel": 0.9999999999999999, "new_collapses": 0}
+{"mods": [["ko", "YDL219W"], ["ko", "YDR297W"]], "mean_rel": 0.9999999999999981, "new_collapses": 0}
+{"mods": [["ko", "YNR067C"], ["ko", "YGR244C"]], "mean_rel": 0.9915938459141309, "new_collapses": 1}
+{"mods": [["ko", "YPL110C"], ["ko", "YKL211C"]], "mean_rel": 0.9999999999999998, "new_collapses": 0}
+{"mods": [["ko", "YEL029C"], ["ko", "YEL071W"]], "mean_rel": 0.9999999999999978, "new_collapses": 0}
+{"mods": [["ko", "YKL055C"], ["ko", "YGR088W"]], "mean_rel": 1.000000000000001, "new_collapses": 0}
+{"mods": [["ko", "YER065C"], ["ko", "YBR218C"]], "mean_rel": 0.9994196709637959, "new_collapses": 0}
+{"mods": [["ko", "YDR037W"], ["scale", "r_2115", 2.0]], "mean_rel": 1.0, "new_collapses": 0}
+{"mods": [["ko", "YLR286C"], ["ko", "YHR025W"]], "mean_rel": 1.0, "new_collapses": 0}
+{"mods": [["ko", "YFL017C"], ["scale", "r_1172", 2.0]], "mean_rel": 1.0000000000000002, "new_collapses": 0}
+{"mods": [["ko", "YNL065W"], ["ko", "YPR011C"]], "mean_rel": 0.9997487887482475, "new_collapses": 0}
+{"mods": [["ko", "YDR503C"], ["ko", "YOR317W"]], "mean_rel": 1.0, "new_collapses": 0}
+{"mods": [["ko", "YDL093W"], ["ko", "YDR297W"]], "mean_rel": 0.9999999999999973, "new_collapses": 0}
+{"mods": [["ko", "YLR214W"], ["ko", "YLR038C"]], "mean_rel": 1.0000000000000018, "new_collapses": 0}
+{"mods": [["ko", "YNL117W"], ["scale", "r_0173", 4.0]], "mean_rel": 0.9999692380518559, "new_collapses": 0}
+{"mods": [["ko", "YER119C"], ["scale", "r_0491", 4.0]], "mean_rel": 0.9999999999999999, "new_collapses": 0}
+{"mods": [["ko", "YGR192C"], ["ko", "YGL009C"]], "mean_rel": 0.9999999999999987, "new_collapses": 0}
+{"mods": [["ko", "YOR317W"], ["ko", "YJL097W"]], "mean_rel": 1.0, "new_collapses": 0}
+{"mods": [["ko", "YCL009C"], ["ko", "YDL022W"]], "mean_rel": 1.0000000000000049, "new_collapses": 0}
+{"mods": [["ko", "YNL092W"], ["ko", "YPR035W"]], "mean_rel": 0.9999999999999998, "new_collapses": 0}
+{"mods": [["ko", "YAL038W"], ["ko", "YLR153C"]], "mean_rel": 0.9999999999999978, "new_collapses": 0}
+{"mods": [["ko", "YIL002C"], ["ko", "YJL166W"]], "mean_rel": 0.9818746514714319, "new_collapses": 2}
+{"mods": [["ko", "YDR098C"], ["scale", "r_1172", 2.0]], "mean_rel": 1.0000000000000002, "new_collapses": 0}
+{"mods": [["ko", "YDL131W"], ["scale", "r_1172", 2.0]], "mean_rel": 0.9999999999999991, "new_collapses": 0}
+{"mods": [["ko", "YIL009W"], ["scale", "r_0173", 4.0]], "mean_rel": 0.9999999999999966, "new_collapses": 0}
+{"mods": [["ko", "YMR054W"], ["ko", "YJL100W"]], "mean_rel": 1.0000000000000027, "new_collapses": 0}
+{"mods": [["ko", "YDL178W"], ["scale", "r_2115", 2.0]], "mean_rel": 0.9999999999999972, "new_collapses": 0}
+{"mods": [["ko", "YOR163W"], ["ko", "YGL186C"]], "mean_rel": 0.9704465899427095, "new_collapses": 2}
+{"mods": [["ko", "YML086C"], ["scale", "r_1166", 2.0]], "mean_rel": 1.0, "new_collapses": 0}
+{"mods": [["ko", "YMR041C"], ["scale", "r_0491", 0.5]], "mean_rel": 1.0, "new_collapses": 0}
+{"mods": [["ko", "YOL058W"], ["ko", "YPL036W"]], "mean_rel": 1.0000000000000002, "new_collapses": 0}
+{"mods": [["ko", "YDR039C"], ["ko", "YGR191W"]], "mean_rel": 1.0, "new_collapses": 0}
+{"mods": [["ko", "YPR001W"], ["scale", "r_0959", 0.5]], "mean_rel": 1.0, "new_collapses": 0}
+{"mods": [["ko", "YCR024C"], ["scale", "r_1166", 2.0]], "mean_rel": 1.0, "new_collapses": 0}
+{"mods": [["ko", "YNL267W"], ["scale", "r_1166", 0.25]], "mean_rel": 1.0, "new_collapses": 0}
+{"mods": [["ko", "YPL206C"], ["ko", "YBL015W"]], "mean_rel": 1.0, "new_collapses": 0}
+{"mods": [["ko", "YOR125C"], ["ko", "YPR036W"]], "mean_rel": 1.0, "new_collapses": 0}
+{"mods": [["ko", "YLR157C"], ["scale", "r_0959", 4.0]], "mean_rel": 1.0, "new_collapses": 0}
+{"mods": [["ko", "YHR091C"], ["ko", "YBL039C"]], "mean_rel": 1.0, "new_collapses": 0}
+{"mods": [["ko", "YLR284C"], ["scale", "r_1115", 0.25]], "mean_rel": 0.9999999999999993, "new_collapses": 0}
+{"mods": [["ko", "YGR015C"], ["scale", "r_1115", 2.0]], "mean_rel": 0.9999999999999996, "new_collapses": 0}
+{"mods": [["ko", "YDL055C"], ["ko", "YIL083C"]], "mean_rel": 1.0000000000000002, "new_collapses": 0}
+{"mods": [["ko", "YGL167C"], ["ko", "YOR095C"]], "mean_rel": 0.9704465899427124, "new_collapses": 2}
