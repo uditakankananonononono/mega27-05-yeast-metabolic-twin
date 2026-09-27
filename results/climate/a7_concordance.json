@@ -1,0 +1,209 @@
+{
+  "analysis": "A7 regime-transcriptome concordance (Amendment 3)",
+  "dataset": {
+    "name": "Gasch et al. 2000 complete_dataset.txt (PMID 11102521)",
+    "source": "Wayback Machine capture of genome-www.stanford.edu/yeast_stress/data/rawdata/complete_dataset.txt",
+    "sha256": "3050664e0deba976b70b954676675cce74d3288198d850abb6fb123bac58daa7",
+    "grade": "context (pre-reg Section 8); A7 is concordance, not a validation gate"
+  },
+  "ethanol_regime": "untested: no ethanol-stress experiment in Gasch 2000 (carbon-source columns are not stress)",
+  "arms": [
+    {
+      "arm": "A",
+      "regime": "osmotic carbon diversion",
+      "stress": "1M sorbitol hyperosmotic shock, 30 min",
+      "column": "1M sorbitol - 30 min",
+      "pathway": "glycerol biosynthesis",
+      "citation": "Hohmann 2002 MMBR 66:300; Gasch 2000",
+      "least_certain": false,
+      "genes": [
+        "GPD1",
+        "GPD2",
+        "GPP1",
+        "GPP2"
+      ],
+      "uids": {
+        "GPD1": "YDL022W",
+        "GPD2": "YOL059W",
+        "GPP1": "YIL053W",
+        "GPP2": "YER062C"
+      },
+      "log2_ratios": {
+        "GPD1": 2.4,
+        "GPD2": -0.01,
+        "GPP1": 1.32,
+        "GPP2": 2.7
+      },
+      "n": 4,
+      "k_agree": 3,
+      "binom_p_one_sided": 0.3125,
+      "binom_p_two_sided": 0.625,
+      "ci95_clopper_pearson": [
+        0.19412044968324338,
+        0.9936905367902902
+      ]
+    },
+    {
+      "arm": "B",
+      "regime": "thermal carbon starvation",
+      "stress": "heat shock 25->37 C, 30 min",
+      "column": "Heat Shock 30 minutes hs-1",
+      "pathway": "heat-shock proteins",
+      "citation": "Gasch 2000; Verghese 2012",
+      "least_certain": false,
+      "genes": [
+        "HSP12",
+        "HSP26",
+        "HSP30",
+        "HSP42",
+        "HSP78",
+        "HSP82",
+        "HSP104",
+        "SSA3",
+        "SSA4",
+        "STI1"
+      ],
+      "uids": {
+        "HSP12": "YFL014W",
+        "HSP26": "YBR072W",
+        "HSP30": "YCR021C",
+        "HSP42": "YDR171W",
+        "HSP78": "YDR258C",
+        "HSP82": "YPL240C",
+        "HSP104": "YLL026W",
+        "SSA3": "YBL075C",
+        "SSA4": "YER103W",
+        "STI1": "YOR027W"
+      },
+      "log2_ratios": {
+        "HSP12": 6.9,
+        "HSP26": 3.1,
+        "HSP30": 0.97,
+        "HSP42": 4.86,
+        "HSP78": 4.39,
+        "HSP82": 2.71,
+        "HSP104": 4.8,
+        "SSA3": 3.67,
+        "SSA4": 5.14,
+        "STI1": 2.63
+      },
+      "n": 10,
+      "k_agree": 10,
+      "binom_p_one_sided": 0.0009765625,
+      "binom_p_two_sided": 0.001953125,
+      "ci95_clopper_pearson": [
+        0.6915028921812392,
+        1.0
+      ]
+    },
+    {
+      "arm": "C",
+      "regime": "thermal carbon starvation",
+      "stress": "heat shock 25->37 C, 30 min",
+      "column": "Heat Shock 30 minutes hs-1",
+      "pathway": "glycolysis",
+      "citation": "Gasch 2000 ESR induced carbohydrate/energy genes",
+      "least_certain": true,
+      "genes": [
+        "PGI1",
+        "PFK1",
+        "PFK2",
+        "FBA1",
+        "TPI1",
+        "GPM1",
+        "PGK1",
+        "ENO1",
+        "ENO2",
+        "TDH3",
+        "HXK2",
+        "CDC19",
+        "PDC1",
+        "ADH1"
+      ],
+      "uids": {
+        "PGI1": "YBR196C",
+        "PFK1": "YGR240C",
+        "PFK2": "YMR205C",
+        "FBA1": "YKL060C",
+        "TPI1": "YDR050C",
+        "GPM1": "YKL152C",
+        "PGK1": "YCR012W",
+        "ENO1": "YGR254W",
+        "ENO2": "YHR174W",
+        "TDH3": "YGR192C",
+        "HXK2": "YGL253W",
+        "CDC19": "YAL038W",
+        "PDC1": "YLR044C",
+        "ADH1": "YOL086C"
+      },
+      "log2_ratios": {
+        "PGI1": 0.01,
+        "PFK1": -0.64,
+        "PFK2": -0.22,
+        "FBA1": 0.27,
+        "TPI1": -0.18,
+        "GPM1": 0.25,
+        "PGK1": 0.81,
+        "ENO1": 0.58,
+        "ENO2": 0.52,
+        "TDH3": 0.23,
+        "HXK2": -0.76,
+        "CDC19": -0.58,
+        "PDC1": 0.04,
+        "ADH1": 0.37
+      },
+      "n": 14,
+      "k_agree": 9,
+      "binom_p_one_sided": 0.21197509765625,
+      "binom_p_two_sided": 0.4239501953125,
+      "ci95_clopper_pearson": [
+        0.3513801106159917,
+        0.8724015701408404
+      ]
+    },
+    {
+      "arm": "D",
+      "regime": "multi-constraint collapse (ammonium-bound component)",
+      "stress": "nitrogen depletion, 1 h",
+      "column": "Nitrogen Depletion 1 h",
+      "pathway": "nitrogen catabolite repression targets",
+      "citation": "Magasanik & Kaiser 2002 Gene 290:1; Gasch 2000",
+      "least_certain": false,
+      "genes": [
+        "GAP1",
+        "MEP2",
+        "DAL5",
+        "PUT4",
+        "UGA4",
+        "GDH2",
+        "GLT1"
+      ],
+      "uids": {
+        "GAP1": "YKR039W",
+        "MEP2": "YNL142W",
+        "DAL5": "YJR152W",
+        "PUT4": "YOR348C",
+        "UGA4": "YDL210W",
+        "GDH2": "YDL215C",
+        "GLT1": "YDL171C"
+      },
+      "log2_ratios": {
+        "GAP1": 5.09,
+        "MEP2": 5.02,
+        "DAL5": 5.35,
+        "PUT4": 0.39,
+        "UGA4": -0.15,
+        "GDH2": 0.6,
+        "GLT1": 0.39
+      },
+      "n": 7,
+      "k_agree": 6,
+      "binom_p_one_sided": 0.0625,
+      "binom_p_two_sided": 0.125,
+      "ci95_clopper_pearson": [
+        0.4212768029568048,
+        0.9963897031380994
+      ]
+    }
+  ]
+}
