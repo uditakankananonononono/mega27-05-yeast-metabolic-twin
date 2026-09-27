@@ -1,0 +1,172 @@
+[
+ {
+  "mods": [
+   [
+    "scale",
+    "r_0491",
+    0.25
+   ]
+  ],
+  "mean_rel": 1.0000000000000002,
+  "new_collapses": 0,
+  "own_ref_yield": 45.458333333333336,
+  "tolerances": {
+   "temperature_c": 37.0,
+   "ethanol_pct": 1.0,
+   "nitrogen_frac": 0.05
+  }
+ },
+ {
+  "mods": [
+   [
+    "scale",
+    "r_0491",
+    0.5
+   ]
+  ],
+  "mean_rel": 1.0,
+  "new_collapses": 0,
+  "own_ref_yield": 45.458333333333286,
+  "tolerances": {
+   "temperature_c": 37.0,
+   "ethanol_pct": 1.0,
+   "nitrogen_frac": 0.05
+  }
+ },
+ {
+  "mods": [
+   [
+    "scale",
+    "r_0491",
+    2.0
+   ]
+  ],
+  "mean_rel": 1.0000000000000002,
+  "new_collapses": 0,
+  "own_ref_yield": 45.458333333333414,
+  "tolerances": {
+   "temperature_c": 37.0,
+   "ethanol_pct": 1.0,
+   "nitrogen_frac": 0.05
+  }
+ },
+ {
+  "mods": [
+   [
+    "scale",
+    "r_0491",
+    4.0
+   ]
+  ],
+  "mean_rel": 1.0000000000000002,
+  "new_collapses": 0,
+  "own_ref_yield": 45.45833333333333,
+  "tolerances": {
+   "temperature_c": 37.0,
+   "ethanol_pct": 1.0,
+   "nitrogen_frac": 0.05
+  }
+ },
+ {
+  "mods": [
+   [
+    "scale",
+    "r_0489",
+    2.0
+   ]
+  ],
+  "mean_rel": 1.0,
+  "new_collapses": 0,
+  "own_ref_yield": 45.45833333333339,
+  "tolerances": {
+   "temperature_c": 37.0,
+   "ethanol_pct": 1.0,
+   "nitrogen_frac": 0.05
+  }
+ },
+ {
+  "mods": [
+   [
+    "scale",
+    "r_0489",
+    4.0
+   ]
+  ],
+  "mean_rel": 1.000000000000001,
+  "new_collapses": 0,
+  "own_ref_yield": 45.4583333333333,
+  "tolerances": {
+   "temperature_c": 37.0,
+   "ethanol_pct": 1.0,
+   "nitrogen_frac": 0.05
+  }
+ },
+ {
+  "mods": [
+   [
+    "scale",
+    "r_1172",
+    0.25
+   ]
+  ],
+  "mean_rel": 1.0000000000000002,
+  "new_collapses": 0,
+  "own_ref_yield": 45.458333333333336,
+  "tolerances": {
+   "temperature_c": 37.0,
+   "ethanol_pct": 1.0,
+   "nitrogen_frac": 0.05
+  }
+ },
+ {
+  "mods": [
+   [
+    "scale",
+    "r_1172",
+    0.5
+   ]
+  ],
+  "mean_rel": 1.0,
+  "new_collapses": 0,
+  "own_ref_yield": 45.458333333333286,
+  "tolerances": {
+   "temperature_c": 37.0,
+   "ethanol_pct": 1.0,
+   "nitrogen_frac": 0.05
+  }
+ },
+ {
+  "mods": [
+   [
+    "scale",
+    "r_2115",
+    0.25
+   ]
+  ],
+  "mean_rel": 1.0000000000000002,
+  "new_collapses": 0,
+  "own_ref_yield": 45.458333333333414,
+  "tolerances": {
+   "temperature_c": 37.0,
+   "ethanol_pct": 1.0,
+   "nitrogen_frac": 0.05
+  }
+ },
+ {
+  "mods": [
+   [
+    "scale",
+    "r_2115",
+    0.5
+   ]
+  ],
+  "mean_rel": 1.0000000000000002,
+  "new_collapses": 0,
+  "own_ref_yield": 45.45833333333333,
+  "tolerances": {
+   "temperature_c": 37.0,
+   "ethanol_pct": 1.0,
+   "nitrogen_frac": 0.05
+  }
+ }
+]
