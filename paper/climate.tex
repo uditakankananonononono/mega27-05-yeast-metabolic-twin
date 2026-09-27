@@ -1173,6 +1173,59 @@ per-design timeout and a hang is recorded as \texttt{solver\_timeout} -
 16 occurrences across the campaign - never silently skipped or imputed.
 All code, data, run logs, and the judge archive are in the repository;
 the paper's every number can be regenerated from the pinned commit.
+
+\subsection{The pre-registration lifecycle, as executed}
+\label{sec:prereglifecycle}
+
+The discipline contract operated in four phases, and each left
+artifacts. \emph{Lock.} The design document was written before any
+outcome run: environment grid and axes, stress-layer forms with
+parameter provenance, the four objectives and their thresholds, the
+eight analysis stages, the four gates with their binary criteria, the
+validation datasets with accession identifiers, and every statistical
+test with its direction, correction, and seed. The document's SHA-256
+was recorded at lock time and is embedded in every stage artifact
+that answers to it. \emph{Amendment.} Four amendments were needed -
+the viability boundary and maintenance form (Amendment 1), the
+parameter-sweep arm (Amendment 2), the transcriptome and dynamic
+stages (Amendment 3), and the A5 staging and plausibility filters
+(Amendment 4) - and each was committed with its own hash before the
+first run it governed; no amendment touched a locked objective, gate
+threshold, grid, or statistic after outcomes existed. \emph{Execution.}
+Stages ran in dependency order with per-stage artifacts, and two
+categories of mid-flight correction were allowed and are on record:
+bug fixes committed pre-outcome (the A4 index-mapping fix, the
+evolutionary resume fixes, the A6 WT-evaluation fixes), and
+resolver-level engineering (checkpointing, timeouts) that cannot
+change an outcome's definition. \emph{Scoring.} Gates were scored
+against the locked criteria exactly as outcomes landed, and the
+exploratory label was applied per the post-run rule to everything
+outside the locked design - in this campaign, the very-high-gravity
+dynamic variant. The result is a paper in which the word ``locked''
+is always checkable: every locked quantity names the document and
+hash that locks it.
+
+\subsection{Solvers, tolerances, and numerical hygiene}
+
+All optimization used GLPK through COBRApy defaults with two declared
+exceptions: per-evaluation worker-termination timeouts (bounded, with
+the timeout register of Appendix~\ref{app:solver}), and the declared
+$10^{-14}$ noise band for relative-yield comparisons. The band's
+origin is empirical: repeated solves of identical models on identical
+data returned relative yields differing at the $10^{-15}$ scale
+across solver invocations, and the band was set an order of magnitude
+above the observed spread before any comparison was scored. Feasibility
+was taken from solver status, never from flux magnitude; the
+viability classification uses the declared $f_{\mathrm{floor}}=0.01$
+on the combined capacity factor; and collapse uses the locked 0.20
+relative-yield threshold. Flux-variability analysis fixed the
+objective at its optimum exactly (no optimality slack), so the
+forced-width criterion of A4 is conservative by construction - which
+is part of why the strict criterion failed and the directional
+criterion carries the weight it does. Every statistic that resamples
+(bootstrap CIs, the random baseline, the LHS, the splits) names its
+seed in the methods, and all seeds are single-use.
+
 \section{Results}
 \label{sec:results}
 
