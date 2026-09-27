@@ -1162,8 +1162,7 @@ candidate pool. Scalings: 36 reaction-bound multipliers
 nine-reaction list covering glycerol, glycolytic, fermentative, and
 membrane-transport nodes). Evolutionary search: three seeds, twelve
 generations, population 24, genome over the top-30 confirmed
-modifications, selection on mean DESIGN-relative yield with collapse
-penalty. The random baseline draws 150 budget-2 designs (30 seeds)
+modifications, scored by mean relative yield over the 40-environment screen sample, ranked by yield with fewest-new-collapses as the ordering tie-break. The random baseline draws 150 budget-2 designs (30 seeds)
 under identical evaluation, giving the null distribution G4(b)
 compares against. Plausibility filters were locked before outcomes:
 filter (a) excludes designs essential under the target-regime
@@ -1206,6 +1205,69 @@ the trajectory. The batch substrate-exhaustion confound was declared
 in the amendment, and the very-high-gravity variant
 (1{,}665\,mmol/L) is labeled exploratory per the post-run rule.
 
+
+
+\subsection{Search algorithms in detail}
+\label{sec:searchdetail}
+
+\paragraph{Evolutionary search.} The evolutionary arm is a
+population-based search over the confirmed-modification genome, with
+parameters locked in Amendment 4 and every evaluated design recorded
+on disk. The genome is the deduplicated union of individual
+modifications appearing in the confirmed singles, doubles, and
+scaling arms, truncated to 30 members. Initialization: 24 designs,
+each a set of 3 modifications drawn without replacement from the
+genome (seeded RNG; seeds 42, 123, 2026). Scoring: mean relative
+yield over the 40-environment screen sample, with designs ranked by
+yield and fewest-new-collapses as the ordering tie-break. Each of the
+twelve generations retains the top third of the scored population (8
+designs) as elites and breeds the remaining 16 by union
+recombination: two parents are drawn uniformly from the elite pool,
+the child is the deduplicated union of their modification sets
+truncated to 3 loci, and with probability 0.3 a random genome member
+is appended (again deduplicated and truncated), the implementation's
+mutation operator. Finalists: the top five scored designs per seed
+across the run, deduplicated, the ten best by yield advancing to
+confirmation on the 150-environment design sample. Two properties of
+this scheme matter for interpretation. First, the genome is
+restricted to modifications that already confirmed at wild-type level
+- the search explores combinations of the best available parts, which
+is exactly the space where a hidden interaction would live. Second,
+the elite-retention scheme is greedy: it cannot climb out of a flat
+fitness landscape, and the observed flatness (every generation
+scoring 1.0) means there was nothing to climb. Both are stated in
+the A5 run log alongside the engineering record (deterministic
+resume, replay-from-cache, deduplicated screen files) of
+Section~\ref{sec:stageprotocols}; the algorithm is exactly
+re-derivable from the artifacts, since every generation's evaluated
+designs and scores are on disk.
+
+\paragraph{Random baseline.} The baseline answers one question -
+``would random designs of the same size score as well?'' - and its
+construction mirrors the real arms: 150 budget-2 designs across 30
+seeds (5 per seed, seed stream offset at 10{,}000 to avoid collision
+with any campaign seed), each design either a double knockout (70\%
+of draws) or a knockout plus a reaction-bound scaling (30\%), sampled
+uniformly from the full gene universe and the locked scaling list.
+Evaluation is identical to the real arms: same 150-environment design
+sample, same fresh reference solves, same noise band. The baseline is
+not a weakened comparator: it samples the same space the screens
+searched, at the doubles' budget, scored identically. Its role in
+G4(b) is the 95th-percentile threshold a real candidate must exceed,
+and its role in interpretation is the certification of resolving
+power described in Section~\ref{sec:a5}: with 44\% of baseline
+designs scoring strictly below 1.0, an evaluation pipeline that could
+not see effects would have compressed the baseline onto 1.0 as well.
+
+\paragraph{Confirmation and TEST selection.} Confirmation is a
+re-evaluation on the wider 150-environment design sample with fresh
+reference solves; its purpose is to kill screen-sample luck before
+TEST. All confirmed candidates scored within the noise band, so the
+TEST roster was filled by the locked ordering (yield, then fewest new
+collapses) across the arms to the roster size fixed in the amendment
+- 25 candidates, kept small and enumerable so the single TEST
+evaluation could be reported exhaustively, per-candidate, in the A5
+artifacts.
 
 \subsection{Objective definitions and tolerance metrics}
 \label{sec:objectivedetail}
@@ -1907,6 +1969,56 @@ $p=0.06$. The ethanol arm was locked untestable and stayed so. All
 systematic identifiers were SGD-verified and frozen in code before
 any lookup; the frozen table is in the A7 artifact.
 
+
+\subsection{A4 in detail: the FVA subset and the regime map}
+\label{sec:a4detail}
+
+The flux-variability analysis is deliberately scoped, and the scope
+is part of the locked design. The 121-reaction subset is resolved
+deterministically: every reaction annotated to the glycolysis /
+gluconeogenesis, pyruvate-metabolism, pentose-phosphate, citric-acid
+cycle, and nitrogen-metabolism subsystems, plus an explicit
+extension list - the osmoregulatory glycerol module (eleven reactions
+spanning the GPD/GPP branch and its transport), the
+nitrogen-assimilation and exchange reactions, the ethanol exchange
+(the objective carrier), and the three constraint-carrier exchanges
+themselves, so that every constraint whose binding is scored is also
+inside the variability analysis. FVA then runs at fraction-of-optimum
+exactly 1.0 - no optimality slack - over 50 seeded environments
+(seed 777), of which 25 were solvable; the strict forced-width
+criterion calls a reaction forced when its feasible width at the
+optimum is below the locked relative tolerance ($10^{-4}$ of
+$\max(1,|\mathrm{flux}|)$). Under that criterion the ethanol cap and
+NGAM are forced in 25/25 (tautologically and vacuously, both
+declared), and no informative constraint is forced - the strict
+criterion's declared failure. The direction-aware check asks the
+weaker, lower-bound-appropriate question: does the optimum sit at the
+bound, i.e.\ is the FVA minimum equal to the bound for an uptake or
+drain constraint? For both the glucose cap and the glycerol drain the
+answer is yes in 25/25 solved environments: at the optimum the cell
+cannot take up one more unit of glucose and cannot pay one less unit
+of glycerol tax. The two criteria disagree only because ``forced''
+(for an upper-bound-typed readout) is the wrong question for
+lower-bound constraints; both are locked, both are reported, and the
+interpretation follows the mechanism rather than the criterion.
+
+The regime map gives the mechanism its labels. Each of the 199
+solvable collapsed environments is assigned to one of four locked
+regimes by its binding signature: thermal carbon starvation (49
+environments - glucose-cap-dominated signatures), osmotic carbon
+diversion (69 - glycerol-drain-dominated), ethanol detoxification
+failure (12 - ethanol-cap-dominated, declared expected by
+construction and carrying no biological weight), and multi-constraint
+collapse (69 - three or more informative constraints co-binding).
+The two biologically substantive regimes account for 118 of the 199
+solvable environments, the multi-constraint regime for another 69,
+and the by-construction regime for 12; the remaining 170 of the 369
+collapsed environments are infeasible or nonviable and carry no
+binding signature to classify. The map is the compact statement of
+co-limitation: single-mechanism collapses exist but are the minority;
+the typical collapsed environment in the hostile corner is failing
+through several carbon gates at once.
+
 \subsection{A5 arm by arm}
 
 \paragraph{Singles.} All 1{,}143 model genes were deleted under the
@@ -1943,7 +2055,7 @@ capacity and boundary obligation.
 
 \paragraph{Evolutionary search.} Three seeds, twelve generations,
 population 24, genome over the top-30 confirmed modifications,
-selection on mean DESIGN-relative yield with collapse penalty. All
+scored by mean relative yield over the 40-environment screen sample, ranked by yield with fewest-new-collapses as the ordering tie-break. All
 evolved finalists confirmed at 1.0 with zero new collapses. The
 engineering record matters here because evolution amplifies
 implementation noise: sandbox interruptions killed the runner
