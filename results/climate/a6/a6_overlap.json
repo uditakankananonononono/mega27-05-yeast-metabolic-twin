@@ -1,0 +1,98 @@
+{
+ "analysis": "A6 Section-8 deletion-screen overlap (locked metrics)",
+ "theta": 0.8,
+ "regimes": {
+  "ethanol": {
+   "temperature_c": 30.0,
+   "ethanol_pct": 8.0,
+   "osmotic_m": 0.0,
+   "nitrogen_frac": 1.0
+  },
+  "heat": {
+   "temperature_c": 39.0,
+   "ethanol_pct": 0.0,
+   "osmotic_m": 0.0,
+   "nitrogen_frac": 1.0
+  },
+  "sorbitol": {
+   "temperature_c": 30.0,
+   "ethanol_pct": 0.0,
+   "osmotic_m": 1.0,
+   "nitrogen_frac": 1.0
+  },
+  "yp20": {
+   "temperature_c": 30.0,
+   "ethanol_pct": 0.0,
+   "osmotic_m": 1.1,
+   "nitrogen_frac": 1.0
+  }
+ },
+ "wt_growth_ref": 0.5733511135347452,
+ "comparisons": [
+  {
+   "comparison": "ethanol_gse151784",
+   "universe": 705,
+   "model_sensitive": 0,
+   "dataset_hits": 604,
+   "overlap": 0,
+   "fisher_or": null,
+   "fisher_p_one_sided": 1.0,
+   "mcc": 0.0,
+   "mcc_ci95": [
+    0.0,
+    0.0
+   ],
+   "bh_fdr5_significant": false
+  },
+  {
+   "comparison": "heat_gibney2013",
+   "universe": 678,
+   "model_sensitive": 0,
+   "dataset_hits": 536,
+   "overlap": 0,
+   "fisher_or": null,
+   "fisher_p_one_sided": 1.0,
+   "mcc": 0.0,
+   "mcc_ci95": [
+    0.0,
+    0.0
+   ],
+   "bh_fdr5_significant": false
+  },
+  {
+   "comparison": "sorbitol_gse59659",
+   "universe": 1060,
+   "model_sensitive": 3,
+   "dataset_hits": 141,
+   "overlap": 0,
+   "fisher_or": 0.0,
+   "fisher_p_one_sided": 1.0,
+   "mcc": -0.020867716807138448,
+   "mcc_ci95": [
+    -0.020867716807138448,
+    0.0837175305477871
+   ],
+   "bh_fdr5_significant": false
+  },
+  {
+   "comparison": "yp20_gse59659",
+   "universe": 1060,
+   "model_sensitive": 3,
+   "dataset_hits": 146,
+   "overlap": 0,
+   "fisher_or": 0.0,
+   "fisher_p_one_sided": 1.0,
+   "mcc": -0.021292490577539958,
+   "mcc_ci95": [
+    -0.021292490577539958,
+    0.08176705285712833
+   ],
+   "bh_fdr5_significant": false
+  }
+ ],
+ "g1_overlap_clause": {
+  "n_significant_of_4": 0,
+  "passes": false
+ },
+ "runtime_s": 18.8
+}
