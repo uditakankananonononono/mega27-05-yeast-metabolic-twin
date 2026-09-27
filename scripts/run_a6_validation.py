@@ -79,8 +79,8 @@ def _worker_init():
     _REF = prepare(_MOD)
 
 
-def _growth(model, env):
-    with applied(model, env, LOCKED, _REF):
+def _growth(model, ref, env):
+    with applied(model, env, LOCKED, ref):
         model.objective = GROWTH_RXN
         sol = model.optimize()
         if sol.status != "optimal" or sol.objective_value is None:
@@ -115,8 +115,10 @@ def model_sensitivity(genes):
         if not todo:
             continue
         pool = Pool(2, initializer=_worker_init)
-        wt = _growth(_MOD, env)  # workers share CWD model state pattern
-        # WT growth under env (compute in main process once)
+        main_mod = load_model()
+        main_ref = prepare(main_mod)
+        wt = _growth(main_mod, main_ref, env)  # WT growth under env (once)
+        del main_mod, main_ref
         def restart():
             nonlocal pool
             pool.terminate(); pool.join()
