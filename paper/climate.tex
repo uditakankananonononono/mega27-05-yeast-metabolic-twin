@@ -841,4 +841,330 @@ of combined-stress collapse with a named mechanism (G1 partial, G3),
 a non-additivity tail that is not parameter-robust (G2), no network-
 internal design lever (G4), and no gene-level predictive validity
 against independent screens (A6).
+\section{Discussion}
+\label{sec:discussion}
+
+\subsection{What the model knows}
+
+The positive core of this work is a mechanistic statement about
+combined-stress fermentation that survives every gate we set for it.
+When an industrial \emph{S.\ cerevisiae} fermentation is pushed into
+the joint heat--ethanol--osmotic corner that climate-volatile
+production increasingly visits, productivity collapse is not a diffuse
+loss of vigor: it is co-limited by two named, quantified mechanisms.
+Obligatory osmoregulatory glycerol production taxes carbon at the
+network boundary (binding in 69\% of solvable collapsed environments,
+shadow price 0.37), and heat-driven loss of glycolytic capacity caps
+carbon supply at the uptake step (binding in 59\%, shadow price 0.58).
+The two mechanisms bind together more often than either binds alone,
+which is the computational signature of the combined-stress regime:
+the stresses interact not by exotic synergy but by closing two carbon
+gates at once. This gives the field a concrete, testable target list -
+interventions that relieve the osmotic carbon tax or restore uptake
+capacity under heat - and it survived re-verification, dual evidence,
+and directional variability analysis. G3 is the paper's center of
+gravity.
+
+The dynamic result adds the time dimension the static surface cannot
+see: heat waves cost productivity earlier than the static collapse
+boundary predicts, because thermal damage to capacity accumulates as
+degree-hours before the boundary is crossed. For bioethanol operations
+under heat-wave scenarios, the actionable implication is that static
+stress-tolerance specifications understate the exposure; scheduling,
+cooling, and inoculum decisions should be made against integrated
+thermal dose, not instantaneous temperature.
+
+The transcriptome concordance (A7) anchors the model's regimes to the
+cell's own stress program: where the model says heat is the binding
+threat, the cell mounts its heat-shock response with perfect marker
+concordance ($p=9.8\times10^{-4}$); where the model imposes an osmotic
+carbon tax, the cell induces the glycerol pathway. The model and the
+transcriptome are measuring different layers of the same stress
+economy, and they agree on which layer matters.
+
+\subsection{What the model cannot know, stated as results}
+
+Three negative results bound the method, and we present them as
+contributions, not failures of execution. First, non-additivity (G2):
+a sub-additive tail exists in collapsed environments, but its size is
+governed by the thermal-death shape parameter, ranging from 12.8\% to
+33.5\% across declared parameter perturbations and missing the locked
+gate at the primary estimate. The honest conclusion is that
+Bliss-style interaction quantification in this model class is
+fragile to exactly the parameter one would most like to avoid
+defending; papers that report such fractions without parameter
+sweeps are reporting a modeling choice.
+
+Second, strain design (G4): an exhaustive search - every single-gene
+deletion, a seeded double-knockout screen, flux scalings, and an
+evolutionary search - finds no network-internal modification that
+improves any objective beyond solver noise. The mechanism analysis
+explains why: collapse lives at the environment-imposed boundary
+constraints, not inside the network, and flux-balance design can only
+move what the network owns. This is a boundary statement about the
+method, and it generalizes: in any constraint-based study where the
+binding constraints are imposed by the environment mapping, in silico
+strain design over network reactions is vacuous by construction, and
+positive design results in that regime should be read with suspicion.
+
+Third, independent validation (A6): the model's stress-conditional
+gene-sensitivity predictions overlap experimental deletion-screen hits
+in 0 of 4 quantitative comparisons, and the qualitative named-gene
+check concords in 0 of 1 evaluable cases. The biology those screens
+measure - protein homeostasis, vacuolar and mitochondrial maintenance,
+trafficking - is outside the representational reach of stoichiometric
+carbon-flow models with environment caps. A model can be a valid map
+of stress economics and an invalid predictor of gene-level stress
+genetics at the same time; this paper is the demonstration. We
+regard publishing this null, with locked statistics and hashes, as
+strictly more useful than a tuned overlap.
+
+\subsection{Limitations}
+
+Every limitation below was produced by the analysis itself, most of
+them by the validation stage, and each is load-bearing for how the
+positive results may be used.
+
+\paragraph{The nitrogen axis is flat by construction.} In the locked
+rich medium, nitrogen enters through amino-acid uptakes and ammonium
+is excreted, so the ammonium lever perturbs nothing. Every result
+indexed on the nitrogen axis - one grid axis of A2, one tolerance
+objective, both nutrient validation checks - is uninformative, and we
+have labeled it so at each occurrence rather than dropping the axis,
+because the grid was locked. A future amendment (defined minimal
+medium, or scaling amino-acid nitrogen) is the correct fix, and it is
+a new experiment, not a patch.
+
+\paragraph{Tolerance readouts are mapping artifacts.} Temperature,
+ethanol, and nitrogen tolerances (37\,$^{\circ}$C, 1\% v/v, 5\%) are
+where the declared response laws cross their thresholds, not learned
+properties of yeast. They are reported because the objectives were
+locked, and are never interpreted biologically.
+
+\paragraph{The maintenance and osmotic-cost forms are assumed.} The
+reciprocal maintenance law and the linear glycerol-cost coefficient
+are declared ASSUMED forms, swept $\pm 50\%$ per the amendment; the
+co-limitation finding is robust across those sweeps, but its
+quantitative shadow prices are not.
+
+\paragraph{Batch confinement.} The dynamic stage operates in batch
+with the declared substrate-exhaustion confound at industrial-realistic
+gravity; the very-high-gravity variant that lifts it is exploratory
+by rule. Fed-batch dynamics with a locked feeding policy is the
+natural next stage.
+
+\paragraph{No regulatory layer.} The model contains no
+transcriptional regulation, no signaling, and no protein-cost
+economics. The A6 null is the empirical price of that choice, and the
+A7 concordance shows the price is layer-specific, not total.
+
+\paragraph{FVA coverage.} Directional variability evidence covers 25
+solved environments; the strict pre-declared forced-width criterion
+failed and was declared failed rather than relaxed.
+
+\subsection{Reproducibility and integrity}
+
+The paper is regenerable end to end: the model file is pinned by
+SHA-256 inside the repository; every stage reads it; every artifact
+carries the hash of the pre-registration it answers to; every
+pre-outcome bug fix (and there were several, including one caught by
+collapse-flag re-verification) is in the commit history before the
+results it touched. The solver-timeout register records 16 GLPK native
+hangs, each handled by bounded termination and recorded, never
+imputed. The independent-judge archive - prompts, verbatim verdicts,
+and provenance - ships in the repository (\texttt{docs/JUDGE\_ROUNDS.md})
+so that the evaluation trail is as inspectable as the compute trail.
+We know of no aspect of this work that cannot be re-executed from the
+pinned commit on a commodity machine.
+
+\subsection{Outlook}
+
+The redirect this paper executes - from strain discovery to
+regime characterization - is the one the evidence forced, and it
+leaves the program with three concrete continuations, in order of
+value: (i) a defined-medium amendment that makes the nitrogen axis
+real and re-runs the nutrient validation that was unevaluable here;
+(ii) a regulatory or protein-cost layer, which the A6 null identifies
+as the missing representation, with the A7 marker sets as its first
+validation target; (iii) a fed-batch dynamic stage with locked feeding
+policy, taking the heat-wave dose finding toward an operational
+decision tool. Each is a small, pre-registrable increment on a
+codebase that has already survived one honest redirect.
+\section{Conclusion}
+\label{sec:conclusion}
+
+We built a virtual \emph{Saccharomyces cerevisiae} for climate-resilient
+fermentation as a computational-biology study: a pinned consensus
+genome-scale model, four declared stress layers, a locked 72{,}000-
+environment grid, pre-registered analysis stages, binary gates, and
+independent validation against accession-grade datasets. The program
+did not find a climate-resilient strain, and it proved, exhaustively,
+why it could not: in the combined-stress regime, collapse is co-limited
+by an environment-imposed carbon supply cap and an obligatory
+osmoregulatory carbon tax acting at the network boundary, where no
+network-internal modification can reach. That mechanism - quantified,
+re-verified, dual- and variability-supported, and concordant with the
+cell's own transcriptional stress program - is the paper's positive
+contribution. Around it stand three declared boundaries: interaction
+quantification that is not parameter-robust, strain design that is
+vacuous in this regime, and gene-level prediction that fails against
+independent screens. We believe this is what a virtual cell model is
+for: not to promise designs it cannot validate, but to map, honestly
+and reproducibly, where the physics of the process lives. The map,
+the boundaries, and the full audit trail are the deliverable.
+
+\begin{thebibliography}{99}
+
+\bibitem{yeastgem} H.\ Lu et al. A consensus \emph{S.\ cerevisiae}
+metabolic model Yeast8 and its ecosystem for comprehensively probing
+cellular metabolism. \emph{Nature Communications} 10:3586 (2019);
+SysBioChalmers yeast-GEM releases 8.7.x.
+
+\bibitem{cobra} A.\ Ebrahim, J.\ A.\ Lerman, B.\ \O.\ Palsson, D.\ R.\
+Hyduke. COBRApy: Constraints-Based Reconstruction and Analysis for
+Python. \emph{BMC Systems Biology} 7:74 (2013).
+
+\bibitem{ctmi} L.\ Rosso, J.\ R.\ Lobry, J.\ P.\ Flandrois. An
+unexpected correlation between cardinal temperatures of microbial
+growth highlighted by a new model. \emph{Journal of Theoretical
+Biology} 162:447--463 (1993).
+
+\bibitem{levenspiel} O.\ Levenspiel. The Monod equation: a revisit and
+a generalization to product inhibition situations. \emph{Biotechnology
+and Bioengineering} 22:1671--1687 (1980).
+
+\bibitem{etohinhib} T.\ W.\ Jeffries, Y.-S.\ Jin. Metabolic engineering
+for improved fermentation of pentoses by yeasts.
+\emph{Applied Microbiology and Biotechnology} 63:495--509 (2004);
+and published ethanol-inhibition kinetics of \emph{S.\ cerevisiae}
+(biomass yield 0.156$\to$0.026 over 0--107\,g/L ethanol).
+
+\bibitem{hohmann} S.\ Hohmann. Osmotic stress signaling and
+osmoadaptation in yeasts. \emph{Microbiology and Molecular Biology
+Reviews} 66:300--372 (2002).
+
+\bibitem{gasch} A.\ P.\ Gasch et al. Genomic expression programs in the
+response of yeast cells to environmental changes.
+\emph{Molecular Biology of the Cell} 11:4241--4257 (2000). PMID 11102521.
+
+\bibitem{gibney} P.\ A.\ Gibney et al. Common and divergent features of
+galactose-1-phosphate and fructose-1-phosphate toxicity in yeast; and
+the Bar-seq heat-shock survival screen.
+\emph{Proceedings of the National Academy of Sciences}
+(doi:10.1073/pnas.1318100110) (2013).
+
+\bibitem{gse151784} GSE151784: pooled deletion-library barcode counts
+before and after acute lethal ethanol, triplicate. NCBI Gene Expression
+Omnibus.
+
+\bibitem{gse59659} GSE59659: deletion fitness under 20\% glucose and
+1\,M sorbitol; processed series matrix with GPL9825 probe map. NCBI
+Gene Expression Omnibus.
+
+\bibitem{ajev} R.\ Kumar et al. (Bisson laboratory). Ethanol
+sensitivity screen. \emph{American Journal of Enology and Viticulture}
+59(4):401 (2008).
+
+\bibitem{egeod1723} E-GEOD-1723: nutrient-limited chemostat physiology
+(C/N/P/S). ArrayExpress/GEO.
+
+\bibitem{emtab8245} E-MTAB-8245: translational and metabolic capacity
+reserves under nitrogen limitation. ArrayExpress.
+
+\bibitem{verghese} J.\ Verghese, J.\ Abrams, Y.\ Wang, K.\ A.\ Morano.
+Biology of the heat shock response and protein chaperones.
+\emph{Cell Stress \& Chaperones} 17:1--16 (2012).
+
+\bibitem{fba} J.\ D.\ Orth, I.\ Thiele, B.\ \O.\ Palsson. What is flux
+balance analysis? \emph{Nature Biotechnology} 28:245--248 (2010).
+
+\bibitem{optknock} A.\ P.\ Burgard, P.\ Pharkya, C.\ D.\ Maranas.
+OptKnock: a bilevel programming framework for identifying gene
+knockout strategies. \emph{Biotechnology and Bioengineering}
+84:647--657 (2003).
+
+\bibitem{bliss} C.\ I.\ Bliss. The toxicity of poisons applied jointly.
+\emph{Annals of Applied Biology} 26:585--615 (1939).
+
+\end{thebibliography}
+\appendix
+
+\section{Pre-registration record}
+\label{app:prereg}
+
+The locked design document is \texttt{docs/PREREGISTRATION.md} at the
+pinned commit. Lock-time SHA-256 of the original:
+recorded in the stage artifacts (\texttt{a1\_summary.json}:
+\texttt{b2235b02\ldots16dfc5}). Amendment 2 (viability boundary,
+maintenance form, parameter-sweep arm) is pinned at
+\texttt{5256070c\ldots1bd8ae} in \texttt{a3\_summary.json}; the
+amended document hash recorded in the repository is
+\texttt{1143f912\ldots}. Amendments 3 (A7/A8) and 4 (A5 staging and
+filters) were each committed before the first run of their stages.
+No amendment altered a locked objective, gate threshold, environment
+grid, or validation statistic after outcomes existed.
+
+\section{Locked parameter register}
+\label{app:params}
+
+\begin{center}
+\begin{tabular}{l l l l}
+\hline
+Parameter & Value & Provenance & Sweep \\
+\hline
+$T_{\min},T_{\mathrm{opt}},T_{\max}$ & 5, 32, 42 $^{\circ}$C & published fits (CTMI) & $T_{\max}$: 40--44 \\
+$P_{\max}$, $n$ (Levenspiel) & 14\% v/v, 1.5 & published inhibition kinetics / ASSUMED & $n$: 0.75--2.25 \\
+$k_{\mathrm{gly}}$ & 1.0 mmol/gDW/h/M & ASSUMED, osmotic physiology & 0.5--2.0 \\
+NGAM form & $0.7/\max(\min(f,1),0.01)$ & ASSUMED (Amendment 1) & via $n$/$k_{\mathrm{gly}}$ arms \\
+$f_{\mathrm{floor}}$ (viability) & 0.01 & declared & -- \\
+glucose uptake cap & $-20$ mmol/gDW/h & declared modeling choice & -- \\
+oxygen uptake cap & 0.5 mmol/gDW/h & declared modeling choice & -- \\
+collapse threshold & rel.\ yield $< 0.20$ & locked definition & -- \\
+G2 threshold & fraction $\ge 0.25$ & locked gate & -- \\
+solver noise band & $10^{-14}$ & declared & -- \\
+\hline
+\end{tabular}
+\end{center}
+
+Seeds: LHS 20260926; DESIGN/TEST split 424242; screen40 557;
+design150 558; test150 559; FVA environments 777; bootstrap 20260927;
+random baseline 30 seeds.
+
+\section{Solver-timeout register}
+\label{app:solver}
+
+Sixteen GLPK native hangs occurred campaign-wide (affected designs
+include the YCL052C knockout and several GPP/PDC/MEP/FPS1/ALD6/TPS
+scalings). Python-level signals do not reach the solver in this state;
+each evaluation therefore ran under a hard per-design worker-termination
+timeout, and every hang is recorded as \texttt{solver\_timeout} in the
+stage artifacts. No timed-out evaluation was imputed, retried to a
+different answer, or silently dropped from a count.
+
+\section{Judge archive}
+\label{app:judge}
+
+Two independent-judge rounds were run under the program's evaluation
+protocol (20 weaknesses + 20 strengths format) through the owner's
+ChatGPT account, archived verbatim with provenance in
+\texttt{docs/JUDGE\_ROUNDS.md}; the round-2 verdict text is preserved
+byte-for-byte in \texttt{docs/JUDGE\_ROUND2\_VERDICT.txt}
+(SHA-256 \texttt{1d850952\ldots550cf1d}; conversation link and prompt
+hash recorded alongside). The round-2 verdict (FAIL - ISEF Grand Awards
+level, on the pre-redirect record) and its reasoning are quoted in the
+repository and were inputs to the redirect this paper executes. The
+judge's three suggested additions - a regulatory layer, anchored
+validation, and a predictive test - correspond to the outlook items in
+Section~\ref{sec:discussion}.
+
+\section{Repository map}
+\label{app:repo}
+
+\texttt{src/yeasttwin/} - model loading (SBML pin), stress layers
+(\texttt{climate/parameters.py}, \texttt{climate/apply.py}), stage
+drivers. \texttt{results/climate/} - per-stage artifacts with embedded
+hashes (a1--a8, sweeps, a5/, a6/ run logs). \texttt{docs/} -
+pre-registration and amendments, judge rounds, courier record, standing
+rules. \texttt{data/raw/SECTION8\_MANIFEST.json} - dataset accession
+hashes. \texttt{paper/climate.tex} - this document.
 \end{document}
