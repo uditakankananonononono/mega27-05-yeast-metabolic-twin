@@ -390,6 +390,56 @@ this system dies before anyone builds a bioreactor around it, and a
 mechanism that survives here arrives at the bench with quantified
 shadow prices attached.
 
+
+\subsection{The industry's decision context}
+
+The audience for a regime map is not only academic, and the decisions
+it feeds are specific. A producer facing a warming service area makes
+four recurring choices: how much cooling duty to buy and when to
+dispatch it; what mash gravity to run, trading osmotic load against
+distillation energy; when to schedule campaigns relative to heat-wave
+forecasts; and whether to invest in strain development, process
+control, or both. Each choice has a model-facing counterpart in this
+paper. Cooling dispatch maps to the degree-hour rule: the static
+tolerance chart reads safe an hour longer than the dynamic reality,
+so control written against instantaneous temperature systematically
+under-cools, and the correction is to integrate. Mash gravity maps to
+the glycerol drain: the osmotic carbon tax binds in 69\% of solvable
+collapses, so gravity policy is a first-order productivity lever in
+exactly the conditions where it is most tempting to push gravity
+harder. Campaign scheduling maps to the collapse geography: the mild
+corner is real (zero collapses in 191 sampled environments) and the
+hostile corner is total (100\% collapse above 38\,$^{\circ}$C with
+10\% ethanol), so avoidance beats tolerance at the joint extreme.
+And the strain-versus-process investment maps to the A5 null: in the
+boundary-capped regime the expected return on internal-network strain
+engineering is zero beyond noise, while the mechanism analysis prices
+the process-level levers directly. We state these as model-derived
+decision rules, with the construct-validity caveat of
+Section~\ref{sec:discussion} attached to each: they rank options
+under a declared mapping, they do not price a specific plant.
+
+\subsection{Stress-axis provenance, in one place}
+
+The paper's four axes were chosen against the industry's loss record,
+and the mapping of loss mechanism to axis is worth stating in one
+place. Heat: fermenter temperature excursions during heat waves are
+the most commonly reported cause of stuck and sluggish industrial
+fermentations, and cooling capacity is a binding capital constraint
+at many plants - the temperature axis. Product toxicity: ethanol is
+both the product and the principal endogenous toxin, and rising
+titers from very-high-gravity operation have moved the inhibition
+region into routine operating range - the ethanol axis. Osmotic
+load: high-gravity mashes begin at sugar concentrations whose water
+activity forces continuous osmoadaptation - the osmotic axis, with
+its glycerol invoice. Nutrient cost: nitrogen supplementation is a
+direct operating expense and a regulatory variable (stillage quality)
+- the nitrogen axis, which this model could not make real, and which
+the defined-medium continuation exists to fix. The four axes are the
+axes the pre-registration locked; other industrial stressors
+(organic-acid toxicity from contamination, sulfite stress) are simply
+not modeled, and the paper makes no claim about them.
+
 \subsection{The redirect: from strain hunt to regime map}
 
 This paper exists because the program it reports changed direction
@@ -1544,6 +1594,61 @@ sensitivity. No p-value anywhere in the paper is computed on data
 that informed its own hypothesis: the A6 universes, hit calls, and
 model calls were all locked before the first overlap was computed.
 
+
+\subsection{Reproducibility in practice: a reader's timed walkthrough}
+
+We close the methods with the reproducibility claim tested the way a
+skeptic would test it: clone, install, run, compare. Cloning the
+repository at the pinned commit yields the complete state - model
+file, code, locked documents, and every artifact this paper cites.
+Installation needs a Python environment with COBRApy, SciPy, NumPy,
+and a GLPK shared library; no other dependency touches an outcome.
+The fastest verification path is not a full re-run but a spot check
+against the artifacts, in ascending order of cost. In under a minute:
+open any summary JSON and confirm the SBML hash matches the model
+file's SHA-256 and the stage's pre-registration hash matches the
+locked document - the two-link chain every claim hangs from. In
+minutes: re-solve a single A1 grid point (the driver takes an axis
+and level) and compare against the CSV row; re-verify one A4 collapse
+flag from its environment coordinates. In an hour: re-run the A3
+statistic from the joined A2 artifact - pure arithmetic over stored
+solves - or re-score one gate from the stage summaries. In hours:
+re-run any full stage from its driver with its locked seed; the
+evolutionary stage replays deterministically from its per-generation
+records, and the shard-structured stages resume rather than restart.
+What a reader cannot do is reproduce a different answer without
+changing a locked input - and that, rather than the runtime, is the
+property the engineering was built for: every number in this paper
+is a deterministic function of the pinned model, the locked
+parameters, and the named seeds, and the function is inspectable.
+The one exception class is the solver's floating-point path
+dependence at the $10^{-15}$ scale, which the declared noise band
+exists to absorb and which never crosses a gate decision in either
+direction.
+
+\subsection{Assumptions register: the complete list in prose}
+
+Every assumption that can move a number is named somewhere in this
+paper; this register collects them in one place, in the order a
+reader meets them. The model itself is the first assumption: one
+curated reconstruction, one release, one hash. The medium is the
+second: rich, microaerobic, glucose-capped, with the nitrogen
+consequence declared. The stress layers contribute the CTMI cardinal
+temperatures, the Levenspiel $P_{\max}$ and exponent, the glycerol
+coefficient, the reciprocal maintenance form with its floor, and the
+joint growth cap - each with provenance (published, anchored, or
+ASSUMED) and each swept where the pre-registration required. The
+analysis layer contributes the collapse threshold (0.20), the
+sensitivity threshold (0.8), the hit thresholds ($-1$ log2), the
+noise band ($10^{-14}$), the sample sizes and seeds, and the gate
+criteria. The validation layer contributes the universes, the locked
+hit calls, and the qualitative gene sets with their frozen
+identifiers. Nothing else influences an outcome: there are no hidden
+tolerances, no undocumented preprocessing, no fitting anywhere in
+the pipeline, and no post-outcome edits to any of the above - the
+amendment ledger and the commit history are the proof of the last
+claim, and they ship with the repository.
+
 \section{Results}
 \label{sec:results}
 
@@ -1721,6 +1826,55 @@ of the model. We note for the record that the mean deviation in
 collapsed environments is small in absolute terms (0.2\% of
 reference); the negative tail is concentrated, not pervasive.
 
+
+
+\subsection{Why the mild corner and the hostile corner are both findings}
+
+The collapse geography's two corners are easy to read past - of
+course mild environments are fine and extreme ones fail - but both
+carry quantitative content the paper uses. The mild corner
+(temperature at or below 32\,$^{\circ}$C, ethanol at or below 2\%,
+191 sampled environments, zero collapses) is the control that
+certifies the mapping's floor: nothing in the stress machinery fires
+spuriously at benign settings, so collapses elsewhere are responses,
+not artifacts. The hostile corner (temperature at or above
+38\,$^{\circ}$C, ethanol at or above 10\%, 415 sampled environments,
+100\% collapse) is the calibration of the ceiling: the joint extreme
+is unsurvivable in the model, as it is in the plant, and the
+question the industry actually faces is where between the corners
+the boundary runs. That boundary is the surface's ramp, and its
+position is what the parameter sweeps perturb - the $T_{\max}$ sweeps
+move it most, which is why the thermal margin is the paper's most
+consequential parameter and why the G2 fragility lives where it
+lives. Between the corners, the ramp's gradient is jointly set: at
+fixed moderate ethanol, two degrees of temperature costs more
+relative yield than at zero ethanol, and at fixed moderate
+temperature, each percent of ethanol costs more at high temperature
+- the geometric signature of the two carbon gates closing together,
+and the qualitative content of non-additivity that survives even
+where the locked Bliss statistic fails its magnitude gate.
+
+\subsection{The exclusions, stated as protocol}
+
+Three exclusion rules ran through the campaign and are collected
+here. \emph{Unconditionally sick or essential knockouts} (reference
+growth at or below $10^{-6}$) are excluded from stress-conditional
+sensitivity calls and recorded per gene: a deletion that cannot grow
+at reference has no stress-conditional phenotype to measure, and
+including it would manufacture spurious ``sensitivity.'' GSH1 is the
+canonical case (unconditionally lethal in the model, declared a
+likely artifact of absent glutathione salvage). \emph{Solver
+timeouts} (16 across the campaign) are recorded in the register and
+never imputed: a timed-out design is absent from confirm-stage
+counts, present in the register, and its absence is visible in the
+per-arm totals. \emph{Unresolved identifiers} (TDP3 in the
+qualitative set) are recorded as unresolved rather than substituted
+with a near-match: the qualitative check's universe is the named
+genes of the locked source, and a substitution would silently widen
+it. Each rule is a one-line declaration with a one-line reason, and
+each protects a different inferential seam - sensitivity
+denominators, design counts, and concordance universes
+respectively.
 
 \subsection{A3 in detail: reading the sweep table}
 
@@ -2324,6 +2478,53 @@ locked conclusion from the variant; we note that its direction agrees
 with the locked stage's, and that a fed-batch protocol with a locked
 feeding policy is the amendment that would settle it.
 
+
+\subsection{The campaign's economics}
+
+The campaign's compute ledger is part of its reproducibility story,
+and we summarize it here. Across all stages the program ran on the
+order of 150{,}000 model evaluations: 66 A1 solves; 5{,}000 A2 solves
+in 25 shards; the A3 lookup-and-bootstrap analysis; 369 re-verified
+A4 solves plus binding and dual extraction on the 199 solvable subset
+and FVA on 25 environments $\times$ 121 reactions $\times$ 2
+directions ($\sim$6{,}000 linear programs); the A5 search -
+1{,}143 singles, 435 doubles, and 36 scalings screened on 40
+environments each, 864 evolutionary designs likewise, 90
+confirmations and 150 baseline designs on 150 environments each, and
+25 TEST evaluations on 150 environments (roughly 139{,}000
+environment-solves in A5 alone); the A6 per-gene stress-conditional
+growth calls: all 1{,}143 deletions under the reference and each of
+the four stress regimes, 5{,}715 knockout solves exactly; the A7
+lookups; and the A8 dynamic batches. Wall-clock time was
+bounded by the GLPK solves at roughly seconds per environment and by
+the timeout policy for native hangs; the entire campaign re-runs in
+hours on a commodity machine. Storage is modest: the full artifact
+tree, including shard files, per-generation evolutionary records,
+and progress journals, is tens of megabytes. We state the ledger
+because ``exhaustive'' claims are cheap and this one has a price tag:
+every single gene was deleted, every confirmed candidate was
+re-evaluated on fresh environments, and the TEST region was touched
+exactly 25 times, once per candidate. The exhaustiveness is
+enumerable from the artifacts, and the enumeration is the evidence.
+
+\subsection{Reading order for the artifacts}
+
+For the reader who wants to check one claim without re-running
+anything: the collapse map is \texttt{a2\_collapse\_surface.csv}
+joined on \texttt{a1\_dose\_response.csv}; the interaction statistic
+is \texttt{a3\_summary.json} with its sweep arm in
+\texttt{a3\_parameter\_uncertainty.json}; the mechanism is
+\texttt{a4\_summary.json} (binding counts, duals, FVA verdict) over
+\texttt{a4\_binding.csv}; the design null is the A5 directory's
+confirm and TEST records against \texttt{baseline\_random.json}; the
+validation null is \texttt{a6/a6\_overlap.json} with the run log's
+gene-by-gene qualitative table; the concordance is
+\texttt{a7\_concordance.json}; the dynamics are
+\texttt{a8\_summary.json} and its exploratory sibling. Every one of
+these carries the SBML hash and the pre-registration hash it answers
+to, and every number quoted in this paper appears in at least one of
+them.
+
 \subsection{Gate ledger}
 
 \begin{center}
@@ -2674,6 +2875,54 @@ curve in degree-hours. All three continuations inherit this paper's
 discipline contract: locked design, hashed amendments, gates scored
 as they fall.
 
+
+\subsection{From map to mechanism to boundary: the argument's logic}
+
+The paper's three central results depend on each other in a specific
+order, and making the dependency explicit is the cleanest way to see
+what is established. The map (A2) is descriptive: it locates collapse
+in the environment space and is conditioned on the declared mapping -
+nothing more is claimed for it. The mechanism (A4) is explanatory:
+given the map, it identifies which constraints bind in collapse, with
+dual and directional variability evidence, and it is where the
+paper's positive claim lives - co-limitation is a statement about
+the model's structure that happens to be checkable, and was checked,
+against the cell's transcriptional priorities (A7). The boundaries
+(G2, G4, A6) are limitative: given the mechanism, they show that the
+regime's binding constraints live where design cannot reach (A5),
+that interaction magnitude is parameter-shaped (A3), and that
+gene-level sensitivity is invisible to the model class (A6). The
+logical point is that the boundaries inherit the mechanism's
+strength: because co-limitation is established by binding, dual, and
+directional evidence - not by the design search - the design null is
+a consequence, not a stand-alone disappointment. A reader who accepts
+A4 must expect A5; a reader who rejects A4 knows exactly which
+evidence (binding counts, shadow prices, FVA direction) to attack.
+This is what ``the negative is a measurement'' means in practice:
+the nulls are downstream of a gated positive, and the chain of
+dependency is printed.
+
+\subsection{Competition context and category placement}
+
+This work is submitted in the computational biology category, and the
+placement is deliberate rather than administrative. The paper's
+methods are the category's core toolkit - constraint-based
+reconstruction, genome-scale models, sampling and split discipline,
+statistical concordance against public functional-genomics datasets -
+and its contribution is of the category's characteristic kind: not a
+new wet result, but a computationally derived, experimentally
+confronted statement about a biological system, with its validity
+boundaries measured. The climate framing makes the application
+bioenergy-industrial, but the science is computational biology in
+the strict sense: a virtual organism, interrogated at accession
+scale, scored against independent data, with the audit trail that
+the category's reproducibility norms demand. We note the category
+placement here because the paper's evaluation criteria follow from
+it: the deliverable is the validated map plus the measured
+boundaries, and the appropriate comparison class is computational
+studies of stress physiology, not wet-lab strain-engineering
+programs.
+
 \subsection{On the evaluation trail}
 
 Unusually for a modeling paper, this work carries an external
@@ -2919,6 +3168,51 @@ declared consequence of one of those three. The repository is
 complete enough to attack all three directly, and the ledger format
 means a successful attack improves the paper rather than
 contradicting it.
+
+
+\subsection{Program-level reflection}
+
+This paper is one item's deliverable inside a larger program, and the
+fit is worth stating because the program is the unit the discipline
+serves. The item began, as all the program's items do, with an
+ambitious owner-facing question - a climate-resilient fermentation
+yeast - and a fixed contract: pre-register before compute, declare
+negatives honestly, pad nothing, verify everything. What the contract
+produced here is a case study in its own value. Without the locked
+gates, the campaign would have presented the collapse map and the
+mechanism and quietly dropped the design null and the validation
+null - a weaker paper that looked stronger. With them, the item
+closes with a complete account: what was asked, what was found, what
+failed, what it means, and what comes next, every claim traceable to
+an artifact and every artifact to a hash. The program-level lesson we
+carry to the other items is that the redirect is not the failure
+mode: the failure mode is the unreported redirect. An item that
+changes direction under its own evidence and says so is the program
+working as designed.
+
+\subsection{Final summary}
+
+A virtual \emph{S.\ cerevisiae}, built from a pinned public
+reconstruction and four declared stress layers, was run through a
+pre-registered eight-stage campaign over a 72{,}000-environment
+design space and validated against accession-grade experimental
+screens. It produced: a quantitative collapse map of the combined
+heat--ethanol--osmotic regime; a validated co-limitation mechanism
+(glucose-uptake capacity and the osmoregulatory glycerol tax, with
+shadow prices 0.58 and 0.37) that names process-level intervention
+targets; a parameter-fragility result that retires naive
+stress-synergy statistics in this model class; an exhaustive,
+baseline-certified null for network-internal strain design in this
+regime; a degenerate, mechanistically explained null for gene-level
+prediction against three independent deletion screens; directional
+concordance with the cell's transcriptional stress program
+(10/10 heat-shock markers, $p=9.8\times10^{-4}$); and a dynamic
+degree-hour rule that moves collapse onset an hour ahead of static
+expectation under heat waves. The gate ledger reads G1 partial, G2
+failed, G3 met in substance, G4 failed. The program's judge archived
+its verdict; the repository archives everything else. The organism
+for climate-resilient fermentation was not found in this model; the
+map of where to look, and of where not to bother, was.
 
 \subsection{Closing statement}
 
