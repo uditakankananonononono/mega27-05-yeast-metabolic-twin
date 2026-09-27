@@ -36,9 +36,11 @@
     "gse59659/GSM1442008_YPD5-WT2_vs_SORB-WT2.txt.gz": "b18e18ac9a5dafdb8e28fe13930fddf05508b39cbf58cc31bc4c725d8c69a721",
     "gse59659/GSM1442009_SORB-WT3_vs_YPD5-WT3.txt.gz": "581afd11f1f45e6fa8afedf088ed5a51991e38bbe1a5fd4a89fda4ea9aebb619",
     "gse59659/GSM1442010_YPDG-WT2_vs_YP20-WT2.txt.gz": "77b0da688daf61ff7c8861bb1a398fedb607b121ec83f52d8a60ac8e9e451281",
-    "gse59659/GSM1442011_YP20-WT3_vs_YPDG-WT3.txt.gz": "caba05465c7a761a6acf65c7a6ec431e93f84eb46e3eaf8d4911a62587271bae"
+    "gse59659/GSM1442011_YP20-WT3_vs_YPDG-WT3.txt.gz": "caba05465c7a761a6acf65c7a6ec431e93f84eb46e3eaf8d4911a62587271bae",
+    "gse59659/GSE59659_series_matrix.txt.gz": "6d08272d504e56ab09cc63f73340061fff5df334e92af6e0fd19601a9c3372b7"
    },
-   "status": "PARTIAL: GEO RAW holds raw GPR array scans, not processed fitness values; processed values still needed (GEO series matrix or SGD S000128535 download)"
+   "status": "complete: series matrix = processed log2 fitness ratios (YPS rep1/2, YP20 rep1/2) per Agilent probe; GPL9825 annotations map probe->ORF",
+   "processed_source": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE59nnn/GSE59659/matrix/GSE59659_series_matrix.txt.gz"
   }
  }
 }
