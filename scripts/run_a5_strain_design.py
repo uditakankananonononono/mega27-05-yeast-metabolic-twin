@@ -120,9 +120,7 @@ def eval_design_on_envs(model, ref, mods, envs, wt_vals):
             with model:
                 apply_mods(model, mods)
                 model.objective = ETHANOL_EX
-                sol = model.optimize()
-                v = float(max(sol.objective_value, 0.0)) \
-                    if sol.status == "optimal" else 0.0
+                v = float(max(model.slim_optimize(error_value=0.0), 0.0))
         if wt > 0:
             ratios.append(v / wt)
             if v < 0.2 * wt:
@@ -229,17 +227,33 @@ def load_wt():
 
 
 def screen(mods_list, envs, wt_vals, tag):
+    """Resume-safe: completed designs are kept in screen_<tag>.json and
+    skipped on re-run; the file is rewritten after every batch."""
     t0 = time.time()
-    args = [(m, envs, wt_vals) for m in mods_list]
-    with Pool(2, initializer=_worker_init) as pool:
-        rows = pool.map(_screen_one, args, chunksize=4)
-    rows.sort(key=lambda r: (-r[1], r[2]))
-    ser = [dict(mods=r[0], mean_rel=r[1], new_collapses=r[2]) for r in rows]
-    with open(OUT / f"screen_{tag}.json", "w") as fh:
-        json.dump(ser, fh)
-    print(f"screen {tag}: {len(rows)} designs {time.time()-t0:.0f}s; "
-          f"top: {rows[0][0]} rel={rows[0][1]:.4f}")
-    return rows
+    fp = OUT / f"screen_{tag}.json"
+    done = {}
+    if fp.exists():
+        for r in json.load(open(fp)):
+            done[json.dumps(r["mods"])] = r
+    todo = [m for m in mods_list if json.dumps(m) not in done]
+    rows = list(done.values())
+    batch = max(1, len(todo) // 6)
+    for i in range(0, len(todo), batch):
+        part = todo[i:i + batch]
+        args = [(m, envs, wt_vals) for m in part]
+        with Pool(2, initializer=_worker_init) as pool:
+            got = pool.map(_screen_one, args, chunksize=2)
+        rows.extend(dict(mods=r[0], mean_rel=r[1], new_collapses=r[2])
+                    for r in got)
+        with open(fp, "w") as fh:
+            json.dump(rows, fh)
+    rows.sort(key=lambda r: (-r["mean_rel"], r["new_collapses"]))
+    with open(fp, "w") as fh:
+        json.dump(rows, fh)
+    out = [(r["mods"], r["mean_rel"], r["new_collapses"]) for r in rows]
+    print(f"screen {tag}: {len(rows)} designs ({len(todo)} new) "
+          f"{time.time()-t0:.0f}s; top: {out[0][0]} rel={out[0][1]:.4f}")
+    return out
 
 
 def stage_singles(chunk, nchunks):
@@ -340,8 +354,11 @@ def main():
         subs = load_subsamples()
         wt, _, _ = load_wt()
         rows = []
-        for c in range(8):
-            rows.extend(json.load(open(OUT / f"screen_singles_{c}.json")))
+        for fp in sorted(OUT.glob("screen_singles_*.json")):
+            rows.extend(json.load(open(fp)))
+        n_genes = len(load_model().genes)
+        if len(rows) < n_genes:
+            raise SystemExit(f"singles incomplete: {len(rows)}/{n_genes}")
         rows.sort(key=lambda r: (-r["mean_rel"], r["new_collapses"]))
         top = [r["mods"] for r in rows[:60]]
         confirm(top, subs["design150"], wt, "singles_conf")
