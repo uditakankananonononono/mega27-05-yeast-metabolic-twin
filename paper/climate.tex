@@ -1514,6 +1514,90 @@ require counting it, and we score G4 failed because the same locked
 rules require passing to mean something.
 
 
+
+\subsection{A2 numbers walk: from 5{,}000 environments to a surface}
+
+The collapse surface is built from exactly 5{,}000 solves, and its
+construction is fully enumerable. Each of the 25 shards of 200
+environments was solved independently; the joined artifact carries,
+per environment, the four axis values, the absolute maximal ethanol
+exchange, the feasibility flag, the relative yield, the collapse
+flag, and the SBML hash - no derived quantity is stored without its
+inputs. Of the 5{,}000 solves, 1{,}857 returned relative yield below
+the locked 0.20 threshold. The complement - 3{,}143 productive
+environments - is itself structured: productivity above 90\% of
+reference occupies the mild corner and a wedge extending to moderate
+ethanol at low temperature, and the 0.5--0.9 band forms the
+transition ramp the interaction analysis of A3 then interrogates.
+The surface's three boundary types - smooth ramp along each single
+axis, knee where the thermal and ethanol ramps meet, and a hard
+infeasibility wall at the joint extreme - are the geometric content
+of the co-limitation mechanism before any dual analysis: two
+independent carbon gates produce a surface with a knee, and a single
+gate would have produced a smooth diagonal.
+
+The deterministic subsample used downstream (every fifth environment,
+369 collapsed of 1{,}000 sampled at nominal parameters) preserves
+this structure by construction, and the A4 re-verification - every
+subsampled flag re-solved from scratch, 0 mismatches - means the
+bottleneck counts inherit no stale-solver state. We note the one
+incident in this pipeline because the paper's discipline requires
+it: an early version of the subsample mapping misaligned environment
+indices between shards; the mandatory re-verification pass caught it
+before any analysis ran on the misaligned set, the fix was committed
+pre-outcome, and the incident is recorded in the A4 run log. This is
+what the re-verification step is for, and it is why it is mandatory
+rather than optional.
+
+\subsection{A4 numbers walk: binding counts and their denominators}
+
+The bottleneck counts are quoted with three different denominators in
+the literature of this kind of analysis, and we fix ours explicitly.
+Over all 369 re-verified collapsed environments: ethanol cap binds
+197 (53\%), glycerol drain 138 (37\%), glucose cap 118 (32\%), growth
+cap 39 (11\%). Over the 199 environments that solve to an optimum
+(the denominator that matches the intervention question - what would
+relaxing this constraint buy?), the same counts read 197 (99\%), 138
+(69\%), 118 (59\%), 39 (20\%). The paper quotes the second set as the
+headline because it is the actionable one, and gives the first here
+for completeness. The binding-set clusters tell the co-limitation
+story directly: the largest single cluster is ethanol-cap +
+glycerol-drain (66 environments), the second is glucose-cap +
+ethanol-cap + glycerol-drain (49), the third glucose-cap +
+ethanol-cap (34); the three-way and four-way co-binding clusters
+account for the majority of the solvable collapsed set. Isolated
+binding - a single constraint alone - is the minority case, which is
+the quantitative sense in which collapse in this regime is a joint
+phenomenon: not two stresses happening to coincide, but two carbon
+gates closing on the same objective in the same environments.
+
+The dual evidence deserves its numbers stated plainly. When the
+glucose cap binds, its mean reduced cost is $-0.576$ (the sign
+convention of the minimization dual; magnitude 0.58 ethanol per unit
+uptake capacity). When the glycerol drain binds, mean shadow price
+0.367. The growth cap's shadow price is exactly 0.0 in every
+environment where it binds - degenerate binding, the constraint
+active but worthless at the margin, which is why we never list the
+growth cap as an intervention target despite its presence in 39
+environments. The ethanol cap's uniform shadow price of 2.0 is the
+objective-carrier tautology (relaxing the cap on the objective
+reaction yields the objective at unit rate per the locked scaling)
+and is excluded from interpretation by declaration.
+
+\subsection{A7 numbers walk: the marker table}
+
+The concordance counts, for the record: arm A (glycerol
+biosynthesis), 4 markers, GPD1 $+2.40$, GPD2 $-0.01$, GPP1 $+1.32$,
+GPP2 $+2.70$ log2 at 30\,min post 1\,M sorbitol shock - 3/4
+agreeing, $p=0.31$. Arm B (heat-shock proteins), 10 markers, HSP12
+$+6.9$, HSP26 $+3.1$, and the remaining eight (HSP30, HSP42, HSP78,
+HSP82, HSP104, SSA3, SSA4, STI1) all positive - 10/10,
+$p=9.77\times10^{-4}$. Arm C (glycolysis), 14 markers, 9 induced,
+$p=0.21$. Arm D (nitrogen-catabolite targets), 7 markers, 6 induced,
+$p=0.06$. The ethanol arm was locked untestable and stayed so. All
+systematic identifiers were SGD-verified and frozen in code before
+any lookup; the frozen table is in the A7 artifact.
+
 \subsection{A5 arm by arm}
 
 \paragraph{Singles.} All 1{,}143 model genes were deleted under the
@@ -1716,6 +1800,30 @@ post-run rule: there the confound lifts, the heat wave's dynamic onset
 diverge (7.48\% vs 11.52\% v/v). The exploratory label stands;
 Section~\ref{sec:discussion} draws no locked conclusion from it.
 
+
+
+\subsection{A8 numbers walk: two trajectories, one dose}
+
+The locked batch runs, stated end to end. Control (isothermal
+30\,$^{\circ}$C, 111\,mmol/L initial glucose, 0.1\,gDW/L inoculum,
+1\,L): biomass reaches 2.79\,gDW/L by hour 16, ethanol 229\,mmol/L
+(1.34\% v/v), glucose fully consumed, final ethanol flux zero -
+substrate-limited from 6.5\,h onward, the declared confound in its
+purest form. Heat wave (the locked seven-phase profile): biomass
+2.85\,gDW/L, ethanol 241\,mmol/L (1.41\%), glucose likewise
+exhausted, but the trajectory differs where it matters - dynamic
+collapse onset at 8.0\,h against the static surface's 9.0\,h
+prediction along the same path, after 7.4 degree-hours above
+37\,$^{\circ}$C out of an eventual 22.9, and a recovery deficit of
+1.0 at batch end: production never rejoins the control's trajectory
+after the wave passes. The exploratory very-high-gravity variant
+(1{,}665\,mmol/L, labeled post-run) lifts the substrate confound:
+control reaches 23.5\,gDW/L and 11.52\% v/v with fermentation still
+active at hour 16, while the heat-wave arm stalls at 14.7\,gDW/L and
+7.48\% with dynamic onset at 8.75\,h - again ahead of its static
+9.0\,h prediction. The consistency of the one-hour gap across both
+gravities is the exploratory hint that the degree-hour rule, not the
+batch detail, carries the finding.
 
 \subsection{A8 in detail: reading a heat wave as an integral}
 
@@ -2170,6 +2278,53 @@ independent screens. We believe this is what a virtual cell model is
 for: not to promise designs it cannot validate, but to map, honestly
 and reproducibly, where the physics of the process lives. The map,
 the boundaries, and the full audit trail are the deliverable.
+
+
+\subsection{What we would tell a producer, a modeler, and a reviewer}
+
+\emph{To the producer.} Your enemy in a heat wave is the integral,
+not the peak. The model's most operational number is the one-hour gap
+between dynamic collapse and the static boundary: a campaign run to
+the edge of a static tolerance chart is, in model terms, already
+failing before the chart says so. Cooling and feed decisions made
+against accumulated thermal dose are the cheap win; strain
+replacement is not the lever this analysis supports, and mash
+osmolarity management is the underrated one, because the glycerol tax
+binds in two of three solvable collapse scenarios.
+
+\emph{To the modeler.} Boundary-imposed stress mappings are
+self-certifying in a way network models are not: they produce clean
+dose responses by construction, and every strain-design question
+posed to them returns the boundary's answer. If your collapse
+constraints are exchange bounds, your design stage is vacuous before
+it runs - check where your constraints live before you budget the
+search. And validate at the layer you claim: our process-level model
+passes process-level checks and fails gene-level ones totally, and
+both results were knowable only because both were run.
+
+\emph{To the reviewer.} The three things most worth your skepticism
+are the thermal margin (it moves a gate), the maintenance form (it is
+assumed), and the FVA coverage (it is thin). Everything else in the
+paper is either a locked definition, an artifact-backed number, or a
+declared consequence of one of those three. The repository is
+complete enough to attack all three directly, and the ledger format
+means a successful attack improves the paper rather than
+contradicting it.
+
+\subsection{Closing statement}
+
+The program this paper belongs to began by asking a virtual yeast to
+design its own successor. It ends - for now - with something we judge
+more valuable: a validated map of where fermentation productivity
+lives and dies under the combined stresses of a warming production
+environment, a quantified mechanism with named intervention targets,
+an exhaustive demonstration of where the current method class cannot
+go, and a public ledger in which every one of those claims carries
+its evidence and its caveat on its face. The climate problem the
+program started from has not gotten smaller. The tool this paper
+delivers for it is not a strain; it is the knowledge of which levers
+exist, which do not, and what it would take to build the ones that
+should. That is the virtual yeast's first honest answer.
 
 \begin{thebibliography}{99}
 
