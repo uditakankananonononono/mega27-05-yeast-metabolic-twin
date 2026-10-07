@@ -23,14 +23,14 @@ genome-scale FBA + graph deep learning on the consensus yeast model
   locked-gate CV harness, over-rescue auditor, strain-design scans
 - `data/raw/` — SBML fixture, gold labels, sequences (all in-repo, hermetic)
 - `results/` — every number in the paper, as CSV/JSON
-- `tests/` — 11 hermetic tests (no network)
+- `tests/` — 76 hermetic test functions (no network)
 - `scripts/` — scan runners, figure/table generators
 - `paper/` — LaTeX source + compiled 50-page PDF
 
 ## Reproduce
 ```
 pip install -r requirements.txt
-PYTHONPATH=src python -m pytest tests/          # 11 tests, hermetic
+PYTHONPATH=src python -m pytest tests/          # 76 test functions, hermetic
 PYTHONPATH=src python -m yeasttwin.evaluate     # locked-gate CV
 PYTHONPATH=src python -m yeasttwin.overrescue   # auditor
 PYTHONPATH=src python scripts/run_strain_scan.py
